@@ -14,13 +14,13 @@ export default function Lineup(stage) {
 
   return (
     <div className="lineup">
-      <Day {...monday}></Day>
-      <Day {...tuesday}></Day>
-      <Day {...wednesday}></Day>
-      <Day {...thursday}></Day>
-      <Day {...friday}></Day>
-      <Day {...saturday}></Day>
-      <Day {...sunday}></Day>
+      <Day {...monday} />
+      <Day {...tuesday} />
+      <Day {...wednesday} />
+      <Day {...thursday} />
+      <Day {...friday} />
+      <Day {...saturday} />
+      <Day {...sunday} />
     </div>
 
     // return <ul>{schedule.map((jotunheim) => console.log(jotunheim))}</ul>;

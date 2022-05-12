@@ -1,24 +1,34 @@
 .lineup {
   display: flex;
   flex-direction: column;
+  gap: 5rem;
 }
 
 .stages {
-  /* display: flex; */
   display: grid;
   flex-wrap: nowrap;
-  grid-template-columns: 0.25fr 1fr 1fr 1fr;
+  grid-template-columns: 0.15fr 1fr 1fr 1fr;
   gap: 5rem;
 }
 
 .days {
+  /* writing-mode: sideways-lr;*/
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  display: flex;
+  justify-content: space-around;
 }
 
-.days ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5rem;
+.day {
+  min-height: 80vh;
+  display: grid;
+  /* CHANGE HEIGHT of row to make it responsive */
+  grid-template-rows: repeat(12, 6vh);
+  gap: 2rem;
+}
+
+.act {
+  height: fit-content;
+  background-color: red;
+  align-self: center;
 }

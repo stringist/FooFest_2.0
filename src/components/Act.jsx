@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
-
 export default function Act(act) {
+  // console.log(act);
   return (
-    <li>
-      {act.start} - {act.end} -- {act.act}
-    </li>
+    <div className="act">
+      <p>
+        {act.start} - {act.end} -- {act.act}
+      </p>
+    </div>
   );
 }

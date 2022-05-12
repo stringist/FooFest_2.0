@@ -57,15 +57,13 @@ function App() {
 
       <section className="stages">
         <div className="days">
-          <ul>
-            <li>Mon</li>
-            <li>Tue</li>
-            <li>Wed</li>
-            <li>Thu</li>
-            <li>Fri</li>
-            <li>Sat</li>
-            <li>Sun</li>
-          </ul>
+          <h2>Mon</h2>
+          <h2>Tue</h2>
+          <h2>Wed</h2>
+          <h2>Thu</h2>
+          <h2>Fri</h2>
+          <h2>Sat</h2>
+          <h2>Sun</h2>
         </div>
         <Lineup {...midgard}></Lineup>
         <Lineup {...jotunheim}></Lineup>
