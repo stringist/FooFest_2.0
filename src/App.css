@@ -1,34 +1,35 @@
 .lineup {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 }
 
 .stages {
-  display: grid;
-  flex-wrap: nowrap;
-  grid-template-columns: 0.15fr 1fr 1fr 1fr;
-  gap: 5rem;
+    display: grid;
+    flex-wrap: nowrap;
+    grid-template-columns: 0.15fr 1fr 1fr 1fr;
+    gap: 5rem;
 }
 
 .days {
-  /* writing-mode: sideways-lr;*/
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  display: flex;
-  justify-content: space-around;
+    /* writing-mode: sideways-lr;*/
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    justify-content: space-around;
 }
 
 .day {
-  min-height: 80vh;
-  display: grid;
-  /* CHANGE HEIGHT of row to make it responsive */
-  grid-template-rows: repeat(12, 6vh);
-  gap: 2rem;
+    min-height: 80vh;
+    display: grid;
+    /* CHANGE HEIGHT of row to make it responsive */
+    grid-template-rows: repeat(12, 6vh);
+    gap: 2rem;
 }
 
 .act {
-  height: fit-content;
-  background-color: red;
-  align-self: center;
+    /* height: fit-content; */
+    background-color: #c6e1a3;
+    align-self: center;
+    padding-left: .25rem;
 }
