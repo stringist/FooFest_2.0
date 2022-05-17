@@ -1,3 +1,9 @@
+import CheckOutForm from "../components/CheckOutForm";
+
 export default function Booking() {
-  return <h1>Booking</h1>;
+  return (
+    <>
+      <CheckOutForm></CheckOutForm>
+    </>
+  );
 }

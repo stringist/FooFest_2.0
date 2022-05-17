@@ -2,8 +2,8 @@ import Act from "./Act";
 
 export default function Day(day) {
   const acts = Object.values(day);
-  console.log(acts);
-
+  /*   console.log(acts);
+   */
   return (
     <div className="day">
       {/* 00-2:00 */}

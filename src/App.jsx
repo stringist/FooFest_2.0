@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 // import filter from "just-filter";
 
 import Festival from "./roots/Festival";
@@ -7,21 +6,7 @@ import "./App.css";
 import { Link, Routes, Route } from "react-router-dom";
 // These are for the react-reroute
 
-import Lineup from "./components/Lineup";
-
 function App() {
-  const [count, setCount] = useState(0);
-  const [schedule, setSchedule] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://foofestival.herokuapp.com/schedule`)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        setSchedule(data);
-      });
-  }, []);
-
   // const [events, setEvents] = useState([]);
 
   // useEffect(() => {
@@ -39,9 +24,6 @@ function App() {
   // Object.values(schedule).map((x) => console.log(x));
   // Object.keys(schedule).map((x) => console.log(x));
   // Object.entries(schedule).map((x) => console.log(x));
-  const midgard = schedule.Midgard;
-  const vanaheim = schedule.Vanaheim;
-  const jotunheim = schedule.Jotunheim;
 
   return (
     <div className="App">
@@ -54,21 +36,6 @@ function App() {
         <Route path="/" element={<Festival />} />
         <Route path="/Booking" element={<Booking />} />
       </Routes>
-
-      <section className="stages">
-        <div className="days">
-          <h2>Mon</h2>
-          <h2>Tue</h2>
-          <h2>Wed</h2>
-          <h2>Thu</h2>
-          <h2>Fri</h2>
-          <h2>Sat</h2>
-          <h2>Sun</h2>
-        </div>
-        <Lineup {...midgard}></Lineup>
-        <Lineup {...jotunheim}></Lineup>
-        <Lineup {...vanaheim}></Lineup>
-      </section>
     </div>
   );
 }
