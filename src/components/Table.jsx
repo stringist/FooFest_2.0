@@ -11,44 +11,22 @@ export default function Table(props) {
       </thead>
 
       <tbody>
-        <td>
-          {props.stage1.map((act) => {
-            return (
-              <tr>
-                <td>
-                  {act.start} - {act.end}
-                </td>
-              </tr>
-            );
-          })}
-        </td>
-        <td>
-          {props.stage1.map((act) => {
-            return (
-              <tr>
-                <td>{act.act}</td>
-              </tr>
-            );
-          })}
-        </td>
-        <td>
-          {props.stage2.map((act) => {
-            return (
-              <tr>
-                <td>{act.act}</td>
-              </tr>
-            );
-          })}
-        </td>
-        <td>
-          {props.stage3.map((act) => {
-            return (
-              <tr>
-                <td>{act.act}</td>
-              </tr>
-            );
-          })}
-        </td>
+        {props.stage1.map((act, index) => {
+          const mAct = act.act;
+          const jAct = props.stage2[index].act;
+          const vAct = props.stage3[index].act;
+
+          return (
+            <tr>
+              <th>
+                {act.start} - {act.end}
+              </th>
+              <td>{mAct}</td>
+              <td>{jAct}</td>
+              <td>{vAct}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
