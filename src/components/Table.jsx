@@ -1,5 +1,5 @@
 export default function Table(props) {
-  console.return(
+  return (
     <table>
       <thead>
         <tr>
@@ -11,16 +11,17 @@ export default function Table(props) {
       </thead>
 
       <tbody>
-        {props.stage1.map((act) => {
-          return (
-            <tr>
-              <td>
-                {act.start} - {act.end}
-              </td>
-            </tr>
-          );
-        })}
-
+        <td>
+          {props.stage1.map((act) => {
+            return (
+              <tr>
+                <td>
+                  {act.start} - {act.end}
+                </td>
+              </tr>
+            );
+          })}
+        </td>
         <td>
           {props.stage1.map((act) => {
             return (
