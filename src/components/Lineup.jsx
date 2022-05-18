@@ -1,16 +1,18 @@
 import Day from "./Day";
 
-export default function Lineup(stage) {
+export default function Lineup({ stage, day }) {
+  const currentStage = { ...stage };
+  console.log(day);
   // console.log(midgard.midgard.mon);
   // Object.values(stage).map((days) => console.log(days));
   // console.log(stage);
-  const monday = stage.mon;
-  const tuesday = stage.tue;
-  const wednesday = stage.wed;
-  const thursday = stage.thu;
-  const friday = stage.fri;
-  const saturday = stage.sat;
-  const sunday = stage.sun;
+  const monday = currentStage.mon;
+  const tuesday = currentStage.tue;
+  const wednesday = currentStage.wed;
+  const thursday = currentStage.thu;
+  const friday = currentStage.fri;
+  const saturday = currentStage.sat;
+  const sunday = currentStage.sun;
 
   return (
     <div className="lineup">
