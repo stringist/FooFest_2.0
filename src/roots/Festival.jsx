@@ -12,6 +12,7 @@ export default function Festival() {
   const [filteredM, setFilteredM] = useState([]);
   const [filteredJ, setFilteredJ] = useState([]);
   const [filteredV, setFilteredV] = useState([]);
+  const [bandDisplay, setBandDisplayed] = useState([]);
 
   useEffect(() => {
     fetch(`https://foofestival.herokuapp.com/schedule`)
@@ -34,6 +35,7 @@ export default function Festival() {
   // console.log(events);
 
   function filterList(day) {
+    setBandDisplayed([]);
     console.log("list filtered");
     if (day === "monday") {
       setFilteredM(schedule.Midgard.mon);
@@ -123,7 +125,7 @@ export default function Festival() {
         Sunday
       </button>
 
-      <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV}></Table>
+      <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed}></Table>
     </div>
   );
 }
