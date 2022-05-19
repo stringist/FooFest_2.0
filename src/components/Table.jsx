@@ -21,7 +21,7 @@ export default function Table(props) {
               <th>
                 {act.start} - {act.end}
               </th>
-              <td>{mAct}</td>
+              <td>{mAct === "break" ? "BREAK" : mAct}</td>
               <td>{jAct}</td>
               <td>{vAct}</td>
             </tr>
