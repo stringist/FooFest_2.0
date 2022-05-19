@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import "../../sass/style.scss";
-
 export default function CheckOutForm() {
   const ENDPOINT = "https://kea2semester-e216.restdb.io/rest/foofest";
   const KEY = "615d83068597142da1745455";
@@ -19,6 +18,7 @@ export default function CheckOutForm() {
     };
     submitted(ticketHolderObject);
   }
+
   function submitted(ticketHolder) {
     const postData = JSON.stringify(ticketHolder);
     fetch(ENDPOINT, {
