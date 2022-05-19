@@ -75,57 +75,59 @@ export default function Festival() {
   return (
     <div className="Festival">
       <h1>Festival</h1>
-      <button
-        onClick={() => {
-          filterList("monday");
-        }}
-      >
-        Monday
-      </button>
-      <button
-        onClick={() => {
-          filterList("tuesday");
-        }}
-      >
-        Tuesday
-      </button>
-      <button
-        onClick={() => {
-          filterList("wednesday");
-        }}
-      >
-        Wednesday
-      </button>
-      <button
-        onClick={() => {
-          filterList("thursday");
-        }}
-      >
-        Thursday
-      </button>
-      <button
-        onClick={() => {
-          filterList("friday");
-        }}
-      >
-        Friday
-      </button>
-      <button
-        onClick={() => {
-          filterList("saturday");
-        }}
-      >
-        Saturday
-      </button>
-      <button
-        onClick={() => {
-          filterList("sunday");
-        }}
-      >
-        Sunday
-      </button>
+      <div className="festival__buttons">
+        <button
+          onClick={() => {
+            filterList("monday");
+          }}
+        >
+          Monday
+        </button>
+        <button
+          onClick={() => {
+            filterList("tuesday");
+          }}
+        >
+          Tuesday
+        </button>
+        <button
+          onClick={() => {
+            filterList("wednesday");
+          }}
+        >
+          Wednesday
+        </button>
+        <button
+          onClick={() => {
+            filterList("thursday");
+          }}
+        >
+          Thursday
+        </button>
+        <button
+          onClick={() => {
+            filterList("friday");
+          }}
+        >
+          Friday
+        </button>
+        <button
+          onClick={() => {
+            filterList("saturday");
+          }}
+        >
+          Saturday
+        </button>
+        <button
+          onClick={() => {
+            filterList("sunday");
+          }}
+        >
+          Sunday
+        </button>
+      </div>
 
-      <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed}></Table>
+      <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} />
     </div>
   );
 }

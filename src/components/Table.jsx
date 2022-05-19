@@ -29,7 +29,7 @@ export default function Table(props) {
   }
 
   return (
-    <>
+    <div className="festival__schedule">
       <table>
         <thead>
           <tr>
@@ -51,10 +51,7 @@ export default function Table(props) {
                 <th>
                   {act.start} - {act.end}
                 </th>
-                <td>
-                  {mAct === "break" ? "BREAK" : mAct}
-                  {mAct !== "break" ? <button onClick={() => showBand(mAct)}>Show band info</button> : null}
-                </td>
+                <td>{mAct !== "break" ? <button onClick={() => showBand(mAct)}>{mAct}</button> : "Break"}</td>
                 <td>{jAct}</td>
                 <td>{vAct}</td>
               </tr>
@@ -63,7 +60,7 @@ export default function Table(props) {
         </tbody>
       </table>
 
-      <BandInfo {...props.bandDisplay}></BandInfo>
-    </>
+      <BandInfo bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed}></BandInfo>
+    </div>
   );
 }
