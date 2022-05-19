@@ -25,43 +25,52 @@ export default function Table(props) {
     console.log(bands);
   }
 
+  function showBand(bandName) {
+    const i = bands.data.findIndex((band) => band.name == bandName);
+    console.log(i);
+    console.log(bands.data[i]);
+  }
+
+  //   return (
+  //     <div className="container">
+  //       <h2>Example component</h2>
+  //       <button onClick={handleClick}>Get students</button>
+  //       <div>{bands.loading ? "loading" : bands.data[0].name}</div>
+  //     </div>
+  //   );
+  // }
   return (
-    <div className="container">
-      <h2>Example component</h2>
-      <button onClick={handleClick}>Get students</button>
-      <div>{bands.loading ? "loading" : bands.data[0].name}</div>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Midgard</th>
+          <th>Jotunheim</th>
+          <th>Vaneheim</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {props.stage1.map((act, index) => {
+          const mAct = act.act;
+          const jAct = props.stage2[index].act;
+          const vAct = props.stage3[index].act;
+
+          return (
+            <tr>
+              <th>
+                {act.start} - {act.end}
+              </th>
+              <td>
+                {mAct === "break" ? "BREAK" : mAct}
+                <button onClick={() => showBand(mAct)}>Show band info</button>
+              </td>
+              <td>{jAct}</td>
+              <td>{vAct}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }
-// return (
-//   <table>
-//     <thead>
-//       <tr>
-//         <th>Time</th>
-//         <th>Midgard</th>
-//         <th>Jotunheim</th>
-//         <th>Vaneheim</th>
-//       </tr>
-//     </thead>
-
-//     <tbody>
-//       {props.stage1.map((act, index) => {
-//         const mAct = act.act;
-//         const jAct = props.stage2[index].act;
-//         const vAct = props.stage3[index].act;
-
-//         return (
-//           <tr>
-//             <th>
-//               {act.start} - {act.end}
-//             </th>
-//             <td>{mAct === "break" ? "BREAK" : mAct}</td>
-//             <td>{jAct}</td>
-//             <td>{vAct}</td>
-//           </tr>
-//         );
-//       })}
-//     </tbody>
-//   </table>
-// );
-// }

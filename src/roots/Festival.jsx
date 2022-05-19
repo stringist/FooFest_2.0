@@ -66,7 +66,6 @@ export default function Festival() {
     }
   }
 
-  // console.log(schedule);
   if (!schedule) {
     return null;
   }
