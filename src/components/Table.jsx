@@ -52,8 +52,8 @@ export default function Table(props) {
                   {act.start} - {act.end}
                 </th>
                 <td>{mAct !== "break" ? <button onClick={() => showBand(mAct)}>{mAct}</button> : "Break"}</td>
-                <td>{jAct}</td>
-                <td>{vAct}</td>
+                <td>{jAct !== "break" ? <button onClick={() => showBand(jAct)}>{jAct}</button> : "Break"}</td>
+                <td>{vAct !== "break" ? <button onClick={() => showBand(vAct)}>{vAct}</button> : "Break"}</td>
               </tr>
             );
           })}

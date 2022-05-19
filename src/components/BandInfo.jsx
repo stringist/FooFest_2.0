@@ -1,8 +1,5 @@
 export default function BandInfo(props) {
-  console.log(props.name);
   const band = { ...props.bandDisplay };
-  console.log(band.name);
-  console.log(band.name == undefined);
 
   if (band.name != undefined) {
     return (
