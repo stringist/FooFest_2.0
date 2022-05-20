@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
-import RadioButton from "./RadioButton";
+import AreaButton from "./AreaButton";
+import TicketButton from "./TicketButton";
 
 export default function FormStep1() {
   const formEl = useRef(null);
 
-  const [area, setArea] = useState("");
-  const [amount, setAmount] = useState("");
+  const [ticket, setTicket] = useState("General");
+  const [area, setArea] = useState("Svartheim");
+  const [amount, setAmount] = useState(1);
   const [isSearching, setIsSearching] = useState(false);
   // const [ticketRequest, setTicketRequest] = useState({ area: "", amount: 0 });
 
@@ -39,20 +41,17 @@ export default function FormStep1() {
     <form ref={formEl} onSubmit={searchTickets}>
       <fieldset>
         <legend>Choose ticket</legend>
-
-        <input type="radio" id="generalTicket" name="ticketChoice" value="general" />
-        <label htmlFor="generalTicket">General 799kr</label>
-        <input type="radio" id="vipTicket" name="ticketChoice" value="vip" />
-        <label htmlFor="vipTicket">Vip 1299kr</label>
+        <TicketButton name="General" price="799kr" ticket={ticket} setTicket={setTicket} />
+        <TicketButton name="VIP" price="1299kr" ticket={ticket} setTicket={setTicket} />
       </fieldset>
 
       <fieldset>
         <legend>Choose area</legend>
-        <RadioButton name="Svartheim" area={area} setArea={setArea}></RadioButton>
-        <RadioButton name="Nilfheim" area={area} setArea={setArea}></RadioButton>
-        <RadioButton name="Helheim" area={area} setArea={setArea}></RadioButton>
-        <RadioButton name="Muspeleheim" area={area} setArea={setArea}></RadioButton>
-        <RadioButton name="Alfheim" area={area} setArea={setArea}></RadioButton>
+        <AreaButton name="Svartheim" area={area} setArea={setArea} />
+        <AreaButton name="Nilfheim" area={area} setArea={setArea} />
+        <AreaButton name="Helheim" area={area} setArea={setArea} />
+        <AreaButton name="Muspeleheim" area={area} setArea={setArea} />
+        <AreaButton name="Alfheim" area={area} setArea={setArea} />
       </fieldset>
 
       <fieldset>
@@ -62,6 +61,7 @@ export default function FormStep1() {
           type="number"
           id="amount"
           name="amount"
+          value={amount}
           min="1"
           inputMode="numeric"
           onChange={(e) => {

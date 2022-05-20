@@ -1,4 +1,4 @@
-export default function RadioButton(props) {
+export default function AreaButton(props) {
   return (
     <>
       <input
