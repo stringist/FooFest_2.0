@@ -10,7 +10,6 @@ export default function Table(props) {
   const [name, setName] = useState("");
 
   useEffect(() => {
-    console.log("fetching student");
     fetch(`https://foofestival.herokuapp.com/bands`)
       .then((res) => res.json())
       .then((data) => {

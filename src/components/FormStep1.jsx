@@ -10,6 +10,7 @@ export default function FormStep1() {
   const [area, setArea] = useState("Svartheim");
   const [amount, setAmount] = useState(1);
   const [isSearching, setIsSearching] = useState(false);
+  const [reservation, setReservation] = useState([]);
 
   function searchTickets(e) {
     e.preventDefault();
@@ -29,10 +30,20 @@ export default function FormStep1() {
       body: putData,
     })
       .then((response) => {
-        console.log(response);
+        response.json().then((data) => {
+          // console.log(data);
+          setReservation(data);
+        });
         setIsSearching(false);
       })
       .catch((err) => console.error(err));
+  }
+  console.log(reservation);
+
+  if (reservation.error === "Invalid area, expired id or not enough available spots") {
+    return alert("no available spots, try another area");
+  } else if (reservation.message === "Reserved") {
+    return alert("tickets resered");
   }
 
   return (
@@ -45,11 +56,17 @@ export default function FormStep1() {
 
       <fieldset>
         <legend>Choose area</legend>
-        <AreaButton name="Svartheim" area={area} setArea={setArea} />
-        <AreaButton name="Nilfheim" area={area} setArea={setArea} />
-        <AreaButton name="Helheim" area={area} setArea={setArea} />
-        <AreaButton name="Muspeleheim" area={area} setArea={setArea} />
-        <AreaButton name="Alfheim" area={area} setArea={setArea} />
+        <div className="form__area">
+          <div className="form__area--row">
+            <AreaButton name="Svartheim" area={area} setArea={setArea} />
+            <AreaButton name="Nilfheim" area={area} setArea={setArea} />
+            <AreaButton name="Helheim" area={area} setArea={setArea} />
+          </div>
+          <div className="form__area--row">
+            <AreaButton name="Muspeleheim" area={area} setArea={setArea} />
+            <AreaButton name="Alfheim" area={area} setArea={setArea} />
+          </div>
+        </div>
       </fieldset>
 
       <fieldset>
