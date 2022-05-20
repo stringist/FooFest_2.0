@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import RadioButton from "./RadioButton";
 
 export default function FormStep1() {
   const formEl = useRef(null);
@@ -10,16 +11,8 @@ export default function FormStep1() {
 
   function searchTickets(e) {
     e.preventDefault();
-
-    setArea(formEl.current.elements.areaChoice.value);
-    setAmount(Number(formEl.current.elements.amount.value));
-
-    console.log(area, amount);
-    // const ticketRequest = {
-    //   area: formEl.current.elements.areaChoice.value,
-    //   amount: Number(formEl.current.elements.amount.value),
-    // };
     const ticketRequest = { area, amount };
+
     console.log(ticketRequest);
     checkAvailability(ticketRequest);
     setIsSearching(true);
@@ -55,22 +48,26 @@ export default function FormStep1() {
 
       <fieldset>
         <legend>Choose area</legend>
-        <input type="radio" id="svartheim" name="areaChoice" value="Svartheim" />
-        <label htmlFor="svartheim">Svartheim</label>
-        <input type="radio" id="nilfheim" name="areaChoice" value="Nilfheim" />
-        <label htmlFor="nilfheim">Nilfheim</label>
-        <input type="radio" id="helheim" name="areaChoice" value="Helheim" />
-        <label htmlFor="helheim">Helheim</label>
-        <input type="radio" id="muspeleheim" name="areaChoice" value="muspeleheim" />
-        <label htmlFor="muspeleheim">Muspeleheim</label>
-        <input type="radio" id="alfheim" name="areaChoice" value="Alfheim" />
-        <label htmlFor="alfheim">Alfheim</label>
+        <RadioButton name="Svartheim" area={area} setArea={setArea}></RadioButton>
+        <RadioButton name="Nilfheim" area={area} setArea={setArea}></RadioButton>
+        <RadioButton name="Helheim" area={area} setArea={setArea}></RadioButton>
+        <RadioButton name="Muspeleheim" area={area} setArea={setArea}></RadioButton>
+        <RadioButton name="Alfheim" area={area} setArea={setArea}></RadioButton>
       </fieldset>
 
       <fieldset>
         <legend>Choose amount</legend>
         <label htmlFor="amount"></label>
-        <input type="number" id="amount" name="amount" min="1" inputMode="numeric" />
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          min="1"
+          inputMode="numeric"
+          onChange={(e) => {
+            setAmount(Number(e.target.value));
+          }}
+        />
       </fieldset>
 
       {!isSearching && <button>Search tickets</button>}

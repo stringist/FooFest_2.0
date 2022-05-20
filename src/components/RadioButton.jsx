@@ -1,0 +1,17 @@
+export default function RadioButton(props) {
+  return (
+    <>
+      <input
+        type="radio"
+        checked={props.area === props.name}
+        id={props.name}
+        name="areaChoice"
+        value={props.name}
+        onChange={(e) => {
+          props.setArea(e.target.value);
+        }}
+      />
+      <label htmlFor={props.name}>{props.name}</label>
+    </>
+  );
+}
