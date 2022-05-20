@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import AreaButton from "./AreaButton";
 import TicketButton from "./TicketButton";
+import AmountButton from "./AmountButton";
 
 export default function FormStep1() {
   const formEl = useRef(null);
@@ -9,19 +10,15 @@ export default function FormStep1() {
   const [area, setArea] = useState("Svartheim");
   const [amount, setAmount] = useState(1);
   const [isSearching, setIsSearching] = useState(false);
-  // const [ticketRequest, setTicketRequest] = useState({ area: "", amount: 0 });
 
   function searchTickets(e) {
     e.preventDefault();
+    setIsSearching(true);
+
     const ticketRequest = { area, amount };
+    const putData = JSON.stringify(ticketRequest);
 
     console.log(ticketRequest);
-    checkAvailability(ticketRequest);
-    setIsSearching(true);
-  }
-
-  function checkAvailability(ticketRequest) {
-    const putData = JSON.stringify(ticketRequest);
     console.log(putData);
 
     fetch("https://foofestival.herokuapp.com/reserve-spot", {
@@ -37,6 +34,7 @@ export default function FormStep1() {
       })
       .catch((err) => console.error(err));
   }
+
   return (
     <form ref={formEl} onSubmit={searchTickets}>
       <fieldset>
@@ -56,18 +54,7 @@ export default function FormStep1() {
 
       <fieldset>
         <legend>Choose amount</legend>
-        <label htmlFor="amount"></label>
-        <input
-          type="number"
-          id="amount"
-          name="amount"
-          value={amount}
-          min="1"
-          inputMode="numeric"
-          onChange={(e) => {
-            setAmount(Number(e.target.value));
-          }}
-        />
+        <AmountButton name="amount" amount={amount} setAmount={setAmount} />
       </fieldset>
 
       {!isSearching && <button>Search tickets</button>}

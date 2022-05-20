@@ -1,3 +1,5 @@
+import AreaImage from "./AreaImage";
+
 export default function AreaButton(props) {
   return (
     <>
@@ -11,7 +13,11 @@ export default function AreaButton(props) {
           props.setArea(e.target.value);
         }}
       />
-      <label htmlFor={props.name}>{props.name}</label>
+
+      <label htmlFor={props.name}>
+        {props.name}
+        <AreaImage name={props.name} area={props.area} />
+      </label>
     </>
   );
 }
