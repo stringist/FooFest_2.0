@@ -9,7 +9,6 @@ export default function BandsList() {
 
   const [filter, setFilter] = useState("All");
   const [sort, setSort] = useState("");
-  const [genres, setGenres] = useState([]);
 
   useEffect(() => {
     fetch(`https://foofestival.herokuapp.com/bands`)
@@ -24,17 +23,11 @@ export default function BandsList() {
   if (bands.data === "") {
     return null;
   }
-  const filtered = filter === "All" ? bands.data : bands.data.filter((band) => band.genre === filter);
 
-  // function showBand(bandName) {
-  //   const i = bands.data.findIndex((band) => band.name == bandName);
-  //   props.setBandDisplayed(bands.data[i]);
-  //   // console.log(i);
-  // }
+  const filtered = filter === "All" ? bands.data : bands.data.filter((band) => band.genre === filter);
 
   return (
     <div className="festival__bandList">
-      {console.log(genres)}
       <button onClick={() => setFilter("Rock" || "Alternative Rock")}></button>
       <FilterButton setFilter={setFilter} filter={filter} name="All" />
       <FilterButton setFilter={setFilter} filter={filter} name="Rock" />
@@ -55,16 +48,6 @@ export default function BandsList() {
               <tr>
                 <td>{band.name}</td>
                 <td>{band.genre}</td>
-                {/* {setGenres((old) => old.concat(band.genre))} */}
-                {function genres() {
-                  if (genres.find((item) => item === band.genre)) {
-                    console.log("genre duplicated");
-                    setGenres((old) => old.filter((item) => item !== band.name));
-                  } else {
-                    setGenres((old) => old.concat(band.genre));
-                    console.log("genre added to the list");
-                  }
-                }}
               </tr>
             );
           })}
