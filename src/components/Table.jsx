@@ -59,7 +59,7 @@ export default function Table(props) {
         </tbody>
       </table>
 
-      <BandInfo bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed}></BandInfo>
+      <BandInfo bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites}></BandInfo>
     </div>
   );
 }

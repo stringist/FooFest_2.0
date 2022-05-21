@@ -13,6 +13,7 @@ export default function Festival() {
   const [filteredJ, setFilteredJ] = useState([]);
   const [filteredV, setFilteredV] = useState([]);
   const [bandDisplay, setBandDisplayed] = useState([]);
+  const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
     fetch(`https://foofestival.herokuapp.com/schedule`)
@@ -127,7 +128,7 @@ export default function Festival() {
         </button>
       </div>
 
-      <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} />
+      <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
     </div>
   );
 }
