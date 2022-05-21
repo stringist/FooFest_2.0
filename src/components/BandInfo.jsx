@@ -12,7 +12,10 @@ export default function BandInfo(props) {
         </button>
         <h2>{band.name}</h2>
         <h4>{band.genre}</h4>
-        <img src={band.logo} alt={band.name} />
+        <figure>
+          <img src={band.logo} alt={band.name} />
+          {band.logoCredits ? <figcaption>{band.logoCredits}</figcaption> : null}
+        </figure>
         <p>{band.bio}</p>
       </div>
     );

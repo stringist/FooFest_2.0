@@ -71,6 +71,7 @@ export default function FormStep1() {
         <fieldset>
           <legend>Choose amount</legend>
           <AmountButton name="amount" amount={amount} setAmount={setAmount} />
+          <span>The amount must be a number greater than 0</span>
         </fieldset>
 
         {!isSearching && <button>Search tickets</button>}
