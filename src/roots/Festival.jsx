@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Booking from "./Booking";
 
 import Table from "../components/Table";
+import BandsList from "../components/BandsList";
 
 export default function Festival() {
   const [count, setCount] = useState(0);
@@ -129,6 +130,7 @@ export default function Festival() {
       </div>
 
       <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
+      <BandsList />
     </div>
   );
 }

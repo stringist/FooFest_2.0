@@ -7,7 +7,6 @@ export default function Table(props) {
     data: "",
     loading: true,
   });
-  const [name, setName] = useState("");
 
   useEffect(() => {
     fetch(`https://foofestival.herokuapp.com/bands`)
