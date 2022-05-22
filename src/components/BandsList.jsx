@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import FilterButton from "./FilterButton";
 import SearchBar from "./SearchBar";
+import BandPage from "./BandPage";
+import BandListTable from "./BandListTable";
 
-export default function BandsList() {
+export default function BandsList(props) {
   const [bands, setBands] = useState({
     data: "",
     loading: true,
@@ -32,42 +34,13 @@ export default function BandsList() {
     <div className="festival__bandList">
       <SearchBar searched={searched} setSearched={setSearched} bands={bands.data} />
 
-      <button onClick={() => setFilter("Rock" || "Alternative Rock")}></button>
       <FilterButton setFilter={setFilter} filter={filter} name="All" />
       <FilterButton setFilter={setFilter} filter={filter} name="Rock" />
       <FilterButton setFilter={setFilter} filter={filter} name="Heavy Metal" />
-      <table>
-        <thead>
-          <tr>
-            <th>Time</th>
-            <th>Midgard</th>
-            <th>Jotunheim</th>
-            <th>Vaneheim</th>
-          </tr>
-        </thead>
 
-        <tbody>
-          {searched === ""
-            ? filtered.map((band) => {
-                return (
-                  <tr>
-                    <td>{band.name}</td>
-                    <td>{band.genre}</td>
-                  </tr>
-                );
-              })
-            : searched.map((band) => {
-                return (
-                  <tr>
-                    <td>{band.name}</td>
-                    <td>{band.genre}</td>
-                  </tr>
-                );
-              })}
-        </tbody>
-      </table>
+      <BandListTable bands={bands.data} searched={searched} filtered={filtered} bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} />
 
-      {/* <BandInfo bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites}></BandInfo> */}
+      <BandPage bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} />
     </div>
   );
 }

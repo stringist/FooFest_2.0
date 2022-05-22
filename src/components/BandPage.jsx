@@ -1,4 +1,4 @@
-export default function BandInfo(props) {
+export default function BandPage(props) {
   const band = { ...props.bandDisplay };
   console.log(props.bandDisplay);
 
@@ -14,7 +14,7 @@ export default function BandInfo(props) {
 
   if (band.name != undefined) {
     return (
-      <div className="band__info">
+      <div className="band__page">
         <button onClick={() => props.setBandDisplayed([])}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
             <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
