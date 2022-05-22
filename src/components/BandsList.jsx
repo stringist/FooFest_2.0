@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import FilterButton from "./FilterButton";
+import SearchBar from "./SearchBar";
 
 export default function BandsList() {
   const [bands, setBands] = useState({
@@ -9,6 +10,7 @@ export default function BandsList() {
 
   const [filter, setFilter] = useState("All");
   const [sort, setSort] = useState("");
+  const [searched, setSearched] = useState("");
 
   useEffect(() => {
     fetch(`https://foofestival.herokuapp.com/bands`)
@@ -28,6 +30,8 @@ export default function BandsList() {
 
   return (
     <div className="festival__bandList">
+      <SearchBar searched={searched} setSearched={setSearched} bands={bands.data} />
+
       <button onClick={() => setFilter("Rock" || "Alternative Rock")}></button>
       <FilterButton setFilter={setFilter} filter={filter} name="All" />
       <FilterButton setFilter={setFilter} filter={filter} name="Rock" />
@@ -43,14 +47,23 @@ export default function BandsList() {
         </thead>
 
         <tbody>
-          {filtered.map((band) => {
-            return (
-              <tr>
-                <td>{band.name}</td>
-                <td>{band.genre}</td>
-              </tr>
-            );
-          })}
+          {searched === ""
+            ? filtered.map((band) => {
+                return (
+                  <tr>
+                    <td>{band.name}</td>
+                    <td>{band.genre}</td>
+                  </tr>
+                );
+              })
+            : searched.map((band) => {
+                return (
+                  <tr>
+                    <td>{band.name}</td>
+                    <td>{band.genre}</td>
+                  </tr>
+                );
+              })}
         </tbody>
       </table>
 
