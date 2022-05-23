@@ -10,8 +10,10 @@ export default function BandListTable(props) {
   return (
     <table>
       <thead>
-        <SortToggle name="Band" setSort={props.setSort} setSortDir={props.setSortDir} sortKey={"name"} />
-        <SortToggle name="Genre" setSort={props.setSort} setSortDir={props.setSortDir} sortKey={"genre"} />
+        <tr>
+          <SortToggle name="Band" setSort={props.setSort} setSortDir={props.setSortDir} sortKey={"name"} />
+          <SortToggle name="Genre" setSort={props.setSort} setSortDir={props.setSortDir} sortKey={"genre"} />
+        </tr>
       </thead>
       <tbody>
         {props.searched === ""

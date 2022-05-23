@@ -23,13 +23,13 @@ export default function BandsList(props) {
       });
   }, []);
 
-  console.log(bands.data);
+  // console.log(bands.data);
 
   if (bands.data === "") {
     return null;
   }
 
-  const filtered = filter === "All" ? bands.data : bands.data.filter((band) => band.genre === filter);
+  const filtered = filter === "All" ? bands.data : filter === "Others" ? bands.data.filter((band) => !band.genre.includes("Rock") && !band.genre.includes("Metal")) : bands.data.filter((band) => band.genre.includes(filter));
 
   sortDir === "asc" ? filtered.sort((a, b) => a[sort] > b[sort]) : filtered.sort((a, b) => a[sort] < b[sort]);
 

@@ -5,14 +5,15 @@ import Booking from "./Booking";
 
 import Table from "../components/Table";
 import BandsList from "../components/BandsList";
+import ScheduleButtons from "../components/ScheduleButtons";
 
 export default function Festival() {
   const [count, setCount] = useState(0);
   const [schedule, setSchedule] = useState(null);
 
-  const [filteredM, setFilteredM] = useState([]);
-  const [filteredJ, setFilteredJ] = useState([]);
-  const [filteredV, setFilteredV] = useState([]);
+  const [filteredM, setFilteredM] = useState();
+  const [filteredJ, setFilteredJ] = useState();
+  const [filteredV, setFilteredV] = useState();
   const [bandDisplay, setBandDisplayed] = useState([]);
   const [favourites, setFavourites] = useState([]);
 
@@ -21,6 +22,9 @@ export default function Festival() {
       .then((res) => res.json())
       .then((data) => {
         setSchedule(data);
+        setFilteredM(data.Midgard.mon);
+        setFilteredJ(data.Jotunheim.mon);
+        setFilteredV(data.Vanaheim.mon);
       });
   }, []);
 
@@ -36,40 +40,6 @@ export default function Festival() {
   // }, []);
   // console.log(events);
 
-  function filterList(day) {
-    setBandDisplayed([]);
-    console.log("list filtered");
-    if (day === "monday") {
-      setFilteredM(schedule.Midgard.mon);
-      setFilteredJ(schedule.Jotunheim.mon);
-      setFilteredV(schedule.Vanaheim.mon);
-    } else if (day === "tuesday") {
-      setFilteredM(schedule.Midgard.tue);
-      setFilteredJ(schedule.Jotunheim.tue);
-      setFilteredV(schedule.Vanaheim.tue);
-    } else if (day === "wednesday") {
-      setFilteredM(schedule.Midgard.wed);
-      setFilteredJ(schedule.Jotunheim.wed);
-      setFilteredV(schedule.Vanaheim.wed);
-    } else if (day === "thursday") {
-      setFilteredM(schedule.Midgard.thu);
-      setFilteredJ(schedule.Jotunheim.thu);
-      setFilteredV(schedule.Vanaheim.thu);
-    } else if (day === "friday") {
-      setFilteredM(schedule.Midgard.fri);
-      setFilteredJ(schedule.Jotunheim.fri);
-      setFilteredV(schedule.Vanaheim.fri);
-    } else if (day === "saturday") {
-      setFilteredM(schedule.Midgard.sat);
-      setFilteredJ(schedule.Jotunheim.sat);
-      setFilteredV(schedule.Vanaheim.sat);
-    } else if (day === "sunday") {
-      setFilteredM(schedule.Midgard.sun);
-      setFilteredJ(schedule.Jotunheim.sun);
-      setFilteredV(schedule.Vanaheim.sun);
-    }
-  }
-
   if (!schedule) {
     return null;
   }
@@ -77,59 +47,11 @@ export default function Festival() {
   return (
     <div className="Festival">
       <h1>Festival</h1>
-      <div className="festival__buttons">
-        <button
-          onClick={() => {
-            filterList("monday");
-          }}
-        >
-          Monday
-        </button>
-        <button
-          onClick={() => {
-            filterList("tuesday");
-          }}
-        >
-          Tuesday
-        </button>
-        <button
-          onClick={() => {
-            filterList("wednesday");
-          }}
-        >
-          Wednesday
-        </button>
-        <button
-          onClick={() => {
-            filterList("thursday");
-          }}
-        >
-          Thursday
-        </button>
-        <button
-          onClick={() => {
-            filterList("friday");
-          }}
-        >
-          Friday
-        </button>
-        <button
-          onClick={() => {
-            filterList("saturday");
-          }}
-        >
-          Saturday
-        </button>
-        <button
-          onClick={() => {
-            filterList("sunday");
-          }}
-        >
-          Sunday
-        </button>
-      </div>
+
+      <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} />
 
       <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
+
       <BandsList bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
     </div>
   );

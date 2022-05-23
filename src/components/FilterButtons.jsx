@@ -6,7 +6,8 @@ export default function FilterButtons(props) {
     <>
       <FilterButton setFilter={props.setFilter} filter={props.filter} name="All" />
       <FilterButton setFilter={props.setFilter} filter={props.filter} name="Rock" />
-      <FilterButton setFilter={props.setFilter} filter={props.filter} name="Heavy Metal" />
+      <FilterButton setFilter={props.setFilter} filter={props.filter} name="Metal" />
+      <FilterButton setFilter={props.setFilter} filter={props.filter} name="Others" />
     </>
   );
 }
