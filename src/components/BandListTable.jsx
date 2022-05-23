@@ -1,3 +1,5 @@
+import SortToggle from "./SortToggle";
+
 export default function BandListTable(props) {
   function showBand(bandName) {
     const i = props.bands.findIndex((band) => band.name == bandName);
@@ -7,15 +9,18 @@ export default function BandListTable(props) {
 
   return (
     <table>
+      <thead>
+        <SortToggle name="Band" setSort={props.setSort} setSortDir={props.setSortDir} sortKey={"name"} />
+        <SortToggle name="Genre" setSort={props.setSort} setSortDir={props.setSortDir} sortKey={"genre"} />
+      </thead>
       <tbody>
         {props.searched === ""
           ? props.filtered.map((band) => {
               return (
                 <tr>
-                  <button onClick={() => showBand(band.name)}>
-                    <td>{band.name}</td>
-                  </button>
-
+                  <td>
+                    <button onClick={() => showBand(band.name)}>{band.name}</button>
+                  </td>
                   <td>{band.genre}</td>
                 </tr>
               );
@@ -23,9 +28,9 @@ export default function BandListTable(props) {
           : props.searched.map((band) => {
               return (
                 <tr>
-                  <button onClick={() => showBand(band.name)}>
-                    <td>{band.name}</td>
-                  </button>
+                  <td>
+                    <button onClick={() => showBand(band.name)}>{band.name}</button>
+                  </td>
                   <td>{band.genre}</td>
                 </tr>
               );

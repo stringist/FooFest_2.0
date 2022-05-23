@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import FilterButton from "./FilterButton";
+import FilterButtons from "./FilterButtons";
 import SearchBar from "./SearchBar";
 import BandPage from "./BandPage";
 import BandListTable from "./BandListTable";
@@ -11,8 +11,9 @@ export default function BandsList(props) {
   });
 
   const [filter, setFilter] = useState("All");
-  const [sort, setSort] = useState("");
+  const [sort, setSort] = useState("name");
   const [searched, setSearched] = useState("");
+  const [sortDir, setSortDir] = useState("asc");
 
   useEffect(() => {
     fetch(`https://foofestival.herokuapp.com/bands`)
@@ -30,15 +31,17 @@ export default function BandsList(props) {
 
   const filtered = filter === "All" ? bands.data : bands.data.filter((band) => band.genre === filter);
 
+  sortDir === "asc" ? filtered.sort((a, b) => a[sort] > b[sort]) : filtered.sort((a, b) => a[sort] < b[sort]);
+
   return (
     <div className="festival__bandList">
       <SearchBar searched={searched} setSearched={setSearched} bands={bands.data} />
 
-      <FilterButton setFilter={setFilter} filter={filter} name="All" />
-      <FilterButton setFilter={setFilter} filter={filter} name="Rock" />
-      <FilterButton setFilter={setFilter} filter={filter} name="Heavy Metal" />
+      <FilterButtons setFilter={setFilter} filter={filter} />
 
-      <BandListTable bands={bands.data} searched={searched} filtered={filtered} bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} />
+      {searched === "" ? <h3>{filter}</h3> : null}
+
+      <BandListTable bands={bands.data} searched={searched} filtered={filtered} bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} setSort={setSort} setSortDir={setSortDir} />
 
       <BandPage bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} />
     </div>
