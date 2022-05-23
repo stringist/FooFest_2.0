@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 
 import Festival from "./roots/Festival";
 import Booking from "./roots/Booking";
+import Lineup from "./roots/Lineup";
+import Bands from "./roots/Bands";
 import "./App.css";
 import "./paper.css";
 import { Link, Routes, Route } from "react-router-dom";
@@ -15,13 +17,16 @@ function App() {
     <div className="App">
       <header>
         <nav>
-          <Link to="/Festival">Festival</Link> | <Link to="/Booking">Booking</Link>
+          <Link to="/festival">Festival</Link> | <Link to="/booking">Booking</Link>
+          {/* <Link to="/festival/lineup">Lineup</Link> | <Link to="festival/bands">Bands</Link> */}
         </nav>
       </header>
 
       <Routes>
-        <Route path="/Festival" element={<Festival />} />
-        <Route path="/Booking" element={<Booking />} />
+        <Route path="/festival" element={<Festival />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/festival/lineup" element={<Lineup />} />
+        <Route path="/festival/bands" element={<Bands />} />
       </Routes>
     </div>
   );

@@ -1,13 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, Routes, Route } from "react-router-dom";
-
-import Booking from "./Booking";
-
-import Lineup from "./Lineup";
 import Bands from "./Bands";
 
 import Table from "../components/Table";
-import BandsList from "../components/BandsList";
 import ScheduleButtons from "../components/ScheduleButtons";
 
 export default function Festival() {
@@ -55,10 +50,16 @@ export default function Festival() {
         </nav>
       </header>
 
-      <h1>Festival</h1>
+      {/* <Routes>
+        <Route path="/Lineup" element={<Lineup />} />
+        <Route path="/Bands" element={<Bands />} />
+      </Routes> */}
+
+      <h1>Lineup</h1>
+
       <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} />
+
       <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
-      <BandsList bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
     </div>
   );
 }
