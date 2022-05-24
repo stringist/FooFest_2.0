@@ -15,10 +15,14 @@ $grey-100: hsl(0, 0, 28);
 $h-font: "Koulen", cursive;
 $body-font: "Inter", sans-serif;
 
-@mixin primary-button {
+$gap: 3rem 0;
+
+button {
   background-color: $accent-color-100;
   color: $primary-color-light;
   padding: 0.5rem 1rem;
+  font-family: $h-font;
+  border: none;
 }
 
 body {
@@ -26,6 +30,7 @@ body {
   background-color: $primary-color-dark;
   color: $primary-color-light;
 }
+
 h1,
 h2,
 h3,
@@ -33,4 +38,12 @@ h4,
 h5 {
   font-family: $h-font;
   color: $primary-color-light;
+}
+
+h1 {
+  font-size: 7.6rem;
+}
+
+a {
+  color: $accent-color-100;
 }

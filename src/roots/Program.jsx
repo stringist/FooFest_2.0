@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import Bands from "./Bands";
 
+import programStyles from "/sass/modules/_Program.module.scss";
+
 import Table from "../components/Table";
 import ScheduleButtons from "../components/ScheduleButtons";
 
@@ -56,11 +58,9 @@ export default function Program() {
         <Route path="/Bands" element={<Bands />} />
       </Routes> */}
 
-      <h1>Lineup</h1>
+      <h1>Program</h1>
 
       <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} setDay={setDay} day={day} />
-
-      <h2>{day}</h2>
 
       <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
     </div>

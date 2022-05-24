@@ -1,3 +1,5 @@
+import programStyles from "/sass/modules/_Program.module.scss";
+
 export default function ScheduleButton(props) {
   function filterList(day) {
     // setBandDisplayed([]);
@@ -40,7 +42,16 @@ export default function ScheduleButton(props) {
     }
   }
 
-  return (
+  return props.day === props.title ? (
+    <button
+      className={programStyles.selected}
+      onClick={() => {
+        filterList(props.day);
+      }}
+    >
+      {props.title}
+    </button>
+  ) : (
     <button
       onClick={() => {
         filterList(props.day);

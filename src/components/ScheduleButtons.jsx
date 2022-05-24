@@ -1,8 +1,10 @@
 import ScheduleButton from "./ScheduleButton";
 
+import programStyles from "/sass/modules/_Program.module.scss";
+
 export default function ScheduleButtons(props) {
   return (
-    <div className="festival__buttons">
+    <div className={programStyles.festival__buttons}>
       <ScheduleButton
         setFilteredM={props.setFilteredM}
         setFilteredJ={props.setFilteredJ}

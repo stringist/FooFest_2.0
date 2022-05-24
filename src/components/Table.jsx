@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import programStyles from "/sass/modules/_Program.module.scss";
 
 import BandInfo from "./BandInfo";
 
@@ -31,7 +32,7 @@ export default function Table(props) {
   }
 
   return (
-    <div className="festival__schedule">
+    <div className={programStyles.festival__schedule}>
       <table>
         <thead>
           <tr>
@@ -51,7 +52,9 @@ export default function Table(props) {
             return (
               <tr>
                 <th>
-                  {act.start} - {act.end}
+                  {act.start.substring(0, 1) === "0" ? act.start.substring(1) : act.start}
+                  <br></br>
+                  {Number(act.start.substring(0, 2)) + 1}:00
                 </th>
                 <td>
                   {mAct.act !== "break" ? (
@@ -64,7 +67,7 @@ export default function Table(props) {
                       {mAct.act}
                     </button>
                   ) : (
-                    "Break"
+                    <hr></hr>
                   )}
                 </td>
                 <td>
@@ -78,7 +81,7 @@ export default function Table(props) {
                       {jAct.act}
                     </button>
                   ) : (
-                    "Break"
+                    <hr></hr>
                   )}
                 </td>
                 <td>
@@ -92,7 +95,7 @@ export default function Table(props) {
                       {vAct.act}
                     </button>
                   ) : (
-                    "Break"
+                    <hr></hr>
                   )}
                 </td>
               </tr>
