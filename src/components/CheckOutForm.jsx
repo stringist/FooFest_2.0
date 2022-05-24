@@ -1,5 +1,11 @@
 import { useRef } from "react";
 import "../../sass/style.scss";
+import React, { Component } from "react";
+import {
+  CountryDropdown,
+  RegionDropdown,
+  CountryRegionData,
+} from "react-country-region-selector";
 export default function CheckOutForm() {
   const ENDPOINT = "https://kea2semester-e216.restdb.io/rest/foofest";
   const KEY = "615d83068597142da1745455";
@@ -50,7 +56,8 @@ export default function CheckOutForm() {
         <input type="number" id="floor" required />{" "}
         <label htmlFor="door">Door</label>
         <input type="text" id="door" required />
-        <button>Pay</button>
+        {/*         <CountryDropdown value={country} onChange={selectCountry} />{" "}
+         */}{" "}
       </form>
     </>
   );
