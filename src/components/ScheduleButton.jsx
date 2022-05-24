@@ -1,42 +1,49 @@
 export default function ScheduleButton(props) {
   function filterList(day) {
     // setBandDisplayed([]);
-    console.log("list filtered");
-    if (day === "monday") {
+
+    if (props.title === "Monday") {
       props.setFilteredM(props.midgard.mon);
       props.setFilteredJ(props.jotunheim.mon);
-      props.setFilteredV(schedule.vanaheim.mon);
-    } else if (day === "tuesday") {
+      props.setFilteredV(props.vanaheim.mon);
+      props.setDay("Monday");
+    } else if (props.title === "Tuesday") {
       props.setFilteredM(props.midgard.tue);
       props.setFilteredJ(props.jotunheim.tue);
       props.setFilteredV(props.vanaheim.tue);
-    } else if (day === "wednesday") {
+      props.setDay("Tuesday");
+    } else if (props.title === "Wednesday") {
       props.setFilteredM(props.midgard.wed);
       props.setFilteredJ(props.jotunheim.wed);
       props.setFilteredV(props.vanaheim.wed);
-    } else if (day === "thursday") {
+      props.setDay("Wednesday");
+    } else if (props.title === "Thursday") {
       props.setFilteredM(props.midgard.thu);
       props.setFilteredJ(props.jotunheim.thu);
       props.setFilteredV(props.vanaheim.thu);
-    } else if (day === "friday") {
+      props.setDay("Thursday");
+    } else if (props.title === "Friday") {
       props.setFilteredM(props.midgard.fri);
       props.setFilteredJ(props.jotunheim.fri);
       props.setFilteredV(props.vanaheim.fri);
-    } else if (day === "saturday") {
+      props.setDay("Friday");
+    } else if (props.title === "Saturday") {
       props.setFilteredM(props.midgard.sat);
       props.setFilteredJ(props.jotunheim.sat);
       props.setFilteredV(props.vanaheim.sat);
-    } else if (day === "sunday") {
+      props.setDay("Saturday");
+    } else if (props.title === "Sunday") {
       props.setFilteredM(props.midgard.sun);
       props.setFilteredJ(props.jotunheim.sun);
       props.setFilteredV(props.vanaheim.sun);
+      props.setDay("Sunday");
     }
   }
 
   return (
     <button
       onClick={() => {
-        filterList(props.filterDay);
+        filterList(props.day);
       }}
     >
       {props.title}

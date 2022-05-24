@@ -34,6 +34,9 @@ export default function BandInfo(props) {
         </button>
         <h2>{band.name}</h2>
         <h4>{band.genre}</h4>
+        <p>
+          Performing: {props.act.start}-{props.act.end} {props.stage}
+        </p>
         <figure>
           <img src={band.logo} alt={band.name} />
           {band.logoCredits ? <figcaption>{band.logoCredits}</figcaption> : null}

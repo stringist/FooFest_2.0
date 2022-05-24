@@ -7,6 +7,8 @@ export default function Table(props) {
     data: "",
     loading: true,
   });
+  const [act, setAct] = useState([]);
+  const [stage, setStage] = useState("");
 
   useEffect(() => {
     fetch(`https://foofestival.herokuapp.com/bands`)
@@ -20,9 +22,11 @@ export default function Table(props) {
     return null;
   }
 
-  function showBand(bandName) {
-    const i = bands.data.findIndex((band) => band.name == bandName);
+  function showBand(act) {
+    const i = bands.data.findIndex((band) => band.name == act.act);
     props.setBandDisplayed(bands.data[i]);
+    setAct(act);
+
     // console.log(i);
   }
 
@@ -40,25 +44,63 @@ export default function Table(props) {
 
         <tbody>
           {props.stage1.map((act, index) => {
-            const mAct = act.act;
-            const jAct = props.stage2[index].act;
-            const vAct = props.stage3[index].act;
+            const mAct = act;
+            const jAct = props.stage2[index];
+            const vAct = props.stage3[index];
 
             return (
               <tr>
                 <th>
                   {act.start} - {act.end}
                 </th>
-                <td>{mAct !== "break" ? <button onClick={() => showBand(mAct)}>{mAct}</button> : "Break"}</td>
-                <td>{jAct !== "break" ? <button onClick={() => showBand(jAct)}>{jAct}</button> : "Break"}</td>
-                <td>{vAct !== "break" ? <button onClick={() => showBand(vAct)}>{vAct}</button> : "Break"}</td>
+                <td>
+                  {mAct.act !== "break" ? (
+                    <button
+                      onClick={() => {
+                        setStage("Midgard");
+                        showBand(mAct);
+                      }}
+                    >
+                      {mAct.act}
+                    </button>
+                  ) : (
+                    "Break"
+                  )}
+                </td>
+                <td>
+                  {jAct.act !== "break" ? (
+                    <button
+                      onClick={() => {
+                        setStage("Jotunheim");
+                        showBand(jAct);
+                      }}
+                    >
+                      {jAct.act}
+                    </button>
+                  ) : (
+                    "Break"
+                  )}
+                </td>
+                <td>
+                  {vAct.act !== "break" ? (
+                    <button
+                      onClick={() => {
+                        setStage("Vanaheim");
+                        showBand(vAct);
+                      }}
+                    >
+                      {vAct.act}
+                    </button>
+                  ) : (
+                    "Break"
+                  )}
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-
-      <BandInfo bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites}></BandInfo>
+      <BandInfo bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} act={act} stage={stage}></BandInfo>
     </div>
   );
 }

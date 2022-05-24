@@ -14,6 +14,7 @@ export default function Festival() {
   const [filteredV, setFilteredV] = useState();
   const [bandDisplay, setBandDisplayed] = useState([]);
   const [favourites, setFavourites] = useState([]);
+  const [day, setDay] = useState("Monday");
 
   useEffect(() => {
     fetch(`https://foofestival.herokuapp.com/schedule`)
@@ -57,7 +58,9 @@ export default function Festival() {
 
       <h1>Lineup</h1>
 
-      <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} />
+      <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} setDay={setDay} day={day} />
+
+      <h2>{day}</h2>
 
       <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
     </div>
