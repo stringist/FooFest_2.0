@@ -1,0 +1,5 @@
+@use "_General.module" as general;
+
+a {
+  color: general.$accent-color-100;
+}

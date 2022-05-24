@@ -5,7 +5,7 @@ import Bands from "./Bands";
 import Table from "../components/Table";
 import ScheduleButtons from "../components/ScheduleButtons";
 
-export default function Festival() {
+export default function Program() {
   const [count, setCount] = useState(0);
   const [schedule, setSchedule] = useState(null);
 
@@ -47,7 +47,7 @@ export default function Festival() {
     <div className="Festival">
       <header>
         <nav>
-          <Link to="/festival/lineup">Lineup</Link> | <Link to="/festival/bands">Bands</Link>
+          <Link to="/program">Program</Link> | <Link to="/bands">Bands</Link>
         </nav>
       </header>
 

@@ -3,7 +3,7 @@ import { Link, Routes, Route } from "react-router-dom";
 
 import Booking from "./Booking";
 
-import Lineup from "./Lineup";
+import Program from "./Program";
 import Bands from "./Bands";
 
 import Table from "../components/Table";
@@ -51,8 +51,7 @@ export default function Festival() {
     <div className="Festival">
       <header>
         <nav>
-          <Link to="/festival/lineup">Lineup</Link> |{" "}
-          <Link to="/festival/bands">Bands</Link>
+          <Link to="/program">Program</Link> | <Link to="/bands">Bands</Link>
         </nav>
       </header>
 

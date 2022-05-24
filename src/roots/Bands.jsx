@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, Routes, Route } from "react-router-dom";
-import Lineup from "./Lineup";
+import Program from "./Program";
 
 import BandsList from "../components/BandsList";
 
@@ -14,7 +14,7 @@ export default function Festival() {
     <div className="bands">
       <header>
         <nav>
-          <Link to="/festival/lineup">Lineup</Link> | <Link to="/festival/bands">Bands</Link>
+          <Link to="/program">Program</Link> | <Link to="/bands">Bands</Link>
         </nav>
       </header>
 
