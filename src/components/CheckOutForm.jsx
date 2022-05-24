@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "../../sass/style.scss";
 import React, { Component } from "react";
 import {
@@ -10,6 +10,10 @@ export default function CheckOutForm() {
   const ENDPOINT = "https://kea2semester-e216.restdb.io/rest/foofest";
   const KEY = "615d83068597142da1745455";
   const formEl = useRef(null);
+  const [country, setCountry] = useState("");
+  function selectCountry(val) {
+    setCountry(val);
+  }
   function createObject(e) {
     e.preventDefault();
 
@@ -56,8 +60,7 @@ export default function CheckOutForm() {
         <input type="number" id="floor" required />{" "}
         <label htmlFor="door">Door</label>
         <input type="text" id="door" required />
-        {/*         <CountryDropdown value={country} onChange={selectCountry} />{" "}
-         */}{" "}
+        <CountryDropdown value={country} onChange={selectCountry} />{" "}
       </form>
     </>
   );
