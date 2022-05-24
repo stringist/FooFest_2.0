@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 // import filter from "just-filter";
 
 import Festival from "./roots/Festival";
@@ -10,7 +9,6 @@ import "./paper.css";
 import { Link, Routes, Route } from "react-router-dom";
 // These are for the react-reroute
 
-import Table from "./components/Table";
 
 function App() {
   return (

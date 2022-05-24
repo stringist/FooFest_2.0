@@ -51,7 +51,8 @@ export default function Festival() {
     <div className="Festival">
       <header>
         <nav>
-          <Link to="/festival/lineup">Lineup</Link> | <Link to="/festival/bands">Bands</Link>
+          <Link to="/festival/lineup">Lineup</Link> |{" "}
+          <Link to="/festival/bands">Bands</Link>
         </nav>
       </header>
 
