@@ -22,6 +22,7 @@ export default function BandListTable(props) {
                 <tr>
                   <td>
                     <button onClick={() => showBand(band.name)}>{band.name}</button>
+                    <img src="" alt="" />
                   </td>
                   <td>{band.genre}</td>
                 </tr>

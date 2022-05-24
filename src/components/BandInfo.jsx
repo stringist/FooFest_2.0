@@ -1,6 +1,6 @@
 export default function BandInfo(props) {
   const band = { ...props.bandDisplay };
-  // console.log(props.bandDisplay);
+  console.log(props.bandDisplay);
 
   function switchFav() {
     if (props.favourites.find((item) => item.name === band.name)) {
