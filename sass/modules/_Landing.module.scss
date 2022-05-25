@@ -1,5 +1,127 @@
 @use "_General.module" as general;
 
-a {
-  color: general.$accent-color-100;
+body {
+  background-image: url(/public/img/landing_background.webp);
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+h2 {
+  margin: 0;
+  text-align: center;
+}
+h3 {
+  font-size: 1.5rem;
+  margin-top: 10vh;
+  margin-bottom: 0;
+}
+h4 {
+  font-size: 2.25rem;
+  margin-top: -3rem;
+  margin-left: 2rem;
+  margin-bottom: 0;
+  background-color: general.$primary-color-dark;
+  padding: 1rem;
+  width: fit-content;
+}
+button {
+  font-size: 1.5rem;
+  width: 40vw;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__ {
+  &logo {
+    width: 50vw;
+    align-self: center;
+    margin-top: 10vw;
+  }
+
+  &box {
+    background-color: rgba(71, 71, 71, 0.408);
+    width: fit-content;
+    padding: 2rem 3rem;
+    border: solid 2px general.$accent-color-100;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+  }
+}
+
+.articles {
+  width: fit-content;
+  height: fit-content;
+  border: solid 2px hsl(16deg, 100%, 50%);
+  margin: 5rem auto;
+  display: block;
+  background-position: center;
+  padding: 3rem;
+  padding-top: 0;
+  margin-top: 2.5rem;
+
+  .content {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  p {
+    width: 30ch;
+    font-size: 1.5rem;
+    font-family: general.$h-font;
+    line-height: 1.5;
+    display: block;
+    margin-left: auto;
+    margin-right: 2rem;
+    color: general.$primary-color-light;
+  }
+}
+
+@media only screen and (max-width: general.$mobile-query) {
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+    margin-top: -2.5rem;
+  }
+
+  .hero__ {
+    &logo {
+      width: 70vw;
+    }
+    &box {
+      padding: 1rem 2rem;
+    }
+  }
+  button {
+    font-size: 1rem;
+    width: 100%;
+  }
+  .articles {
+    .content {
+      display: block;
+    }
+    p {
+      font-size: 1rem;
+      margin-right: auto;
+    }
+  }
 }

@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 
+import generalStyles from "/sass/modules/_General.module.scss";
+import landingStyles from "/sass/modules/_Landing.module.scss";
+
 import Booking from "./Booking";
 
 import Program from "./Program";
 import Bands from "./Bands";
 
-import Table from "../components/Table";
+import LatestNews from "../components/LatestNews";
 import BandsList from "../components/BandsList";
 import ScheduleButtons from "../components/ScheduleButtons";
 
@@ -55,7 +58,17 @@ export default function Festival() {
         </nav>
       </header>
 
-      <h1>Festival</h1>
+      <img className={landingStyles.hero__logo} src="./img/logo.svg" alt="FooFest logo" />
+      <h1 className={generalStyles.d_none}>FooFest</h1>
+
+      <div className={landingStyles.hero__box}>
+        <h2>23-30 june 2022</h2>
+        <button>Get tickets</button>
+      </div>
+
+      <img src="./img/arrow.svg" alt="arrow pointing down" />
+
+      <LatestNews></LatestNews>
     </div>
   );
 }

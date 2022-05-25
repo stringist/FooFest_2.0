@@ -1,1 +1,4 @@
 @use "_General.module" as general;
+
+@media only screen and (max-width: general.$mobile-query) {
+}
