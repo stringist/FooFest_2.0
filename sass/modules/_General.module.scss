@@ -17,12 +17,16 @@ $body-font: "Inter", sans-serif;
 
 $gap: 3rem 0;
 
+* {
+  box-sizing: border-box;
+}
 button {
   background-color: $accent-color-100;
   color: $primary-color-light;
   padding: 0.5rem 1rem;
   font-family: $h-font;
   border: none;
+  cursor: pointer;
 }
 
 body {
@@ -43,7 +47,16 @@ h5 {
 h1 {
   font-size: 7.6rem;
 }
+h2 {
+  font-size: 2.25rem;
+}
 
 a {
   color: $accent-color-100;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 3.375rem;
+  }
 }
