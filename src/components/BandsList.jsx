@@ -7,6 +7,7 @@ import FilterButtons from "./FilterButtons";
 import SearchBar from "./SearchBar";
 import BandPage from "./BandPage";
 import BandListTable from "./BandListTable";
+import SortToggle from "./SortToggle";
 
 export default function BandsList(props) {
   const [bands, setBands] = useState({
@@ -43,10 +44,13 @@ export default function BandsList(props) {
         <FilterButtons setFilter={setFilter} filter={filter} />
         <SearchBar searched={searched} setSearched={setSearched} bands={bands.data} />
       </div>
+      <SortToggle name="Sort by name" setSort={setSort} setSortDir={setSortDir} sortKey={"name"} />
 
-      {searched === "" ? <h3>{filter}</h3> : null}
+      {searched === "" ? <h3>{filter}</h3> : <h3>Results</h3>}
 
-      <BandListTable bands={bands.data} searched={searched} filtered={filtered} bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} setSort={setSort} setSortDir={setSortDir} />
+      <div className={bandsStyles.band__grid}>
+        <BandListTable bands={bands.data} searched={searched} filtered={filtered} bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} setSort={setSort} setSortDir={setSortDir} />
+      </div>
 
       <BandPage bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} />
     </div>

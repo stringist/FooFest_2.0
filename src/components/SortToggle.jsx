@@ -5,9 +5,5 @@ export default function SortToggle(props) {
     props.setSortDir((old) => (old === "asc" ? "desc" : "asc"));
   }
 
-  return (
-    <th>
-      <button onClick={handleClick}>{props.name}</button>
-    </th>
-  );
+  return <button onClick={handleClick}>{props.name}</button>;
 }

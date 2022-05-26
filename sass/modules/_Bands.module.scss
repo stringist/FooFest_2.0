@@ -5,6 +5,7 @@ body {
 }
 .festival__bandList {
   padding: 0 5vw;
+  position: relative;
 
   &__filters {
     display: flex;
@@ -97,6 +98,104 @@ body {
     font-family: general.$h-font;
     font-size: 2.25rem;
     color: general.$accent-color-100;
+  }
+}
+
+.band__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 1rem;
+  row-gap: 3rem;
+  cursor: pointer;
+
+  figcaption {
+    font-size: 0.65rem;
+    color: general.$primary-color-lighter;
+  }
+
+  .band__card {
+    border: solid 1px hsl(16deg, 100%, 50%);
+    background-color: general.$primary-color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+    line-height: 1;
+    filter: grayscale(40%);
+
+    &:hover {
+      scale: 1.03;
+      box-shadow: rgba(150, 145, 145, 0.279) 0px 2px 8px 0px;
+      filter: grayscale(0%);
+      border: solid 2px hsl(16deg, 100%, 50%);
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+
+  h4 {
+    margin-bottom: -2rem;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+.festival__bandList__page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: general.$grey-500;
+  overflow-y: scroll;
+
+  button {
+    background: none;
+  }
+  svg {
+    fill: general.$primary-color-lighter;
+  }
+  h4 {
+    background: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.56rem;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  img {
+    max-width: 50%;
+  }
+
+  p {
+    max-width: 70ch;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  figcaption {
+    color: general.$primary-color-lighter;
+    font-size: 0.65rem;
+    text-align: center;
+  }
+
+  .favourite {
+    position: absolute;
+    bottom: 5vw;
+    right: 5vw;
+    background: none;
+
+    svg {
+      fill: general.$accent-color-100;
+    }
   }
 }
 

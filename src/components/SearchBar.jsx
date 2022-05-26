@@ -4,7 +4,7 @@ import bandsStyles from "/sass/modules/_Bands.module.scss";
 export default function SearchBar(props) {
   const [input, setInput] = useState("");
   function searchBands(e) {
-    // console.log(e.target.value);
+    console.log(e.target.value);
     setInput(e.target.value.toUpperCase());
 
     const searchedBands = props.bands.filter((band) => {
@@ -23,7 +23,7 @@ export default function SearchBar(props) {
     <div className={bandsStyles.search}>
       <label htmlFor="">Search</label>
       <div className={bandsStyles.search__input}>
-        <input type="text" id="searchBar" onKeyUp={searchBands} />
+        <input type="text" id="searchBar" onChange={searchBands} />
         {input === "" ? (
           <button onClick={searchBands}>
             <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20">
