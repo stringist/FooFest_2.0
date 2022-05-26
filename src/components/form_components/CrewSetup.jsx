@@ -1,6 +1,6 @@
 import CrewSetupSubMenu from "./CrewSetupSubMenu";
 
-export default function CrewSetup() {
+export default function CrewSetup(props) {
   return (
     <>
       <div className="formItem">
@@ -13,6 +13,7 @@ export default function CrewSetup() {
         </div>
         <p className="price">+99 DKK</p>
       </div>
+
       <CrewSetupSubMenu />
     </>
   );

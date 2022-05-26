@@ -3,6 +3,7 @@ import AreaButton from "./AreaButton";
 import TicketButton from "./TicketButton";
 import AmountButton from "./AmountButton";
 import Alert from "./Alert";
+import FormStep2 from "./FormStep2";
 
 export default function FormStep1() {
   const formEl = useRef(null);
@@ -13,6 +14,7 @@ export default function FormStep1() {
   const [isSearching, setIsSearching] = useState(false);
   const [reservation, setReservation] = useState([]);
   const [showAlert, setAlert] = useState(false);
+const [basket, setBasket] = useState([{product: "Fixed Fee", price: 99, id: 1}]);
 
   function searchTickets(e) {
     e.preventDefault();
@@ -42,7 +44,7 @@ export default function FormStep1() {
       })
       .catch((err) => console.error(err));
   }
-  console.log(reservation);
+  // console.log(reservation);
 
   return (
     <>
@@ -79,7 +81,7 @@ export default function FormStep1() {
       </form>
 
       {showAlert && <Alert message={reservation.error} setAlert={setAlert} />}
-      {/* {showAlert === true ? <Alert message={reservation.error} setAlert={setAlert} /> : <FormStep2/>} */}
+       {showAlert === true ? <Alert message={reservation.error} setAlert={setAlert} /> : <FormStep2 ticket={ticket}  area={area} amount={amount} setBasket={setBasket} basket={basket}/>} 
     </>
   );
 }
