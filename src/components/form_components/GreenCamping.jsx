@@ -1,7 +1,11 @@
+import { useState } from "react";
+
+
 export default function GreenCamping() {
+const [isGreen, setIsGreen] = useState(false)
   return (
     <div className="formItem">
-      <input type="checkbox" id="greenCamping" name="greenCamping" />
+      <input type="checkbox" id="greenCamping" name="greenCamping" onClick={}/>
       <div className="text_content">
         <label htmlFor="greenCamping">Green camping </label>
         <p className="subtext">
