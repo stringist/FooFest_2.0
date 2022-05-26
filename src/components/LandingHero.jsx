@@ -9,7 +9,7 @@ export default function LandingHero() {
       <div className={landingStyles.hero__box}>
         <h2>23-30 june 2022</h2>
 
-        <a href="/booking" className={generalStyles.cta}>
+        <a href="/tickets" className={generalStyles.cta}>
           Get tickets
         </a>
       </div>

@@ -1,0 +1,70 @@
+@use "_General.module" as general;
+.navBar {
+  position: relative;
+}
+
+svg {
+  fill: general.$primary-color-light;
+}
+
+.navBar button {
+  position: fixed;
+  right: 2vw;
+  top: 2vh;
+  z-index: 10;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+
+  :hover {
+    svg {
+      fill: red;
+    }
+  }
+}
+
+.menuNav {
+  overflow-y: scroll;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  background-color: general.$grey-500;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 0;
+  overflow: hidden;
+  max-width: 40vw;
+  z-index: 9;
+  margin-top: 0;
+}
+
+.menuNav.showMenu {
+  width: 100%;
+}
+
+li a {
+  display: block;
+  padding: 1vw 3vw;
+  font-family: general.$h-font;
+  font-size: 1.5rem;
+  color: general.$primary-color-light;
+}
+
+li:hover {
+  background-color: general.$grey-400;
+
+  a {
+    color: general.$accent-color-100;
+  }
+}
+
+.menuNav li:first-child {
+  margin-top: 5rem;
+}
+
+.showingMenu {
+}
+
+@media only screen and (max-width: general.$mobile-query) {
+}

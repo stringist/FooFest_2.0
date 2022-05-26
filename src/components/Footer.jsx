@@ -1,4 +1,3 @@
-import generalStyles from "/sass/modules/_General.module.scss";
 import footerStyles from "/sass/modules/_Footer.module.scss";
 
 export default function Footer() {
@@ -33,17 +32,17 @@ export default function Footer() {
         <ul className={footerStyles.some}>
           <li>
             <a href="#">
-              <img src="/img/facebook.svg" alt="" />
+              <img src="/img/facebook.svg" alt="facebook icon" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="/img/instagram.svg" alt="" />
+              <img src="/img/instagram.svg" alt="instagram icon" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="/img/youtube.svg" alt="" />
+              <img src="/img/youtube.svg" alt="youtube icon" />
             </a>
           </li>
         </ul>

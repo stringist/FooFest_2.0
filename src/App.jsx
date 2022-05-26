@@ -16,14 +16,14 @@ function App() {
     <div className="App">
       <header>
         <nav>
-          <Link to="/">Festival</Link> | <Link to="/booking">Booking</Link>
+          <Link to="/">Festival</Link> | <Link to="/tickets">Tickets</Link>
           {/* <Link to="/festival/lineup">Lineup</Link> | <Link to="festival/bands">Bands</Link> */}
         </nav>
       </header>
 
       <Routes>
         <Route path="/" element={<Festival />} />
-        <Route path="/booking" element={<Booking />} />
+        <Route path="/tickets" element={<Booking />} />
         <Route path="/program" element={<Program />} />
         <Route path="/bands" element={<Bands />} />
       </Routes>

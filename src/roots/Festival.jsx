@@ -11,6 +11,7 @@ import Bands from "./Bands";
 
 import LandingHero from "../components/LandingHero";
 import LatestNews from "../components/LatestNews";
+import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 import BandsList from "../components/BandsList";
 import ScheduleButtons from "../components/ScheduleButtons";
@@ -59,6 +60,7 @@ export default function Festival() {
           <Link to="/program">Program</Link> | <Link to="/bands">Bands</Link>
         </nav>
       </header>
+      <Menu />
       <LandingHero />
 
       <LatestNews />
