@@ -1,12 +1,20 @@
 .festival__schedule {
-  display: flex;
+    display: flex;
 }
 
 .form__area [type="radio"] {
-  display: none;
+    display: none;
 }
 
 .form__area--row {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+.formItem {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    border: solid 1px grey;
+    width: 100%;
 }
