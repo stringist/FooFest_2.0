@@ -7,9 +7,11 @@ import MenuLink from "./MenuLink";
 
 export default function Menu() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   const handleToggle = () => {
+    menuOpen ? setIsOpening(true) : setIsClosing(true);
     setMenuOpen((prev) => !prev);
   };
 
@@ -27,7 +29,7 @@ export default function Menu() {
         )}
       </button>
 
-      <ul className={`${menuStyles.menuNav} ${menuOpen ? menuStyles.showMenu : null}${isAnimating ? menuStyles.showingMenu : null}`}>
+      <ul className={`${menuStyles.menuNav} ${menuOpen ? menuStyles.showMenu : null} ${isOpening ? menuStyles.showingMenu : null} ${isClosing ? menuStyles.closingMenu : null}`}>
         <MenuLink link="/" title="Home" setMenuOpen={setMenuOpen} />
         <MenuLink link="/tickets" title="Tickets" setMenuOpen={setMenuOpen} />
         <MenuLink link="/program" title="Program" setMenuOpen={setMenuOpen} />
