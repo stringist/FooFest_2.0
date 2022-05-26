@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react";
+
+import generalStyles from "/sass/modules/_General.module.scss";
+import bandsStyles from "/sass/modules/_Bands.module.scss";
+
 import FilterButtons from "./FilterButtons";
 import SearchBar from "./SearchBar";
 import BandPage from "./BandPage";
@@ -34,10 +38,11 @@ export default function BandsList(props) {
   sortDir === "asc" ? filtered.sort((a, b) => a[sort] > b[sort]) : filtered.sort((a, b) => a[sort] < b[sort]);
 
   return (
-    <div className="festival__bandList">
-      <SearchBar searched={searched} setSearched={setSearched} bands={bands.data} />
-
-      <FilterButtons setFilter={setFilter} filter={filter} />
+    <div className={bandsStyles.festival__bandList}>
+      <div className={bandsStyles.festival__bandList__filters}>
+        <FilterButtons setFilter={setFilter} filter={filter} />
+        <SearchBar searched={searched} setSearched={setSearched} bands={bands.data} />
+      </div>
 
       {searched === "" ? <h3>{filter}</h3> : null}
 
