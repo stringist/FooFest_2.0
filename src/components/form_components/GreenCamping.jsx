@@ -4,29 +4,31 @@ export default function GreenCamping({ basket, setBasket }) {
   const [isGreen, setIsGreen] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
-
-console.log(`Checked is ${isChecked}, isGreen is ${isGreen}`)
-function checkStatus() {
-}
+  function updateBasket() {
+    // console.log(`Checked is ${isGreen}, isGreen is ${isGreen}, basket is ${basket[0]}`);
+console.log( isChecked, isGreen, basket);
+{isGreen? addToBasket() : removeFromBasket();}
+  }
 
   const addToBasket = () => {
     console.log("adding to basket");
     //   setBasket((prevState) => prevState.concat({ product: "Green Camping", price: 249, id: 666}));
+      setBasket((prevState) => [...prevState, { product: "Green Camping", price: 249, id: 666 }])
   };
+
   const removeFromBasket = (id) => {
-    setBasket((old) => old.filter((item) => item.id !== id));
+    console.log("removing from basket");
+    // setBasket((old) => old.filter((item) => item.id !== id));
   };
+
   const handleChange = () => {
-    setIsChecked(prevState => !prevState);
+    // setIsChecked((prevState) => prevState = !prevState);
+    // setIsChecked(!isChecked);
+    // setIsGreen(!isChecked);
+
+setIsChecked(prevState => !prevState);
     setIsGreen(prevState => prevState = !isChecked);
-checkStatus();
-    isGreen ? { addToBasket } : { removeFromBasket };
-    
-    //     setIsGreen((prevState) => !prevState);
-    //    {isChecked
-    //       ? setBasket((prevState) => [...prevState, { product: "Green Camping", price: 249, id: 666 }])
-    //       : setBasket((prevState) => prevState.filter((product) => product.id !== id));
-    //     console.log(basket, isGreen, isChecked);}
+    updateBasket();
   };
 
   return (
