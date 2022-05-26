@@ -88,6 +88,23 @@ ul {
   z-index: -99;
 }
 
+.hero_banner {
+  height: 40vh;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+
+  h1 {
+    margin: 2rem;
+  }
+}
+
 @media only screen and (max-width: $mobile-query) {
   h1 {
     font-size: 3.375rem;

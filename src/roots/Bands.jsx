@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, Routes, Route } from "react-router-dom";
-import Program from "./Program";
 
+import generalStyles from "/sass/modules/_General.module.scss";
+
+import Program from "./Program";
+import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 import BandsList from "../components/BandsList";
+import HeroBanner from "../components/HeroBanner";
 
 export default function Festival() {
   const [schedule, setSchedule] = useState(null);
@@ -11,16 +16,14 @@ export default function Festival() {
   const [favourites, setFavourites] = useState([]);
 
   return (
-    <div className="bands">
-      <header>
-        <nav>
-          <Link to="/program">Program</Link> | <Link to="/bands">Bands</Link>
-        </nav>
-      </header>
+    <>
+      <Menu />
+      <div className="bands">
+        <HeroBanner img="/img/bands_background.png" title="Bands" />
 
-      <h1>Bands</h1>
-
-      <BandsList bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
-    </div>
+        <BandsList bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
+      </div>
+      <Footer />
+    </>
   );
 }

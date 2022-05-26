@@ -14,13 +14,6 @@ import { Link, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <header>
-        <nav>
-          <Link to="/">Festival</Link> | <Link to="/tickets">Tickets</Link>
-          {/* <Link to="/festival/lineup">Lineup</Link> | <Link to="festival/bands">Bands</Link> */}
-        </nav>
-      </header>
-
       <Routes>
         <Route path="/" element={<Festival />} />
         <Route path="/tickets" element={<Booking />} />

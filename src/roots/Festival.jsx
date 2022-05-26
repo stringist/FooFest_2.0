@@ -55,11 +55,6 @@ export default function Festival() {
 
   return (
     <div className={landingStyles.Festival}>
-      <header>
-        <nav>
-          <Link to="/program">Program</Link> | <Link to="/bands">Bands</Link>
-        </nav>
-      </header>
       <Menu />
       <LandingHero />
 
