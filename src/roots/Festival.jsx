@@ -9,7 +9,9 @@ import Booking from "./Booking";
 import Program from "./Program";
 import Bands from "./Bands";
 
+import LandingHero from "../components/LandingHero";
 import LatestNews from "../components/LatestNews";
+import Footer from "../components/Footer";
 import BandsList from "../components/BandsList";
 import ScheduleButtons from "../components/ScheduleButtons";
 
@@ -51,24 +53,26 @@ export default function Festival() {
   }
 
   return (
-    <div className="Festival">
+    <div className={landingStyles.Festival}>
       <header>
         <nav>
           <Link to="/program">Program</Link> | <Link to="/bands">Bands</Link>
         </nav>
       </header>
+      <LandingHero />
 
-      <img className={landingStyles.hero__logo} src="./img/logo.svg" alt="FooFest logo" />
-      <h1 className={generalStyles.d_none}>FooFest</h1>
-
-      <div className={landingStyles.hero__box}>
-        <h2>23-30 june 2022</h2>
-        <button>Get tickets</button>
+      <LatestNews />
+      <h3>Sponsors</h3>
+      <div className={landingStyles.sponsors}>
+        <img src="/img/tuborg.png" alt="" />
+        <img src="/img/tuborg.png" alt="" />
+        <img src="/img/tuborg.png" alt="" />
+        <img src="/img/tuborg.png" alt="" />
+        <img src="/img/tuborg.png" alt="" />
+        <img src="/img/tuborg.png" alt="" />
       </div>
 
-      <img src="./img/arrow.svg" alt="arrow pointing down" />
-
-      <LatestNews></LatestNews>
+      <Footer />
     </div>
   );
 }

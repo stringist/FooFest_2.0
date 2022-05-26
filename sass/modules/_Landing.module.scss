@@ -2,12 +2,17 @@
 
 body {
   background-image: url(/public/img/landing_background.webp);
-  height: 500px;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
+
+.Festival {
+  padding: 0 5vw;
+}
+
 h2 {
   margin: 0;
   text-align: center;
@@ -26,21 +31,20 @@ h4 {
   padding: 1rem;
   width: fit-content;
 }
-button {
-  font-size: 1.5rem;
-  width: 40vw;
-}
+
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
+.hero {
+  height: 95vh;
+}
+
 .hero__ {
   &logo {
     width: 50vw;
-    align-self: center;
-    margin-top: 10vw;
   }
 
   &box {
@@ -56,10 +60,10 @@ img {
 }
 
 .articles {
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   border: solid 2px hsl(16deg, 100%, 50%);
-  margin: 5rem auto;
+  margin: 0 auto;
   display: block;
   background-position: center;
   padding: 3rem;
@@ -90,22 +94,37 @@ img {
   }
 }
 
+.sponsors {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  img {
+    max-width: 200px;
+  }
+}
+
 @media only screen and (max-width: general.$mobile-query) {
+  .Festival {
+    padding: 0;
+  }
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.93rem;
+    text-align: center;
   }
 
   h3 {
-    font-size: 1.25rem;
+    margin-top: 0;
+    font-size: 2.41rem;
   }
   h4 {
-    font-size: 1.5rem;
+    font-size: 1.56rem;
     margin-top: -2.5rem;
   }
 
   .hero__ {
     &logo {
-      width: 70vw;
+      width: 90vw;
     }
     &box {
       padding: 1rem 2rem;

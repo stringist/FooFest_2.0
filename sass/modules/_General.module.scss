@@ -22,6 +22,10 @@ $mobile-query: 650px;
 * {
   box-sizing: border-box;
 }
+
+nav {
+  height: 5vh;
+}
 button {
   background-color: $accent-color-100;
   color: $primary-color-light;
@@ -63,6 +67,22 @@ a {
   }
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cta {
+  color: $primary-color-light;
+  font-size: 1.5rem;
+  display: block;
+  width: 30vw;
+  padding: 0.5rem 1rem;
+  background-color: $accent-color-100;
+  font-family: $h-font;
+  text-align: center;
+}
+
 .d_none {
   display: none;
   z-index: -99;
@@ -71,5 +91,9 @@ a {
 @media only screen and (max-width: $mobile-query) {
   h1 {
     font-size: 3.375rem;
+  }
+
+  .cta {
+    width: 60vw;
   }
 }
