@@ -48,7 +48,7 @@ export default function Program() {
   }
 
   return (
-    <div className="Festival">
+    <div className={programStyles.Program}>
       <Menu />
 
       <h1>Program</h1>

@@ -39,7 +39,9 @@
 
 .filters__buttons {
   position: absolute;
-  bottom: -5vw;
+  bottom: -7vw;
+  background-color: general.$accent-color-100;
+  padding: 0.5rem;
 
   button {
     &:hover {
@@ -225,6 +227,7 @@
     .filters__buttons {
       bottom: 4vw;
       z-index: 99;
+      width: 100%;
     }
   }
 

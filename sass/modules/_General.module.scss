@@ -103,7 +103,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5vh;
+  margin-top: 10vh;
 
   h1 {
     margin: 2rem;
@@ -117,5 +117,9 @@ ul {
 
   .cta {
     width: 60vw;
+  }
+
+  .hero_banner {
+    height: 20vh;
   }
 }

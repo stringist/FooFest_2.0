@@ -7,6 +7,8 @@ table {
 
 .festival__buttons {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   justify-content: space-evenly;
   margin: general.$gap;
 
