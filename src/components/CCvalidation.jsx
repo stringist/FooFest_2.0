@@ -1,19 +1,32 @@
 import Cards from "react-credit-cards";
 import "react-credit-cards/lib/styles.scss";
 import { useState, useRef } from "react";
+import generalStyles from "/sass/modules/_General.module.scss";
+import billing from "/sass/modules/_Billing.module.scss";
+import BillingInfo from "./BillingInfo";
 export default function CCvalidation() {
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
   const [focus, setFocus] = useState("");
+  const [submit, setSubmit] = useState(false);
+  const [ticketholderdata, setTicketholderdata] = useState({});
   const formEl = useRef(null);
-
+  const ENDPOINT = "https://kea2semester-e216.restdb.io/rest/foofest";
+  const KEY = "615d83068597142da1745455";
   function changeFocus(e) {
     const attr = parseInt(e.target.attributes.maxLength.value, 10);
+    // if attrb === undefined - because the input for Name doesnt carry a maxlength
     if (attr === undefined) {
     } else if (e.target.textLength === attr) {
       e.target.nextElementSibling.focus();
+      if (e.target.nextElementSibling.nodeName === "SECTION") {
+        e.target.nextElementSibling.firstChild.focus();
+        // the if statement underneath here is because expiry + cvc was put into a section
+      }
+    } else if (e.target.nextElementSibling === null) {
+      console.log("fack");
     }
   }
   function handleCardDisplay() {
@@ -60,18 +73,34 @@ export default function CCvalidation() {
           );
     }
   }
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const postData = JSON.stringify(ticketholderdata);
+    fetch(ENDPOINT, {
+      method: "post",
+      headers: {
+        "Content-type": "application/json",
+        "x-apikey": KEY,
+      },
+      body: postData,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
 
   return (
     <>
+      <BillingInfo setTicketholderdata={setTicketholderdata}></BillingInfo>
+      <h4 className={billing.h4}>CARD INFORMATION</h4>
       <Cards
         number={number}
         name={name}
         expiry={expiry}
         cvc={cvc}
         focused={focus}
-      />
-
-      <form ref={formEl} onChange={changeFocus}>
+      ></Cards>
+      <form ref={formEl} onChange={changeFocus} onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
@@ -93,42 +122,49 @@ export default function CCvalidation() {
           minLength="16"
           maxLength="19"
         />
-        <input
-          type="text"
-          name="expiry"
-          placeholder="MM/YY Expiry"
-          value={handleExpiryDate()}
-          onChange={(e) => setExpiry(e.target.value)}
-          onFocus={(e) => setFocus(e.target.name)}
-          onInput={(e) => handleExpiryDate(e)}
-          minLength="5"
-          maxLength="5"
-        />
+        <section className={billing.section_cc}>
+          <input
+            type="text"
+            name="expiry"
+            placeholder="MM/YY Expiry"
+            value={handleExpiryDate()}
+            onChange={(e) => setExpiry(e.target.value)}
+            onFocus={(e) => setFocus(e.target.name)}
+            onInput={(e) => handleExpiryDate(e)}
+            minLength="5"
+            maxLength="5"
+          />
 
-        {number.substring(0, 2) == 34 || number.substring(0, 2) == 37 ? (
-          <input
-            type="tel"
-            name="cvc"
-            placeholder="CVC"
-            value={cvc}
-            onChange={(e) => setCvc(e.target.value)}
-            onFocus={(e) => setFocus(e.target.name)}
-            minLength="3"
-            maxLength="4"
-          />
-        ) : (
-          <input
-            type="tel"
-            name="cvc"
-            placeholder="CVC"
-            value={cvc}
-            onChange={(e) => setCvc(e.target.value)}
-            onFocus={(e) => setFocus(e.target.name)}
-            minLength="3"
-            maxLength="3"
-          />
-        )}
-        <button onFocus={(e) => setFocus(e.target.name)}>Pay</button>
+          {number.substring(0, 2) == 34 || number.substring(0, 2) == 37 ? (
+            <input
+              type="tel"
+              name="cvc"
+              placeholder="CVC"
+              value={cvc}
+              onChange={(e) => setCvc(e.target.value)}
+              onFocus={(e) => setFocus(e.target.name)}
+              minLength="3"
+              maxLength="4"
+            />
+          ) : (
+            <input
+              type="tel"
+              name="cvc"
+              placeholder="CVC"
+              value={cvc}
+              onChange={(e) => setCvc(e.target.value)}
+              onFocus={(e) => setFocus(e.target.name)}
+              minLength="3"
+              maxLength="3"
+            />
+          )}
+        </section>
+        <button
+          onSubmit={(e) => handleSubmit()}
+          onFocus={(e) => setFocus(e.target.name)}
+        >
+          Pay
+        </button>
       </form>
     </>
   );
