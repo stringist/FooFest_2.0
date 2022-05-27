@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Koulen&display=swap");
 
-$primary-color-dark: hsla(0, 12, 7, 100%);
-$primary-color-light: hsla(0, 0, 98, 100%);
-$primary-color-lighter: rgb(208, 198, 198);
-$accent-color-100: hsla(16, 100, 50, 100%);
-$accent-color-60: hsla(16, 100, 60, 60%);
-$secondary-color: hsl(0, 0, 82);
+$primary-color-dark: hsla(0, 12%, 7%, 100%);
+$primary-color-light: hsla(0, 0%, 98%, 100%);
+$primary-color-lighter: rgb(208, 198%, 198%);
+$accent-color-100: hsla(16, 100%, 50%, 100%);
+$accent-color-60: hsla(16, 100%, 60%, 60%);
+$secondary-color: hsl(0, 0%, 82%);
 
-$grey-500: hsl(0, 0, 12);
-$grey-400: hsl(0, 1, 16);
-$grey-300: hsl(0, 0, 19);
-$grey-200: hsl(0, 0, 22);
-$grey-100: hsl(0, 0, 28);
+$grey-500: hsl(0, 0%, 12%);
+$grey-400: hsl(0, 1%, 16%);
+$grey-300: hsl(0, 0%, 19%);
+$grey-200: hsl(0, 0%, 22%);
+$grey-100: hsl(0, 0%, 28%);
 
 $h-font: "Koulen", cursive;
 $body-font: "Inter", sans-serif;
@@ -22,6 +22,10 @@ $mobile-query: 650px;
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
 }
 
 nav {

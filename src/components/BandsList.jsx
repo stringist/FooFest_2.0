@@ -48,9 +48,7 @@ export default function BandsList(props) {
 
       {searched === "" ? <h3>{filter}</h3> : <h3>Results</h3>}
 
-      <div className={bandsStyles.band__grid}>
-        <BandListTable bands={bands.data} searched={searched} filtered={filtered} bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} setSort={setSort} setSortDir={setSortDir} />
-      </div>
+      <BandListTable bands={bands.data} searched={searched} filtered={filtered} bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} setSort={setSort} setSortDir={setSortDir} />
 
       <BandPage bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} />
     </div>

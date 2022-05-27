@@ -34,8 +34,10 @@ footer {
 
     li {
       width: fit-content;
+      padding: 0.3rem;
     }
     li:hover {
+      background: none;
       a {
         color: general.$accent-color-100;
       }

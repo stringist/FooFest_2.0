@@ -32,7 +32,7 @@ export default function Menu() {
           <MenuLink link="/" title="Home" setMenuOpen={setMenuOpen} />
           <MenuLink link="/tickets" title="Tickets" setMenuOpen={setMenuOpen} />
           <MenuLink link="/program" title="Program" setMenuOpen={setMenuOpen} />
-          <MenuLink link="/bands" title="Bands" setMenuOpen={setMenuOpen} />
+          <MenuLink link="/artists" title="Artists" setMenuOpen={setMenuOpen} />
         </ul>
       </nav>
     </header>

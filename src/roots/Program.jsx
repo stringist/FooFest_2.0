@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, Routes, Route } from "react-router-dom";
-import Bands from "./Bands";
 
 import programStyles from "/sass/modules/_Program.module.scss";
 
+import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 import Table from "../components/Table";
 import ScheduleButtons from "../components/ScheduleButtons";
+import Bands from "./Bands";
 
 export default function Program() {
   const [count, setCount] = useState(0);
@@ -47,22 +49,15 @@ export default function Program() {
 
   return (
     <div className="Festival">
-      <header>
-        <nav>
-          <Link to="/program">Program</Link> | <Link to="/bands">Bands</Link>
-        </nav>
-      </header>
-
-      {/* <Routes>
-        <Route path="/Lineup" element={<Lineup />} />
-        <Route path="/Bands" element={<Bands />} />
-      </Routes> */}
+      <Menu />
 
       <h1>Program</h1>
 
       <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} setDay={setDay} day={day} />
 
       <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
+
+      <Footer />
     </div>
   );
 }

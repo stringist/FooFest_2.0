@@ -15,12 +15,7 @@ svg {
   cursor: pointer;
   background: transparent;
   border: none;
-
-  :hover {
-    svg {
-      fill: red;
-    }
-  }
+  width: fit-content;
 }
 
 .menuNav {
@@ -52,7 +47,7 @@ li a {
 }
 
 li:hover {
-  background-color: general.$grey-400;
+  background-color: general.$grey-300;
 
   a {
     color: general.$accent-color-100;
@@ -64,13 +59,16 @@ li:hover {
 }
 
 .showingMenu {
-  transition: all 1s ease-out;
+  transition: all 0.5s ease-out;
   transform: translateX(-30vw);
 }
 .closingMenu {
-  transition: all 1s ease-out;
+  transition: all 0.5s ease-out;
   transform: translateX(30vw);
 }
 
 @media only screen and (max-width: general.$mobile-query) {
+  .showingMenu {
+    transform: translateX(0vw);
+  }
 }

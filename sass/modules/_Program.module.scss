@@ -16,6 +16,7 @@ table {
     border: none;
     padding: 0.2rem 0.5rem;
     cursor: pointer;
+    width: fit-content;
   }
 
   .selected {
@@ -187,6 +188,14 @@ table {
     tbody {
       button {
         font-size: 1rem;
+      }
+      tr {
+        height: 100%;
+      }
+      p {
+        display: block;
+        padding: 0.35rem 0;
+        font-size: 0.85rem;
       }
     }
   }

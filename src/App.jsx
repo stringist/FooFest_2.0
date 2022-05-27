@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<Festival />} />
         <Route path="/tickets" element={<Booking />} />
         <Route path="/program" element={<Program />} />
-        <Route path="/bands" element={<Bands />} />
+        <Route path="/artists" element={<Bands />} />
       </Routes>
     </div>
   );

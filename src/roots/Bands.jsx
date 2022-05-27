@@ -19,7 +19,7 @@ export default function Festival() {
     <>
       <Menu />
       <div className="bands">
-        <HeroBanner img="/img/bands_background.png" title="Bands" />
+        <HeroBanner img="/img/bands_background.png" title="Artists" />
 
         <BandsList bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
       </div>
