@@ -6,6 +6,9 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 2rem;
+  background-color: general.$grey-500;
+  padding: 6rem;
 }
 
 .login__card {
@@ -69,6 +72,9 @@
   text-decoration: underline;
   font-weight: 600;
   font-size: 0.8rem;
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 
   &:hover {
     color: general.$accent-color-100;

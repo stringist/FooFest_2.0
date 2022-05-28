@@ -45,7 +45,7 @@ export default function BandsList(props) {
         <FilterButtons setFilter={setFilter} filter={filter} />
         <SearchBar searched={searched} setSearched={setSearched} bands={bands.data} />
       </div>
-      <SortToggle name="Sort by name" setSort={setSort} setSortDir={setSortDir} sortKey={"name"} />
+      {/* <SortToggle name="Sort by name" setSort={setSort} setSortDir={setSortDir} sortKey={"name"} /> */}
 
       {searched === "" ? <h3>{filter}</h3> : <h3>Results</h3>}
 

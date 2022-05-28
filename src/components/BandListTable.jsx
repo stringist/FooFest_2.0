@@ -51,7 +51,6 @@ export default function BandListTable(props) {
         {/* <SortToggle name="Genre" setSort={props.setSort} setSortDir={props.setSortDir} sortKey={"genre"} /> */}
         {props.searched === ""
           ? props.filtered.slice(page * bandsPerPage, page * bandsPerPage + bandsPerPage).map((band) => {
-              console.log(page);
               const path = band.logo.includes("http") ? band.logo : `https://foofestival.herokuapp.com/logos/${band.logo}`;
               // console.log(path);
               return (
@@ -63,7 +62,6 @@ export default function BandListTable(props) {
               );
             })
           : props.searched.slice(page * bandsPerPage, page * bandsPerPage + bandsPerPage).map((band) => {
-              console.log(props.searched.length);
               const path = band.logo.includes("http") ? band.logo : `https://foofestival.herokuapp.com/logos/${band.logo}`;
               return (
                 <div className={bandsStyles.band__card} onClick={() => showBand(band.name)}>
@@ -74,6 +72,7 @@ export default function BandListTable(props) {
               );
             })}
       </div>
+
       <div className={bandsStyles.pagination}>
         <button onClick={previousPage}>Previous</button>
         {buttonss}

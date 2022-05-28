@@ -15,7 +15,7 @@ export default function Login(props) {
     <div className={loginStyles.Login}>
       <Menu user={props.user} />
 
-      <HeroBanner img="/img/bands_background.png" title="Login" />
+      <HeroBanner img="/img/bands_background.png" title="Profile" />
 
       {props.user === "" ? <SignInForm setUser={props.setUser} /> : <UserProfile user={props.user} />}
       <Footer />

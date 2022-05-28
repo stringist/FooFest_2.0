@@ -8,6 +8,7 @@ $accent-color-60: hsla(16, 100%, 60%, 60%);
 $secondary-color: hsl(0, 0%, 82%);
 
 $error-color: rgb(246, 97, 97);
+$valid-color: rgb(14, 137, 35);
 
 $grey-500: hsl(0, 0%, 12%);
 $grey-400: hsl(0, 1%, 16%);
@@ -103,16 +104,14 @@ input {
     svg {
       fill: $error-color;
     }
-
-    // &:before {
-    //   content: url("/img/error.svg");
-    //   fill: $error-color;
-    // }
   }
 }
 
 .isInvalid {
   border: solid 1px $error-color;
+}
+.isValid {
+  border: solid 1px greenyellow;
 }
 
 .cta {

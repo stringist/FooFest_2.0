@@ -25,9 +25,9 @@ export default function SignInForm(props) {
       }}
     >
       {(formik) => (
-        <div>
-          <h1>Sign Up</h1>
+        <div className={loginStyles.card}>
           <Form>
+            <h2>Login to your account</h2>
             <TextField label="Username" name="username" type="text" />
             <TextField label="Password" name="password" type="password" />
 
@@ -39,6 +39,9 @@ export default function SignInForm(props) {
             </button>
             <a href="#" className={loginStyles.forgot}>
               Forgot your password?
+            </a>
+            <a href="#" className={loginStyles.forgot}>
+              Don't have an account yet? Sign up
             </a>
           </Form>
         </div>
