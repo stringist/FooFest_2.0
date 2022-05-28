@@ -4,7 +4,7 @@ import menuStyles from "/sass/modules/_Menu.module.scss";
 
 import MenuLink from "./MenuLink";
 
-export default function Menu() {
+export default function Menu(props) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpening, setIsOpening] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -13,6 +13,7 @@ export default function Menu() {
     menuOpen ? setIsOpening(true) : setIsClosing(true);
     setMenuOpen((prev) => !prev);
   };
+  console.log(props.user);
 
   return (
     <header>
@@ -29,6 +30,7 @@ export default function Menu() {
           )}
         </button>
         <ul className={`${menuStyles.menuNav} ${menuOpen ? menuStyles.showMenu : null} ${isOpening ? menuStyles.showingMenu : null} ${isClosing ? menuStyles.closingMenu : null}`}>
+          {props.user === "" ? <MenuLink link="/profile" title="Sign in" setMenuOpen={setMenuOpen} /> : <MenuLink link="/profile" title="Profile" setMenuOpen={setMenuOpen} />}
           <MenuLink link="/" title="Home" setMenuOpen={setMenuOpen} />
           <MenuLink link="/tickets" title="Tickets" setMenuOpen={setMenuOpen} />
           <MenuLink link="/program" title="Program" setMenuOpen={setMenuOpen} />
