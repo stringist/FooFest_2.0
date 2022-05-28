@@ -5,11 +5,11 @@ import CheckOutForm from "../components/CheckOutForm";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 
-export default function Booking() {
+export default function Booking(props) {
   return (
     <>
-      <Menu />
-
+      <Menu user={props.user} />
+      <HeroBanner img="/img/bands_background.png" title="Tickets" />
       <FormStep1></FormStep1>
       <CheckOutForm></CheckOutForm>
       <CCvalidation></CCvalidation>
