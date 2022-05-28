@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import "../../sass/style.scss";
 import React, { Component } from "react";
-import { CountryDropdown, RegionDropdown, CountryRegionData } from "react-country-region-selector";
+// import { CountryDropdown, RegionDropdown, CountryRegionData } from "react-country-region-selector";
 export default function CheckOutForm() {
   const ENDPOINT = "https://kea2semester-e216.restdb.io/rest/foofest";
   const KEY = "615d83068597142da1745455";

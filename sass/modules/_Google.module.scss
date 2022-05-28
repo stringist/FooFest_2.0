@@ -1,0 +1,7 @@
+@use "_General.module" as general;
+
+.g_button {
+  background-color: general.$primary-color-light;
+}
+@media only screen and (max-width: general.$mobile-query) {
+}

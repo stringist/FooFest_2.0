@@ -2,6 +2,7 @@ import Festival from "./roots/Festival";
 import Booking from "./roots/Booking";
 import Program from "./roots/Program";
 import Bands from "./roots/Bands";
+import Login from "./roots/Login";
 import "./App.css";
 // import "./paper.css";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/tickets" element={<Booking />} />
         <Route path="/program" element={<Program />} />
         <Route path="/artists" element={<Bands />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );

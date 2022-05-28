@@ -5,6 +5,8 @@ import programStyles from "/sass/modules/_Program.module.scss";
 
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
+import HeroBanner from "../components/HeroBanner";
+
 import Table from "../components/Table";
 import ScheduleButtons from "../components/ScheduleButtons";
 import Bands from "./Bands";
@@ -51,7 +53,7 @@ export default function Program() {
     <div className={programStyles.Program}>
       <Menu />
 
-      <h1>Program</h1>
+      <HeroBanner img="/img/bands_background.png" title="Program" />
 
       <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} setDay={setDay} day={day} />
 
