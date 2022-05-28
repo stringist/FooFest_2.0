@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ReactPaginate from "react-paginate";
 
 import generalStyles from "/sass/modules/_General.module.scss";
 import bandsStyles from "/sass/modules/_Bands.module.scss";

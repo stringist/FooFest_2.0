@@ -159,6 +159,22 @@
 
 .pagination {
   margin-top: 3rem;
+  display: flex;
+  gap: 0.5rem;
+
+  button {
+    background: none;
+    border: solid 1px general.$accent-color-100;
+    &:first-child,
+    &:last-child {
+      background-color: general.$accent-color-60;
+      border-color: general.$accent-color-60;
+    }
+  }
+
+  .active {
+    background-color: general.$accent-color-100;
+  }
 }
 
 .festival__bandList__page {

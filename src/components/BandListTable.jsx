@@ -11,25 +11,38 @@ export default function BandListTable(props) {
 
   useEffect(() => {
     props.searched === "" ? setNPages(Math.ceil(props.filtered.length / bandsPerPage)) : setNPages(Math.ceil(props.searched.length / bandsPerPage));
-    createPageButton();
   }, [props.filtered.length, props.searched.length]);
 
   function showBand(bandName) {
     console.log("shw band clicked");
     const i = props.bands.findIndex((band) => band.name == bandName);
     props.setBandDisplayed(props.bands[i]);
-    // console.log(props.bandDisplayed);
+    console.log(props.bandDisplayed);
     // console.log(i);
   }
 
-  function createPageButton() {
-    setPageButtons([]);
-    for (let i = 0; i < nPages; i++) setPageButtons((old) => old.concat(<button>Page{i + 1}</button>));
-  }
+  const buttonss = [...Array(nPages)].map((e, i) =>
+    page === i ? (
+      <button key={i + 1} onClick={() => handleClick(i)} className={bandsStyles.active}>
+        {i + 1}
+      </button>
+    ) : (
+      <button key={i + 1} onClick={() => handleClick(i)}>
+        {i + 1}
+      </button>
+    )
+  );
 
   function handleClick(page) {
     setPage(page);
     console.log(page);
+  }
+
+  function previousPage() {
+    setPage((old) => old - 1);
+  }
+  function nextPage() {
+    setPage((old) => old + 1);
   }
 
   return (
@@ -38,7 +51,7 @@ export default function BandListTable(props) {
         {/* <SortToggle name="Genre" setSort={props.setSort} setSortDir={props.setSortDir} sortKey={"genre"} /> */}
         {props.searched === ""
           ? props.filtered.slice(page * bandsPerPage, page * bandsPerPage + bandsPerPage).map((band) => {
-              console.log(props.filtered.length);
+              console.log(page);
               const path = band.logo.includes("http") ? band.logo : `https://foofestival.herokuapp.com/logos/${band.logo}`;
               // console.log(path);
               return (
@@ -50,7 +63,7 @@ export default function BandListTable(props) {
               );
             })
           : props.searched.slice(page * bandsPerPage, page * bandsPerPage + bandsPerPage).map((band) => {
-              // console.log(props.searched.length);
+              console.log(props.searched.length);
               const path = band.logo.includes("http") ? band.logo : `https://foofestival.herokuapp.com/logos/${band.logo}`;
               return (
                 <div className={bandsStyles.band__card} onClick={() => showBand(band.name)}>
@@ -62,9 +75,9 @@ export default function BandListTable(props) {
             })}
       </div>
       <div className={bandsStyles.pagination}>
-        Pagination
-        <p>{nPages}</p>
-        {pageButtons}
+        <button onClick={previousPage}>Previous</button>
+        {buttonss}
+        <button onClick={nextPage}>Previous</button>
       </div>
     </>
   );

@@ -10,21 +10,14 @@ import HeroBanner from "../components/HeroBanner";
 import SignInForm from "../components/SignInForm";
 import UserProfile from "../components/UserProfile";
 
-export default function Login() {
-  const [user, setUser] = useState("");
-  const [isLogedIn, setIsLogedIn] = useState(false);
-  const [pswDisplayed, setPswDisplayed] = useState(false);
-
-  const psw = useRef();
-  const formSignIn = useRef();
-
+export default function Login(props) {
   return (
     <div className={loginStyles.Login}>
-      <Menu />
+      <Menu user={props.user} />
 
       <HeroBanner img="/img/bands_background.png" title="Login" />
 
-      {user === "" ? <SignInForm pswDisplayed={pswDisplayed} psw={psw} formSignIn={formSignIn} setIsLogedIn={setIsLogedIn} setUser={setUser} /> : <UserProfile user={user} />}
+      {props.user === "" ? <SignInForm setUser={props.setUser} /> : <UserProfile user={props.user} />}
       <Footer />
     </div>
   );

@@ -9,7 +9,7 @@ import LatestNews from "../components/LatestNews";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 
-export default function Festival() {
+export default function Festival(props) {
   const [count, setCount] = useState(0);
   const [schedule, setSchedule] = useState(null);
 
@@ -48,7 +48,8 @@ export default function Festival() {
 
   return (
     <div className={landingStyles.Festival}>
-      <Menu />
+      <Menu user={props.user} />
+
       <LandingHero />
 
       <LatestNews />
