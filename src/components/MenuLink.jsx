@@ -9,8 +9,6 @@ export default function MenuLink(props) {
     props.setMenuOpen(false);
   };
 
-  // console.log(props.title);
-
   return (
     <li onClick={() => closeMenu()}>
       <Link to={props.link}>{props.title}</Link>
