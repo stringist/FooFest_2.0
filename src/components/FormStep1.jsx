@@ -1,4 +1,7 @@
 import { useRef, useState } from "react";
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
+
 import form1Styles from "/sass/modules/_Form1.module.scss";
 
 import AreaButton from "./AreaButton";
@@ -46,42 +49,43 @@ export default function FormStep1() {
   }
   console.log(reservation);
 
+  const validate = Yup.object({
+    type: Yup.string().required("Choose a type of ticket"),
+    area: Yup.string().required("Choose one area"),
+    amount: Yup.number().positive().integer().required("Amount must be greater than 0"),
+  });
+
   return (
-    <>
-      <form ref={formEl} onSubmit={searchTickets}>
-        <fieldset>
-          <legend>Choose ticket</legend>
-          <TicketButton name="General" price="799kr" ticket={ticket} setTicket={setTicket} />
-          <TicketButton name="VIP" price="1299kr" ticket={ticket} setTicket={setTicket} />
-        </fieldset>
-
-        <fieldset>
-          <legend>Choose area</legend>
-          <div className="form__area">
-            <div className="form__area--row">
-              <AreaButton name="Svartheim" area={area} setArea={setArea} />
-              <AreaButton name="Nilfheim" area={area} setArea={setArea} />
-              <AreaButton name="Helheim" area={area} setArea={setArea} />
-            </div>
-            <div className="form__area--row">
-              <AreaButton name="Muspeleheim" area={area} setArea={setArea} />
-              <AreaButton name="Alfheim" area={area} setArea={setArea} />
-            </div>
+    <Formik
+      initialValues={{
+        type: "",
+        area: "",
+        amount: "",
+      }}
+      validationSchema={validate}
+      onSubmit={(values) => {
+        props.setUser(values.username);
+        props.setIsLogedIn(true);
+      }}
+    >
+      {({ values }) => (
+        <Form>
+          <legend id="my-radio-group">Choose ticket</legend>
+          <div role="group" aria-labelledby="my-radio-group">
+            <label>
+              <Field type="radio" name="ticket" value="general" />
+              One
+            </label>
+            <label>
+              <Field type="radio" name="ticket" value="vip" />
+              Two
+            </label>
+            <div>Picked: {values.ticket}</div>
           </div>
-        </fieldset>
 
-        <fieldset>
-          <legend>Choose amount</legend>
-          <AmountButton name="amount" amount={amount} setAmount={setAmount} />
-          <span>The amount must be a number greater than 0</span>
-        </fieldset>
-
-        {!isSearching && <button>Search tickets</button>}
-        {isSearching && <button>Searching tickets...</button>}
-      </form>
-
-      {showAlert && <Alert message={reservation.error} setAlert={setAlert} />}
-      {/* {showAlert === true ? <Alert message={reservation.error} setAlert={setAlert} /> : <FormStep2/>} */}
-    </>
+          <button type="submit">Submit</button>
+        </Form>
+      )}
+    </Formik>
   );
 }

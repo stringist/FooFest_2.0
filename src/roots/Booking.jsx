@@ -4,6 +4,7 @@ import CheckOutForm from "../components/CheckOutForm";
 
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
+import HeroBanner from "../components/HeroBanner";
 
 export default function Booking(props) {
   return (

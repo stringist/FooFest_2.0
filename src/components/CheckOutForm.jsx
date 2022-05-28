@@ -51,7 +51,7 @@ export default function CheckOutForm() {
         <input type="text" id="street_address" required /> <label htmlFor="floor">Floor</label>
         <input type="number" id="floor" required /> <label htmlFor="door">Door</label>
         <input type="text" id="door" required />
-        <CountryDropdown value={country} onChange={selectCountry} />{" "}
+        {/* <CountryDropdown value={country} onChange={selectCountry} /> */}
       </form>
     </>
   );
