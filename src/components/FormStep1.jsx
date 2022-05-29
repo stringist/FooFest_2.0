@@ -59,7 +59,7 @@ export default function FormStep1() {
 
         <fieldset className={form1Styles.form__amount}>
           <legend>Choose amount</legend>
-          <p>The amount must be a number greater than 0</p>
+          {/* <p>Choose a number greater than 0</p> */}
           <AmountButton name="amount" amount={amount} setAmount={setAmount} />
         </fieldset>
 

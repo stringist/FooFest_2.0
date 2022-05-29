@@ -2,10 +2,19 @@
 
 form {
   font-family: general.$h-font;
+  margin: 0 30vw;
+  gap: 1rem;
+
+  button {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+  }
+
   legend {
     font-size: 1.5rem;
     margin-top: 2rem;
     line-height: 1;
+    margin-bottom: 0.5rem;
   }
 
   .ticket_legend {
@@ -28,6 +37,7 @@ form {
   &type {
     display: flex;
     gap: 5rem;
+    justify-content: center;
 
     [type="radio"] {
       display: none;
@@ -74,4 +84,17 @@ form {
 }
 
 @media only screen and (max-width: general.$mobile-query) {
+  .Booking form {
+    margin: 0;
+    margin-top: 2rem;
+    padding: 1rem;
+
+    .form__type {
+      gap: 3rem;
+    }
+
+    legend {
+      margin-bottom: 1rem;
+    }
+  }
 }

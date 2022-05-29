@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import createUID from "create-unique-id";
+
 import programStyles from "/sass/modules/_Program.module.scss";
 
 import BandInfo from "./BandInfo";
@@ -38,7 +40,7 @@ export default function Table(props) {
         <thead>
           <tr>
             <th>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-clock-fill" viewBox="0 0 16 16">
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
               </svg>
             </th>
@@ -55,7 +57,7 @@ export default function Table(props) {
             const vAct = props.stage3[index];
 
             return (
-              <tr>
+              <tr key={createUID(4)}>
                 <th>
                   <p>{act.start.substring(0, 1) === "0" ? act.start.substring(1) : act.start}</p>
                   <br></br>

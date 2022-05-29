@@ -1,4 +1,5 @@
 import { useState } from "react";
+import createUID from "create-unique-id";
 
 import menuStyles from "/sass/modules/_Menu.module.scss";
 
@@ -30,11 +31,11 @@ export default function Menu(props) {
           )}
         </button>
         <ul className={`${menuStyles.menuNav} ${menuOpen ? menuStyles.showMenu : null} ${isOpening ? menuStyles.showingMenu : null} ${isClosing ? menuStyles.closingMenu : null}`}>
-          {props.user === "" ? <MenuLink link="/profile" title="Sign in" setMenuOpen={setMenuOpen} /> : <MenuLink link="/profile" title="Profile" setMenuOpen={setMenuOpen} />}
-          <MenuLink link="/" title="Home" setMenuOpen={setMenuOpen} />
-          <MenuLink link="/tickets" title="Tickets" setMenuOpen={setMenuOpen} />
-          <MenuLink link="/program" title="Program" setMenuOpen={setMenuOpen} />
-          <MenuLink link="/artists" title="Artists" setMenuOpen={setMenuOpen} />
+          {props.user === "" ? <MenuLink link="/profile" title="Sign in" setMenuOpen={setMenuOpen} /> : <MenuLink link="/profile" title="Profile" setMenuOpen={setMenuOpen} key={createUID(4)} />}
+          <MenuLink link="/" title="Home" setMenuOpen={setMenuOpen} key={createUID(4)} />
+          <MenuLink link="/tickets" title="Tickets" setMenuOpen={setMenuOpen} key={createUID(4)} />
+          <MenuLink link="/program" title="Program" setMenuOpen={setMenuOpen} key={createUID(4)} />
+          <MenuLink link="/artists" title="Artists" setMenuOpen={setMenuOpen} key={createUID(4)} />
         </ul>
       </nav>
     </header>

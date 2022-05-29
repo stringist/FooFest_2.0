@@ -1,3 +1,5 @@
+import form1Styles from "/sass/modules/_Form1.module.scss";
+
 import FormStep1 from "../components/FormStep1";
 import CCvalidation from "../components/CCvalidation";
 import CheckOutForm from "../components/CheckOutForm";
@@ -8,7 +10,7 @@ import HeroBanner from "../components/HeroBanner";
 
 export default function Booking(props) {
   return (
-    <>
+    <div className={form1Styles.Booking}>
       <Menu user={props.user} />
       <HeroBanner img="/img/bands_background.png" title="Tickets" />
       <FormStep1></FormStep1>
@@ -16,6 +18,6 @@ export default function Booking(props) {
       <CCvalidation></CCvalidation>
 
       <Footer />
-    </>
+    </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import createUID from "create-unique-id";
 
 import bandsStyles from "/sass/modules/_Bands.module.scss";
 
@@ -54,7 +55,7 @@ export default function BandListTable(props) {
               const path = band.logo.includes("http") ? band.logo : `https://foofestival.herokuapp.com/logos/${band.logo}`;
               // console.log(path);
               return (
-                <div className={bandsStyles.band__card} onClick={() => showBand(band.name)}>
+                <div className={bandsStyles.band__card} onClick={() => showBand(band.name)} key={createUID(4)}>
                   <div className={bandsStyles.band__card__img} style={{ backgroundImage: `url(${path})` }}></div>
                   {band.logoCredits ? <p>{band.logoCredits}</p> : null}
                   <h4>{band.name}</h4>
@@ -64,7 +65,7 @@ export default function BandListTable(props) {
           : props.searched.slice(page * bandsPerPage, page * bandsPerPage + bandsPerPage).map((band) => {
               const path = band.logo.includes("http") ? band.logo : `https://foofestival.herokuapp.com/logos/${band.logo}`;
               return (
-                <div className={bandsStyles.band__card} onClick={() => showBand(band.name)}>
+                <div className={bandsStyles.band__card} onClick={() => showBand(band.name)} key={createUID(4)}>
                   <div className={bandsStyles.band__card__img} style={{ backgroundImage: `url(${path})` }}></div>
                   {band.logoCredits ? <p>{band.logoCredits}</p> : null}
                   <h4>{band.name}</h4>
