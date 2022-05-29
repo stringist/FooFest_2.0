@@ -3,13 +3,12 @@ import { Link, Routes, Route } from "react-router-dom";
 
 import programStyles from "/sass/modules/_Program.module.scss";
 
-import Menu from "../components/Menu";
-import Footer from "../components/Footer";
-import HeroBanner from "../components/HeroBanner";
+import Menu from "../components/general/Menu";
+import Footer from "../components/general/Footer";
+import HeroBanner from "../components/general/HeroBanner";
 
-import Table from "../components/Table";
-import ScheduleButtons from "../components/ScheduleButtons";
-import Bands from "./Bands";
+import Table from "../components/program/Table";
+import ScheduleButtons from "../components/program/ScheduleButtons";
 
 export default function Program() {
   const [count, setCount] = useState(0);

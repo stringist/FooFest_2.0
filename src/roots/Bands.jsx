@@ -3,13 +3,12 @@ import { Link, Routes, Route } from "react-router-dom";
 
 import generalStyles from "/sass/modules/_General.module.scss";
 
-import Program from "./Program";
-import Menu from "../components/Menu";
-import Footer from "../components/Footer";
-import BandsList from "../components/BandsList";
-import HeroBanner from "../components/HeroBanner";
+import Menu from "../components/general/Menu";
+import Footer from "../components/general/Footer";
+import HeroBanner from "../components/general/HeroBanner";
+import BandsList from "../components/artists/BandsList";
 
-export default function Festival() {
+export default function Bands(props) {
   const [schedule, setSchedule] = useState(null);
 
   const [bandDisplay, setBandDisplayed] = useState([]);
@@ -17,7 +16,8 @@ export default function Festival() {
 
   return (
     <>
-      <Menu />
+      <Menu user={props.user} />
+
       <div className="bands">
         <HeroBanner img="/img/bands_background.png" title="Artists" />
 

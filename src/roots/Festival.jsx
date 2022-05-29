@@ -4,10 +4,10 @@ import { Link, Routes, Route } from "react-router-dom";
 import generalStyles from "/sass/modules/_General.module.scss";
 import landingStyles from "/sass/modules/_Landing.module.scss";
 
-import LandingHero from "../components/LandingHero";
-import LatestNews from "../components/LatestNews";
-import Menu from "../components/Menu";
-import Footer from "../components/Footer";
+import LandingHero from "../components/landing/LandingHero";
+import LatestNews from "../components/landing/LatestNews";
+import Menu from "../components/general/Menu";
+import Footer from "../components/general/Footer";
 
 export default function Festival(props) {
   const [count, setCount] = useState(0);
