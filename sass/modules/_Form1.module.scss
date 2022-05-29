@@ -1,4 +1,77 @@
 @use "_General.module" as general;
 
+form {
+  font-family: general.$h-font;
+  legend {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    line-height: 1;
+  }
+
+  .ticket_legend {
+    font-size: 2rem;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.form__ {
+  &area [type="radio"] {
+    display: none;
+  }
+  &area__row {
+    display: flex;
+    justify-content: center;
+  }
+
+  &type {
+    display: flex;
+    gap: 5rem;
+
+    [type="radio"] {
+      display: none;
+    }
+    &__row {
+      border: 1px solid general.$primary-color-light;
+      padding: 1rem;
+      font-size: 2.25rem;
+      line-height: 1.2;
+      text-align: center;
+      min-width: 10rem;
+    }
+    .checked {
+      border: 2px solid general.$accent-color-100;
+      color: general.$accent-color-100;
+    }
+  }
+
+  &amount {
+    input {
+      width: 5rem;
+      text-align: center;
+      padding: 0;
+    }
+
+    &__row {
+      display: flex;
+      align-items: center;
+
+      div {
+        margin: 0.5rem;
+        padding: 0 1rem;
+        background-color: general.$accent-color-100;
+        cursor: pointer;
+      }
+    }
+    p {
+      margin: 0;
+      font-family: general.$body-font;
+      font-size: 0.85rem;
+      color: general.$primary-color-lighter;
+    }
+  }
+}
+
 @media only screen and (max-width: general.$mobile-query) {
 }

@@ -3,9 +3,8 @@ import AreaImage from "./AreaImage";
 export default function AreaButton(props) {
   return (
     <>
-      <div className={"form__area--" + props.name}>
+      <div>
         <label htmlFor={props.name}>
-          {props.name}
           <AreaImage name={props.name} area={props.area} />
         </label>
         <input

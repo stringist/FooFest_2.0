@@ -1,12 +1,1 @@
-.festival__schedule {
-  display: flex;
-}
 
-.form__area [type="radio"] {
-  display: none;
-}
-
-.form__area--row {
-  display: flex;
-  justify-content: center;
-}
