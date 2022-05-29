@@ -2,16 +2,15 @@ import Cards from "react-credit-cards";
 import "react-credit-cards/lib/styles.scss";
 import { useState, useRef } from "react";
 import generalStyles from "/sass/modules/_General.module.scss";
-import billing from "/sass/modules/_Billing.module.scss";
-import BillingInfo from "./BillingInfo";
-export default function CCvalidation() {
+import Creditcard from "/sass/modules/_Creditcard.module.scss";
+import step4 from "../../public/img/step4.svg";
+
+export default function CCvalidation(props) {
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
   const [focus, setFocus] = useState("");
-  const [submit, setSubmit] = useState(false);
-  const [ticketholderdata, setTicketholderdata] = useState({});
   const formEl = useRef(null);
   const ENDPOINT = "https://kea2semester-e216.restdb.io/rest/foofest";
   const KEY = "615d83068597142da1745455";
@@ -73,10 +72,14 @@ export default function CCvalidation() {
           );
     }
   }
+  function changePage(e) {
+    e.preventDefault();
+    props.setShowContent(0);
+  }
   function handleSubmit(e) {
     e.preventDefault();
 
-    const postData = JSON.stringify(ticketholderdata);
+    const postData = JSON.stringify(props.ticketholderdata);
     fetch(ENDPOINT, {
       method: "post",
       headers: {
@@ -91,8 +94,8 @@ export default function CCvalidation() {
 
   return (
     <>
-      <BillingInfo setTicketholderdata={setTicketholderdata}></BillingInfo>
-      <h4 className={billing.h4}>CARD INFORMATION</h4>
+      <img src={step4} alt="" />
+      <h4 className={Creditcard.h4}>CARD INFORMATION</h4>
       <Cards
         number={number}
         name={name}
@@ -100,6 +103,7 @@ export default function CCvalidation() {
         cvc={cvc}
         focused={focus}
       ></Cards>
+
       <form ref={formEl} onChange={changeFocus} onSubmit={handleSubmit}>
         <input
           type="text"
@@ -111,6 +115,7 @@ export default function CCvalidation() {
           minLength="1"
           maxLength="45"
         />
+
         <input
           type="tel"
           name="number"
@@ -122,7 +127,7 @@ export default function CCvalidation() {
           minLength="16"
           maxLength="19"
         />
-        <section className={billing.section_cc}>
+        <section className={Creditcard.section_cc}>
           <input
             type="text"
             name="expiry"
@@ -159,12 +164,15 @@ export default function CCvalidation() {
             />
           )}
         </section>
-        <button
-          onSubmit={(e) => handleSubmit()}
-          onFocus={(e) => setFocus(e.target.name)}
-        >
-          Pay
-        </button>
+        <section className={generalStyles.next_back_buttons}>
+          <button onClick={changePage}>Back</button>
+          <button
+            onSubmit={(e) => handleSubmit()}
+            onFocus={(e) => setFocus(e.target.name)}
+          >
+            Pay
+          </button>
+        </section>
       </form>
     </>
   );

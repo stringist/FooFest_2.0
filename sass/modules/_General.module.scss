@@ -41,6 +41,8 @@ button {
   display: flex;
   justify-content: space-between;
   margin-top: 1.5rem;
+  max-width: 335px;
+
   button:first-of-type {
     background-color: $primary-color-dark;
     border: 1px solid $accent-color-100;

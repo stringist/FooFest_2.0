@@ -9,7 +9,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 100%;
-
+  margin-top: 2rem;
   input {
     border-radius: 5px;
     background-color: general.$primary-color-dark;
@@ -50,8 +50,6 @@ form {
 }
 
 .section_cc {
-  /*   flex-direction: column;
- */
   input {
     max-width: 113px;
   }
@@ -61,6 +59,4 @@ form {
   button {
     max-width: 362px;
   }
-}
-.rccs__card {
 }

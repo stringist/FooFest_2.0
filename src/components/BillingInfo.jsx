@@ -7,8 +7,9 @@ import {
   CountryRegionData,
 } from "react-country-region-selector";
 import generalStyles from "/sass/modules/_General.module.scss";
-
 import billing from "/sass/modules/_Billing.module.scss";
+import step3 from "../../public/img/step3.svg";
+
 export default function CheckOutForm(props) {
   const formEl = useRef(null);
   const [country, setCountry] = useState("");
@@ -30,10 +31,10 @@ export default function CheckOutForm(props) {
   function selectCountry(val) {
     setCountry(val);
   }
-  function sendTickeholder(e) {
+  function exportInfo(e) {
     e.preventDefault();
-    console.log(props.setTicketholderdata);
     props.setTicketholderdata(ticketHolderObject);
+    props.setShowContent(1);
   }
   function createObject(e) {
     e.preventDefault();
@@ -47,6 +48,8 @@ export default function CheckOutForm(props) {
 
   return (
     <>
+      {" "}
+      <img src={step3} alt="" />
       <h4 className={billing.h4}>BILLING INFORMATION</h4>
       <form ref={formEl} onChange={createObject} className={billing}>
         <label htmlFor="name">Name as on card</label>
@@ -83,7 +86,7 @@ export default function CheckOutForm(props) {
         />{" "}
         <section className={generalStyles.next_back_buttons}>
           <button>Back</button>
-          <button onClick={sendTickeholder}>Next</button>
+          <button onClick={exportInfo}>Next</button>
         </section>
       </form>
     </>
