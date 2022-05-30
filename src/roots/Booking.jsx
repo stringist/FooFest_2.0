@@ -25,26 +25,16 @@ export default function Booking(props) {
         <HeroBanner img="/img/bands_background.png" title="Tickets" />
         <FormStep1 setIsSearching={setIsSearching} />
         {showcontent === 0 ? (
-        <section className={generalStyles.sections_forms}>
-          <BillingInfo
-            setShowContent={setShowContent}
-            setTicketholderdata={setTicketholderdata}
-            ticketholderdata={ticketholderdata}
-          />
-        </section>
-      ) : (
-        <section className={generalStyles.sections_forms}>
-          <CCvalidation
-            setShowContent={setShowContent}
-            ticketholderdata={ticketholderdata}
-          />
-        </section>
-      )}
+          <section className={generalStyles.sections_forms}>
+            <BillingInfo setShowContent={setShowContent} setTicketholderdata={setTicketholderdata} ticketholderdata={ticketholderdata} />
+          </section>
+        ) : (
+          <section className={generalStyles.sections_forms}>
+            <CCvalidation setShowContent={setShowContent} ticketholderdata={ticketholderdata} />
+          </section>
+        )}
         <Footer />
       </div>
-
- 
-
     </>
   );
 }
