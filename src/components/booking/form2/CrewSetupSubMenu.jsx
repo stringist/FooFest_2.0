@@ -15,14 +15,14 @@ export default function CrewSetupSubMenu(props) {
 
   function updateBasket(productName) {
     console.log(productName);
-    const twoPers = { product: "twoPersonTent", price: 299, id: 667 };
-    const threePers = { product: "threePersonTent", price: 399, id: 668 };
+    const twoPers = {product: "Two-person tent setup", name: "twoPersonTent", price: 299, id: 667 };
+    const threePers = { product: "Three-person tent setup", name: "threePersonTent", price: 399, id: 668 };
 
-    if (props.basket.find((item) => item.product === productName)) {
+    if (props.basket.find((item) => item.name === productName)) {
       console.log(`the item called ${productName} is already in the basket`);
       props.setBasket((old) =>
         old.map((item) => {
-          if (item.product === productName) {
+          if (item.name === productName) {
             if (productName === "twoPersonTent") {
               const copy = { ...twoPers };
               copy.amount = parseInt(twoPersonInput.current.value);
