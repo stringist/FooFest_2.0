@@ -19,7 +19,7 @@ export default function TextField({ label, ...props }) {
       <div className={loginStyles.inputContainer}>
         <input className={` ${meta.touched && meta.error && generalStyles.isInvalid} ${meta.touched && meta.error === undefined && generalStyles.isValid}`} {...field} name={props.name} type={fieldType} autoComplete="off" />
 
-        {label === "Password" && fieldType === "text" ? <p onClick={toggleVisibility}>Hide password</p> : label === "Password" && fieldType === "password" ? <p onClick={toggleVisibility}>Show password</p> : null}
+        {label === "Password" && fieldType === "text" ? <img src="/img/visibility_off.svg" onClick={toggleVisibility}></img> : label === "Password" && fieldType === "password" ? <img src="/img/visibility.svg" onClick={toggleVisibility}></img> : null}
       </div>
     </div>
   );

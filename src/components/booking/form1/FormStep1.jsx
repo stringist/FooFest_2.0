@@ -47,9 +47,10 @@ export default function FormStep1(props) {
         });
 
         console.log(showAlert);
+
         const timing = setTimeout(() => {
           props.setIsSearching(false);
-          setTimer(1);
+          !showAlert ? setTimer(0) : setTimer(1);
         }, 2000);
         return () => {
           clearTimeout(timing);
@@ -57,7 +58,7 @@ export default function FormStep1(props) {
       })
       .catch((err) => console.error(err));
   }
-  // console.log(reservation);
+  console.log(reservation);
 
   return (
     <>
@@ -94,7 +95,7 @@ export default function FormStep1(props) {
         {!props.isSearching && <button>Search tickets</button>}
         {props.isSearching && <button>Searching tickets...</button>}
       </form>
-      {showAlert && <Alert message={reservation.error} setAlert={setAlert} />}
+
       {console.log(timer)}
       {timer === 1 && <Timer setTimer={setTimer} />}
       {timer === -1 && <TimeUp />}

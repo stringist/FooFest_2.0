@@ -1,5 +1,9 @@
 @use "_General.module" as general;
 
+.Booking {
+  position: relative;
+}
+
 form {
   font-family: general.$h-font;
   margin: 0 30vw;
