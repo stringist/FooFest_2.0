@@ -8,7 +8,7 @@ import AmountButton from "./AmountButton";
 import Alert from "./Alert";
 import Timer from "../Timer";
 import TimeUp from "../TimeUp";
-import FormStep2 from "./FormStep2";
+import FormStep2 from "../../FormStep2";
 
 export default function FormStep1(props) {
   const formEl = useRef(null);
