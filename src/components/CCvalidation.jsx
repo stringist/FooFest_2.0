@@ -74,6 +74,7 @@ export default function CCvalidation(props) {
   }
   function changePage(e) {
     e.preventDefault();
+    console.log(props.ticketholderdata);
     props.setShowContent(0);
   }
   function handleSubmit(e) {
@@ -104,16 +105,22 @@ export default function CCvalidation(props) {
         focused={focus}
       ></Cards>
 
-      <form ref={formEl} onChange={changeFocus} onSubmit={handleSubmit}>
+      <form
+        ref={formEl}
+        onChange={changeFocus}
+        onSubmit={handleSubmit}
+        className={Creditcard.form}
+      >
         <input
           type="text"
           name="name"
           placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          /*           value={name}
+           */ onChange={(e) => setName(e.target.value)}
           onFocus={(e) => setFocus(e.target.name)}
           minLength="1"
           maxLength="45"
+          required
         />
 
         <input
@@ -126,6 +133,7 @@ export default function CCvalidation(props) {
           onInput={(e) => handleCardDisplay()}
           minLength="16"
           maxLength="19"
+          required
         />
         <section className={Creditcard.section_cc}>
           <input
@@ -138,6 +146,7 @@ export default function CCvalidation(props) {
             onInput={(e) => handleExpiryDate(e)}
             minLength="5"
             maxLength="5"
+            required
           />
 
           {number.substring(0, 2) == 34 || number.substring(0, 2) == 37 ? (
@@ -150,6 +159,7 @@ export default function CCvalidation(props) {
               onFocus={(e) => setFocus(e.target.name)}
               minLength="3"
               maxLength="4"
+              required
             />
           ) : (
             <input
@@ -161,6 +171,7 @@ export default function CCvalidation(props) {
               onFocus={(e) => setFocus(e.target.name)}
               minLength="3"
               maxLength="3"
+              required
             />
           )}
         </section>

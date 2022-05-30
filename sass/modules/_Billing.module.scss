@@ -1,15 +1,16 @@
 @use "_General.module" as general;
+
 h4 {
   margin: 0;
   background-color: transparent;
   padding: 0;
   font-size: 1rem;
 }
-form {
+form:first-of-type {
   display: flex;
   flex-direction: column;
   width: 100%;
-
+  max-width: 335px;
   input {
     border-radius: 5px;
     background-color: general.$primary-color-dark;
@@ -17,6 +18,22 @@ form {
     max-width: 335px;
     color: general.$primary-color-light;
     margin-bottom: 1rem;
+  }
+  input:valid {
+    border: 2px solid rgba(0, 127, 0, 0.66);
+
+    background-color: rgba(0, 127, 0, 0.193);
+  }
+  input:invalid:not(:placeholder-shown, :focus) {
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.181);
+  }
+  input:invalid:not(:placeholder-shown + span) {
+    opacity: 1;
+  }
+  input:focus-within {
+    border: 1px solid rgba(0, 0, 255, 0.623);
+    background-color: rgba(0, 0, 255, 0.167);
   }
   select {
     background-color: general.$primary-color-dark;
@@ -62,5 +79,21 @@ form {
     max-width: 362px;
   }
 }
-.rccs__card {
+@media only screen and (min-width: general.$mobile-query) {
+  form:first-of-type {
+    max-width: 800px;
+  }
+  form:first-of-type section div:first-of-type {
+    display: block;
+    max-width: 400px;
+  }
+  form:first-of-type section div:last-of-type {
+    margin: 0;
+  }
+  form:first-of-type section {
+    display: block;
+  }
+  form:first-of-type section:last-of-type {
+    display: flex;
+  }
 }
