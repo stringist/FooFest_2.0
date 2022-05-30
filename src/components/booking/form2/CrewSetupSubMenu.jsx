@@ -18,7 +18,7 @@ export default function CrewSetupSubMenu(props) {
     const twoPers = { product: "twoPersonTent", price: 299, id: 667 };
     const threePers = { product: "threePersonTent", price: 399, id: 668 };
 
-    if (props.basket.find((item) => item.name === productName)) {
+    if (props.basket.find((item) => item.product === productName)) {
       console.log(`the item called ${productName} is already in the basket`);
       props.setBasket((old) =>
         old.map((item) => {
