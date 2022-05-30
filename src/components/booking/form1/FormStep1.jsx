@@ -6,23 +6,23 @@ import AreaButton from "./AreaButton";
 import TicketButton from "./TicketButton";
 import AmountButton from "./AmountButton";
 import Alert from "./Alert";
-import MyLoader from "../../general/MyLoader";
 import Timer from "../Timer";
+import TimeUp from "../TimeUp";
 
-export default function FormStep1() {
+export default function FormStep1(props) {
   const formEl = useRef(null);
 
-  const [timer, setTimer] = useState("");
+  const [timer, setTimer] = useState(0);
   const [ticket, setTicket] = useState("General");
   const [area, setArea] = useState("Svartheim");
   const [amount, setAmount] = useState(1);
-  const [isSearching, setIsSearching] = useState(false);
+
   const [reservation, setReservation] = useState([]);
   const [showAlert, setAlert] = useState(false);
 
   function searchTickets(e) {
     e.preventDefault();
-    setIsSearching(true);
+    props.setIsSearching(true);
 
     const ticketRequest = { area, amount };
     const putData = JSON.stringify(ticketRequest);
@@ -46,8 +46,8 @@ export default function FormStep1() {
 
         console.log(showAlert);
         const timing = setTimeout(() => {
-          setIsSearching(false);
-          setTimer("1");
+          props.setIsSearching(false);
+          setTimer(1);
         }, 2000);
         return () => {
           clearTimeout(timing);
@@ -59,7 +59,6 @@ export default function FormStep1() {
 
   return (
     <>
-      {isSearching && <MyLoader message="Searching tickets..." />}
       <form ref={formEl} onSubmit={searchTickets}>
         <fieldset>
           <legend className={form1Styles.ticket_legend}>Select ticket</legend>
@@ -90,12 +89,13 @@ export default function FormStep1() {
           </div>
         </fieldset>
 
-        {!isSearching && <button>Search tickets</button>}
-        {isSearching && <button>Searching tickets...</button>}
+        {!props.isSearching && <button>Search tickets</button>}
+        {props.isSearching && <button>Searching tickets...</button>}
       </form>
       {showAlert && <Alert message={reservation.error} setAlert={setAlert} />}
       {console.log(timer)}
-      {timer && <Timer />}
+      {timer === 1 && <Timer setTimer={setTimer} />}
+      {timer === -1 && <TimeUp />}
     </>
   );
 }

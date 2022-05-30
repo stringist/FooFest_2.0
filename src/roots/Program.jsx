@@ -14,6 +14,7 @@ import ScheduleButtons from "../components/program/ScheduleButtons";
 export default function Program(props) {
   const [count, setCount] = useState(0);
   const [schedule, setSchedule] = useState(null);
+  const [loadingSch, setLoadingSch] = useState(false);
 
   const [filteredM, setFilteredM] = useState();
   const [filteredJ, setFilteredJ] = useState();
@@ -23,8 +24,9 @@ export default function Program(props) {
   const [day, setDay] = useState("Monday");
 
   useEffect(() => {
-    props.setIsLoading(true);
-    console.log(props.isLoading);
+    setLoadingSch(true);
+    console.log("is loading");
+
     fetch(`https://foofestival.herokuapp.com/schedule`)
       .then((res) => res.json())
       .then((data) => {
@@ -32,7 +34,9 @@ export default function Program(props) {
         setFilteredM(data.Midgard.mon);
         setFilteredJ(data.Jotunheim.mon);
         setFilteredV(data.Vanaheim.mon);
-        props.setIsLoading(false);
+        setLoadingSch(false);
+        console.log("finished loading");
+
         console.log(props.isLoading);
       });
   }, []);
@@ -55,8 +59,8 @@ export default function Program(props) {
 
   return (
     <div className={programStyles.Program}>
-      {props.isLoading && <MyLoader />}
-      {!props.isLoading && (
+      {loadingSch && <MyLoader />}
+      {!loadingSch && (
         <>
           <Menu user={props.user} />
 

@@ -9,10 +9,10 @@ export default function Footer() {
         </a>
         <ul>
           <li>
-            <a href="#">Tickets</a>
+            <a href="/tickets">Tickets</a>
           </li>
           <li>
-            <a href="#">Program</a>
+            <a href="/program">Program</a>
           </li>
           <li>
             <a href="#">Volunteer</a>

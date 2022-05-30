@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import generalStyles from "../sass/modules/_General.module.scss";
+
 import { Link, Routes, Route } from "react-router-dom";
 import Festival from "./roots/Festival";
 import Booking from "./roots/Booking";
@@ -20,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className={generalStyles.App}>
       <Routes>
         <Route path="/" element={<Festival user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />
         <Route path="/tickets" element={<Booking user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />

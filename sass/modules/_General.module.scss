@@ -96,6 +96,8 @@ input {
 
   span {
     font-size: 0.8rem;
+    font-family: $body-font;
+    font-weight: 500;
     margin-top: -0.5rem;
     display: flex;
     align-items: center;
@@ -131,7 +133,7 @@ input {
 }
 
 .hero_banner {
-  height: 30vh;
+  height: 17vh;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -140,16 +142,29 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10vh;
 
   h1 {
     margin: 2rem;
   }
 }
 
+.App {
+  height: fit-content;
+  position: relative;
+}
+
 .timer {
   position: absolute;
-  top: 0;
+  top: -2rem;
+  left: -1rem;
+  div {
+    scale: 0.5;
+
+    div {
+      font-size: 5rem;
+      font-family: $h-font;
+    }
+  }
 }
 
 @media only screen and (max-width: $mobile-query) {

@@ -9,6 +9,10 @@
   margin-top: 2rem;
   background-color: general.$grey-500;
   padding: 6rem;
+
+  label {
+    font-size: 1.5rem;
+  }
 }
 
 .login__card {
@@ -46,8 +50,8 @@
 
 .sign_button {
   width: 100%;
-  margin-top: 1rem;
-  font-size: 1.25rem;
+  margin-top: 2rem;
+  font-size: 1.5rem;
   padding: 0;
 }
 .g_button {
@@ -56,6 +60,7 @@
   box-shadow: rgba(150, 145, 145, 0.279) 0px 2px 8px 0px;
   color: general.$primary-color-dark;
   font-family: "roboto", sans-serif;
+  font-size: 1rem;
   display: flex;
   gap: 0.5rem;
   justify-content: center;
@@ -64,12 +69,15 @@
 
   img {
     margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 
 .forgot {
   color: general.$primary-color-light;
   text-decoration: underline;
+  font-family: general.$body-font;
   font-weight: 600;
   font-size: 0.8rem;
   display: block;
