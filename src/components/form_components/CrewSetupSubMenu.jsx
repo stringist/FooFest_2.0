@@ -26,10 +26,9 @@ export default function CrewSetupSubMenu(props) {
             if (productName === "twoPersonTent") {
               const copy = { ...twoPers };
               copy.amount = parseInt(twoPersonInput.current.value);
-console.log(typeof twoPersonInput.current.value)
-              return copy;
+ return copy;
             } else {
-              const copy = { ...twoPers };
+              const copy = { ...threePers };
               copy.amount = parseInt(threePersonInput.current.value);
               return copy;
             }
