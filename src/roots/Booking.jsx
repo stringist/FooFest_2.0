@@ -7,7 +7,7 @@ export default function Booking() {
   return (
     <>
       <FormStep1 />
-      <FormStep2 />
+      {/* <FormStep2 /> */}
       <CheckOutForm />
       <CCvalidation />
     </>
