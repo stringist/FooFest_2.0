@@ -6,7 +6,7 @@ export default function CrewSetup(props) {
 const [isChecked, setIsChecked] = useState(false);
 
 const showSubMenu = (e) => {e.target.checked ? console.log(`Show crewSetupSubMenu`) : console.log("hide submenu");}
-const handleChange = (e) => {setIsChecked((prevState) => prevState =e.target.checked); ; console.log(`checkbox is ${isChecked}`)}
+const handleChange = (e) => {setIsChecked((prevState) => prevState = e.target.checked);}
   return (
     <>
       <div className="formItem">
@@ -17,9 +17,9 @@ const handleChange = (e) => {setIsChecked((prevState) => prevState =e.target.che
           </label>
           <p className="subtext">The number of tents must match the number of tickets</p>
         </div>
-        <p className="price">+99 DKK</p>
+        <p className="price">From 299 DKK</p>
       </div>
-      {isChecked ? <CrewSetupSubMenu/> : null}
+      {isChecked && <CrewSetupSubMenu {...props}/>}
     </>
   );
 }
