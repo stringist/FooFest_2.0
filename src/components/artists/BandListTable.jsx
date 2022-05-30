@@ -59,7 +59,11 @@ export default function BandListTable(props) {
               return (
                 <div className={bandsStyles.band__card} onClick={() => showBand(band.name)} key={createUID(4)}>
                   <div className={bandsStyles.band__card__img}>
-                    <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
+                    {path.includes("svg") ? (
+                      <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" className={bandsStyles.fill} />
+                    ) : (
+                      <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
+                    )}
                   </div>
                   {band.logoCredits ? <p>{band.logoCredits}</p> : null}
                   <h4>{band.name}</h4>
@@ -71,7 +75,12 @@ export default function BandListTable(props) {
               return (
                 <div className={bandsStyles.band__card} onClick={() => showBand(band.name)} key={createUID(4)}>
                   <div className={bandsStyles.band__card__img}>
-                    <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
+                    {path.includes("svg") ? (
+                      <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" className={bandsStyles.fill} />
+                    ) : (
+                      <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
+                    )}
+                    {/* <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" /> */}
                   </div>
                   {band.logoCredits ? <p>{band.logoCredits}</p> : null}
                   <h4>{band.name}</h4>

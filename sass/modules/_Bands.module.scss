@@ -157,6 +157,10 @@
         object-position: 100% 0%;
       }
     }
+
+    .fill {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(260deg) brightness(108%) contrast(101%);
+    }
     p {
       color: general.$primary-color-lighter;
       font-size: 0.7rem;
