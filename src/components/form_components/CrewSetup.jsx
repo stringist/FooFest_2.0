@@ -1,7 +1,8 @@
 import CrewSetupSubMenu from "./CrewSetupSubMenu";
+ import "../../../sass/style.scss";
 
 export default function CrewSetup(props) {
-const showSubMenu = () => {console.log(`Show crewSetupSubMenu`);}
+const showSubMenu = (e) => {e.target.checked ? console.log(`Show crewSetupSubMenu`) : console.log("hide submenu");}
   return (
     <>
       <div className="formItem">
@@ -14,8 +15,7 @@ const showSubMenu = () => {console.log(`Show crewSetupSubMenu`);}
         </div>
         <p className="price">+99 DKK</p>
       </div>
-
-      <CrewSetupSubMenu />
+      <CrewSetupSubMenu className="hidden"/>
     </>
   );
 }
