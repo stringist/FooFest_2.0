@@ -11,13 +11,13 @@ import Footer from "../components/general/Footer";
 import MyLoader from "../components/general/MyLoader";
 
 export default function Festival(props) {
-  useEffect(() => {
-    props.setIsLoading(true);
-    const timing = setTimeout(() => {
-      props.setIsLoading(false);
-    }, 4000);
-    return () => clearTimeout(timing);
-  }, []);
+  // useEffect(() => {
+  //   props.setIsLoading(true);
+  //   const timing = setTimeout(() => {
+  //     props.setIsLoading(false);
+  //   }, 4000);
+  //   return () => clearTimeout(timing);
+  // }, []);
   return (
     <div className={landingStyles.Festival}>
       {props.isLoading && <MyLoader />}

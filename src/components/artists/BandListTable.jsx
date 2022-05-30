@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import createUID from "create-unique-id";
 
 import bandsStyles from "/sass/modules/_Bands.module.scss";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export default function BandListTable(props) {
   const [page, setPage] = useState(0);
@@ -56,7 +58,9 @@ export default function BandListTable(props) {
               // console.log(path);
               return (
                 <div className={bandsStyles.band__card} onClick={() => showBand(band.name)} key={createUID(4)}>
-                  <div className={bandsStyles.band__card__img} style={{ backgroundImage: `url(${path})` }}></div>
+                  <div className={bandsStyles.band__card__img}>
+                    <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
+                  </div>
                   {band.logoCredits ? <p>{band.logoCredits}</p> : null}
                   <h4>{band.name}</h4>
                 </div>
@@ -66,7 +70,9 @@ export default function BandListTable(props) {
               const path = band.logo.includes("http") ? band.logo : `https://foofestival.herokuapp.com/logos/${band.logo}`;
               return (
                 <div className={bandsStyles.band__card} onClick={() => showBand(band.name)} key={createUID(4)}>
-                  <div className={bandsStyles.band__card__img} style={{ backgroundImage: `url(${path})` }}></div>
+                  <div className={bandsStyles.band__card__img}>
+                    <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
+                  </div>
                   {band.logoCredits ? <p>{band.logoCredits}</p> : null}
                   <h4>{band.name}</h4>
                 </div>

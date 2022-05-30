@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Link, Routes, Route } from "react-router-dom";
 import Festival from "./roots/Festival";
@@ -11,6 +11,13 @@ import Profile from "./roots/Profile";
 function App() {
   const [user, setUser] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    setIsLoading(true);
+    const timing = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+    return () => clearTimeout(timing);
+  }, []);
 
   return (
     <div className="App">
