@@ -2,7 +2,7 @@ import form1Styles from "/sass/modules/_Form1.module.scss";
 
 export default function TicketButton(props) {
   return (
-    <div className={`${form1Styles.form__type__row} ${props.ticket === props.name ? form1Styles.checked : ""}`}>
+    <div className={`${form1Styles.form__type__row}`}>
       <input
         type="radio"
         checked={props.ticket === props.name}
@@ -13,7 +13,7 @@ export default function TicketButton(props) {
           props.setTicket(e.target.value);
         }}
       />
-      <label htmlFor={props.name}>
+      <label htmlFor={props.name} className={`${props.ticket === props.name ? form1Styles.checked : ""}`}>
         {props.name} <br></br>
         {props.price}
       </label>

@@ -7,6 +7,7 @@ export default function MyLoader(props) {
   return (
     <div className={loaderStyles.container}>
       <img src="/img/ff_logo.svg" alt="" className={loaderStyles.pulse} />
+      <p>{props.message}</p>
       <ReactLoading type={"cubes"} color={"#FFFFFF"} height={100} width={100} />
     </div>
   );

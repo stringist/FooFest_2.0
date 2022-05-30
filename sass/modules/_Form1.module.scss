@@ -32,6 +32,15 @@ form {
   &area__row {
     display: flex;
     justify-content: center;
+
+    label {
+      img {
+        cursor: pointer;
+      }
+      .not_selected:hover {
+        filter: brightness(0) saturate(100%) invert(80%) sepia(100%) saturate(0%) hue-rotate(260deg) brightness(108%) contrast(101%);
+      }
+    }
   }
 
   &type {
@@ -42,16 +51,19 @@ form {
     [type="radio"] {
       display: none;
     }
-    &__row {
-      border: 1px solid general.$primary-color-light;
+
+    label {
+      border: 1px solid hsl(0deg, 0%, 98%);
       padding: 1rem;
       font-size: 2.25rem;
       line-height: 1.2;
       text-align: center;
       min-width: 10rem;
+      cursor: pointer;
+      display: block;
     }
     .checked {
-      border: 2px solid general.$accent-color-100;
+      border: 1px solid general.$accent-color-100;
       color: general.$accent-color-100;
     }
   }

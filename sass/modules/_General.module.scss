@@ -147,6 +147,11 @@ input {
   }
 }
 
+.timer {
+  position: absolute;
+  top: 0;
+}
+
 @media only screen and (max-width: $mobile-query) {
   h1 {
     font-size: 3.375rem;

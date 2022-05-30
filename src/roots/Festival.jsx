@@ -20,7 +20,7 @@ export default function Festival(props) {
   // }, []);
   return (
     <div className={landingStyles.Festival}>
-      {props.isLoading && <MyLoader />}
+      {props.isLoading && <MyLoader message="Loading..." />}
       {!props.isLoading && (
         <>
           <Menu user={props.user} />
