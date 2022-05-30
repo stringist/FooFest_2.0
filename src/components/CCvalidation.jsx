@@ -1,19 +1,31 @@
 import Cards from "react-credit-cards";
 // import "react-credit-cards/lib/styles.scss";
 import { useState, useRef } from "react";
-export default function CCvalidation() {
+import generalStyles from "/sass/modules/_General.module.scss";
+import Creditcard from "/sass/modules/_Creditcard.module.scss";
+import step4 from "../../public/img/step4.svg";
+
+export default function CCvalidation(props) {
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
   const [focus, setFocus] = useState("");
   const formEl = useRef(null);
-
+  const ENDPOINT = "https://kea2semester-e216.restdb.io/rest/foofest";
+  const KEY = "615d83068597142da1745455";
   function changeFocus(e) {
     const attr = parseInt(e.target.attributes.maxLength.value, 10);
+    // if attrb === undefined - because the input for Name doesnt carry a maxlength
     if (attr === undefined) {
     } else if (e.target.textLength === attr) {
       e.target.nextElementSibling.focus();
+      if (e.target.nextElementSibling.nodeName === "SECTION") {
+        e.target.nextElementSibling.firstChild.focus();
+        // the if statement underneath here is because expiry + cvc was put into a section
+      }
+    } else if (e.target.nextElementSibling === null) {
+      console.log("fack");
     }
   }
   function handleCardDisplay() {
@@ -59,22 +71,118 @@ export default function CCvalidation() {
         );
     }
   }
+  function changePage(e) {
+    e.preventDefault();
+    console.log(props.ticketholderdata);
+    props.setShowContent(0);
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const postData = JSON.stringify(props.ticketholderdata);
+    fetch(ENDPOINT, {
+      method: "post",
+      headers: {
+        "Content-type": "application/json",
+        "x-apikey": KEY,
+      },
+      body: postData,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
 
   return (
     <>
-      <Cards number={number} name={name} expiry={expiry} cvc={cvc} focused={focus} />
+      <img src={step4} alt="" />
+      <h4 className={Creditcard.h4}>CARD INFORMATION</h4>
+      <Cards
+        number={number}
+        name={name}
+        expiry={expiry}
+        cvc={cvc}
+        focused={focus}
+      ></Cards>
 
-      <form ref={formEl} onChange={changeFocus}>
-        <input type="text" name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} onFocus={(e) => setFocus(e.target.name)} minLength="1" maxLength="45" />
-        <input type="tel" name="number" placeholder="Card Number" value={handleCardDisplay()} onChange={(e) => setNumber(e.target.value)} onFocus={(e) => setFocus(e.target.name)} onInput={(e) => handleCardDisplay()} minLength="16" maxLength="19" />
-        <input type="text" name="expiry" placeholder="MM/YY Expiry" value={handleExpiryDate()} onChange={(e) => setExpiry(e.target.value)} onFocus={(e) => setFocus(e.target.name)} onInput={(e) => handleExpiryDate(e)} minLength="5" maxLength="5" />
+      <form
+        ref={formEl}
+        onChange={changeFocus}
+        onSubmit={handleSubmit}
+        className={Creditcard.form}
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          /*           value={name}
+           */ onChange={(e) => setName(e.target.value)}
+          onFocus={(e) => setFocus(e.target.name)}
+          minLength="1"
+          maxLength="45"
+          required
+        />
 
-        {number.substring(0, 2) == 34 || number.substring(0, 2) == 37 ? (
-          <input type="tel" name="cvc" placeholder="CVC" value={cvc} onChange={(e) => setCvc(e.target.value)} onFocus={(e) => setFocus(e.target.name)} minLength="3" maxLength="4" />
-        ) : (
-          <input type="tel" name="cvc" placeholder="CVC" value={cvc} onChange={(e) => setCvc(e.target.value)} onFocus={(e) => setFocus(e.target.name)} minLength="3" maxLength="3" />
-        )}
-        <button onFocus={(e) => setFocus(e.target.name)}>Pay</button>
+        <input
+          type="tel"
+          name="number"
+          placeholder="Card Number"
+          value={handleCardDisplay()}
+          onChange={(e) => setNumber(e.target.value)}
+          onFocus={(e) => setFocus(e.target.name)}
+          onInput={(e) => handleCardDisplay()}
+          minLength="16"
+          maxLength="19"
+          required
+        />
+        <section className={Creditcard.section_cc}>
+          <input
+            type="text"
+            name="expiry"
+            placeholder="MM/YY Expiry"
+            value={handleExpiryDate()}
+            onChange={(e) => setExpiry(e.target.value)}
+            onFocus={(e) => setFocus(e.target.name)}
+            onInput={(e) => handleExpiryDate(e)}
+            minLength="5"
+            maxLength="5"
+            required
+          />
+
+          {number.substring(0, 2) == 34 || number.substring(0, 2) == 37 ? (
+            <input
+              type="tel"
+              name="cvc"
+              placeholder="CVC"
+              value={cvc}
+              onChange={(e) => setCvc(e.target.value)}
+              onFocus={(e) => setFocus(e.target.name)}
+              minLength="3"
+              maxLength="4"
+              required
+            />
+          ) : (
+            <input
+              type="tel"
+              name="cvc"
+              placeholder="CVC"
+              value={cvc}
+              onChange={(e) => setCvc(e.target.value)}
+              onFocus={(e) => setFocus(e.target.name)}
+              minLength="3"
+              maxLength="3"
+              required
+            />
+          )}
+        </section>
+        <section className={generalStyles.next_back_buttons}>
+          <button onClick={changePage}>Back</button>
+          <button
+            onSubmit={(e) => handleSubmit()}
+            onFocus={(e) => setFocus(e.target.name)}
+          >
+            Pay
+          </button>
+        </section>
       </form>
     </>
   );
