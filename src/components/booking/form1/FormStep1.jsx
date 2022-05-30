@@ -8,7 +8,7 @@ import AmountButton from "./AmountButton";
 import Alert from "./Alert";
 import Timer from "../Timer";
 import TimeUp from "../TimeUp";
-import FormStep2 from "../../FormStep2";
+import FormStep2 from "../form2/FormStep2";
 
 export default function FormStep1(props) {
   const formEl = useRef(null);
@@ -17,10 +17,12 @@ export default function FormStep1(props) {
   const [ticket, setTicket] = useState("General");
   const [area, setArea] = useState("Svartheim");
   const [amount, setAmount] = useState(1);
+// const currentTicket = {product: `ticket`, type: ticket, area: area, amount: amount};
 
   const [reservation, setReservation] = useState([]);
   const [showAlert, setAlert] = useState(false);
-  const [basket, setBasket] = useState([{ product: "Fixed Fee", price: 99, id: 1 }]);
+  const [basket, setBasket] = useState([{ product: "Booking Fee", price: 99, id: 1, amount: 1 }]);
+
 
   function searchTickets(e) {
     e.preventDefault();

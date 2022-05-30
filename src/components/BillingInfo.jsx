@@ -29,7 +29,7 @@ export default function CheckOutForm(props) {
     postalcode: zipcode,
     country: country,
   };
-  console.log(ticketHolderObject);
+  // console.log(ticketHolderObject);
   function selectCountry(val) {
     setCountry(val);
   }
@@ -46,9 +46,7 @@ export default function CheckOutForm(props) {
     setCity(formEl.current.elements.city.value);
   }
   const ticketholderdata = props.ticketholderdata;
-  console.log(ticketholderdata.apartment);
-
-  console.log(ticketholderdata.apartment);
+  // console.log(ticketholderdata.apartment);
 
   return (
     <>

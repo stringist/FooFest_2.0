@@ -1,6 +1,6 @@
 import CrewSetupSubMenu from "./CrewSetupSubMenu";
- import "../../../sass/style.scss";
 import {useState} from "react";
+import Summary from "../../form_components/Summary";
 
 export default function CrewSetup(props) {
 const [isChecked, setIsChecked] = useState(false);

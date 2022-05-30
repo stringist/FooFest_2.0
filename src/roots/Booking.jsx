@@ -12,7 +12,7 @@ import Footer from "../components/general/Footer";
 import HeroBanner from "../components/general/HeroBanner";
 import MyLoader from "../components/general/MyLoader";
 
-import FormStep2 from "../components/FormStep2";
+import FormStep2 from "../components/booking/form2/FormStep2";
 import Summary from "../components/form_components/Summary";
 
 export default function Booking(props) {
