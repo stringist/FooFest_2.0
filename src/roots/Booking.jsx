@@ -11,6 +11,8 @@ import Menu from "../components/general/Menu";
 import Footer from "../components/general/Footer";
 import HeroBanner from "../components/general/HeroBanner";
 import MyLoader from "../components/general/MyLoader";
+import CheckOutForm from "../components/CheckOutForm";
+import FormStep2 from "../components/FormStep2";
 
 export default function Booking(props) {
   const [isSearching, setIsSearching] = useState(false);
