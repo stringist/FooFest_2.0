@@ -16,12 +16,12 @@ console.log( isChecked, isGreen, basket);
       setBasket((prevState) => [...prevState, { product: "Green Camping", price: 249, id: 666 }])
   };
 
-  const removeFromBasket = (id) => {
+  const removeFromBasket = () => {
     console.log("removing from basket");
     // setBasket((old) => old.filter((item) => item.id !== id));
   };
 
-  const handleChange = () => {
+  const handleChange = (e) => {console.log(e.target.checked);
     // setIsChecked((prevState) => prevState = !prevState);
     // setIsChecked(!isChecked);
     // setIsGreen(!isChecked);
@@ -33,7 +33,7 @@ setIsChecked(prevState => !prevState);
 
   return (
     <div className="formItem">
-      <input type="checkbox" id="greenCamping" name="greenCamping" onChange={handleChange} checked={isChecked} />
+      <input type="checkbox" id="greenCamping" name="greenCamping"  checked={isChecked} onChange={handleChange}/>
       <div className="text_content">
         <label htmlFor="greenCamping">Green camping </label>
         <p className="subtext">
