@@ -13,6 +13,7 @@ import HeroBanner from "../components/general/HeroBanner";
 import MyLoader from "../components/general/MyLoader";
 
 import FormStep2 from "../components/FormStep2";
+import Summary from "../components/form_components/Summary";
 
 export default function Booking(props) {
   const [isSearching, setIsSearching] = useState(false);
@@ -26,6 +27,7 @@ export default function Booking(props) {
         <Menu user={props.user} />
         <HeroBanner img="/img/bands_background.png" title="Tickets" />
         <FormStep1 setIsSearching={setIsSearching} />
+
         {showcontent === 0 ? (
           <section className={generalStyles.sections_forms}>
             <BillingInfo setShowContent={setShowContent} setTicketholderdata={setTicketholderdata} ticketholderdata={ticketholderdata} />
