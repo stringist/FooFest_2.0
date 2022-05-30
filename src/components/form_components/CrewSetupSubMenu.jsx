@@ -26,7 +26,7 @@ export default function CrewSetupSubMenu(props) {
             if (productName === "twoPersonTent") {
               const copy = { ...twoPers };
               copy.amount = parseInt(twoPersonInput.current.value);
- return copy;
+              return copy;
             } else {
               const copy = { ...threePers };
               copy.amount = parseInt(threePersonInput.current.value);
@@ -37,7 +37,7 @@ export default function CrewSetupSubMenu(props) {
         })
       );
     } else {
-console.log(`first ${productName} added to basket`)
+      console.log(`first ${productName} added to basket`);
       if (productName === "twoPersonTent") {
         props.setBasket((old) => [...old, { ...twoPers, amount: 1 }]);
       } else {
