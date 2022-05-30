@@ -1,10 +1,11 @@
 import CrewSetupSubMenu from "./CrewSetupSubMenu";
 
 export default function CrewSetup(props) {
+const showSubMenu = () => {console.log(`Show crewSetupSubMenu`);}
   return (
     <>
       <div className="formItem">
-        <input type="checkbox" id="crew_setup" name="crew_setup" />
+        <input type="checkbox" id="crew_setup" name="crew_setup" onChange={showSubMenu}/>
         <div className="text_content">
           <label htmlFor="crew_setup">
             Have the crew set up the tent for you <span className="optional">Optional</span>
