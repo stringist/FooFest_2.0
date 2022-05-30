@@ -6,11 +6,12 @@ import programStyles from "/sass/modules/_Program.module.scss";
 import Menu from "../components/general/Menu";
 import Footer from "../components/general/Footer";
 import HeroBanner from "../components/general/HeroBanner";
+import MyLoader from "../components/general/MyLoader";
 
 import Table from "../components/program/Table";
 import ScheduleButtons from "../components/program/ScheduleButtons";
 
-export default function Program() {
+export default function Program(props) {
   const [count, setCount] = useState(0);
   const [schedule, setSchedule] = useState(null);
 
@@ -22,6 +23,8 @@ export default function Program() {
   const [day, setDay] = useState("Monday");
 
   useEffect(() => {
+    props.setIsLoading(true);
+    console.log(props.isLoading);
     fetch(`https://foofestival.herokuapp.com/schedule`)
       .then((res) => res.json())
       .then((data) => {
@@ -29,6 +32,8 @@ export default function Program() {
         setFilteredM(data.Midgard.mon);
         setFilteredJ(data.Jotunheim.mon);
         setFilteredV(data.Vanaheim.mon);
+        props.setIsLoading(false);
+        console.log(props.isLoading);
       });
   }, []);
 
@@ -50,15 +55,20 @@ export default function Program() {
 
   return (
     <div className={programStyles.Program}>
-      <Menu />
+      {props.isLoading && <MyLoader />}
+      {!props.isLoading && (
+        <>
+          <Menu user={props.user} />
 
-      <HeroBanner img="/img/bands_background.png" title="Program" />
+          <HeroBanner img="/img/bands_background.png" title="Program" />
 
-      <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} setDay={setDay} day={day} />
+          <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} setDay={setDay} day={day} />
 
-      <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
+          <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
 
-      <Footer />
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

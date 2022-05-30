@@ -145,14 +145,20 @@
       padding: 0.5rem;
       position: relative;
     }
+    p {
+      color: general.$primary-color-lighter;
+      font-size: 0.7rem;
+    }
   }
 
   h4 {
     margin-bottom: -2rem;
     width: 80%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    min-height: 7rem;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }
 }
