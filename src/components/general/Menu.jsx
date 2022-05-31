@@ -7,6 +7,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { BsFillCalendar2DayFill } from "react-icons/bs";
 import { BsMusicPlayerFill } from "react-icons/bs";
 import menuStyles from "/sass/modules/_Menu.module.scss";
+// import guitar_icon from "../../../img/guitar_icon.svg";
 
 import MenuLink from "./MenuLink";
 
@@ -40,7 +41,7 @@ export default function Menu(props) {
           <MenuLink link="/" title="Home" setMenuOpen={setMenuOpen} key={createUID(4)} icon={<AiFillHome />} />
           <MenuLink link="/tickets" title="Tickets" setMenuOpen={setMenuOpen} key={createUID(4)} icon={<FaTicketAlt />} />
           <MenuLink link="/program" title="Program" setMenuOpen={setMenuOpen} key={createUID(4)} icon={<BsFillCalendar2DayFill />} />
-          <MenuLink link="/artists" title="Artists" setMenuOpen={setMenuOpen} key={createUID(4)} icon={<BsMusicPlayerFill />} />
+          <MenuLink link="/artists" title="Artists" setMenuOpen={setMenuOpen} key={createUID(4)} icon={<BsMusicPlayerFill/>} />
         </ul>
       </nav>
     </header>
