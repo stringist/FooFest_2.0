@@ -6,7 +6,6 @@ import { FaSignInAlt } from "react-icons/fa";
 import { BsFillPersonFill } from "react-icons/bs";
 import { BsFillCalendar2DayFill } from "react-icons/bs";
 import { BsMusicPlayerFill } from "react-icons/bs";
-
 import menuStyles from "/sass/modules/_Menu.module.scss";
 
 import MenuLink from "./MenuLink";
