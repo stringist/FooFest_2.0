@@ -9,6 +9,7 @@
   margin-top: 2rem;
   background-color: general.$grey-500;
   padding: 6rem;
+  padding-top: 1rem;
 
   label {
     font-size: 1.5rem;
@@ -16,9 +17,22 @@
     margin-top: 1rem;
   }
 
+  h2 {
+    text-align: center;
+  }
+
   .help {
     color: general.$primary-color-lighter;
     margin-top: 0;
+  }
+  .users {
+    background-color: general.$grey-100;
+    font-family: general.$body-font;
+    padding: 0.5rem;
+    width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -49,11 +63,14 @@
     width: 100%;
   }
 
-  img {
-    filter: brightness(0) saturate(100%) invert(80%) sepia(100%) saturate(0%) hue-rotate(260deg) brightness(108%) contrast(101%);
+  svg {
+    fill: general.$primary-color-light;
     margin-left: 0.5rem;
     position: absolute;
-    right: 0.5rem;
+    right: 1rem;
+    top: 0.5rem;
+    scale: 1.5;
+    cursor: pointer;
   }
 }
 

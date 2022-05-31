@@ -62,8 +62,13 @@ export default function SignInForm(props) {
       {(formik) => (
         <div className={loginStyles.card}>
           <Form>
-            {console.log(formik.errors)}
+            {/* {console.log(formik.errors)} */}
             {/* {formik.isValid === false && formik.errors && <DangerMessage message="Correct the fields mark in red" />} */}
+
+            <div className={loginStyles.users}>
+              <p className={loginStyles.help}>(usernames: kalle, lasse or paula)</p>
+              <p>(passwords: "username" + "A123")</p>
+            </div>
 
             <h2>Login to your account</h2>
             <TextField label="Username" name="username" type="text" />
