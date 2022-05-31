@@ -12,6 +12,7 @@ export default function Table(props) {
   });
   const [act, setAct] = useState([]);
   const [stage, setStage] = useState("");
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     fetch(`https://foofestival.herokuapp.com/bands`)
@@ -20,6 +21,16 @@ export default function Table(props) {
         setBands({ data: data, loading: false });
       });
   }, []);
+
+  useEffect(() => {
+    fetch(`https://foofestival.herokuapp.com/events`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setEvents(data);
+      });
+  }, []);
+  console.log(events);
 
   if (!bands) {
     return null;
@@ -90,7 +101,6 @@ export default function Table(props) {
                   ) : (
                     <hr></hr>
                   )}
-                  {/* {props.bandDisplay.name === jAct.act ? <BandInfo bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} act={act} stage={stage}></BandInfo> : "no"} */}
                 </td>
                 <td>
                   {vAct.act !== "break" ? (

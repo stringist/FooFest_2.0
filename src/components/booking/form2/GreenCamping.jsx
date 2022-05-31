@@ -1,6 +1,6 @@
 export default function GreenCamping({ basket, setBasket }) {
   const updateBasket = () => {
-    const product = { product: "Green Camping", price: 249, id: 666 };
+    const product = { product: "Green Camping", price: 249, id: 666, amount: 1 };
 
 // checks to see if item is already in basket; removes if it is
     {

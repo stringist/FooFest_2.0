@@ -11,7 +11,10 @@ export default function MenuLink(props) {
 
   return (
     <li onClick={() => closeMenu()}>
-      <Link to={props.link}>{props.title}</Link>
+      <Link to={props.link}>
+        {props.icon}
+        <p>{props.title}</p>
+      </Link>
     </li>
   );
 }

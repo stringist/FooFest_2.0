@@ -9,6 +9,7 @@ import SearchBar from "./SearchBar";
 import BandPage from "./BandPage";
 import BandListTable from "./BandListTable";
 import SortToggle from "./SortToggle";
+import MyLoader from "../general/MyLoader";
 
 export default function BandsList(props) {
   const [bands, setBands] = useState({
@@ -20,12 +21,17 @@ export default function BandsList(props) {
   const [sort, setSort] = useState("name");
   const [searched, setSearched] = useState("");
   const [sortDir, setSortDir] = useState("asc");
+  const [loadingBands, setLoadingBands] = useState(false);
 
   useEffect(() => {
+    setLoadingBands(true);
+    console.log("loading bands");
     fetch(`https://foofestival.herokuapp.com/bands`)
       .then((res) => res.json())
       .then((data) => {
         setBands({ data: data, loading: false });
+        setLoadingBands(false);
+        console.log("finished loading bands");
       });
   }, []);
 
@@ -40,18 +46,23 @@ export default function BandsList(props) {
   sortDir === "asc" ? filtered.sort((a, b) => a[sort] > b[sort]) : filtered.sort((a, b) => a[sort] < b[sort]);
 
   return (
-    <div className={bandsStyles.festival__bandList}>
-      <div className={bandsStyles.festival__bandList__filters}>
-        <FilterButtons setFilter={setFilter} filter={filter} />
-        <SearchBar searched={searched} setSearched={setSearched} bands={bands.data} />
-      </div>
-      {/* <SortToggle name="Sort by name" setSort={setSort} setSortDir={setSortDir} sortKey={"name"} /> */}
+    <>
+      {loadingBands && <MyLoader />}
+      {!loadingBands && (
+        <div className={bandsStyles.festival__bandList}>
+          <div className={bandsStyles.festival__bandList__filters}>
+            <FilterButtons setFilter={setFilter} filter={filter} />
+            <SearchBar searched={searched} setSearched={setSearched} bands={bands.data} />
+          </div>
+          {/* <SortToggle name="Sort by name" setSort={setSort} setSortDir={setSortDir} sortKey={"name"} /> */}
 
-      {searched === "" ? <h3>{filter}</h3> : <h3>Results</h3>}
+          {searched === "" ? <h3>{filter}</h3> : <h3>Results</h3>}
 
-      <BandListTable bands={bands.data} searched={searched} filtered={filtered} bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} setSort={setSort} setSortDir={setSortDir} />
+          <BandListTable bands={bands.data} searched={searched} filtered={filtered} bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} setSort={setSort} setSortDir={setSortDir} />
 
-      <BandPage bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} />
-    </div>
+          <BandPage bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} />
+        </div>
+      )}
+    </>
   );
 }

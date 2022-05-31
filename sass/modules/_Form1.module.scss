@@ -1,5 +1,9 @@
 @use "_General.module" as general;
 
+.Booking {
+  position: relative;
+}
+
 form {
   font-family: general.$h-font;
   margin: 0 30vw;
@@ -8,6 +12,9 @@ form {
   button {
     font-size: 1.25rem;
     margin-top: 1rem;
+    &:hover {
+      background-color: general.$hover-color;
+    }
   }
 
   legend {
@@ -38,7 +45,7 @@ form {
         cursor: pointer;
       }
       .not_selected:hover {
-        filter: brightness(0) saturate(100%) invert(80%) sepia(100%) saturate(0%) hue-rotate(260deg) brightness(108%) contrast(101%);
+        filter: brightness(0) saturate(100%) invert(65%) sepia(42%) saturate(1033%) hue-rotate(321deg) brightness(97%) contrast(86%);
       }
     }
   }
@@ -61,6 +68,10 @@ form {
       min-width: 10rem;
       cursor: pointer;
       display: block;
+      &:hover {
+        border: 1px solid general.$hover-color;
+        color: general.$hover-color;
+      }
     }
     .checked {
       border: 1px solid general.$accent-color-100;
@@ -84,6 +95,10 @@ form {
         padding: 0 1rem;
         background-color: general.$accent-color-100;
         cursor: pointer;
+
+        &:hover {
+          background-color: general.$hover-color;
+        }
       }
     }
     p {

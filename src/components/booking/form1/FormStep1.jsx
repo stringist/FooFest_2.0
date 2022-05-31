@@ -8,7 +8,7 @@ import AmountButton from "./AmountButton";
 import Alert from "./Alert";
 import Timer from "../Timer";
 import TimeUp from "../TimeUp";
-import FormStep2 from "../../FormStep2";
+import FormStep2 from "../form2/FormStep2";
 
 export default function FormStep1(props) {
   const formEl = useRef(null);
@@ -17,10 +17,12 @@ export default function FormStep1(props) {
   const [ticket, setTicket] = useState("General");
   const [area, setArea] = useState("Svartheim");
   const [amount, setAmount] = useState(1);
+// const currentTicket = {product: `ticket`, type: ticket, area: area, amount: amount};
 
   const [reservation, setReservation] = useState([]);
   const [showAlert, setAlert] = useState(false);
-  const [basket, setBasket] = useState([{ product: "Fixed Fee", price: 99, id: 1 }]);
+  const [basket, setBasket] = useState([{ product: "Booking Fee", price: 99, id: 1, amount: 1 }]);
+
 
   function searchTickets(e) {
     e.preventDefault();
@@ -47,9 +49,10 @@ export default function FormStep1(props) {
         });
 
         console.log(showAlert);
+
         const timing = setTimeout(() => {
           props.setIsSearching(false);
-          setTimer(1);
+          !showAlert ? setTimer(0) : setTimer(1);
         }, 2000);
         return () => {
           clearTimeout(timing);
@@ -57,7 +60,7 @@ export default function FormStep1(props) {
       })
       .catch((err) => console.error(err));
   }
-  // console.log(reservation);
+  console.log(reservation);
 
   return (
     <>
@@ -94,7 +97,7 @@ export default function FormStep1(props) {
         {!props.isSearching && <button>Search tickets</button>}
         {props.isSearching && <button>Searching tickets...</button>}
       </form>
-      {showAlert && <Alert message={reservation.error} setAlert={setAlert} />}
+
       {console.log(timer)}
       {timer === 1 && <Timer setTimer={setTimer} />}
       {timer === -1 && <TimeUp />}

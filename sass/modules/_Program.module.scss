@@ -3,6 +3,9 @@
 table {
   width: 100%;
   border-collapse: collapse;
+  td {
+    border: solid 1px general.$primary-color-dark;
+  }
 }
 
 .festival__buttons {
@@ -102,6 +105,8 @@ table {
       scale: 1.03;
       transition: all 0.3s;
       z-index: 1;
+      box-shadow: rgba(150, 145, 145, 0.279) 0px 2px 8px 0px;
+
       // text-decoration: underline;
     }
   }
@@ -113,10 +118,10 @@ table {
 .band__info {
   padding: 3rem;
   background-color: green;
-  height: 90vh;
+  height: 100vh;
   position: fixed;
   right: 0;
-  top: 6vw;
+  top: 0;
   z-index: 2;
   width: 70%;
   overflow-y: scroll;
@@ -205,12 +210,12 @@ table {
   .band__info {
     padding: 2rem;
     background-color: red;
-    height: 95vh;
+
     position: fixed;
     bottom: 0;
-    right: 5vw;
+    right: 0;
     z-index: 2;
-    width: 90vw;
+    width: 100vw;
 
     button svg {
       width: 80%;
