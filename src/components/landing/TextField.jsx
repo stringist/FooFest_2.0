@@ -15,7 +15,8 @@ export default function TextField({ label, ...props }) {
   return (
     <div className={generalStyles.form_container}>
       <label htmlFor={field.name}>{label}</label>
-      {label === "Username" && <span className={loginStyles.help}>Try Kalle, Lasse, Paula, Peter, Klaus or Jonas</span>}
+      {label === "Username" && <span className={loginStyles.help}>(Try kalle, lasse, paula)</span>}
+      {label === "Password" && <span className={loginStyles.help}>Try username + A123</span>}
       {meta.touched && meta.error && <ErrorValidation name={field.name} />}
       <div className={loginStyles.inputContainer}>
         <input className={` ${meta.touched && meta.error && generalStyles.isInvalid} ${meta.touched && meta.error === undefined && generalStyles.isValid}`} {...field} name={props.name} type={fieldType} autoComplete="off" />
