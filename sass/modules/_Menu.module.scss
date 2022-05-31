@@ -24,26 +24,35 @@ svg {
   position: fixed;
   top: 0;
   background-color: general.$grey-400;
-  right: -60vw;
+  right: -40vw;
   bottom: 0;
   height: 100vh;
-  width: 20vw;
+  width: 40vw;
   overflow: hidden;
-  // max-width: 40vw;
+
   z-index: 9;
   margin-top: 0;
+
+  li a {
+    display: flex;
+    padding-left: 2.5rem;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+  }
 }
 
 .menuNav.showMenu {
-  width: 100%;
+  width: 75vw;
 }
 
 li a {
   display: block;
-  padding: 1vw 3vw;
+  padding: 1rem;
   font-family: general.$h-font;
   font-size: 1.5rem;
   color: general.$primary-color-light;
+  line-height: 2.5;
 }
 
 li:hover {
@@ -51,6 +60,7 @@ li:hover {
 
   a {
     color: general.$accent-color-100;
+    filter: brightness(0) saturate(100%) invert(31%) sepia(69%) saturate(3648%) hue-rotate(2deg) brightness(105%) contrast(106%);
   }
 }
 
@@ -60,7 +70,7 @@ li:hover {
 
 .showingMenu {
   transition: all 0.5s ease-out;
-  transform: translateX(0vw);
+  transform: translateX(80vw);
 }
 .closingMenu {
   transition: all 0.5s ease-out;
@@ -69,9 +79,20 @@ li:hover {
 
 @media only screen and (max-width: general.$mobile-query) {
   .menuNav {
-    right: -40vw;
+    right: 0vw;
+
+    &.showMenu {
+      width: 115vw;
+    }
   }
   .showingMenu {
     transform: translateX(0vw);
+  }
+  .closingMenu {
+    transform: translateX(32vw);
+  }
+
+  .navBar button {
+    right: 1.5rem;
   }
 }

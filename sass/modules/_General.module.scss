@@ -6,6 +6,7 @@ $primary-color-lighter: rgb(234, 232, 230);
 $accent-color-100: hsla(16, 100%, 50%, 100%);
 $accent-color-60: hsla(16, 100%, 60%, 60%);
 $secondary-color: hsl(0, 0%, 82%);
+$hover-color: hsla(16, 74%, 64%, 100%);
 
 $error-color: rgb(246, 97, 97);
 $valid-color: rgb(14, 137, 35);
@@ -133,6 +134,39 @@ input {
     svg {
       fill: $error-color;
     }
+  }
+}
+
+.alert {
+  width: 100%;
+  padding: 12px 16px;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  line-height: 1.5;
+}
+
+.alert_success {
+  background-color: rgba(0, 127, 0, 0.193);
+  color: $primary-color-light;
+  border-color: rgba(0, 127, 0, 0.66);
+
+  svg {
+    fill: $primary-color-light;
+  }
+}
+
+.alert_danger {
+  background-color: rgba(255, 0, 0, 0.181);
+  border-color: rgba(220, 53, 69, 1);
+  color: $primary-color-light;
+
+  svg {
+    fill: $primary-color-light;
   }
 }
 
