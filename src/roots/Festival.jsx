@@ -26,18 +26,18 @@ export default function Festival(props) {
           <Menu user={props.user} />
 
           <LandingHero />
-
-          <LatestNews />
-          <h3>Sponsors</h3>
-          <div className={landingStyles.sponsors}>
-            <img src="/img/tuborg.png" alt="" />
-            <img src="/img/tuborg.png" alt="" />
-            <img src="/img/tuborg.png" alt="" />
-            <img src="/img/tuborg.png" alt="" />
-            <img src="/img/tuborg.png" alt="" />
-            <img src="/img/tuborg.png" alt="" />
-          </div>
-
+          <main>
+            <LatestNews />
+            <h3>Sponsors</h3>
+            <div className={landingStyles.sponsors}>
+              <img src="/img/tuborg.png" alt="" />
+              <img src="/img/tuborg.png" alt="" />
+              <img src="/img/tuborg.png" alt="" />
+              <img src="/img/tuborg.png" alt="" />
+              <img src="/img/tuborg.png" alt="" />
+              <img src="/img/tuborg.png" alt="" />
+            </div>
+          </main>
           <Footer />
         </>
       )}

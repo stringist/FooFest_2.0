@@ -1,79 +1,111 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Koulen&display=swap");
-
-$primary-color-dark: hsla(0, 12%, 7%, 100%);
-$primary-color-light: hsla(0, 0%, 98%, 100%);
-$primary-color-lighter: rgb(234, 232, 230);
-$accent-color-100: hsla(16, 100%, 50%, 100%);
-$accent-color-60: hsla(16, 100%, 60%, 60%);
-$secondary-color: hsl(0, 0%, 82%);
-$hover-color: hsla(16, 74%, 64%, 100%);
-
-$error-color: rgba(220, 53, 69, 1);
-$valid-color: rgb(14, 137, 35);
-
-$grey-500: hsl(0, 0%, 12%);
-$grey-400: hsl(0, 1%, 16%);
-$grey-300: rgb(48, 48, 48);
-$grey-200: rgb(56, 56, 56);
-$grey-100: rgb(71, 71, 71);
-
-$error-color: rgb(246, 97, 97);
-$valid-color: rgb(14, 137, 35);
-
-$h-font: "Koulen", cursive;
-$body-font: "Inter", sans-serif;
-
+$primary-color-dark: hsla(0,
+12%,
+7%,
+100%);
+$primary-color-light: hsla(0,
+0%,
+98%,
+100%);
+$primary-color-lighter: rgb(234,
+232,
+230);
+$accent-color-100: hsla(16,
+100%,
+50%,
+100%);
+$accent-color-60: hsla(16,
+100%,
+60%,
+60%);
+$secondary-color: hsl(0,
+0%,
+82%);
+$hover-color: hsla(16,
+74%,
+64%,
+100%);
+$error-color: rgba(220,
+53,
+69,
+1);
+$valid-color: rgb(14,
+137,
+35);
+$grey-500: hsl(0,
+0%,
+12%);
+$grey-400: hsl(0,
+1%,
+16%);
+$grey-300: rgb(48,
+48,
+48);
+$grey-200: rgb(56,
+56,
+56);
+$grey-100: rgb(71,
+71,
+71);
+$error-color: rgb(246,
+97,
+97);
+$valid-color: rgb(14,
+137,
+35);
+$h-font: "Koulen",
+cursive;
+$body-font: "Inter",
+sans-serif;
 $gap: 3rem 0;
-
 $mobile-query: 650px;
-
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
 }
 
-nav {
-  height: 5vh;
-}
-
+// nav {
+//   height: 4vw;
+// }
 button {
-  background-color: $accent-color-100;
-  color: $primary-color-light;
-  padding: 0.5rem 1rem;
-  font-family: $h-font;
-  border: none;
-  cursor: pointer;
+    background-color: $accent-color-100;
+    color: $primary-color-light;
+    padding: 0.5rem 1rem;
+    font-family: $h-font;
+    border: none;
+    cursor: pointer;
 }
-.next_back_buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.5rem;
-  max-width: 335px;
 
-  button:first-of-type {
-    background-color: $primary-color-dark;
-    border: 1px solid $accent-color-100;
-    height: 38.12px;
-    width: 122.55px;
-    color: $accent-color-100;
-    text-align: center;
-    padding: 0;
-    margin-right: 0.5rem;
-  }
-  button:last-of-type {
-    height: 38.12px;
-    width: 236px;
-    padding: 0;
-  }
+.next_back_buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    max-width: 335px;
+    button:first-of-type {
+        background-color: $primary-color-dark;
+        border: 1px solid $accent-color-100;
+        height: 38.12px;
+        width: 122.55px;
+        color: $accent-color-100;
+        text-align: center;
+        padding: 0;
+        margin-right: 0.5rem;
+    }
+    button:last-of-type {
+        height: 38.12px;
+        width: 236px;
+        padding: 0;
+    }
 }
 
 body {
-  font-family: $body-font;
-  background-color: $primary-color-dark;
-  color: $primary-color-light;
+    font-family: $body-font;
+    background-color: $primary-color-dark;
+    color: $primary-color-light;
+    margin: 0vw;
 }
 
 h1,
@@ -81,185 +113,181 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: $h-font;
-  color: $primary-color-light;
+    font-family: $h-font;
+    color: $primary-color-light;
 }
 
 h1 {
-  font-size: 7.6rem;
+    font-size: 7.6rem;
 }
+
 h2 {
-  font-size: 2.25rem;
+    font-size: 2.25rem;
 }
 
 a {
-  color: $accent-color-100;
-  cursor: pointer;
-  text-decoration: none;
-
-  a:hover {
+    color: $accent-color-100;
+    cursor: pointer;
     text-decoration: none;
-  }
+    a:hover {
+        text-decoration: none;
+    }
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 
 input {
-  background: none;
-  border: solid 1px $primary-color-light;
-  height: 2rem;
-  color: $primary-color-light;
-  padding-left: 0.5rem;
+    background: none;
+    border: solid 1px $primary-color-light;
+    height: 2rem;
+    color: $primary-color-light;
+    padding-left: 0.5rem;
 }
 
 .form_container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
-
-  .span_error {
     display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-  svg {
-    fill: $error-color;
-  }
-
-  span {
-    font-size: 0.8rem;
-    font-family: $body-font;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 0.5rem;
-    color: $error-color;
-  }
+    margin: 0.5rem 0;
+    .span_error {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    svg {
+        fill: $error-color;
+    }
+    span {
+        font-size: 0.8rem;
+        font-family: $body-font;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $error-color;
+    }
 }
 
 .alert {
-  width: 100%;
-  padding: 12px 16px;
-  border-style: solid;
-  border-width: 1px;
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  line-height: 1.5;
+    width: 100%;
+    padding: 12px 16px;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    line-height: 1.5;
 }
 
 .alert_success {
-  background-color: rgba(0, 127, 0, 0.193);
-  color: $primary-color-light;
-  border-color: rgba(0, 127, 0, 0.66);
-
-  svg {
-    fill: $primary-color-light;
-  }
+    background-color: rgba(0, 127, 0, 0.193);
+    color: $primary-color-light;
+    border-color: rgba(0, 127, 0, 0.66);
+    svg {
+        fill: $primary-color-light;
+    }
 }
 
 .alert_danger {
-  background-color: rgba(255, 0, 0, 0.181);
-  border-color: rgba(220, 53, 69, 1);
-  color: $primary-color-light;
-
-  svg {
-    fill: $primary-color-light;
-  }
+    background-color: rgba(255, 0, 0, 0.181);
+    border-color: rgba(220, 53, 69, 1);
+    color: $primary-color-light;
+    svg {
+        fill: $primary-color-light;
+    }
 }
 
 .isInvalid {
-  border: solid 1px $error-color;
+    border: solid 1px $error-color;
 }
+
 .isValid {
-  border: solid 1px greenyellow;
+    border: solid 1px greenyellow;
 }
 
 .cta {
-  color: $primary-color-light;
-  font-size: 1.5rem;
-  display: block;
-  width: 30vw;
-  padding: 0.5rem 1rem;
-  background-color: $accent-color-100;
-  font-family: $h-font;
-  text-align: center;
+    color: $primary-color-light;
+    font-size: 1.5rem;
+    display: block;
+    width: 30vw;
+    padding: 0.5rem 1rem;
+    background-color: $accent-color-100;
+    font-family: $h-font;
+    text-align: center;
 }
 
 .d_none {
-  display: none;
-  z-index: -99;
+    display: none;
+    z-index: -99;
 }
 
 .hero_banner {
-  height: 17vh;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  h1 {
-    margin: 2rem;
-  }
+    margin-top: 4rem;
+    height: 20vh;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        margin: 2rem;
+    }
 }
 
 .App {
-  height: fit-content;
-  position: relative;
+    height: fit-content;
+    position: relative;
 }
 
 .timer {
-  position: absolute;
-  top: -2rem;
-  left: -1rem;
-  div {
-    scale: 0.5;
-
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
     div {
-      font-size: 5rem;
-      font-family: $h-font;
+        scale: 0.5;
+        div {
+            font-size: 5rem;
+            font-family: $h-font;
+        }
     }
-  }
 }
 
 .sections_forms {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  max-width: 335px;
-  margin: 6rem auto;
-  img {
     width: 100%;
-  }
-}
-@media only screen and (max-width: $mobile-query) {
-  h1 {
-    font-size: 3.375rem;
-  }
-
-  .cta {
-    width: 60vw;
-  }
-
-  .hero_banner {
-    height: 20vh;
-  }
-}
-@media only screen and (min-width: $mobile-query) {
-  .sections_forms {
+    display: flex;
+    flex-direction: column;
+    max-width: 335px;
+    margin: 6rem auto;
     img {
-      width: 100%;
-      margin-bottom: 10vh;
+        width: 100%;
     }
-  }
+}
+
+@media only screen and (max-width: $mobile-query) {
+    h1 {
+        font-size: 3.375rem;
+    }
+    .cta {
+        width: 60vw;
+    }
+    .hero_banner {
+        height: 20vh;
+    }
+}
+
+@media only screen and (min-width: $mobile-query) {
+    .sections_forms {
+        img {
+            width: 100%;
+            margin-bottom: 10vh;
+        }
+    }
 }
