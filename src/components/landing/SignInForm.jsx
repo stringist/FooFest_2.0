@@ -8,8 +8,14 @@ import SuccessMessage from "../general/SuccessMessage";
 import DangerMessage from "../general/DangerMessage";
 
 export default function SignInForm(props) {
+  const users = ["kalle", "lasse", "paula", "peter", "klaus", "jonas"];
   const validate = Yup.object({
-    username: Yup.string().required("Username is required"),
+    username: Yup.string()
+      .required("Username is required")
+      .test("", "User not found", function (value) {
+        console.log(value);
+        return value !== undefined ? users.includes(value.toLowerCase()) : null;
+      }),
 
     password: Yup.string().min(6, "Password must be at least 6 charaters").required("Password is required"),
   });
@@ -28,8 +34,8 @@ export default function SignInForm(props) {
       {(formik) => (
         <div className={loginStyles.card}>
           <Form>
-            <SuccessMessage message="This will be the message displayed" />
-            <DangerMessage message="This will be the message displayed" />
+            {console.log(formik.errors)}
+            {formik.isValid === false && formik.errors && <DangerMessage message="Correct the fields mark in red" />}
 
             <h2>Login to your account</h2>
             <TextField label="Username" name="username" type="text" />
