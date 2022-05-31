@@ -2,9 +2,10 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 import loginStyles from "/sass/modules/_Login.module.scss";
-import generalStyles from "/sass/modules/_General.module.scss";
 
 import TextField from "./TextField";
+import SuccessMessage from "../general/SuccessMessage";
+import DangerMessage from "../general/DangerMessage";
 
 export default function SignInForm(props) {
   const validate = Yup.object({
@@ -27,6 +28,9 @@ export default function SignInForm(props) {
       {(formik) => (
         <div className={loginStyles.card}>
           <Form>
+            <SuccessMessage message="This will be the message displayed" />
+            <DangerMessage message="This will be the message displayed" />
+
             <h2>Login to your account</h2>
             <TextField label="Username" name="username" type="text" />
             <TextField label="Password" name="password" type="password" />

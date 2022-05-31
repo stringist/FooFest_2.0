@@ -1,4 +1,6 @@
 import bandsStyles from "/sass/modules/_Bands.module.scss";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export default function BandPage(props) {
   const band = { ...props.bandDisplay };
@@ -28,7 +30,11 @@ export default function BandPage(props) {
           <em>{band.genre}</em>
         </h4>
         <figure>
-          {band.logo.includes("http") ? <img src={band.logo} alt={band.name} /> : <img src={`https://foofestival.herokuapp.com/logos/${band.logo}`} alt={band.name} />}
+          {band.logo.includes("http") ? (
+            <LazyLoadImage effect="blur" src={band.logo} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
+          ) : (
+            <LazyLoadImage effect="blur" src={`https://foofestival.herokuapp.com/logos/${band.logo}`} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
+          )}
           {band.logoCredits ? <figcaption>{band.logoCredits}</figcaption> : null}
         </figure>
         <p>{band.bio}</p>

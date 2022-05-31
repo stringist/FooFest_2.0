@@ -9,7 +9,7 @@ import HeroBanner from "../components/general/HeroBanner";
 import BandsList from "../components/artists/BandsList";
 
 export default function Bands(props) {
-  const [schedule, setSchedule] = useState(null);
+  const [loadingBands, setLoadingBands] = useState(false);
 
   const [bandDisplay, setBandDisplayed] = useState([]);
   const [favourites, setFavourites] = useState([]);
@@ -21,7 +21,7 @@ export default function Bands(props) {
       <div className="bands">
         <HeroBanner img="/img/bands_background.png" title="Artists" />
 
-        <BandsList bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} />
+        <BandsList bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} setLoadingBands={setLoadingBands} />
       </div>
       <Footer />
     </>

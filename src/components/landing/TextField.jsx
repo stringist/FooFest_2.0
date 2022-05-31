@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { ErrorMessage, useField } from "formik";
+import { useField } from "formik";
 
 import loginStyles from "/sass/modules/_Login.module.scss";
 import generalStyles from "/sass/modules/_General.module.scss";
+import ErrorValidation from "../general/ErrorValidation";
 
 export default function TextField({ label, ...props }) {
   const [field, meta] = useField(props);
@@ -14,12 +15,11 @@ export default function TextField({ label, ...props }) {
   return (
     <div className={generalStyles.form_container}>
       <label htmlFor={field.name}>{label}</label>
-
-      <ErrorMessage component="span" name={field.name} className={generalStyles.error} />
+      {meta.touched && meta.error && <ErrorValidation name={field.name} />}
       <div className={loginStyles.inputContainer}>
         <input className={` ${meta.touched && meta.error && generalStyles.isInvalid} ${meta.touched && meta.error === undefined && generalStyles.isValid}`} {...field} name={props.name} type={fieldType} autoComplete="off" />
 
-        {label === "Password" && fieldType === "text" ? <p onClick={toggleVisibility}>Hide password</p> : label === "Password" && fieldType === "password" ? <p onClick={toggleVisibility}>Show password</p> : null}
+        {label === "Password" && fieldType === "text" ? <img src="/img/visibility_off.svg" onClick={toggleVisibility}></img> : label === "Password" && fieldType === "password" ? <img src="/img/visibility.svg" onClick={toggleVisibility}></img> : null}
       </div>
     </div>
   );
