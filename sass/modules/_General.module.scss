@@ -12,9 +12,9 @@ $valid-color: rgb(14, 137, 35);
 
 $grey-500: hsl(0, 0%, 12%);
 $grey-400: hsl(0, 1%, 16%);
-$grey-300: hsl(0, 0%, 19%);
-$grey-200: hsl(0, 0%, 22%);
-$grey-100: hsl(0, 0%, 28%);
+$grey-300: rgb(48, 48, 48);
+$grey-200: rgb(56, 56, 56);
+$grey-100: rgb(71, 71, 71);
 
 $error-color: rgb(246, 97, 97);
 $valid-color: rgb(14, 137, 35);
@@ -37,9 +37,7 @@ $mobile-query: 650px;
 nav {
   height: 5vh;
 }
-body {
-  padding: 0 1rem;
-}
+
 button {
   background-color: $accent-color-100;
   color: $primary-color-light;
@@ -67,6 +65,7 @@ button {
   button:last-of-type {
     height: 38.12px;
     width: 236px;
+    padding: 0;
   }
 }
 
@@ -215,5 +214,13 @@ input {
 
   .hero_banner {
     height: 20vh;
+  }
+}
+@media only screen and (min-width: $mobile-query) {
+  .sections_forms {
+    img {
+      width: 100%;
+      margin-bottom: 10vh;
+    }
   }
 }

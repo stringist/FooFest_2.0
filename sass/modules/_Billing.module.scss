@@ -1,33 +1,35 @@
 @use "_General.module" as general;
 
-h4 {
+.billing_h4 {
   margin: 0;
   background-color: transparent;
   padding: 0;
-  font-size: 1rem;
+  font-size: 1.7rem;
+  margin-top: 1rem;
 }
-form:first-of-type {
+.billing_form {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 335px;
+  background-color: rgba(71, 71, 71, 0.43);
+  margin: 0;
   input {
     border-radius: 5px;
     background-color: general.$primary-color-dark;
     height: 30px;
     max-width: 335px;
     color: general.$primary-color-light;
-    margin-bottom: 1rem;
   }
   input:valid {
     border: 2px solid rgba(0, 127, 0, 0.66);
 
     background-color: rgba(0, 127, 0, 0.193);
   }
-  input:invalid:not(:placeholder-shown, :focus) {
+  /*   input:invalid:not(:focus) {
     border: 2px solid red;
     background-color: rgba(255, 0, 0, 0.181);
-  }
+  } */
   input:invalid:not(:placeholder-shown + span) {
     opacity: 1;
   }
@@ -44,6 +46,22 @@ form:first-of-type {
   section {
     display: flex;
     width: 100%;
+    max-width: 335px;
+
+    input {
+      width: 100%;
+    }
+  }
+  section:nth-child(1) {
+    div {
+      width: 335px;
+    }
+    aside {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  section:nth-child(2) {
     div:first-of-type {
       padding-right: 0.5rem;
       width: 100%;
@@ -57,12 +75,38 @@ form:first-of-type {
       max-width: 113px;
       margin-left: 0.5rem;
     }
-    input {
+  }
+  section:nth-child(3) {
+    div:first-of-type {
+      padding-right: 0.5rem;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      max-width: 213px;
+    }
+    div:last-of-type {
+      display: flex;
+      flex-direction: column;
+      max-width: 113px;
+      margin-left: 0.5rem;
     }
   }
   section:last-of-type {
     margin-bottom: 1rem;
+  }
+  button {
+    padding: 0;
+  }
+  span {
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(250, 250, 250, 0.7);
+    display: inline;
+    line-height: 0.8rem;
+  }
+  label {
+    line-height: 0.9rem;
   }
 }
 
@@ -80,20 +124,27 @@ form:first-of-type {
   }
 }
 @media only screen and (min-width: general.$mobile-query) {
-  form:first-of-type {
+  .billing_form {
     max-width: 800px;
-  }
-  form:first-of-type section div:first-of-type {
-    display: block;
-    max-width: 400px;
-  }
-  form:first-of-type section div:last-of-type {
     margin: 0;
-  }
-  form:first-of-type section {
-    display: block;
-  }
-  form:first-of-type section:last-of-type {
-    display: flex;
+
+    section:nth-child(1) {
+      flex-direction: column;
+    }
+    section:nth-child(2) {
+      flex-direction: column;
+
+      div:last-of-type {
+        margin-left: 0rem;
+        margin-top: 1rem;
+      }
+    }
+    section:nth-child(3) {
+      flex-direction: column;
+      div:last-of-type {
+        margin: 0;
+        margin-top: 1rem;
+      }
+    }
   }
 }

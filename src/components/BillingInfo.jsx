@@ -54,44 +54,47 @@ export default function CheckOutForm(props) {
     <>
       {" "}
       <img src={step3} alt="" />
-      <h4 className={billing.h4}>BILLING INFORMATION</h4>
+      <h4 className={billing.billing_h4}>BILLING INFORMATION</h4>
       <form
-        id="formy"
         ref={formEl}
         onChange={createObject}
-        className={billing}
+        className={billing.billing_form}
         onSubmit={exportInfo}
       >
-        <label htmlFor="name">Name as on card</label>
-        <input
-          placeholder="Lasse Tihoonen Fiaschi"
-          type="text"
-          id="name"
-          required
-        />
+        <section>
+          <div>
+            <aside>
+              {" "}
+              <label htmlFor="name">Name as on card</label>
+              <span>Lasse Tihoonen Fiaschi</span>
+            </aside>
+
+            <input type="text" id="name" required />
+          </div>
+        </section>
+
         <section>
           <div>
             <label htmlFor="street_address">Street address</label>
-            <input
-              placeholder="Guldbergsgade 420"
-              type="text"
-              id="street_address"
-              required
-            />{" "}
+            <span> Guldbergsgade 420</span>
+            <input type="text" id="street_address" required />{" "}
           </div>
           <div>
             <label htmlFor="apartment">Apartment</label>
-            <input placeholder="69 TV" type="text" id="apartment" required />
+            <span>69 TV</span>
+            <input type="text" id="apartment" required />
           </div>
         </section>
         <section>
           <div>
             <label htmlFor="city">City</label>
-            <input placeholder="Haderslev" type="text" id="city" required />
+            <span>Haderslev</span>
+            <input type="text" id="city" required />
           </div>
           <div>
             <label htmlFor="postalcode">Postal Code</label>
-            <input placeholder="6100" type="tel" id="postalcode" required />
+            <span>6100</span>
+            <input type="tel" id="postalcode" required />
           </div>{" "}
         </section>
 

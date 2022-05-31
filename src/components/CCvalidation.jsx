@@ -1,5 +1,5 @@
-import Cards from "react-credit-cards";
-// import "react-credit-cards/lib/styles.scss";
+/* import Cards from "react-credit-cards";
+ */ // import "react-credit-cards/lib/styles.scss";
 import { useState, useRef } from "react";
 import generalStyles from "/sass/modules/_General.module.scss";
 import Creditcard from "/sass/modules/_Creditcard.module.scss";
@@ -40,35 +40,36 @@ export default function CCvalidation(props) {
   function handleExpiryDate(e) {
     if (formEl.current === null) {
     } else {
-      formEl.current.elements.expiry.value = formEl.current.elements.expiry.value
-        .replace(
-          /^([1-9]\/|[2-9])$/g,
-          "0$1/" // 3 > 03/
-        )
-        .replace(
-          /^(0[1-9]|1[0-2])$/g,
-          "$1/" // 11 > 11/
-        )
-        .replace(
-          /^([0-1])([3-9])$/g,
-          "0$1/$2" // 13 > 01/3
-        )
-        .replace(
-          /^(0?[1-9]|1[0-2])([0-9]{2})$/g,
-          "$1/$2" // 141 > 01/41
-        )
-        .replace(
-          /^([0]+)\/|[0]+$/g,
-          "0" // 0/ > 0 and 00 > 0
-        )
-        .replace(
-          /[^\d\/]|^[\/]*$/g,
-          "" // To allow only digits and `/`
-        )
-        .replace(
-          /\/\//g,
-          "/" // Prevent entering more than 1 `/`
-        );
+      formEl.current.elements.expiry.value =
+        formEl.current.elements.expiry.value
+          .replace(
+            /^([1-9]\/|[2-9])$/g,
+            "0$1/" // 3 > 03/
+          )
+          .replace(
+            /^(0[1-9]|1[0-2])$/g,
+            "$1/" // 11 > 11/
+          )
+          .replace(
+            /^([0-1])([3-9])$/g,
+            "0$1/$2" // 13 > 01/3
+          )
+          .replace(
+            /^(0?[1-9]|1[0-2])([0-9]{2})$/g,
+            "$1/$2" // 141 > 01/41
+          )
+          .replace(
+            /^([0]+)\/|[0]+$/g,
+            "0" // 0/ > 0 and 00 > 0
+          )
+          .replace(
+            /[^\d\/]|^[\/]*$/g,
+            "" // To allow only digits and `/`
+          )
+          .replace(
+            /\/\//g,
+            "/" // Prevent entering more than 1 `/`
+          );
     }
   }
   function changePage(e) {
@@ -95,50 +96,55 @@ export default function CCvalidation(props) {
   return (
     <>
       <img src={step4} alt="" />
-      <h4 className={Creditcard.h4}>CARD INFORMATION</h4>
-      <Cards
+      <h4 className={Creditcard.cc_h4}>CARD INFORMATION</h4>
+      {/*   <Cards
         number={number}
         name={name}
         expiry={expiry}
         cvc={cvc}
         focused={focus}
-      ></Cards>
+      ></Cards> */}
 
       <form
         ref={formEl}
         onChange={changeFocus}
         onSubmit={handleSubmit}
-        className={Creditcard.form}
+        className={Creditcard.cc_form}
       >
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          /*           value={name}
-           */ onChange={(e) => setName(e.target.value)}
-          onFocus={(e) => setFocus(e.target.name)}
-          minLength="1"
-          maxLength="45"
-          required
-        />
-
-        <input
-          type="tel"
-          name="number"
-          placeholder="Card Number"
-          value={handleCardDisplay()}
-          onChange={(e) => setNumber(e.target.value)}
-          onFocus={(e) => setFocus(e.target.name)}
-          onInput={(e) => handleCardDisplay()}
-          minLength="16"
-          maxLength="19"
-          required
-        />
-        <section className={Creditcard.section_cc}>
+        <article>
+          {" "}
+          <span>Name</span>
           <input
             type="text"
-            name="expiry"
-            placeholder="MM/YY Expiry"
+            name="name"
+            /*           value={name}
+             */ onChange={(e) => setName(e.target.value)}
+            onFocus={(e) => setFocus(e.target.name)}
+            minLength="1"
+            maxLength="45"
+            required
+          />
+        </article>
+        <article>
+          {" "}
+          <span>Card Number</span>
+          <input
+            type="tel"
+            name="number"
+            value={handleCardDisplay()}
+            onChange={(e) => setNumber(e.target.value)}
+            onFocus={(e) => setFocus(e.target.name)}
+            onInput={(e) => handleCardDisplay()}
+            minLength="16"
+            maxLength="19"
+            required
+          />
+        </article>
+
+        <section className={Creditcard.section_cc}>
+          <span>Expiry</span>
+          <input
+            type="text"
             value={handleExpiryDate()}
             onChange={(e) => setExpiry(e.target.value)}
             onFocus={(e) => setFocus(e.target.name)}
@@ -147,12 +153,11 @@ export default function CCvalidation(props) {
             maxLength="5"
             required
           />
-
+          <span>CVC</span>
           {number.substring(0, 2) == 34 || number.substring(0, 2) == 37 ? (
             <input
               type="tel"
               name="cvc"
-              placeholder="CVC"
               value={cvc}
               onChange={(e) => setCvc(e.target.value)}
               onFocus={(e) => setFocus(e.target.name)}
@@ -164,7 +169,6 @@ export default function CCvalidation(props) {
             <input
               type="tel"
               name="cvc"
-              placeholder="CVC"
               value={cvc}
               onChange={(e) => setCvc(e.target.value)}
               onFocus={(e) => setFocus(e.target.name)}
@@ -180,7 +184,7 @@ export default function CCvalidation(props) {
             onSubmit={(e) => handleSubmit()}
             onFocus={(e) => setFocus(e.target.name)}
           >
-            Pay
+            Complete purchase
           </button>
         </section>
       </form>
