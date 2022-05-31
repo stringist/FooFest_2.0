@@ -1,61 +1,57 @@
 @use "_General.module" as general;
-
 footer {
-  margin-top: 5rem;
-  padding: 2rem 0;
-  height: fit-content;
-
-  img {
-    max-width: 20vw;
-  }
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: general.$h-font;
+    margin-top: 5rem;
+    padding: 2rem 2%;
     height: fit-content;
-
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+    img {
+        max-width: 20vw;
     }
-    .some {
-      display: flex;
-      gap: 1rem;
-      flex-direction: row;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: general.$h-font;
+        height: fit-content;
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: -.5rem;
+        }
+        .some {
+            display: flex;
+            gap: 1rem;
+            flex-direction: row;
+        }
+        a {
+            color: general.$primary-color-light;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            line-height: 1.5rem;
+        }
+        li {
+            margin: 0;
+            padding: 0;
+        }
+        li:hover {
+            background: none;
+            a {
+                color: general.$accent-color-100;
+            }
+            img {
+                filter: brightness(0) saturate(100%) invert(31%) sepia(69%) saturate(3648%) hue-rotate(2deg) brightness(105%) contrast(106%);
+            }
+        }
     }
-    a {
-      color: general.$primary-color-light;
-      font-size: 1.5rem;
-      padding: 0.5rem;
-    }
-
-    li {
-      width: fit-content;
-      padding: 0.3rem;
-    }
-    li:hover {
-      background: none;
-      a {
-        color: general.$accent-color-100;
-      }
-      img {
-        filter: brightness(0) saturate(100%) invert(31%) sepia(69%) saturate(3648%) hue-rotate(2deg) brightness(105%) contrast(106%);
-      }
-    }
-  }
 }
 
 @media only screen and (max-width: general.$mobile-query) {
-  footer {
-    img {
-      max-width: 55vw;
+    footer {
+        img {
+            max-width: 55vw;
+        }
+        nav {
+            display: block;
+            padding: 0 1rem;
+        }
     }
-    nav {
-      display: block;
-      padding: 0 1rem;
-    }
-  }
 }
