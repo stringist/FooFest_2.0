@@ -1,14 +1,14 @@
 @use "_General.module" as general;
 footer {
     margin-top: 5rem;
-    padding: 2rem 2%;
+    padding: 2rem 0;
     height: fit-content;
     img {
         max-width: 20vw;
     }
     nav {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         font-family: general.$h-font;
         height: fit-content;
