@@ -1,1 +1,53 @@
 @use "_General.module" as general;
+.checkout_grid {
+    margin: 10% 5%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.camping_options {
+    h2 {
+        font-size: 2rem;
+        background-color: general.$grey-100;
+        padding-left: 1rem;
+    }
+    background: general.$grey-300;
+    form {
+        margin: 0;
+        padding: 2rem 5%;
+    }
+    .form_item {
+        background-color: hotpink;
+    }
+}
+
+.formItem {
+    margin-bottom: 1rem;
+    background-color: general.$grey-100;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.472);
+    display: flex;
+    // justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem;
+    align-items: center;
+    label {
+        font-size: 1.2rem;
+    }
+    .subtext {
+        font-family: general.$body-font;
+        max-width: 32ch;
+        margin-left: 0;
+        font-weight: 200;
+    }
+    .price {
+        margin-left: auto;
+        width: max-content;
+    }
+    span {
+        font-family: general.$body-font;
+        font-size: .8rem;
+        text-transform: uppercase;
+        padding-bottom: .4rem;
+        font-weight: 100;
+    }
+}

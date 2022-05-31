@@ -8,9 +8,9 @@ export default function FormStep2(props) {
   //   const key = "615d83068597142da1745455";
 
   return (
-    <>
-<CampingOptions  {...props}/>
+    <section className={form2Styles.checkout_grid}>
+<CampingOptions {...props}/>
 <Summary {...props}/>
-    </>
+    </section>
   );
 }

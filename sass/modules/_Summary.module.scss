@@ -1,0 +1,4 @@
+@use "_General.module" as general;
+.summary {
+    background: general.$grey-500;
+}
