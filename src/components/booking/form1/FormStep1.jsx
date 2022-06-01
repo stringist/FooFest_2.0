@@ -17,12 +17,13 @@ export default function FormStep1(props) {
   const [ticket, setTicket] = useState("General");
   const [area, setArea] = useState("Svartheim");
   const [amount, setAmount] = useState(1);
-// const currentTicket = {product: `ticket`, type: ticket, area: area, amount: amount};
+  // const currentTicket = {product: `ticket`, type: ticket, area: area, amount: amount};
 
   const [reservation, setReservation] = useState([]);
   const [showAlert, setAlert] = useState(false);
-  const [basket, setBasket] = useState([{ product: "Booking Fee", price: 99, id: 1, amount: 1 }]);
-
+  const [basket, setBasket] = useState([
+    { product: "Booking Fee", price: 99, id: 1, amount: 1 },
+  ]);
 
   function searchTickets(e) {
     e.preventDefault();
@@ -31,8 +32,8 @@ export default function FormStep1(props) {
     const ticketRequest = { area, amount };
     const putData = JSON.stringify(ticketRequest);
 
-    console.log(ticketRequest);
-    console.log(putData);
+    /*  console.log(ticketRequest);
+    console.log(putData); */
 
     fetch("https://foofestival.herokuapp.com/reserve-spot", {
       method: "PUT",
@@ -44,12 +45,11 @@ export default function FormStep1(props) {
       .then((response) => {
         response.json().then((data) => {
           setReservation(data);
-
           data.error ? setAlert(true) : setAlert(false);
         });
 
-        console.log(showAlert);
-
+        /*         console.log(showAlert);
+         */
         const timing = setTimeout(() => {
           props.setIsSearching(false);
           !showAlert ? setTimer(0) : setTimer(1);
@@ -59,17 +59,30 @@ export default function FormStep1(props) {
         };
       })
       .catch((err) => console.error(err));
+    applyReservationId();
   }
-  console.log(reservation);
-
+  function applyReservationId() {
+    props.setReservationId(reservation.id);
+    console.log(reservation);
+  }
   return (
     <>
       <form ref={formEl} onSubmit={searchTickets}>
         <fieldset>
           <legend className={form1Styles.ticket_legend}>Select ticket</legend>
           <div className={form1Styles.form__type}>
-            <TicketButton name="General" price="799kr" ticket={ticket} setTicket={setTicket} />
-            <TicketButton name="VIP" price="1299kr" ticket={ticket} setTicket={setTicket} />
+            <TicketButton
+              name="General"
+              price="799kr"
+              ticket={ticket}
+              setTicket={setTicket}
+            />
+            <TicketButton
+              name="VIP"
+              price="1299kr"
+              ticket={ticket}
+              setTicket={setTicket}
+            />
           </div>
         </fieldset>
 
@@ -97,11 +110,21 @@ export default function FormStep1(props) {
         {!props.isSearching && <button>Search tickets</button>}
         {props.isSearching && <button>Searching tickets...</button>}
       </form>
-
-      {console.log(timer)}
+      {/*       {console.log(timer)}
+       */}{" "}
       {timer === 1 && <Timer setTimer={setTimer} />}
       {timer === -1 && <TimeUp />}
-      {showAlert === true ? <Alert message={reservation.error} setAlert={setAlert} /> : <FormStep2 ticket={ticket} area={area} amount={amount} setBasket={setBasket} basket={basket} />}
+      {showAlert === true ? (
+        <Alert message={reservation.error} setAlert={setAlert} />
+      ) : (
+        <FormStep2
+          ticket={ticket}
+          area={area}
+          amount={amount}
+          setBasket={setBasket}
+          basket={basket}
+        />
+      )}
     </>
   );
 }

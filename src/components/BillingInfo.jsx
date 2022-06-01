@@ -9,13 +9,12 @@ import React, { Component } from "react";
 import generalStyles from "/sass/modules/_General.module.scss";
 import billing from "/sass/modules/_Billing.module.scss";
 import step3 from "../../public/img/step3.svg";
+import CountrySelector from "./form_components/CountrySelector";
 
 export default function CheckOutForm(props) {
   const formEl = useRef(null);
   const [country, setCountry] = useState("");
   const [fullname, setFullname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [streetaddress, setStreetaddress] = useState("");
   const [apartment, setApartment] = useState("");
@@ -29,10 +28,7 @@ export default function CheckOutForm(props) {
     postalcode: zipcode,
     country: country,
   };
-  // console.log(ticketHolderObject);
-  function selectCountry(val) {
-    setCountry(val);
-  }
+
   function exportInfo(e) {
     props.setTicketholderdata(ticketHolderObject);
     props.setShowContent(1);
@@ -40,10 +36,11 @@ export default function CheckOutForm(props) {
   function createObject(e) {
     e.preventDefault();
     setFullname(formEl.current.elements.name.value);
-    setZipcode(formEl.current.elements.postalcode.value);
     setStreetaddress(formEl.current.elements.street_address.value);
     setApartment(formEl.current.elements.apartment.value);
     setCity(formEl.current.elements.city.value);
+    setZipcode(formEl.current.elements.postalcode.value);
+    setCountry(formEl.current.elements.country.value);
   }
   const ticketholderdata = props.ticketholderdata;
   // console.log(ticketholderdata.apartment);
@@ -59,47 +56,50 @@ export default function CheckOutForm(props) {
         className={billing.billing_form}
         onSubmit={exportInfo}
       >
-        <section>
+        <fieldset>
           <div>
             <aside>
               {" "}
               <label htmlFor="name">Name as on card</label>
-              <span>Lasse Tihoonen Fiaschi</span>
+              {/* <span>Lasse Tihoonen Fiaschi</span> */}
             </aside>
 
             <input type="text" id="name" required />
           </div>
-        </section>
+        </fieldset>
 
-        <section>
+        <fieldset>
           <div>
             <label htmlFor="street_address">Street address</label>
-            <span> Guldbergsgade 420</span>
+            {/* <span> Guldbergsgade 420</span> */}
             <input type="text" id="street_address" required />{" "}
           </div>
           <div>
             <label htmlFor="apartment">Apartment</label>
-            <span>69 TV</span>
+            {/* <span>69 TV</span> */}
             <input type="text" id="apartment" required />
           </div>
-        </section>
-        <section>
+        </fieldset>
+        <fieldset>
           <div>
             <label htmlFor="city">City</label>
-            <span>Haderslev</span>
+            {/* <span>Haderslev</span> */}
             <input type="text" id="city" required />
           </div>
           <div>
             <label htmlFor="postalcode">Postal Code</label>
-            <span>6100</span>
-            <input type="tel" id="postalcode" required />
+            {/* <span>6100</span> */}
+            <input type="number" id="postalcode" required />
           </div>{" "}
-        </section>
-
-        <section className={generalStyles.next_back_buttons}>
+        </fieldset>
+        <fieldset>
+          <label htmlFor="country">Country</label>
+          <CountrySelector id="country" />
+        </fieldset>
+        <fieldset className={generalStyles.next_back_buttons}>
           <button>Back</button>
           <button>Next</button>
-        </section>
+        </fieldset>
       </form>
     </>
   );

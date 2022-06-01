@@ -13,6 +13,7 @@ export default function CCvalidation(props) {
   const [focus, setFocus] = useState("");
   const formEl = useRef(null);
   const ENDPOINT = "https://kea2semester-e216.restdb.io/rest/foofest";
+  const ENDPOINT2 = "https://foofestival.herokuapp.com/fullfill-reservation";
   const KEY = "615d83068597142da1745455";
   function changeFocus(e) {
     const attr = parseInt(e.target.attributes.maxLength.value, 10);
@@ -20,12 +21,11 @@ export default function CCvalidation(props) {
     if (attr === undefined) {
     } else if (e.target.textLength === attr) {
       if (e.target.nextElementSibling === null) {
-        e.target.parentElement.nextElementSibling.nextElementSibling.focus();
         console.log(
           e.target.parentElement.nextElementSibling.nextElementSibling
         );
       } else {
-        e.target.nextElementSibling.nextElementSibling.focus();
+        e.target.nextElementSibling.focus();
       }
     }
   }
@@ -94,6 +94,22 @@ export default function CCvalidation(props) {
       .then((res) => res.json())
       .then((data) => console.log(data));
   }
+  function handlePost() {
+    const reservation = { id: props.reservationId };
+    const postData = JSON.stringify(reservation);
+    console.log(postData);
+    fetch(ENDPOINT2, {
+      method: "post",
+      headers: {
+        "Content-type": "application/json",
+        /*           "x-apikey": KEY,
+         */
+      },
+      body: postData,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
 
   return (
     <>
@@ -148,7 +164,7 @@ export default function CCvalidation(props) {
         <span>Expiry</span>
         <input
           name="expiry"
-          type="text"
+          type="tel"
           value={handleExpiryDate()}
           onChange={(e) => setExpiry(e.target.value)}
           onFocus={(e) => setFocus(e.target.name)}
@@ -171,7 +187,7 @@ export default function CCvalidation(props) {
           />
         ) : (
           <input
-            type="tel"
+            type="number"
             name="cvc"
             value={cvc}
             onChange={(e) => setCvc(e.target.value)}
@@ -184,7 +200,7 @@ export default function CCvalidation(props) {
         <section className={generalStyles.next_back_buttons}>
           <button onClick={changePage}>Back</button>
           <button
-            onSubmit={(e) => handleSubmit()}
+            onClick={(e) => handlePost()}
             onFocus={(e) => setFocus(e.target.name)}
           >
             Complete purchase

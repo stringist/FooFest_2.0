@@ -20,8 +20,8 @@ export default function Menu(props) {
     menuOpen ? setIsOpening(true) : setIsClosing(true);
     setMenuOpen((prev) => !prev);
   };
-  console.log(props.user);
-
+  /*   console.log(props.user);
+   */
   return (
     <header>
       <nav className={menuStyles.navBar}>
@@ -36,12 +36,57 @@ export default function Menu(props) {
             </svg>
           )}
         </button>
-        <ul className={`${menuStyles.menuNav} ${menuOpen ? menuStyles.showMenu : null} ${isOpening ? menuStyles.showingMenu : null} ${isClosing ? menuStyles.closingMenu : null}`}>
-          {props.user === "" ? <MenuLink link="/profile" title="Sign in" setMenuOpen={setMenuOpen} icon={<FaSignInAlt />} /> : <MenuLink link="/profile" title="Profile" setMenuOpen={setMenuOpen} key={createUID(4)} icon={<BsFillPersonFill />} />}
-          <MenuLink link="/" title="Home" setMenuOpen={setMenuOpen} key={createUID(4)} icon={<AiFillHome />} />
-          <MenuLink link="/tickets" title="Tickets" setMenuOpen={setMenuOpen} key={createUID(4)} icon={<FaTicketAlt />} />
-          <MenuLink link="/program" title="Program" setMenuOpen={setMenuOpen} key={createUID(4)} icon={<BsFillCalendar2DayFill />} />
-          <MenuLink link="/artists" title="Artists" setMenuOpen={setMenuOpen} key={createUID(4)} icon={<BsMusicPlayerFill />} />
+        <ul
+          className={`${menuStyles.menuNav} ${
+            menuOpen ? menuStyles.showMenu : null
+          } ${isOpening ? menuStyles.showingMenu : null} ${
+            isClosing ? menuStyles.closingMenu : null
+          }`}
+        >
+          {props.user === "" ? (
+            <MenuLink
+              link="/profile"
+              title="Sign in"
+              setMenuOpen={setMenuOpen}
+              icon={<FaSignInAlt />}
+            />
+          ) : (
+            <MenuLink
+              link="/profile"
+              title="Profile"
+              setMenuOpen={setMenuOpen}
+              key={createUID(4)}
+              icon={<BsFillPersonFill />}
+            />
+          )}
+          <MenuLink
+            link="/"
+            title="Home"
+            setMenuOpen={setMenuOpen}
+            key={createUID(4)}
+            icon={<AiFillHome />}
+          />
+          <MenuLink
+            link="/tickets"
+            title="Tickets"
+            setMenuOpen={setMenuOpen}
+            key={createUID(4)}
+            icon={<FaTicketAlt />}
+          />
+          <MenuLink
+            link="/program"
+            title="Program"
+            setMenuOpen={setMenuOpen}
+            key={createUID(4)}
+            icon={<BsFillCalendar2DayFill />}
+          />
+          <MenuLink
+            link="/artists"
+            title="Artists"
+            setMenuOpen={setMenuOpen}
+            key={createUID(4)}
+            icon={<BsMusicPlayerFill />}
+          />
         </ul>
       </nav>
     </header>
