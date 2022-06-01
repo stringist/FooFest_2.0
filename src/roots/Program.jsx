@@ -33,28 +33,15 @@ export default function Program(props) {
         setFilteredM(data.Midgard.mon);
         setFilteredJ(data.Jotunheim.mon);
         setFilteredV(data.Vanaheim.mon);
-        setLoadingSch(false);
-        console.log("finished loading");
 
-        console.log(props.isLoading);
+        console.log("finished loading");
+        const timing = setTimeout(() => {
+          setLoadingSch(false);
+        }, 2000);
+        return () => clearTimeout(timing);
       });
   }, []);
 
-  // const [events, setEvents] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(`https://foofestival.herokuapp.com/events`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setEvents(data);
-  //     });
-  // }, []);
-  // console.log(events);
-
-  // if (!schedule) {
-  //   return null;
-  // }
   if (loadingSch) {
     return (
       <div className={programStyles.Program}>

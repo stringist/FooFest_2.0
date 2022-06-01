@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import CampingOptions from "./CampingOptions";
-import Summary from "../../form_components/Summary";
+import Summary from "../form_components/Summary";
 import form2Styles from "/sass/modules/_Form2.module.scss";
 
 export default function FormStep2(props) {
@@ -9,8 +9,8 @@ export default function FormStep2(props) {
 
   return (
     <section className={form2Styles.checkout_grid}>
-<CampingOptions {...props}/>
-<Summary {...props}/>
+      <CampingOptions {...props} />
+      <Summary {...props} />
     </section>
   );
 }

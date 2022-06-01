@@ -11,50 +11,49 @@ import Footer from "../components/general/Footer";
 import MyLoader from "../components/general/MyLoader";
 
 export default function Festival(props) {
-  // useEffect(() => {
-  //   props.setIsLoading(true);
-  //   const timing = setTimeout(() => {
-  //     props.setIsLoading(false);
-  //   }, 4000);
-  //   return () => clearTimeout(timing);
-  // }, []);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timing = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+    return () => clearTimeout(timing);
+  }, []);
   return (
     <div className={landingStyles.Festival}>
-      {props.isLoading && <MyLoader message="Loading..." />}
-      {!props.isLoading && (
-        <>
-          <Menu user={props.user} />
+      <>
+        <Menu user={props.user} />
 
-          <LandingHero />
+        <LandingHero />
 
-          <LatestNews />
-          <h3>Sponsors</h3>
-          <div className={landingStyles.sponsors}>
-            <div>
-              <img src="/img/tuborg.png" alt="Tuborg logo" />
-              <p>
-                All rights reserved to <br></br> <a href="https://www.tuborg.com/en/">https://www.tuborg.com/</a>
-              </p>
-            </div>
-            <div>
-              <img src="/img/somersby.png" alt="Somersby logo" />
-              <p>
-                All rights reserved to <br></br>
-                <a href="https://www.somersby.com/en/">https://www.somersby.com/</a>
-              </p>
-            </div>
-            <div>
-              <img src="/img/marshall.png" alt="Marshall logo" className={landingStyles.marshal} />
-              <p>
-                All rights reserved to <br></br>
-                <a href="https://www.marshall.com/en/">https://www.marshall.com/</a>
-              </p>
-            </div>
+        <LatestNews />
+        <h3>Sponsors</h3>
+        <div className={landingStyles.sponsors}>
+          <div>
+            <img src="/img/tuborg.png" alt="Tuborg logo" />
+            <p>
+              All rights reserved to <br></br> <a href="https://www.tuborg.com/en/">https://www.tuborg.com/</a>
+            </p>
           </div>
+          <div>
+            <img src="/img/somersby.png" alt="Somersby logo" />
+            <p>
+              All rights reserved to <br></br>
+              <a href="https://www.somersby.com/en/">https://www.somersby.com/</a>
+            </p>
+          </div>
+          <div>
+            <img src="/img/marshall.png" alt="Marshall logo" className={landingStyles.marshal} />
+            <p>
+              All rights reserved to <br></br>
+              <a href="https://www.marshall.com/en/">https://www.marshall.com/</a>
+            </p>
+          </div>
+        </div>
 
-          <Footer />
-        </>
-      )}
+        <Footer />
+      </>
     </div>
   );
 }
