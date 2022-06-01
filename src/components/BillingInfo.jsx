@@ -53,9 +53,10 @@ export default function CheckOutForm(props) {
         {/* <img src={step3} alt="" /> */}
         <h2>Checkout</h2>
         <a href="#/">← Back</a>
+<h3>Billing Information</h3>
         <form ref={formEl} onChange={createObject} className={billing.billing_form} onSubmit={exportInfo}>
           <fieldset>
-            <legend>Ticketholder information</legend>
+            {/* <legend>Ticketholder information</legend> */}
             <div className={billing.labelInputPair}>
               <label htmlFor="name">Name as on card</label>
               <input type="text" id="name" required />
@@ -92,13 +93,6 @@ export default function CheckOutForm(props) {
               <button className={generalStyles.secondaryButton}>Back</button>
               <button className={generalStyles.primaryButton}>Next</button>
             </div>
-            {/* need to add .map for any extra ticket holders and make name input
-            {props.amount > 1 ? (
-              <div className={billing.labelInputPair}>
-                <label htmlFor="extraTicketHolder">Addtional ticket holder full name</label>
-                <input type="text" id="extraTicketHolder" required />{" "}
-              </div>
-            ) : null} */}
           </fieldset>
         </form>
       </section>
