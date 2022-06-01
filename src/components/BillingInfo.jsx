@@ -52,6 +52,7 @@ export default function CheckOutForm(props) {
       <section className={form2Styles.checkout_options}>
         {/* <img src={step3} alt="" /> */}
         <h2>Checkout</h2>
+        <a href="#/">← Back</a>
         <form ref={formEl} onChange={createObject} className={billing.billing_form} onSubmit={exportInfo}>
           <fieldset>
             <legend>Ticketholder information</legend>
@@ -71,8 +72,8 @@ export default function CheckOutForm(props) {
                 <input type="text" id="apartment" required />
               </div>
             </div>
-              <div className={billing.splitRow}>
-            <div className={billing.labelInputPair}>
+            <div className={billing.splitRow}>
+              <div className={billing.labelInputPair}>
                 <label htmlFor="city">City</label>
                 {/* <span>Haderslev</span> */}
                 <input type="text" id="city" required />
@@ -87,11 +88,18 @@ export default function CheckOutForm(props) {
               <label htmlFor="country">Country</label>
               <CountrySelector id="country" />
             </div>
-          
-          <div className={generalStyles.buttonWrapper}>
-            <button className={generalStyles.secondaryButton}>Back</button>
-            <button className={generalStyles.primaryButton}>Next</button>
-          </div></fieldset>
+            <div className={generalStyles.buttonWrapper}>
+              <button className={generalStyles.secondaryButton}>Back</button>
+              <button className={generalStyles.primaryButton}>Next</button>
+            </div>
+            {/* need to add .map for any extra ticket holders and make name input
+            {props.amount > 1 ? (
+              <div className={billing.labelInputPair}>
+                <label htmlFor="extraTicketHolder">Addtional ticket holder full name</label>
+                <input type="text" id="extraTicketHolder" required />{" "}
+              </div>
+            ) : null} */}
+          </fieldset>
         </form>
       </section>
       {/* <Summary {...props}/> */}
