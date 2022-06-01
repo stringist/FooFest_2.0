@@ -4,7 +4,7 @@ import SummaryStyles from "/sass/modules/_Summary.module.scss"
 
 export default function Summary(props) {
   return (<section className={SummaryStyles.summary}>
-<h3>Summary</h3>
+<h2>Summary</h2>
 <BasketList {...props}/>
 <Total {...props}/>
 </section>);
