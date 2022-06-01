@@ -1,3 +1,6 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 import userStyles from "/sass/modules/_User.module.scss";
 import generalStyles from "/sass/modules/_General.module.scss";
 

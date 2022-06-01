@@ -56,19 +56,18 @@ export default function SignInForm(props) {
       validationSchema={validate}
       onSubmit={(values) => {
         props.setUser(values.username);
-        props.setIsLogedIn(true);
       }}
     >
       {(formik) => (
         <div className={loginStyles.card}>
+          {console.log(formik.values.password)}
           <Form>
-            {/* {console.log(formik.errors)} */}
-            {/* {formik.isValid === false && formik.errors && <DangerMessage message="Correct the fields mark in red" />} */}
-
             <div className={loginStyles.users}>
               <p className={loginStyles.help}>(usernames: kalle, lasse or paula)</p>
               <p>(passwords: "username" + "A123")</p>
             </div>
+
+            {formik.touched.username && formik.touched.password && formik.errors && <DangerMessage message="Plese, correct the errors" />}
 
             <h2>Login to your account</h2>
             <TextField label="Username" name="username" type="text" />

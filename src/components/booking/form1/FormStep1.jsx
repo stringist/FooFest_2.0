@@ -17,12 +17,11 @@ export default function FormStep1(props) {
   const [ticket, setTicket] = useState("General");
   const [area, setArea] = useState("Svartheim");
   const [amount, setAmount] = useState(1);
-// const currentTicket = {product: `ticket`, type: ticket, area: area, amount: amount};
+  // const currentTicket = {product: `ticket`, type: ticket, area: area, amount: amount};
 
   const [reservation, setReservation] = useState([]);
   const [showAlert, setAlert] = useState(false);
   const [basket, setBasket] = useState([{ product: "Booking Fee", price: 99, id: 1, amount: 1 }]);
-
 
   function searchTickets(e) {
     e.preventDefault();
@@ -52,7 +51,7 @@ export default function FormStep1(props) {
 
         const timing = setTimeout(() => {
           props.setIsSearching(false);
-          !showAlert ? setTimer(0) : setTimer(1);
+          showAlert ? setTimer(0) : setTimer(1);
         }, 2000);
         return () => {
           clearTimeout(timing);

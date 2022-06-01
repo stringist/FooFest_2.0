@@ -79,20 +79,13 @@ li:hover {
 
 @media only screen and (max-width: general.$mobile-query) {
   .menuNav {
-    right: 0vw;
-
     &.showMenu {
-      width: 115vw;
+      width: 120vw;
     }
   }
-  .showingMenu {
-    transform: translateX(0vw);
-  }
-  .closingMenu {
-    transform: translateX(32vw);
-  }
 
-  .navBar button {
-    right: 1.5rem;
-  }
+  // .navBar button {
+  //   right: 6rem;
+  //   top: 1rem;
+  // }
 }

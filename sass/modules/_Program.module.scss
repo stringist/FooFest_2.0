@@ -22,6 +22,10 @@ table {
     padding: 0.2rem 0.5rem;
     cursor: pointer;
     width: fit-content;
+
+    &:hover {
+      color: general.$hover-color;
+    }
   }
 
   .selected {
@@ -178,7 +182,8 @@ table {
   .festival__buttons {
     flex-wrap: wrap;
     button {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
+      row-gap: 0;
     }
   }
 
@@ -201,8 +206,9 @@ table {
       }
       p {
         display: block;
-        padding: 0.35rem 0;
+        padding: 0.35rem 0.15rem;
         font-size: 0.85rem;
+        font-weight: 400;
       }
     }
   }

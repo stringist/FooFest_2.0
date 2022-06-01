@@ -17,7 +17,7 @@ export default function Login(props) {
 
       <HeroBanner img="/img/bands_background.png" title="Profile" />
 
-      {props.user === "" ? <SignInForm setUser={props.setUser} /> : <UserProfile user={props.user} />}
+      {props.user === "" ? <SignInForm setUser={props.setUser} /> : <UserProfile user={props.user} favourites={props.favourites} setFavourites={props.setFavourites} />}
       <Footer />
     </div>
   );

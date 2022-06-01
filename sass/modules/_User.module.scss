@@ -6,6 +6,12 @@
   align-items: center;
   height: 50vh;
   flex-direction: column;
+  div:first-child {
+    width: 50vw;
+    p {
+      font-size: 1rem;
+    }
+  }
 
   h3 {
     font-size: 3rem;

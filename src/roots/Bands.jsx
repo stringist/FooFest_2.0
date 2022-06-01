@@ -12,7 +12,6 @@ export default function Bands(props) {
   const [loadingBands, setLoadingBands] = useState(false);
 
   const [bandDisplay, setBandDisplayed] = useState([]);
-  const [favourites, setFavourites] = useState([]);
 
   return (
     <>
@@ -21,7 +20,7 @@ export default function Bands(props) {
       <div className="bands">
         <HeroBanner img="/img/bands_background.png" title="Artists" />
 
-        <BandsList bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={favourites} setFavourites={setFavourites} setLoadingBands={setLoadingBands} />
+        <BandsList bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} setLoadingBands={setLoadingBands} />
       </div>
       <Footer />
     </>

@@ -2,8 +2,11 @@ import generalStyles from "/sass/modules/_General.module.scss";
 
 export default function TimeUp() {
   return (
-    <div>
-      <p>Time is up</p>
+    <div className={generalStyles.timeUp}>
+      <p>Time is up!</p>
+      <a className={generalStyles.cta} href="/tickets" onClick={resetBasket}>
+        Start a new search
+      </a>
     </div>
   );
 }

@@ -92,7 +92,7 @@ export default function BandListTable(props) {
       <div className={bandsStyles.pagination}>
         <button onClick={previousPage}>Previous</button>
         {buttonss}
-        <button onClick={nextPage}>Previous</button>
+        <button onClick={nextPage}>Next</button>
       </div>
     </>
   );
