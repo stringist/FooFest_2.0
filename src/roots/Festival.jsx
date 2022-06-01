@@ -31,23 +31,32 @@ export default function Festival(props) {
           <h3>Sponsors</h3>
           <div className={landingStyles.sponsors}>
             <div>
-              <img src="/img/tuborg.png" alt="Tuborg logo" />
+              <img src="/img/tuborg.webp" alt="Tuborg logo" />
               <p>
-                All rights reserved to <br></br> <a href="https://www.tuborg.com/en/">https://www.tuborg.com/</a>
+                All rights reserved to <br></br>{" "}
+                <a href="https://www.tuborg.com/en/">https://www.tuborg.com/</a>
               </p>
             </div>
             <div>
-              <img src="/img/somersby.png" alt="Somersby logo" />
+              <img src="/img/somersby.webp" alt="Somersby logo" />
               <p>
                 All rights reserved to <br></br>
-                <a href="https://www.somersby.com/en/">https://www.somersby.com/</a>
+                <a href="https://www.somersby.com/en/">
+                  https://www.somersby.com/
+                </a>
               </p>
             </div>
             <div>
-              <img src="/img/marshall.png" alt="Marshall logo" className={landingStyles.marshal} />
+              <img
+                src="/img/marshall.webp"
+                alt="Marshall logo"
+                className={landingStyles.marshal}
+              />
               <p>
                 All rights reserved to <br></br>
-                <a href="https://www.marshall.com/en/">https://www.marshall.com/</a>
+                <a href="https://www.marshall.com/en/">
+                  https://www.marshall.com/
+                </a>
               </p>
             </div>
           </div>
