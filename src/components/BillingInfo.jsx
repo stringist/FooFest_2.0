@@ -1,11 +1,6 @@
 import { useRef, useState } from "react";
 import "../../sass/style.scss";
 import React, { Component } from "react";
-/* import {
-  CountryDropdown,
-  RegionDropdown,
-  CountryRegionData,
-} from "react-country-region-selector"; */
 import generalStyles from "/sass/modules/_General.module.scss";
 import billing from "/sass/modules/_Billing.module.scss";
 import step3 from "/img/step3.svg";
@@ -50,7 +45,12 @@ export default function CheckOutForm(props) {
       {" "}
       <img src={step3} alt="" />
       <h4 className={billing.billing_h4}>BILLING INFORMATION</h4>
-      <form ref={formEl} onChange={createObject} className={billing.billing_form} onSubmit={exportInfo}>
+      <form
+        ref={formEl}
+        onChange={createObject}
+        className={billing.billing_form}
+        onSubmit={exportInfo}
+      >
         <fieldset>
           <div>
             <aside>
