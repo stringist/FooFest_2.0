@@ -8,7 +8,9 @@
 .checkout_options {
     background: general.$grey-300;
     z-index: 1;
-    height: 90vh;
+    min-height: 90vh;
+    padding-bottom: 5%;
+    // overflow: scroll;
     a {
         color: general.$secondary-color;
         padding: 1rem;

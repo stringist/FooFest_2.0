@@ -1,93 +1,90 @@
-@use "_General.module" as general;
-.cc_h4 {
-    margin: 0;
-    background-color: transparent;
-    padding: 0;
-    font-size: 1.7rem;
-    margin-bottom: 1rem;
-}
-
-.cc_form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 2rem;
-    padding: 0;
-    input {
-        border-radius: 5px;
-        background-color: general.$primary-color-dark;
-        height: 30px;
-        max-width: 335px;
-        color: general.$primary-color-light;
-        margin-bottom: 1rem;
-    }
-    input:valid {
-        border: 2px solid rgba(0, 127, 0, 0.66);
-        background-color: rgba(0, 127, 0, 0.193);
-    }
-    /*   input:invalid:not(:focus) {
-    border: 2px solid red;
-    background-color: rgba(255, 0, 0, 0.181);
-  } */
-    input:invalid:not(:placeholder-shown + span) {
-        opacity: 1;
-    }
-    input:focus-within {
-        border: 1px solid rgba(0, 0, 255, 0.623);
-        background-color: rgba(0, 0, 255, 0.167);
-    }
-    select {
-        background-color: general.$primary-color-dark;
-        color: general.$primary-color-light;
-        height: 30px;
-        max-width: 335px;
-    }
-    section {
-        display: flex;
-        width: 100%;
-        div:first-of-type {
-            padding-right: 0.5rem;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            max-width: 213px;
-        }
-        div:last-of-type {
-            display: flex;
-            flex-direction: column;
-            max-width: 113px;
-            margin-left: 0.5rem;
-        }
-        input {
-            width: 100%;
-        }
-    }
-    section:last-of-type {
-        margin-bottom: 1rem;
-    }
-    article {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-.section_cc {
-    input {
-        max-width: 113px;
-    }
-    input:first-of-type {
-        margin-right: 1rem;
-    }
-    // button {
-    //   max-width: 362px;
-    // }
-}
-
-@media only screen and (min-width: general.$mobile-query) {
-    .cc_form {
-        margin: 0;
-    }
-    .section_cc {
-        flex-direction: column;
-    }
-}
+// @use "_General.module" as general;
+// .cc_h4 {
+//     margin: 0;
+//     background-color: transparent;
+//     padding: 0;
+//     font-size: 1.7rem;
+//     margin-bottom: 1rem;
+// }
+// .cc_form {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     margin-top: 2rem;
+//     padding: 0;
+//     input {
+//         border-radius: 5px;
+//         background-color: general.$primary-color-dark;
+//         height: 30px;
+//         max-width: 335px;
+//         color: general.$primary-color-light;
+//         margin-bottom: 1rem;
+//     }
+//     input:valid {
+//         border: 2px solid rgba(0, 127, 0, 0.66);
+//         background-color: rgba(0, 127, 0, 0.193);
+//     }
+//     /*   input:invalid:not(:focus) {
+//     border: 2px solid red;
+//     background-color: rgba(255, 0, 0, 0.181);
+//   } */
+//     input:invalid:not(:placeholder-shown + span) {
+//         opacity: 1;
+//     }
+//     input:focus-within {
+//         border: 1px solid rgba(0, 0, 255, 0.623);
+//         background-color: rgba(0, 0, 255, 0.167);
+//     }
+//     select {
+//         background-color: general.$primary-color-dark;
+//         color: general.$primary-color-light;
+//         height: 30px;
+//         max-width: 335px;
+//     }
+//     section {
+//         display: flex;
+//         width: 100%;
+//         div:first-of-type {
+//             padding-right: 0.5rem;
+//             width: 100%;
+//             display: flex;
+//             flex-direction: column;
+//             max-width: 213px;
+//         }
+//         div:last-of-type {
+//             display: flex;
+//             flex-direction: column;
+//             max-width: 113px;
+//             margin-left: 0.5rem;
+//         }
+//         input {
+//             width: 100%;
+//         }
+//     }
+//     section:last-of-type {
+//         margin-bottom: 1rem;
+//     }
+//     article {
+//         display: flex;
+//         flex-direction: column;
+//     }
+// }
+// .section_cc {
+//     input {
+//         max-width: 113px;
+//     }
+//     input:first-of-type {
+//         margin-right: 1rem;
+//     }
+//     // button {
+//     //   max-width: 362px;
+//     // }
+// }
+// @media only screen and (min-width: general.$mobile-query) {
+//     .cc_form {
+//         margin: 0;
+//     }
+//     .section_cc {
+//         flex-direction: column;
+//     }
+// }

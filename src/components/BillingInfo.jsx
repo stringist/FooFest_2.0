@@ -48,7 +48,7 @@ export default function CheckOutForm(props) {
   // console.log(ticketholderdata.apartment);
 
   return (
-    <section className={form2Styles.checkout_grid}>
+    <div className={form2Styles.checkout_grid}>
       <section className={form2Styles.checkout_options}>
         {/* <img src={step3} alt="" /> */}
         <h2>Checkout</h2>
@@ -97,6 +97,6 @@ export default function CheckOutForm(props) {
         </form>
       </section>
       {/* <Summary {...props}/> */}
-    </section>
+    </div>
   );
 }
