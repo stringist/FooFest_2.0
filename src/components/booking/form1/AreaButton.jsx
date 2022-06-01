@@ -1,5 +1,5 @@
+import form1Styles from "/sass/modules/_Form1.module.scss"
 import AreaImage from "./AreaImage";
-
 export default function AreaButton(props) {
   return (
     <>
@@ -7,7 +7,7 @@ export default function AreaButton(props) {
         <label htmlFor={props.name}>
           <AreaImage name={props.name} area={props.area} />
         </label>
-        <input
+        <input className={form1Styles.areaButton}
           type="radio"
           checked={props.area === props.name}
           id={props.name}

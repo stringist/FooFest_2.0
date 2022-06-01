@@ -1,127 +1,111 @@
 @use "_General.module" as general;
-
 .Booking {
-  position: relative;
+    position: relative;
 }
 
 form {
-  font-family: general.$h-font;
-  margin: 0 30vw;
-  gap: 1rem;
-
-  button {
-    font-size: 1.25rem;
-    margin-top: 1rem;
-    &:hover {
-      background-color: general.$hover-color;
+    font-family: general.$h-font;
+    margin: 0 30vw;
+    gap: 1rem;
+    legend {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        line-height: 1;
+        margin-bottom: 0.5rem;
     }
-  }
-
-  legend {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-
-  .ticket_legend {
-    font-size: 2rem;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    .ticket_legend {
+        font-size: 2rem;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
+
 .form__ {
-  &area [type="radio"] {
-    display: none;
-  }
-  &area__row {
-    display: flex;
-    justify-content: center;
-
-    label {
-      img {
-        cursor: pointer;
-      }
-      .not_selected:hover {
-        filter: brightness(0) saturate(100%) invert(65%) sepia(42%) saturate(1033%) hue-rotate(321deg) brightness(97%) contrast(86%);
-      }
+    &area [type="radio"] {
+        display: none;
     }
-  }
-
-  &type {
-    display: flex;
-    gap: 5rem;
-    justify-content: center;
-
-    [type="radio"] {
-      display: none;
-    }
-
-    label {
-      border: 1px solid hsl(0deg, 0%, 98%);
-      padding: 1rem;
-      font-size: 2.25rem;
-      line-height: 1.2;
-      text-align: center;
-      min-width: 10rem;
-      cursor: pointer;
-      display: block;
-      &:hover {
-        border: 1px solid general.$hover-color;
-        color: general.$hover-color;
-      }
-    }
-    .checked {
-      border: 1px solid general.$accent-color-100;
-      color: general.$accent-color-100;
-    }
-  }
-
-  &amount {
-    input {
-      width: 5rem;
-      text-align: center;
-      padding: 0;
-    }
-
-    &__row {
-      display: flex;
-      align-items: center;
-
-      div {
-        margin: 0.5rem;
-        padding: 0 1rem;
-        background-color: general.$accent-color-100;
-        cursor: pointer;
-
-        &:hover {
-          background-color: general.$hover-color;
+    &area__row {
+        display: flex;
+        justify-content: center;
+        label {
+            img {
+                cursor: pointer;
+            }
+            .not_selected:hover {
+                filter: brightness(0) saturate(100%) invert(65%) sepia(42%) saturate(1033%) hue-rotate(321deg) brightness(97%) contrast(86%);
+            }
         }
-      }
     }
-    p {
-      margin: 0;
-      font-family: general.$body-font;
-      font-size: 0.85rem;
-      color: general.$primary-color-lighter;
+    &type {
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+        [type="radio"] {
+            display: none;
+        }
+        label {
+            border: 1px solid hsl(0deg, 0%, 98%);
+            padding: 1rem;
+            font-size: 2.25rem;
+            line-height: 1.2;
+            text-align: center;
+            min-width: 10rem;
+            cursor: pointer;
+            display: block;
+            &:hover {
+                border: 1px solid general.$accent-color-hover;
+                color: general.$accent-color-hover;
+            }
+        }
+        .checked {
+            border: 1px solid general.$accent-color-100;
+            color: general.$accent-color-100;
+        }
     }
-  }
+    &amount {
+        input {
+            width: 5rem;
+            text-align: center;
+            padding: 0;
+        }
+        &__row {
+            display: flex;
+            align-items: center;
+            div {
+                display: grid;
+                place-items: center;
+                font-size: 2rem;
+                line-height: 0;
+                width: 2.2rem;
+                height: 2.2rem;
+                background-color: general.$accent-color-100;
+                cursor: pointer;
+                &:hover {
+                    background-color: general.$hover-color;
+                }
+            }
+        }
+        p {
+            margin: 0;
+            font-family: general.$body-font;
+            font-size: 0.85rem;
+            color: general.$primary-color-lighter;
+        }
+    }
 }
 
 @media only screen and (max-width: general.$mobile-query) {
-  .Booking form {
-    margin: 0;
-    margin-top: 2rem;
-    padding: 1rem;
-
-    .form__type {
-      gap: 3rem;
+    .Booking form {
+        margin: 0;
+        margin-top: 2rem;
+        padding: 1rem;
+        .form__type {
+            gap: 3rem;
+        }
+        legend {
+            margin-bottom: 1rem;
+        }
     }
-
-    legend {
-      margin-bottom: 1rem;
-    }
-  }
 }

@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 
 import form1Styles from "/sass/modules/_Form1.module.scss";
+import generalStyles from "/sass/modules/_General.module.scss";
 
 import AreaButton from "./AreaButton";
 import TicketButton from "./TicketButton";
@@ -95,8 +96,8 @@ export default function FormStep1(props) {
           </div>
         </fieldset>
 
-        {!props.isSearching && <button>Search tickets</button>}
-        {props.isSearching && <button>Searching tickets...</button>}
+        {!props.isSearching && <button className={generalStyles.primaryButton}>Search tickets</button>}
+        {props.isSearching && <button className={generalStyles.primaryButton}>Searching tickets...</button>}
       </form>
       {/*       {console.log(timer)}
        */}{" "}
