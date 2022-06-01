@@ -53,36 +53,70 @@ export default function CheckOutForm(props) {
         {/* <img src={step3} alt="" /> */}
         <h2>Checkout</h2>
         <a href="#/">← Back</a>
-<h3>Billing Information</h3>
-        <form ref={formEl} onChange={createObject} className={billing.billing_form} onSubmit={exportInfo}>
+        <h3>Billing Information</h3>
+        <form
+          ref={formEl}
+          onChange={createObject}
+          className={billing.billing_form}
+          onSubmit={exportInfo}
+        >
           <fieldset>
             {/* <legend>Ticketholder information</legend> */}
             <div className={billing.labelInputPair}>
               <label htmlFor="name">Name as on card</label>
-              <input type="text" id="name" required />
+              <input
+                placeholder=" "
+                type="text"
+                id="name"
+                pattern="^[a-zA-ZÆØÅæøå ]*$"
+                required
+              />
+              <span className={billing.requirements}>
+                {" "}
+                Must only contain letters
+              </span>
             </div>
             <div className={billing.splitRow}>
               <div className={billing.labelInputPair}>
                 <label htmlFor="street_address">Street address</label>
                 {/* <span> Guldbergsgade 420</span> */}
-                <input type="text" id="street_address" required />
+                <input
+                  placeholder=" "
+                  type="text"
+                  id="street_address"
+                  required
+                />
               </div>
               <div className={billing.labelInputPair}>
                 <label htmlFor="apartment">Apartment</label>
                 {/* <span>69 TV</span> */}
-                <input type="text" id="apartment" required />
+                <input placeholder=" " type="text" id="apartment" required />
               </div>
             </div>
             <div className={billing.splitRow}>
               <div className={billing.labelInputPair}>
                 <label htmlFor="city">City</label>
                 {/* <span>Haderslev</span> */}
-                <input type="text" id="city" required />
+                <input
+                  placeholder=" "
+                  type="text"
+                  id="city"
+                  pattern="^[a-zA-ZÆØÅæøå ]*$"
+                  required
+                />
+                <span className={billing.requirements}>
+                  {" "}
+                  Must only contain letters
+                </span>
               </div>
               <div className={billing.labelInputPair}>
                 <label htmlFor="postalcode">Postal Code</label>
                 {/* <span>6100</span> */}
-                <input type="number" id="postalcode" required />
+                <input placeholder=" " type="number" id="postalcode" required />
+                <span className={billing.requirements}>
+                  {" "}
+                  Must only contain numbers
+                </span>
               </div>
             </div>
             <div className={billing.LabelInputPair}>
