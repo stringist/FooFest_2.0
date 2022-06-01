@@ -14,7 +14,7 @@ import ScheduleButtons from "../components/program/ScheduleButtons";
 export default function Program(props) {
   const [count, setCount] = useState(0);
   const [schedule, setSchedule] = useState(null);
-  const [loadingSch, setLoadingSch] = useState(false);
+  const [loadingSch, setLoadingSch] = useState(true);
 
   const [filteredM, setFilteredM] = useState();
   const [filteredJ, setFilteredJ] = useState();
@@ -52,13 +52,18 @@ export default function Program(props) {
   // }, []);
   // console.log(events);
 
-  if (!schedule) {
-    return null;
+  // if (!schedule) {
+  //   return null;
+  // }
+  if (loadingSch) {
+    return (
+      <div className={programStyles.Program}>
+        <MyLoader />
+      </div>
+    );
   }
-
   return (
     <div className={programStyles.Program}>
-      {loadingSch && <MyLoader />}
       {!loadingSch && (
         <>
           <Menu user={props.user} />
