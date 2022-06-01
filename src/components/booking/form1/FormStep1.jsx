@@ -30,8 +30,8 @@ export default function FormStep1(props) {
     const ticketRequest = { area, amount };
     const putData = JSON.stringify(ticketRequest);
 
-    console.log(ticketRequest);
-    console.log(putData);
+    /*  console.log(ticketRequest);
+    console.log(putData); */
 
     fetch("https://foofestival.herokuapp.com/reserve-spot", {
       method: "PUT",
@@ -43,12 +43,11 @@ export default function FormStep1(props) {
       .then((response) => {
         response.json().then((data) => {
           setReservation(data);
-
           data.error ? setAlert(true) : setAlert(false);
         });
 
-        console.log(showAlert);
-
+        /*         console.log(showAlert);
+         */
         const timing = setTimeout(() => {
           props.setIsSearching(false);
           showAlert ? setTimer(0) : setTimer(1);
@@ -58,9 +57,12 @@ export default function FormStep1(props) {
         };
       })
       .catch((err) => console.error(err));
+    applyReservationId();
   }
-  console.log(reservation);
-
+  function applyReservationId() {
+    props.setReservationId(reservation.id);
+    console.log(reservation);
+  }
   return (
     <>
       <form ref={formEl} onSubmit={searchTickets}>
@@ -96,8 +98,8 @@ export default function FormStep1(props) {
         {!props.isSearching && <button>Search tickets</button>}
         {props.isSearching && <button>Searching tickets...</button>}
       </form>
-
-      {console.log(timer)}
+      {/*       {console.log(timer)}
+       */}{" "}
       {timer === 1 && <Timer setTimer={setTimer} />}
       {timer === -1 && <TimeUp />}
       {showAlert === true ? <Alert message={reservation.error} setAlert={setAlert} /> : <FormStep2 ticket={ticket} area={area} amount={amount} setBasket={setBasket} basket={basket} />}

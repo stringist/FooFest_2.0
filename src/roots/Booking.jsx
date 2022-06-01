@@ -19,6 +19,7 @@ export default function Booking(props) {
   const [isSearching, setIsSearching] = useState(false);
   const [ticketholderdata, setTicketholderdata] = useState({});
   const [showcontent, setShowContent] = useState(0);
+  const [reservationId, setReservationId] = useState("");
 
   return (
     <>
@@ -26,15 +27,26 @@ export default function Booking(props) {
       <div className={form1Styles.Booking}>
         <Menu user={props.user} />
         <HeroBanner img="/img/bands_background.png" title="Tickets" />
-        <FormStep1 setIsSearching={setIsSearching} />
+        <FormStep1
+          setReservationId={setReservationId}
+          setIsSearching={setIsSearching}
+        />
 
         {showcontent === 0 ? (
           <section className={generalStyles.sections_forms}>
-            <BillingInfo setShowContent={setShowContent} setTicketholderdata={setTicketholderdata} ticketholderdata={ticketholderdata} />
+            <BillingInfo
+              setShowContent={setShowContent}
+              setTicketholderdata={setTicketholderdata}
+              ticketholderdata={ticketholderdata}
+            />
           </section>
         ) : (
           <section className={generalStyles.sections_forms}>
-            <CCvalidation setShowContent={setShowContent} ticketholderdata={ticketholderdata} />
+            <CCvalidation
+              reservationId={reservationId}
+              setShowContent={setShowContent}
+              ticketholderdata={ticketholderdata}
+            />
           </section>
         )}
         <Footer />
