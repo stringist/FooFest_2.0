@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import CampingOptions from "./CampingOptions";
 import Summary from "../form_components/Summary";
-import form2Styles from "/sass/modules/_Form2.module.scss";
+import form2Styles from "/sass/modules/forms/_Form2.module.scss";
 
 export default function FormStep2(props) {
   //  const endpoint = "https://kea2semester-e216.restdb.io/rest/foofest";

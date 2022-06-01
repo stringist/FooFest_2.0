@@ -1,19 +1,19 @@
-@use "_General.module" as general;
+@use "../_General.module" as general;
 .summary {
-    background: general.$grey-500;
-    h2 {
-        font-size: 1.8rem;
-        background-color: general.$grey-100;
-        padding-left: 1rem;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    ul {
-        padding: 1rem;
-        margin-bottom: 100%;
-    }
-    li {
-        line-height: 1.5rem;
-        display: flex;
-        justify-content: space-between;
-    }
+  background: general.$grey-500;
+  h2 {
+    font-size: 1.8rem;
+    background-color: general.$grey-100;
+    padding-left: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  ul {
+    padding: 1rem;
+    margin-bottom: 100%;
+  }
+  li {
+    line-height: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }

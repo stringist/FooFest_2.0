@@ -1,4 +1,4 @@
-@use "_General.module" as general;
+@use "../_General.module" as general;
 .container {
   background-color: general.$grey-100;
   width: 50vw;

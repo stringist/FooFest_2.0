@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 
-import menuStyles from "/sass/modules/_Menu.module.scss";
+import menuStyles from "/sass/modules/components/_Menu.module.scss";
 
 export default function MenuLink(props) {
   const closeMenu = () => {

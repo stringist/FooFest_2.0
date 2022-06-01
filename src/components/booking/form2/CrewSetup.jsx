@@ -1,7 +1,7 @@
 import CrewSetupSubMenu from "./CrewSetupSubMenu";
 import { useState } from "react";
 import Summary from "../form_components/Summary";
-import form2Styles from "/sass/modules/_Form2.module.scss";
+import form2Styles from "/sass/modules/forms/_Form2.module.scss";
 
 export default function CrewSetup(props) {
   const [isChecked, setIsChecked] = useState(false);

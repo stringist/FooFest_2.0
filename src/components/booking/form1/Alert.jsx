@@ -1,4 +1,4 @@
-import alertStyles from "/sass/modules/_Alert.module.scss";
+import alertStyles from "/sass/modules/components/_Alert.module.scss";
 
 export default function Alert(props) {
   return (

@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import form1Styles from "/sass/modules/_Form1.module.scss";
+import form1Styles from "/sass/modules/forms/_Form1.module.scss";
 
 import FormStep1 from "../components/booking/form1/FormStep1";
-import CCvalidation from "../components/CCvalidation";
+import CCvalidation from "../components/booking/CCvalidation";
 import BillingInfo from "../components/booking/BillingInfo";
 import generalStyles from "/sass/modules/_General.module.scss";
 

@@ -1,4 +1,4 @@
-@use "_General.module" as general;
+@use "../_General.module" as general;
 
 .g_button {
   background-color: general.$primary-color-light;

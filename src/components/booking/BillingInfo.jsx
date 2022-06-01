@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import "../../sass/style.scss";
+// import "../../sass/style.scss";
 import React, { Component } from "react";
 /* import {
   CountryDropdown,
@@ -7,7 +7,7 @@ import React, { Component } from "react";
   CountryRegionData,
 } from "react-country-region-selector"; */
 import generalStyles from "/sass/modules/_General.module.scss";
-import billing from "/sass/modules/_Billing.module.scss";
+import billing from "/sass/modules/forms/_Billing.module.scss";
 import step3 from "/img/step3.svg";
 import CountrySelector from "./form_components/CountrySelector";
 

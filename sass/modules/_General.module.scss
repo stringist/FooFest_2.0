@@ -1,25 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800&family=Koulen&display=swap");
+
 $primary-color-dark: hsla(0, 12%, 7%, 100%);
 $primary-color-light: hsla(0, 0%, 98%, 100%);
 $primary-color-lighter: rgb(234, 232, 230);
-$accent-color-100: hsla(16, 100%, 50%, 100%);
-$accent-color-hover: #fe640d;
-$accent-color-60: hsla(16, 100%, 60%, 60%);
 $secondary-color: hsl(0, 0%, 82%);
+
+$accent-color-100: hsla(16, 100%, 50%, 100%);
+$accent-color-60: hsla(16, 100%, 60%, 60%);
 $hover-color: rgba(255, 67, 1, 0.15);
+$accent-color-hover: #fe640d;
+
 $error-color: rgba(220, 53, 69, 1);
 $valid-color: rgb(14, 137, 35);
+
 $grey-500: hsl(0, 0%, 12%);
 $grey-400: hsl(0, 1%, 16%);
 $grey-300: rgb(48, 48, 48);
 $grey-200: rgb(56, 56, 56);
 $grey-100: rgb(71, 71, 71);
-$error-color: rgb(246, 97, 97);
-$valid-color: rgb(14, 137, 35);
+
 $h-font: "Koulen", Arial, sans-serif;
 $body-font: "Inter", sans-serif;
 $gap: 3rem 0;
 $mobile-query: 650px;
+
 * {
   box-sizing: border-box;
   margin: 0;

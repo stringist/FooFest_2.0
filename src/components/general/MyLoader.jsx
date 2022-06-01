@@ -1,7 +1,7 @@
 import React from "react";
 import ReactLoading from "react-loading";
 
-import loaderStyles from "/sass/modules/_Loader.module.scss";
+import loaderStyles from "/sass/modules/components/_Loader.module.scss";
 
 export default function MyLoader(props) {
   return (

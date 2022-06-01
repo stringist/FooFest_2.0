@@ -1,4 +1,4 @@
-import form1Styles from "/sass/modules/_Form1.module.scss";
+import form1Styles from "/sass/modules/forms/_Form1.module.scss";
 
 export default function AmountButton(props) {
   function reduceAmount(e) {
