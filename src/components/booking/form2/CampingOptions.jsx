@@ -12,8 +12,9 @@ export default function CampingOptions(props) {
         <FixedFee />
         <GreenCamping  {...props}/>
         <CrewSetup  {...props}/>
+<div className="form2Styles buttonwrapper">
         <button className="secondary">Back</button>
-        <button className="primary">Continue to payment</button>
+        <button className="primary">Continue to payment</button></div>
       </form>
     </section>
   );

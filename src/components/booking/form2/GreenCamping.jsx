@@ -17,7 +17,7 @@ export default function GreenCamping({ basket, setBasket }) {
     <div className={form2Styles.formItem}>
       <input type="checkbox" id="greenCamping" name="greenCamping" onChange={updateBasket} />
       <div className="text_content">
-        <label htmlFor="greenCamping">Green camping </label>
+        <label htmlFor="greenCamping">Green camping <span>Optional</span></label>
         <p className={form2Styles.subtext}>
           Includes re-usable dishes, eco-friendly toiletries, and solar power rather than burning whale oil
         </p>
