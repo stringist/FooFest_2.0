@@ -26,7 +26,7 @@ export default function Festival(props) {
           <Menu user={props.user} />
 
           <LandingHero />
-
+<main>
           <LatestNews />
           <h3>Sponsors</h3>
           <div className={landingStyles.sponsors}>
@@ -51,7 +51,7 @@ export default function Festival(props) {
               </p>
             </div>
           </div>
-
+</main>
           <Footer />
         </>
       )}

@@ -10,9 +10,9 @@ export default function LandingHero() {
         <h3 className={landingStyles.genres}>Metal | Rock</h3>
         <h2>23-30 june 2022</h2>
 
-        <a href="/tickets" className={generalStyles.cta}>
+        <button className={generalStyles.cta}><a href="/tickets">
           Get tickets
-        </a>
+        </a></button>
       </div>
       <img src="./img/arrow.svg" alt="arrow pointing down" />
     </div>

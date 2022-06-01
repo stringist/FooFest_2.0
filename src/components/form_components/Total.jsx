@@ -1,3 +1,5 @@
+import summaryStyles from "/sass/modules/_Summary.module.scss"
+
 export default function Total(props) {
   let ticketPrice;
 
@@ -14,7 +16,7 @@ export default function Total(props) {
   const totalPrice = ticketPrice + sumWithInitial;
   /*   console.log(props);
    */ return (
-    <div className="total">
+    <div className={summaryStyles.total}>
       <p>Total:</p>
       <p>{totalPrice}Dkk</p>
     </div>
