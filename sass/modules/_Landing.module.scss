@@ -107,9 +107,8 @@
             color: general.$primary-color-light;
         }
         &:hover {
-            scale: 1.03;
-            box-shadow: 0px 2px 6px 0px rgba(255, 127, 29, 0.257);
-            border: solid 2px hsl(16deg, 100%, 50%);
+            box-shadow: rgba(255, 127, 29, 0.257) 0px 2px 8px 0px;
+            border: solid 2.5px hsl(16deg, 100%, 50%);
         }
     }
     .sponsors {
