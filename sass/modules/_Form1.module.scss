@@ -7,13 +7,6 @@ form {
     font-family: general.$h-font;
     margin: 0 30vw;
     gap: 1rem;
-    button {
-        font-size: 1.25rem;
-        margin-top: 1rem;
-        &:hover {
-            background-color: general.$hover-color;
-        }
-    }
     legend {
         font-size: 1.5rem;
         margin-top: 2rem;
