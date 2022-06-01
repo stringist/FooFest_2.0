@@ -62,8 +62,8 @@ form {
             cursor: pointer;
             display: block;
             &:hover {
-                border: 1px solid general.$hover-color;
-                color: general.$hover-color;
+                border: 1px solid general.$accent-color-hover;
+                color: general.$accent-color-hover;
             }
         }
         .checked {
@@ -81,8 +81,12 @@ form {
             display: flex;
             align-items: center;
             div {
-                margin: 0.5rem;
-                padding: 0 1rem;
+                display: grid;
+                place-items: center;
+                font-size: 2rem;
+                line-height: 0;
+                width: 2.2rem;
+                height: 2.2rem;
                 background-color: general.$accent-color-100;
                 cursor: pointer;
                 &:hover {
