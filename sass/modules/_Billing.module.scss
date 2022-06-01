@@ -12,17 +12,29 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: rgba(71, 71, 71, 0.43);
-    margin: 0;
+    background-color: #3f3f3f;
     font-family: general.$body-font;
-    input {
-        background-color: general.$grey-100;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 5%;
+    legend {
+        font-family: general.$h-font;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+    input,
+    select {
+        margin-top: .5rem;
+        display: block;
+        background-color: #373737;
+        border: solid .5px general.$primary-color-light;
         height: 30px;
         color: general.$primary-color-light;
+        padding-left: .25rem;
+        box-shadow: inset 2px 2px 3px 2px general.$grey-500;
     }
     input:valid {
-        border: 2px solid rgba(0, 127, 0, 0.66);
-        background-color: rgba(0, 127, 0, 0.193);
+        outline: 2px solid rgba(0, 127, 0, 0.66);
+        background-color: rgba(0, 127, 0, 0.1);
     }
     /*   input:invalid:not(:focus) {
     border: 2px solid red;
@@ -35,76 +47,33 @@
         border: 1px solid rgba(0, 0, 255, 0.623);
         background-color: rgba(0, 0, 255, 0.167);
     }
-    select {
-        background-color: general.$grey-100;
-        color: general.$primary-color-light;
-        height: 30px;
-        border: solid 1px hsl(0deg, 0%, 98%);
-        width: 335px;
-    }
+    // select {
+    //     margin-top: .5rem;
+    //     font-size: 1rem;
+    //     display: block;
+    //     background-color: #373737;
+    //     color: general.$primary-color-light;
+    //     // height: 30px;
+    //     border: solid .5px hsl(0deg, 0%, 98%);
+    //     width: 50%;
+    // }
     fieldset {
+        margin: auto;
         display: flex;
-        width: 100%;
-        input {
-            width: 100%;
-        }
-    }
-    fieldset:nth-child(1) {
-        aside {
-            display: flex;
-            flex-direction: column;
-        }
-        input {
-            width: 335px;
-        }
-    }
-    fieldset:nth-child(2) {
-        div:first-of-type {
-            padding-right: 0.5rem;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            width: 213px;
-        }
-        div:last-of-type {
-            display: flex;
-            flex-direction: column;
-            width: 113px;
-            margin-left: 0.5rem;
-        }
-    }
-    fieldset:nth-child(3) {
-        div:first-of-type {
-            padding-right: 0.5rem;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            width: 213px;
-        }
-        div:last-of-type {
-            display: flex;
-            flex-direction: column;
-            width: 113px;
-            margin-left: 0.5rem;
-        }
-    }
-    fieldset:nth-child(4) {
         flex-direction: column;
+        gap: 1.25rem;
+        width: 80%;
+        input {
+            width: 100%;
+        }
     }
-    fieldset:last-of-type {
-        margin-bottom: 1rem;
+    .splitRow {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 1rem;
     }
-    span {
-        font-family: general.$body-font;
-        font-size: 0.8rem;
-        font-style: italic;
-        font-weight: 300;
-        color: rgba(250, 250, 250, 0.7);
-        display: inline;
-        line-height: 0.8rem;
-    }
-    label {
-        line-height: 1.5rem;
+    [type=number] {
+        -moz-appearance: textfield;
     }
 }
 

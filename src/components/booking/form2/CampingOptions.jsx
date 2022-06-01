@@ -6,7 +6,7 @@ import generalSyles from "/sass/modules/_General.module.scss"
 
 export default function CampingOptions(props) {
   return (
-    <section className={form2Styles.camping_options}>
+    <section className={form2Styles.checkout_options}>
       <h2>Select Camping Options</h2>
       <a href="#/">← Back</a>
       <form>

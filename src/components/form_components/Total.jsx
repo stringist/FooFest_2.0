@@ -18,7 +18,7 @@ export default function Total(props) {
    */ return (
     <div className={summaryStyles.total}>
       <p>Total:</p>
-      <p>{totalPrice}Dkk</p>
+      <p className={summaryStyles.price}>{totalPrice} Dkk</p>
     </div>
   );
 }
