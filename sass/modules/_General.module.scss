@@ -14,7 +14,7 @@ $accent-color-100: hsla(16,
 100%,
 50%,
 100%);
-$accent-color-hover: #FE640D;
+$accent-color-hover: #fe640d;
 $accent-color-60: hsla(16,
 100%,
 60%,
@@ -73,11 +73,11 @@ $mobile-query: 650px;
 //   height: 4vw;
 // }
 button {
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-family: $h-font;
     font-weight: 700;
     cursor: pointer;
-    padding: .75rem 3rem;
+    padding: 0.75rem 3rem;
 }
 
 .primaryButton,
@@ -87,8 +87,8 @@ button {
     &:hover {
         transform: translate(-2px, -2px);
         filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
-        box-shadow: 2px 2px 0px #B62F00;
-        transition: all .5s;
+        box-shadow: 2px 2px 0px #b62f00;
+        transition: all 0.5s;
     }
 }
 
