@@ -73,9 +73,6 @@ $mobile-query: 650px;
     outline: 0;
 }
 
-// nav {
-//   height: 4vw;
-// }
 button {
     color: $primary-color-light;
     font-size: 1rem;
@@ -93,7 +90,7 @@ button {
         transform: translate(-2px, -2px);
         filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
         box-shadow: 2px 2px 0px #b62f00;
-        text-shadow: 1px 1px 2px #b62f00;
+        text-shadow: 1px 1px 1px #b62f00;
         transition: all 0.5s;
     }
 }
@@ -287,6 +284,7 @@ input {
         box-shadow: 2px 2px 0px #b62f00;
         text-shadow: 1px 1px 2px #b62f00;
         transition: all 0.5s;
+        text-shadow: 1.5px 1.5px 1.5px #b62f00;
     }
     & a {
         color: white;

@@ -37,6 +37,7 @@
 
 .filters__buttons {
     position: absolute;
+    z-index: 999;
     bottom: -7vw;
     background-color: general.$accent-color-100;
     padding: 0.5rem;
@@ -268,7 +269,6 @@
         }
         .filters__buttons {
             bottom: 4vw;
-            z-index: 99;
             width: 100%;
         }
     }

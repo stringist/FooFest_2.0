@@ -3,8 +3,8 @@ import billing from "/sass/modules/_Billing.module.scss";
 export default function CountrySelector() {
   return (
     <>
-      <select className={billing.billing_form} id="country" name="country">
-        <option>Select Country</option>
+      <select id="country" defaultValue="" name="country">
+        <option value="" disabled></option>
         <option value="Afghanistan">Afghanistan</option>
         <option value="Aland Islands">Aland Islands</option>
         <option value="Albania">Albania</option>

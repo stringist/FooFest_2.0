@@ -1,6 +1,9 @@
 @use "_General.module" as general;
 .summary {
     background: general.$grey-500;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
     h2 {
         font-size: 1.8rem;
         background-color: general.$grey-100;
@@ -9,15 +12,30 @@
     }
     ul {
         padding: 1rem;
-        margin-bottom: 100%;
+        // border: hotpink solid 1px;
+        // margin-bottom: 100%;
     }
     li {
-        line-height: 1.5rem;
+        margin-bottom: .5rem;
         display: flex;
         justify-content: space-between;
+        // border: solid .5px lime;
+        span {
+            font-family: general.$h-font;
+            min-width: max-content;
+        }
     }
 }
 
-.test {
-    display: none;
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    padding-top: 1rem;
+    border-top: solid .5px general.$secondary-color;
+    font-weight: 700;
+    .price {
+        font-family: general.$h-font;
+        min-width: max-content;
+    }
 }

@@ -1,4 +1,4 @@
-import form2Styles from "/sass/modules/_Form2.module.scss"
+import summaryStyles from "/sass/modules/_Form2.module.scss";
 import createUID from "create-unique-id";
 export default function BasketList(props) {
   /*   console.log(props);
@@ -19,7 +19,7 @@ export default function BasketList(props) {
     ) : null
   );
   return (
-    <section className={form2Styles.basketList}>
+    <section className={summaryStyles.basketList}>
       <ul>
         {ticket} {basketItems}
       </ul>

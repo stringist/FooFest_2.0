@@ -2,6 +2,9 @@ import Cards from "react-credit-cards";
 import "react-credit-cards/lib/styles.scss";
 import { useState, useRef } from "react";
 import generalStyles from "/sass/modules/_General.module.scss";
+import form2Styles from "/sass/modules/_Form2.module.scss";
+import billing from "/sass/modules/_Billing.module.scss";
+
 import Creditcard from "/sass/modules/_Creditcard.module.scss";
 import step4 from "/img/step4.svg";
 
@@ -109,38 +112,104 @@ export default function CCvalidation(props) {
   }
 
   return (
-    <>
-      <img src={step4} alt="" />
-      <h4 className={Creditcard.cc_h4}>CARD INFORMATION</h4>
-      {<Cards number={number} name={name} expiry={expiry} cvc={cvc} focused={focus}></Cards>}
+    <div className={form2Styles.checkout_grid}>
+      <section className={form2Styles.checkout_options}>
+        {/* <img src={step4} alt="" /> */}
+        <h2>Card Information</h2>
 
-      <form ref={formEl} onChange={changeFocus} onSubmit={handleSubmit} className={Creditcard.cc_form}>
-        <article>
-          {" "}
-          <span>Name</span>
-          <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} onFocus={(e) => setFocus(e.target.name)} minLength="1" maxLength="45" required />
-        </article>
-        <article>
-          {" "}
-          <span>Card Number</span>
-          <input type="tel" name="number" value={handleCardDisplay()} onChange={(e) => setNumber(e.target.value)} onFocus={(e) => setFocus(e.target.name)} onInput={(e) => handleCardDisplay()} minLength="16" maxLength="19" required />
-        </article>
+        <form ref={formEl} onChange={changeFocus} onSubmit={handleSubmit} className={billing.billing_form}>
+          {<Cards number={number} name={name} expiry={expiry} cvc={cvc} focused={focus}></Cards>}
+<fieldset>
+          <div className={billing.inputLabelPair}>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              onFocus={(e) => setFocus(e.target.name)}
+              minLength="1"
+              maxLength="45"
+              required
+            />
+          </div>
+          <div className={billing.inputLabelPair}>
+            <label id="number">Card Number</label>
+            <input
+              type="tel"
+              id="number"
+              name="number"
+              value={handleCardDisplay()}
+              onChange={(e) => setNumber(e.target.value)}
+              onFocus={(e) => setFocus(e.target.name)}
+              onInput={(e) => handleCardDisplay()}
+              minLength="16"
+              maxLength="19"
+              required
+            />
+          </div>
+          <div className={billing.twoColumn}>
+            <div className={billing.inputLabelPair}>
+              <label htmlFor="expiry">Expiry Date</label>
+              <input
+                name="expiry"
+                id="expiry"
+                type="tel"
+                value={handleExpiryDate()}
+                onChange={(e) => setExpiry(e.target.value)}
+                onFocus={(e) => setFocus(e.target.name)}
+                onInput={(e) => handleExpiryDate(e)}
+                minLength="5"
+                maxLength="5"
+                required
+              />
+            </div>
 
-        <span>Expiry</span>
-        <input name="expiry" type="tel" value={handleExpiryDate()} onChange={(e) => setExpiry(e.target.value)} onFocus={(e) => setFocus(e.target.name)} onInput={(e) => handleExpiryDate(e)} minLength="5" maxLength="5" required />
-        <span>CVC</span>
-        {number.substring(0, 2) == 34 || number.substring(0, 2) == 37 ? (
-          <input type="tel" name="cvc" value={cvc} onChange={(e) => setCvc(e.target.value)} onFocus={(e) => setFocus(e.target.name)} minLength="3" maxLength="4" required />
-        ) : (
-          <input type="number" name="cvc" value={cvc} onChange={(e) => setCvc(e.target.value)} onFocus={(e) => setFocus(e.target.name)} minLength="3" maxLength="3" required />
-        )}
-        <section className={generalStyles.next_back_buttons}>
-          <button onClick={changePage}>Back</button>
-          <button onClick={(e) => handlePost()} onFocus={(e) => setFocus(e.target.name)}>
-            Complete purchase
-          </button>
-        </section>
-      </form>
-    </>
+            <div className={billing.inputLabelPair}>
+              <label htmlFor="cvc">CVC</label>
+              {number.substring(0, 2) == 34 || number.substring(0, 2) == 37 ? (
+                <input
+                  type="tel"
+                  name="cvc"
+                  id="cvc"
+                  value={cvc}
+                  onChange={(e) => setCvc(e.target.value)}
+                  onFocus={(e) => setFocus(e.target.name)}
+                  minLength="3"
+                  maxLength="4"
+                  required
+                />
+              ) : (
+                <input
+                  type="number"
+                  name="cvc"
+                  id="cvc"
+                  value={cvc}
+                  onChange={(e) => setCvc(e.target.value)}
+                  onFocus={(e) => setFocus(e.target.name)}
+                  minLength="3"
+                  maxLength="3"
+                  required
+                />
+              )}
+            </div>
+          </div>
+          <div className={generalStyles.buttonWrapper}>
+            <button className={generalStyles.secondaryButton} onClick={changePage}>
+              Back
+            </button>
+            <button
+              className={generalStyles.primaryButton}
+              onClick={(e) => handlePost()}
+              onFocus={(e) => setFocus(e.target.name)}
+            >
+              Complete purchase
+            </button>
+          </div>
+</fieldset>
+        </form>
+      </section>
+    </div>
   );
 }
