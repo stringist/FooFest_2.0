@@ -3,7 +3,7 @@ import "react-credit-cards/lib/styles.scss";
 import { useState, useRef } from "react";
 import generalStyles from "/sass/modules/_General.module.scss";
 import Creditcard from "/sass/modules/_Creditcard.module.scss";
-import step4 from "../../img/step4.svg";
+import step4 from "/img/step4.svg";
 
 export default function CCvalidation(props) {
   const [number, setNumber] = useState("");
