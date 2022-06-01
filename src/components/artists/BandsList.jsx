@@ -56,7 +56,7 @@ export default function BandsList(props) {
           </div>
           {/* <SortToggle name="Sort by name" setSort={setSort} setSortDir={setSortDir} sortKey={"name"} /> */}
 
-          {searched === "" ? <h3>{filter}</h3> : <h3>Results</h3>}
+          {searched === "" ? <h3 className={bandsStyles.festival__bandList}>{filter}</h3> : <h3 className={bandsStyles.festival__bandList}>Results</h3>}
 
           <BandListTable bands={bands.data} searched={searched} filtered={filtered} bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} setSort={setSort} setSortDir={setSortDir} />
 
