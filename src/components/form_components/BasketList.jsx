@@ -1,4 +1,5 @@
 import form2Styles from "/sass/modules/_Form2.module.scss"
+import createUID from "create-unique-id";
 export default function BasketList(props) {
   /*   console.log(props);
    */
@@ -11,7 +12,7 @@ export default function BasketList(props) {
   );
   const basketItems = props.basket.map((item) =>
     item.amount > 0 ? (
-      <li>
+      <li key={createUID(5)}>
         {item.amount}x {item.product}{" "}
         <span className="price">{item.price * item.amount} Dkk</span>
       </li>

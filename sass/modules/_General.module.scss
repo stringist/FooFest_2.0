@@ -15,6 +15,10 @@ $accent-color-100: hsla(16,
 50%,
 100%);
 $accent-color-hover: #fe640d;
+$trans-fill: rgba(255,
+66,
+0,
+0.15);
 $accent-color-60: hsla(16,
 100%,
 60%,
@@ -110,6 +114,7 @@ button {
     border: solid 2px $accent-color-100;
     &:hover {
         color: $primary-color-light;
+        background-color: $trans-fill;
     }
 }
 

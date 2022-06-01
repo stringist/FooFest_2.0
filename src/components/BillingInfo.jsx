@@ -91,10 +91,10 @@ export default function CheckOutForm(props) {
           <label htmlFor="country">Country</label>
           <CountrySelector id="country" />
         </fieldset>
-        <fieldset className={generalStyles.next_back_buttons}>
-          <button>Back</button>
-          <button>Next</button>
-        </fieldset>
+        <div className={generalStyles.buttonWrapper}>
+          <button className={generalStyles.secondaryButton}>Back</button>
+          <button className={generalStyles.primaryButton}>Next</button>
+        </div>
       </form>
     </>
   );
