@@ -1,163 +1,149 @@
 @use "_General.module" as general;
-
 .Festival {
-  background-image: url(/img/landing_background.webp);
-  background-repeat: no-repeat;
-
-  body {
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    margin: -1rem;
-    padding: 0 5vw;
-  }
-
-  h2 {
-    margin: 0;
-    text-align: center;
-  }
-  h3 {
-    font-size: 1.5rem;
-    margin-top: 10vh;
-    margin-bottom: 0;
-  }
-
-  .genres {
-    margin: 0;
-    color: general.$primary-color-lighter;
-    text-align: center;
-  }
-  h4 {
-    font-size: 2.25rem;
-    margin-top: -3rem;
-    margin-left: 2rem;
-    margin-bottom: 0;
-    background-color: general.$primary-color-dark;
-    padding: 1rem;
-    width: fit-content;
-  }
-
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero {
-    height: 95vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero__ {
-    &logo {
-      width: 50vw;
-    }
-
-    &box {
-      background-color: rgba(71, 71, 71, 0.408);
-      width: fit-content;
-      padding: 2rem 3rem;
-      border: solid 2px general.$accent-color-100;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 3rem;
-    }
-  }
-
-  .articles {
-    width: 100%;
-    height: fit-content;
-    border: solid 2px hsl(16deg, 100%, 50%);
-    margin: 0 auto;
-    display: block;
-    background-position: center;
-    padding: 3rem;
-    padding-top: 0;
-    margin-top: 2.5rem;
-    margin-bottom: 5rem;
-
-    .content {
-      width: 70vw;
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-    }
-
-    img {
-      height: auto;
-      width: 100%;
-    }
-
-    p {
-      width: 30ch;
-      font-size: 1.5rem;
-      font-family: general.$h-font;
-      line-height: 1.5;
-      display: block;
-      margin-left: auto;
-      margin-right: 2rem;
-      color: general.$primary-color-light;
-    }
-
-    &:hover {
-      box-shadow: rgba(150, 145, 145, 0.279) 0px 2px 8px 0px;
-      border: solid 3px hsl(16deg, 100%, 50%);
-    }
-  }
-
-  .sponsors {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-
-    img {
-      max-width: 200px;
-    }
-  }
-
-  @media only screen and (max-width: general.$mobile-query) {
-    .Festival {
-      padding: 0;
+    body {
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin: -1rem;
+        padding: 0 5vw;
     }
     h2 {
-      font-size: 1.93rem;
-      text-align: center;
+        margin: 0;
+        text-align: center;
     }
-
     h3 {
-      margin-top: 0;
-      font-size: 2.41rem;
+        font-size: 1.5rem;
+        margin-top: 10vh;
+        margin-bottom: 0;
+    }
+    main {
+        padding: 0 5%;
+    }
+    .genres {
+        margin: 0;
+        color: general.$primary-color-lighter;
+        text-align: center;
     }
     h4 {
-      font-size: 1.56rem;
-      margin-top: -2.5rem;
+        font-size: 2.25rem;
+        margin-top: -3rem;
+        margin-left: 2rem;
+        margin-bottom: 0;
+        background-color: general.$primary-color-dark;
+        padding: 1rem;
+        width: fit-content;
     }
-
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero {
+        background-image: url(/img/landing_background.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     .hero__ {
-      &logo {
-        width: 90vw;
-      }
-      &box {
-        padding: 1rem 2rem;
-      }
-    }
-    button {
-      font-size: 1rem;
-      width: 100%;
+        &logo {
+            width: 50vw;
+        }
+        &box {
+            background-color: rgba(71, 71, 71, 0.408);
+            width: fit-content;
+            padding: 2rem 3rem;
+            border: solid 2px general.$accent-color-100;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3rem;
+        }
     }
     .articles {
-      .content {
+        width: 100%;
+        height: fit-content;
+        border: solid 2px hsl(16deg, 100%, 50%);
+        margin: 0 auto;
         display: block;
-      }
-      p {
-        font-size: 1rem;
-        margin-right: auto;
-      }
+        background-position: center;
+        padding: 3rem;
+        padding-top: 0;
+        margin-top: 2.5rem;
+        margin-bottom: 5rem;
+        .content {
+            width: 70vw;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        img {
+            height: auto;
+            width: 100%;
+        }
+        p {
+            width: 30ch;
+            font-size: 1.5rem;
+            font-family: general.$h-font;
+            line-height: 1.5;
+            display: block;
+            margin-left: auto;
+            margin-right: 2rem;
+            color: general.$primary-color-light;
+        }
+        &:hover {
+            box-shadow: rgba(150, 145, 145, 0.279) 0px 2px 8px 0px;
+            border: solid 3px hsl(16deg, 100%, 50%);
+        }
     }
-  }
+    .sponsors {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        img {
+            max-width: 200px;
+        }
+    }
+    @media only screen and (max-width: general.$mobile-query) {
+        .Festival {
+            padding: 0;
+        }
+        h2 {
+            font-size: 1.93rem;
+            text-align: center;
+        }
+        h3 {
+            margin-top: 0;
+            font-size: 2.41rem;
+        }
+        h4 {
+            font-size: 1.56rem;
+            margin-top: -2.5rem;
+        }
+        .hero__ {
+            &logo {
+                width: 90vw;
+            }
+            &box {
+                padding: 1rem 2rem;
+            }
+        }
+        button {
+            font-size: 1rem;
+            width: 100%;
+        }
+        .articles {
+            .content {
+                display: block;
+            }
+            p {
+                font-size: 1rem;
+                margin-right: auto;
+            }
+        }
+    }
 }
