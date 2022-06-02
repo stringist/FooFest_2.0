@@ -43,21 +43,21 @@ export default function ScheduleButton(props) {
   }
 
   return props.day === props.title ? (
-    <button
+    <div
       className={programStyles.selected}
       onClick={() => {
         filterList(props.day);
       }}
     >
       {props.title}
-    </button>
+    </div>
   ) : (
-    <button
+    <div
       onClick={() => {
         filterList(props.day);
       }}
     >
       {props.title}
-    </button>
+    </div>
   );
 }

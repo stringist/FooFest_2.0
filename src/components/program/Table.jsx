@@ -76,42 +76,45 @@ export default function Table(props) {
                 </th>
                 <td>
                   {mAct.act !== "break" ? (
-                    <button
+                    <div
+                      className={programStyles.cell}
                       onClick={() => {
                         setStage("Midgard");
                         showBand(mAct);
                       }}
                     >
                       {mAct.act}
-                    </button>
+                    </div>
                   ) : (
                     <hr></hr>
                   )}
                 </td>
                 <td>
                   {jAct.act !== "break" ? (
-                    <button
+                    <div
+                      className={programStyles.cell}
                       onClick={() => {
                         setStage("Jotunheim");
                         showBand(jAct);
                       }}
                     >
                       {jAct.act}
-                    </button>
+                    </div>
                   ) : (
                     <hr></hr>
                   )}
                 </td>
                 <td>
                   {vAct.act !== "break" ? (
-                    <button
+                    <div
+                      className={programStyles.cell}
                       onClick={() => {
                         setStage("Vanaheim");
                         showBand(vAct);
                       }}
                     >
                       {vAct.act}
-                    </button>
+                    </div>
                   ) : (
                     <hr></hr>
                   )}

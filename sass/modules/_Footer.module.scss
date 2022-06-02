@@ -1,5 +1,5 @@
 @use "_General.module" as general;
-footer {
+.footer {
   margin-top: 5rem;
   padding: 2rem 0;
   height: fit-content;
@@ -11,47 +11,40 @@ footer {
 
   nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-family: general.$h-font;
     height: fit-content;
     img {
       max-width: 20vw;
     }
-    nav {
+    ul {
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      font-family: general.$h-font;
-      height: fit-content;
-      ul {
-        display: flex;
-        flex-direction: column;
-        gap: -0.5rem;
-      }
-      .some {
-        display: flex;
-        gap: 1rem;
-        flex-direction: row;
-      }
+      flex-direction: column;
+      gap: -0.5rem;
+    }
+    .some {
+      display: flex;
+      gap: 1rem;
+      flex-direction: row;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      font-size: 1.5rem;
+      color: general.$primary-color-light;
+    }
+    li:hover {
+      background: none;
       a {
-        color: general.$primary-color-light;
-        font-size: 1.5rem;
-        padding: 0.5rem;
-        line-height: 1.5rem;
-      }
-      li {
-        margin: 0;
-        padding: 0;
-      }
-      li:hover {
+        color: general.$accent-color-100;
         background: none;
-        a {
-          color: general.$accent-color-100;
-        }
-        img {
-          filter: brightness(0) saturate(100%) invert(31%) sepia(69%) saturate(3648%) hue-rotate(2deg) brightness(105%) contrast(106%);
-        }
+      }
+      img {
+        filter: brightness(0) saturate(100%) invert(47%) sepia(72%) saturate(6598%) hue-rotate(0deg) brightness(102%) contrast(104%);
       }
     }
   }

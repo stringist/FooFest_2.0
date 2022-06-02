@@ -1,4 +1,6 @@
 import { useState, useRef } from "react";
+import { AiOutlineSearch } from "react-icons/ai";
+
 import bandsStyles from "/sass/modules/_Bands.module.scss";
 
 export default function SearchBar(props) {
@@ -19,6 +21,7 @@ export default function SearchBar(props) {
       <label htmlFor="">Search</label>
       <div className={bandsStyles.search__input}>
         <input type="text" id="searchBar" ref={search} onChange={searchBands} />
+        <AiOutlineSearch />
       </div>
     </div>
   );

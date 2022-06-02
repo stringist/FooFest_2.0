@@ -13,7 +13,7 @@ export default function FilterButtons(props) {
 
   return (
     <>
-      <button className={bandsStyles.filter__button} onClick={handleClick}>
+      <div className={bandsStyles.filter__button} onClick={handleClick}>
         <p>Filter Artists</p>
         {showFilters === true ? (
           <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
@@ -24,7 +24,7 @@ export default function FilterButtons(props) {
             <path d="M24 30.8 12 18.8 14.15 16.65 24 26.5 33.85 16.65 36 18.8Z" />
           </svg>
         )}
-      </button>
+      </div>
       <div className={`${bandsStyles.filters__buttons} ${showFilters ? bandsStyles.showFilters : bandsStyles.hideFilters}`}>
         <FilterButton setFilter={props.setFilter} filter={props.filter} name="All" setShowFilters={setShowFilters} />
         <FilterButton setFilter={props.setFilter} filter={props.filter} name="Rock" setShowFilters={setShowFilters} />

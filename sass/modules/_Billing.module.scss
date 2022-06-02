@@ -96,6 +96,58 @@
   color: red;
   font-style: italic;
   visibility: hidden;
+  input:invalid:not(:placeholder-shown + span) {
+    opacity: 1;
+  }
+  input:focus-within {
+    border: 1px solid rgba(0, 0, 255, 0.623);
+    background-color: rgba(0, 0, 255, 0.167);
+  }
+  // select {
+  //     margin-top: .5rem;
+  //     font-size: 1rem;
+  //     display: block;
+  //     background-color: #373737;
+  //     color: general.$primary-color-light;
+  //     // height: 30px;
+  //     border: solid .5px hsl(0deg, 0%, 98%);
+  //     width: 50%;
+  // }
+  fieldset {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 80%;
+    input {
+      width: 100%;
+    }
+  }
+  .splitRow {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 1rem;
+  }
+  .twoColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    // & input {
+    //     width: 75%;
+    // }
+  }
+  .labelInputPair {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+    & span {
+      font-size: 0.8rem;
+      font-weight: 200;
+    }
+  }
+  [type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 // @media only screen and (min-width: general.$mobile-query) {
 //     .billing_form {
