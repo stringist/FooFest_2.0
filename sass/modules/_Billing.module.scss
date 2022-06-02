@@ -72,6 +72,19 @@
             width: 100%;
         }
     }
+    .ticketholderCard {
+        margin-bottom: 2rem;
+        gap: .5rem;
+        border: solid 1px general.$grey-400;
+        padding: 5%;
+        legend {
+            font-size: 1.5rem;
+            padding: auto 4rem;
+        }
+        input {
+            margin: 0;
+        }
+    }
     .splitRow {
         display: grid;
         grid-template-columns: 3fr 1fr;

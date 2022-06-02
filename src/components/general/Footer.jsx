@@ -15,33 +15,33 @@ export default function Footer() {
             <a href="/program">Program</a>
           </li>
           <li>
-            <a href="#">Volunteer</a>
+            <a href="/">Volunteer</a>
           </li>
         </ul>
         <ul>
           <li>
-            <a href="#">Sustainability</a>
+            <a href="/">Sustainability</a>
           </li>
           <li>
-            <a href="#">FAQ</a>
+            <a href="/">FAQ</a>
           </li>
           <li>
-            <a href="#">Press</a>
+            <a href="/">Press</a>
           </li>
         </ul>
         <ul className={footerStyles.some}>
           <li>
-            <a href="#">
+            <a href="/">
               <img src="/img/facebook.svg" alt="facebook icon" />
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/">
               <img src="/img/instagram.svg" alt="instagram icon" />
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/">
               <img src="/img/youtube.svg" alt="youtube icon" />
             </a>
           </li>
