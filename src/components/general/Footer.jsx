@@ -1,18 +1,21 @@
 import footerStyles from "/sass/modules/_Footer.module.scss";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className={footerStyles.footer}>
       <nav>
-        <a href="/">
+        <Link to={"/"}>
+          {" "}
           <img src="/img/ff_logo.svg" alt="Foofest logo" />
-        </a>
+        </Link>
+
         <ul>
           <li>
-            <a href="/tickets">Tickets</a>
+            <Link to={"/tickets"}>Tickets</Link>
           </li>
           <li>
-            <a href="/program">Program</a>
+            <Link to={"/program"}>Program</Link>
           </li>
           <li>
             <a href="/">Volunteer</a>

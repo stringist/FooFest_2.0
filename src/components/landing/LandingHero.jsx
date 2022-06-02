@@ -1,5 +1,6 @@
 import generalStyles from "/sass/modules/_General.module.scss";
 import landingStyles from "/sass/modules/_Landing.module.scss";
+import { Link } from "react-router-dom";
 
 export default function LandingHero() {
   return (
@@ -10,9 +11,9 @@ export default function LandingHero() {
         <h3 className={landingStyles.genres}>Metal | Rock</h3>
         <h2>23-30 june 2022</h2>
 
-        <button className={generalStyles.cta}><a href="/tickets">
-          Get tickets
-        </a></button>
+        <button className={generalStyles.cta}>
+          <Link to={"/tickets"}>Get tickets</Link>
+        </button>
       </div>
       <img src="./img/arrow.svg" alt="arrow pointing down" />
     </div>
