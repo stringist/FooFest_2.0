@@ -37,10 +37,37 @@
         margin: 2rem auto auto auto;
         max-width: 90%;
     }
+    .subMenu {
+        margin-top: -1rem;
+        background-color: general.$grey-200;
+        padding: 5%;
+        margin-bottom: 1rem;
+    }
+    .subMenuItem {
+        display: flex;
+        // justify-content: space-between;
+        margin: 2rem;
+        z-index: 999;
+        gap: 2rem;
+        p {
+            display: inline;
+        }
+        input,
+        select {
+            // margin-top: .25rem;
+            display: block;
+            background-color: #373737;
+            border: solid .5px general.$primary-color-light;
+            height: 2.5rem;
+            color: general.$primary-color-light;
+            padding-left: .25rem;
+            padding-right: .25rem;
+        }
+    }
 }
 
 .formItem {
-    // margin-bottom: 1rem;
+    margin-bottom: 1rem;
     background-color: general.$grey-100;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -56,6 +83,7 @@
         transition: all 0.5s;
     }
     label {
+        font-family: general.$h-font;
         font-size: 1.25rem;
         display: flex;
         align-items: center;

@@ -115,6 +115,10 @@ button {
   }
 }
 
+[type="checkbox"] {
+    cursor: pointer;
+}
+
 body {
   font-family: $body-font;
   background-color: $primary-color-dark;
