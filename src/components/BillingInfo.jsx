@@ -68,7 +68,7 @@ export default function CheckOutForm(props) {
                 placeholder=" "
                 type="text"
                 id="name"
-                pattern="^[a-zA-ZÆØÅæøå ]*$"
+                pattern="^[a-zA-ZÆØÅæøå'- ]*$"
                 required
               />
               <span className={billing.requirements}>
@@ -101,7 +101,7 @@ export default function CheckOutForm(props) {
                   placeholder=" "
                   type="text"
                   id="city"
-                  pattern="^[a-zA-ZÆØÅæøå ]*$"
+                  pattern="^[a-zA-ZÆØÅæøå'- ]*$"
                   required
                 />
                 <span className={billing.requirements}>
@@ -121,7 +121,7 @@ export default function CheckOutForm(props) {
             </div>
             <div className={billing.LabelInputPair}>
               <label htmlFor="country">Country</label>
-              <CountrySelector id="country" />
+              <CountrySelector id="country" required />
             </div>
             <div className={generalStyles.buttonWrapper}>
               <button className={generalStyles.secondaryButton}>Back</button>

@@ -145,7 +145,7 @@ export default function CCvalidation(props) {
                 type="text"
                 id="name"
                 name="name"
-                pattern="^[a-zA-ZÆØÅæøå ]*$"
+                pattern="^[a-zA-ZÆØÅæøå'- ]*$"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 onFocus={(e) => setFocus(e.target.name)}
@@ -187,6 +187,7 @@ export default function CCvalidation(props) {
                   name="expiry"
                   id="expiry"
                   type="tel"
+                  pattern="[0-9/ ]+"
                   value={handleExpiryDate()}
                   onChange={(e) => setExpiry(e.target.value)}
                   onFocus={(e) => setFocus(e.target.name)}
@@ -204,6 +205,7 @@ export default function CCvalidation(props) {
                   <input
                     placeholder=" "
                     type="tel"
+                    pattern="[0-9 ]+"
                     name="cvc"
                     id="cvc"
                     value={cvc}
@@ -216,14 +218,14 @@ export default function CCvalidation(props) {
                 ) : (
                   <input
                     placeholder=" "
-                    type="number"
+                    type="tel"
                     name="cvc"
                     id="cvc"
                     value={cvc}
                     onChange={(e) => setCvc(e.target.value)}
                     onFocus={(e) => setFocus(e.target.name)}
-                    minLength="2"
-                    maxLength="4"
+                    minLength="3"
+                    maxLength="3"
                     required
                   />
                 )}
