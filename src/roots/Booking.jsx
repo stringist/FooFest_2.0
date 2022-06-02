@@ -1,17 +1,16 @@
 import { useState } from "react";
 
+import generalStyles from "/sass/modules/_General.module.scss";
 import form1Styles from "/sass/modules/_Form1.module.scss";
 
 import FormStep1 from "../components/booking/form1/FormStep1";
 import CCvalidation from "../components/CCvalidation";
 import BillingInfo from "../components/BillingInfo";
-import generalStyles from "/sass/modules/_General.module.scss";
-
 import Menu from "../components/general/Menu";
 import Footer from "../components/general/Footer";
 import HeroBanner from "../components/general/HeroBanner";
 import MyLoader from "../components/general/MyLoader";
-
+import TicketHolderForm from "../components/booking/TicketHolderForm";
 import FormStep2 from "../components/booking/form2/FormStep2";
 import Summary from "../components/form_components/Summary";
 
@@ -31,7 +30,7 @@ export default function Booking(props) {
           setReservationId={setReservationId}
           setIsSearching={setIsSearching}
         />
-
+        <TicketHolderForm />
         {showcontent === 0 ? (
           <section className={generalStyles.sections_forms}>
             <BillingInfo
