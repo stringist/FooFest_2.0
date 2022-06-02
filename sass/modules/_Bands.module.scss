@@ -10,12 +10,10 @@
     justify-content: space-between;
     position: relative;
     margin-top: 2rem;
-
-    button {
-      background-color: general.$primary-color-dark;
-      color: general.$accent-color-100;
-      border: solid 1px general.$accent-color-100;
-    }
+  }
+  h3 {
+    margin-top: 5rem;
+    font-size: 2rem;
   }
 }
 
@@ -26,6 +24,13 @@
   width: 100%;
   padding: 0;
   padding-left: 0.5rem;
+  height: 100%;
+  background-color: hsl(0deg, 12%, 7%);
+  color: hsl(16deg, 100%, 50%);
+  border: solid 1px hsl(16deg, 100%, 50%);
+  font-size: 2rem;
+  font-family: general.$h-font;
+  cursor: pointer;
 
   svg {
     fill: general.$accent-color-100;
@@ -39,13 +44,24 @@
 
 .filters__buttons {
   position: absolute;
-  bottom: -7vw;
+  bottom: -5vw;
   background-color: general.$accent-color-100;
   padding: 0.5rem;
+  z-index: 99;
+  display: flex;
+  gap: 0.5rem;
+  width: 50%;
+  justify-content: space-around;
 
-  button {
+  div {
+    background-color: general.$primary-color-dark;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+
     &:hover {
-      background-color: general.$accent-color-100;
+      background-color: general.$accent-color-hover;
       color: general.$primary-color-dark;
     }
   }
@@ -70,26 +86,13 @@
     height: 100%;
     width: 100%;
 
-    button {
+    svg {
+      fill: general.$accent-color-100;
+      width: 10%;
+      height: 100%;
       position: absolute;
-      right: 0;
-      top: 1vh;
-      border: none;
-      background: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 3rem;
-      height: 3rem;
-
-      svg {
-        fill: general.$accent-color-100;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
+      right: 1rem;
+      top: 0;
     }
   }
 

@@ -6,13 +6,13 @@ export default function FilterButton(props) {
     props.setShowFilters(false);
   };
   return (
-    <button
+    <div
       onClick={() => {
         props.setFilter(props.name);
         closeFilters();
       }}
     >
       {props.name}
-    </button>
+    </div>
   );
 }
