@@ -3,18 +3,38 @@
     position: relative;
 }
 
+fieldset {
+    margin-bottom: 1rem;
+    background-color: general.$grey-100;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    // display: flex;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1.5rem 6vw;
+    align-items: center;
+    label {
+        grid-column: 1/2;
+        font-family: general.$h-font;
+        font-size: 1.5rem;
+        display: flex;
+        // align-items: center;
+        gap: 1rem;
+    }
+}
+
 form.step1Form {
     display: flex;
     flex-direction: column;
-    // gap: 1rem;
-    width: 100%;
-    background-color: #3f3f3f;
+    // gap: 1.5rem;
+    width: 90%;
+    // background-color: #3f3f3f;
     font-family: general.$body-font;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 5%;
+    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    // padding: 5%;
     legend {
         font-family: general.$h-font;
-        margin-bottom: 1rem;
+        // margin-bottom: 1rem;
         margin-top: 0;
     }
     input,
@@ -40,10 +60,10 @@ form.step1Form {
     // }
     .ticket_legend {
         font-size: 2rem;
-        text-align: center;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        // text-align: center;
+        // display: block;
+        // margin-left: auto;
+        // margin-right: auto;
     }
 }
 
@@ -79,7 +99,7 @@ form.step1Form {
             font-size: 2.25rem;
             line-height: 1.2;
             text-align: center;
-            min-width: 12rem;
+            // min-width: 12rem;
             cursor: pointer;
             display: block;
             &:hover {
@@ -98,25 +118,36 @@ form.step1Form {
         }
     }
     &amount {
+        // display: flex;
+        // gap: 2rem;
         input {
-            width: 5rem;
+            width: 8rem;
             text-align: center;
-            padding: 0;
+            // padding: 1rem;
         }
         &__row {
             display: flex;
-            align-items: center;
+            align-items: flex-end;
+            gap: .5rem;
+            grid-column: 2/3;
+            margin: auto;
             div {
                 display: grid;
                 place-items: center;
                 font-size: 2rem;
                 line-height: 0;
-                width: 2.2rem;
-                height: 2.2rem;
+                width: 2.5rem;
+                height: 2.5rem;
                 background-color: general.$accent-color-100;
                 cursor: pointer;
                 &:hover {
-                    background-color: general.$hover-color;
+                    background-color: general.$accent-color-hover;
+                    border: .5px solid general.$accent-color-100;
+                    // transform: translate(-1px, -1px);
+                    filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
+                    box-shadow: 2px 2px 0px #b62f00;
+                    text-shadow: 1px 1px 1px #b62f00;
+                    transition: all 0.5s;
                 }
             }
         }

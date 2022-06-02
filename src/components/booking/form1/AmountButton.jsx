@@ -9,7 +9,6 @@ export default function AmountButton(props) {
   }
   return (
     <>
-      <label htmlFor="amount"></label>
       <div className={form1Styles.form__amount__row}>
         <div onClick={props.amount > 1 ? reduceAmount : null}>-</div>
         <input

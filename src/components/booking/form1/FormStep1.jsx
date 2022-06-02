@@ -72,7 +72,8 @@ export default function FormStep1(props) {
 <h2>Select ticket</h2>
       <form className={form1Styles.step1Form} ref={formEl} onSubmit={searchTickets}>
         <fieldset>
-          <legend className={form1Styles.ticket_legend}>Ticket Type:</legend>
+          {/* <legend className={form1Styles.ticket_legend}>Ticket Type:</legend> */}
+          <label className={form1Styles.ticket_legend}>Ticket Type:</label>
           <div className={form1Styles.form__type}>
             <TicketButton name="General" price="799kr" ticket={ticket} setTicket={setTicket} />
             <TicketButton name="VIP" price="1299kr" ticket={ticket} setTicket={setTicket} />
@@ -80,13 +81,14 @@ export default function FormStep1(props) {
         </fieldset>
 
         <fieldset className={form1Styles.form__amount}>
-          <legend>Choose amount</legend>
+          <label>Choose amount:</label>
           {/* <p>Choose a number greater than 0</p> */}
-          <AmountButton  name="amount" amount={amount} setAmount={setAmount} />
+          <AmountButton  id="amount" name="amount" amount={amount} setAmount={setAmount} />
         </fieldset>
 
         <fieldset>
-          <legend>Choose area</legend>
+          {/* <legend>Choose area</legend> */}
+          <label>Choose area:</label>
           <div className={form1Styles.form__area}>
             <div className={form1Styles.form__area__row}>
               <AreaButton name="Svartheim" area={area} setArea={setArea} />
