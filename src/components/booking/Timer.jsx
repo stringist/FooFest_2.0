@@ -15,12 +15,13 @@ export default function Timer(props) {
   };
 
   function timeUp() {
-    props.setTimer(-1);
+    props.setTimer(0);
+    props.setStep(-1);
   }
 
   return (
     <div className={generalStyles.timer}>
-      <CountdownCircleTimer isPlaying duration={5} colors={["#0E8923", "#F2EC6D", "#DC3545"]} colorsTime={[300, 120, 0]} onComplete={timeUp}>
+      <CountdownCircleTimer isPlaying duration={300} colors={["#0E8923", "#F2EC6D", "#DC3545"]} colorsTime={[300, 120, 0]} onComplete={timeUp}>
         {renderTime}
       </CountdownCircleTimer>
     </div>
