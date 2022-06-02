@@ -65,27 +65,35 @@ form.step1Form {
     }
     &type {
         display: flex;
-        gap: 5rem;
+        gap: 2rem;
         justify-content: center;
         [type="radio"] {
             display: none;
         }
         label {
-            border: 1px solid hsl(0deg, 0%, 98%);
-            padding: 1rem;
+            font-family: general.$h-font;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            background-color: general.$grey-500;
+            border: 2px solid hsl(0deg, 0%, 98%);
+            padding: 1.5rem;
             font-size: 2.25rem;
             line-height: 1.2;
             text-align: center;
-            min-width: 10rem;
+            min-width: 12rem;
             cursor: pointer;
             display: block;
             &:hover {
-                border: 1px solid general.$accent-color-hover;
+                border: 2px solid general.$accent-color-hover;
                 color: general.$accent-color-hover;
+                transform: translate(-2px, -2px);
+                filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
+                box-shadow: 2px 2px 0px #b62f00;
+                text-shadow: 1px 1px 1px #b62f00;
+                transition: all 0.5s;
             }
         }
         .checked {
-            border: 1px solid general.$accent-color-100;
+            border: 2px solid general.$accent-color-100;
             color: general.$accent-color-100;
         }
     }
