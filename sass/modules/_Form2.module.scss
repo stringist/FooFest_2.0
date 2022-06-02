@@ -42,19 +42,22 @@
         background-color: general.$grey-200;
         padding: 5%;
         margin-bottom: 1rem;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
     .subMenuItem {
         display: flex;
-        // justify-content: space-between;
+        align-items: center;
         margin: 2rem;
         z-index: 999;
         gap: 2rem;
+        font-size: 1rem;
         p {
-            display: inline;
+            font-family: general.$h-font;
+            // font-weight: 600;
         }
-        input,
-        select {
-            // margin-top: .25rem;
+        input {
+            text-align: center;
             display: block;
             background-color: #373737;
             border: solid .5px general.$primary-color-light;

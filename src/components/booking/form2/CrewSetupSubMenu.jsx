@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 import form2Styles from "/sass/modules/_Form2.module.scss";
+import form1Styles from "/sass/modules/_Form1.module.scss";
+
 
 export default function CrewSetupSubMenu(props) {
   // const [twoPersonTent, setTwoPersonTents] = useState(0);
@@ -7,6 +9,9 @@ export default function CrewSetupSubMenu(props) {
   const [tentTotal, setTentTotal] = useState(0);
   const twoPersonInput = useRef(0);
   const threePersonInput = useRef(0);
+  // const [twoPersCount, setTwoPersCount] = useState(0);
+  // const [threePersCount, setThreePersCount] = useState(0);
+
   console.log(`number of tickets is`, props.amount);
 
   const handleChange = (e) => {
@@ -52,10 +57,9 @@ export default function CrewSetupSubMenu(props) {
     <div className={form2Styles.subMenu}>
       <div className={form2Styles.subMenuItem}>
         <div className="text_content">
-          <label htmlFor="twoPersonTent">2 person tent <span> +299Dkk</span></label>
-   
-        </div>
-        <input
+          <label htmlFor="twoPersonTent">2 person tent </label>
+</div>
+  <input
           type="number"
           name="twoPersonTent"
           id="twoPersonTent"
@@ -63,11 +67,11 @@ export default function CrewSetupSubMenu(props) {
           min={0}
           onChange={handleChange}
         />
+        <p> +299Dkk</p>
       </div>
       <div className={form2Styles.subMenuItem}>
         <div className="text_content">
-          <label htmlFor="threePersonTent">3 person tent <span> +299Dkk</span></label>
-         
+          <label htmlFor="threePersonTent">3 person tent </label>
         </div>
         <input
           type="number"
@@ -77,6 +81,7 @@ export default function CrewSetupSubMenu(props) {
           min={0}
           onChange={handleChange}
         />
+        <p> +399Dkk</p>
       </div>
       {tentTotal > 0 && tentTotal === props.amount ? (
         <p>The number of tents matches the number of tickets</p>
