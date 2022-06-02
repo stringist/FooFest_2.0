@@ -6,7 +6,6 @@ export default function Footer() {
     <footer className={footerStyles.footer}>
       <nav>
         <Link to={"/"}>
-          {" "}
           <img src="/img/ff_logo.svg" alt="Foofest logo" />
         </Link>
 

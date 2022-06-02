@@ -51,13 +51,24 @@
 }
 
 @media only screen and (max-width: general.$mobile-query) {
-  footer {
+  .footer {
     img {
       max-width: 55vw;
     }
     nav {
       display: block;
       padding: 0 1rem;
+      ul {
+        display: none;
+      }
+
+      .some img {
+        width: 2rem;
+      }
+      .some {
+        justify-content: center;
+        margin-top: 1rem;
+      }
     }
   }
 }

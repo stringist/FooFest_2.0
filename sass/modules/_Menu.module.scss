@@ -75,16 +75,20 @@
     transition: all 0.5s ease-out;
     transform: translateX(0vw);
   }
-}
-@media only screen and (max-width: general.$mobile-query) {
-  .menuNav {
-    &.showMenu {
-      width: 120vw;
+
+  .logo {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    img {
+      max-width: 4rem;
     }
   }
-
-  // .navBar button {
-  //   right: 6rem;
-  //   top: 1rem;
-  // }
+}
+@media only screen and (max-width: general.$mobile-query) {
+  .navBar .menuNav {
+    &.showMenu {
+      width: 110vw;
+    }
+  }
 }

@@ -12,7 +12,6 @@ import Table from "../components/program/Table";
 import ScheduleButtons from "../components/program/ScheduleButtons";
 
 export default function Program(props) {
-  const [count, setCount] = useState(0);
   const [schedule, setSchedule] = useState(null);
   const [loadingSch, setLoadingSch] = useState(true);
 
