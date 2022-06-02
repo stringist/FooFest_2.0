@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 
 import form1Styles from "/sass/modules/_Form1.module.scss";
+import form2Styles from "/sass/modules/_Form2.module.scss";
 import generalStyles from "/sass/modules/_General.module.scss";
 
 import AreaButton from "./AreaButton";
@@ -66,9 +67,12 @@ export default function FormStep1(props) {
   }
   return (
     <>
+<div className={form2Styles.checkout_grid}>
+<section className={form2Styles.checkout_options}>
+<h2>Select ticket</h2>
       <form ref={formEl} onSubmit={searchTickets}>
         <fieldset>
-          <legend className={form1Styles.ticket_legend}>Select ticket</legend>
+          <legend className={form1Styles.ticket_legend}>Ticket Type:</legend>
           <div className={form1Styles.form__type}>
             <TicketButton name="General" price="799kr" ticket={ticket} setTicket={setTicket} />
             <TicketButton name="VIP" price="1299kr" ticket={ticket} setTicket={setTicket} />
@@ -78,7 +82,7 @@ export default function FormStep1(props) {
         <fieldset className={form1Styles.form__amount}>
           <legend>Choose amount</legend>
           {/* <p>Choose a number greater than 0</p> */}
-          <AmountButton name="amount" amount={amount} setAmount={setAmount} />
+          <AmountButton  name="amount" amount={amount} setAmount={setAmount} />
         </fieldset>
 
         <fieldset>
@@ -99,11 +103,13 @@ export default function FormStep1(props) {
         {!props.isSearching && <button className={generalStyles.primaryButton}>Search tickets</button>}
         {props.isSearching && <button className={generalStyles.primaryButton}>Searching tickets...</button>}
       </form>
+</section>
+</div>    
       {/*       {console.log(timer)}
        */}{" "}
       {timer === 1 && <Timer setTimer={setTimer} />}
       {timer === -1 && <TimeUp />}
       {showAlert === true ? <Alert message={reservation.error} setAlert={setAlert} /> : <FormStep2 ticket={ticket} area={area} amount={amount} setBasket={setBasket} basket={basket} />}
-    </>
+</>
   );
 }

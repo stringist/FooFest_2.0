@@ -4,9 +4,33 @@
 }
 
 form {
-    font-family: general.$h-font;
-    margin: 0 30vw;
-    gap: 1rem;
+    // font-family: general.$h-font;
+    // margin: 0 30vw;
+    // gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #3f3f3f;
+    font-family: general.$body-font;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 5%;
+    legend {
+        font-family: general.$h-font;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+    input,
+    select {
+        margin-top: .25rem;
+        display: block;
+        background-color: #373737;
+        border: solid .5px general.$primary-color-light;
+        height: 2.5rem;
+        color: general.$primary-color-light;
+        padding-left: .25rem;
+        padding-right: .25rem;
+        box-shadow: inset 2px 2px 3px 2px general.$grey-500;
+    }
     legend {
         font-size: 1.5rem;
         margin-top: 2rem;
