@@ -1,173 +1,129 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800&family=Koulen&display=swap");
-$primary-color-dark: hsla(0,
-12%,
-7%,
-100%);
-$primary-color-light: hsla(0,
-0%,
-98%,
-100%);
-$primary-color-lighter: rgb(234,
-232,
-230);
-$accent-color-100: hsla(16,
-100%,
-50%,
-100%);
+$primary-color-dark: hsla(0, 12%, 7%, 100%);
+$primary-color-light: hsla(0, 0%, 98%, 100%);
+$primary-color-lighter: rgb(234, 232, 230);
+$accent-color-100: hsla(16, 100%, 50%, 100%);
 $accent-color-hover: #fe640d;
-$trans-fill: rgba(255,
-66,
-0,
-0.15);
-$accent-color-60: hsla(16,
-100%,
-60%,
-60%);
-$secondary-color: hsl(0,
-0%,
-82%);
-$hover-color: rgba(255,
-67,
-1,
-0.15);
-$error-color: rgba(220,
-53,
-69,
-1);
-$valid-color: rgb(14,
-137,
-35);
-$grey-500: hsl(0,
-0%,
-12%);
-$grey-400: hsl(0,
-1%,
-16%);
-$grey-300: rgb(48,
-48,
-48);
-$grey-200: rgb(56,
-56,
-56);
-$grey-100: rgb(71,
-71,
-71);
-$error-color: rgb(246,
-97,
-97);
-$valid-color: rgb(14,
-137,
-35);
-$h-font: "Koulen",
-Arial,
-sans-serif;
-$body-font: "Inter",
-sans-serif;
+$trans-fill: rgba(255, 66, 0, 0.15);
+$accent-color-60: hsla(16, 100%, 60%, 60%);
+$secondary-color: hsl(0, 0%, 82%);
+$hover-color: rgba(255, 67, 1, 0.15);
+$error-color: rgba(220, 53, 69, 1);
+$valid-color: rgb(14, 137, 35);
+$grey-500: hsl(0, 0%, 12%);
+$grey-400: hsl(0, 1%, 16%);
+$grey-300: rgb(48, 48, 48);
+$grey-200: rgb(56, 56, 56);
+$grey-100: rgb(71, 71, 71);
+$error-color: rgb(246, 97, 97);
+$valid-color: rgb(14, 137, 35);
+$h-font: "Koulen", Arial, sans-serif;
+$body-font: "Inter", sans-serif;
 $gap: 3rem 0;
 $mobile-query: 750px;
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
 }
 
 button {
-    color: $primary-color-light;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    padding: 0.75rem 3rem;
-    font-family: $h-font;
+  color: $primary-color-light;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.75rem 3rem;
+  font-family: $h-font;
 }
 
 .primaryButton,
 .secondaryButton {
-    font-family: $body-font;
-    font-weight: 700;
-    &:hover {
-        transform: translate(-2px, -2px);
-        filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
-        box-shadow: 2px 2px 0px #b62f00;
-        text-shadow: 1px 1px 1px #b62f00;
-        transition: all 0.5s;
-    }
+  font-family: $body-font;
+  font-weight: 700;
+  &:hover {
+    transform: translate(-2px, -2px);
+    filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
+    box-shadow: 2px 2px 0px #b62f00;
+    text-shadow: 1px 1px 1px #b62f00;
+    transition: all 0.5s;
+  }
 }
 
 .primaryButton {
-    background-color: $accent-color-100;
-    color: $primary-color-light;
-    border: solid 2px $accent-color-100;
-    min-width: 15rem;
-    &:hover {
-        background-color: $accent-color-hover;
-    }
+  background-color: $accent-color-100;
+  color: $primary-color-light;
+  border: solid 2px $accent-color-100;
+  min-width: 15rem;
+  &:hover {
+    background-color: $accent-color-hover;
+  }
 }
 
 .secondaryButton {
-    background-color: unset;
-    color: $accent-color-100;
-    text-align: center;
-    border: solid 2px $accent-color-100;
-    &:hover {
-        color: $primary-color-light;
-        background-color: $trans-fill;
-    }
+  background-color: unset;
+  color: $accent-color-100;
+  text-align: center;
+  border: solid 2px $accent-color-100;
+  &:hover {
+    color: $primary-color-light;
+    background-color: $trans-fill;
+  }
 }
 
 .buttonWrapper {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 [type="checkbox"],
 [type="radio"] {
-    appearance: none;
-    margin: 0;
-    background-color: unset;
-    min-width: 25px;
-    min-height: 25px;
-    max-height: 25px;
-    max-width: 25px;
-    left: 20px;
-    top: 20px;
-    border: 1px solid #f0f1f2;
-    display: grid;
-    place-items: center;
-    vertical-align: middle;
-    &::before {
-        position: relative;
-        left: -25%;
-        content: "";
-        width: 14px;
-        height: 14px;
-        background: $accent-color-100;
-        transform: scale(0);
-        transition: 0.08s all ease-in-out;
-        box-shadow: inset 1em 1em $accent-color-100;
-    }
-    &:checked::before {
-        transform: scale(1);
-    }
+  appearance: none;
+  margin: 0;
+  background-color: unset;
+  min-width: 25px;
+  min-height: 25px;
+  max-height: 25px;
+  max-width: 25px;
+  left: 20px;
+  top: 20px;
+  border: 1px solid #f0f1f2;
+  display: grid;
+  place-items: center;
+  vertical-align: middle;
+  &::before {
+    position: relative;
+    left: -25%;
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: $accent-color-100;
+    transform: scale(0);
+    transition: 0.08s all ease-in-out;
+    box-shadow: inset 1em 1em $accent-color-100;
+  }
+  &:checked::before {
+    transform: scale(1);
+  }
 }
 
 [type="radio"] {
+  border-radius: 100%;
+  &::before {
     border-radius: 100%;
-    &::before {
-        border-radius: 100%;
-    }
+  }
 }
 
 [type="checkbox"] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 body {
-    font-family: $body-font;
-    background-color: $primary-color-dark;
-    color: $primary-color-light;
-    margin: 0vw;
+  font-family: $body-font;
+  background-color: $primary-color-dark;
+  color: $primary-color-light;
+  margin: 0vw;
 }
 
 h1,
@@ -175,234 +131,244 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: $h-font;
-    color: $primary-color-light;
+  font-family: $h-font;
+  color: $primary-color-light;
 }
 
 h1 {
-    font-size: 7.6rem;
+  font-size: 7.6rem;
 }
 
 h2 {
-    font-size: 2.25rem;
+  font-size: 2.25rem;
 }
 
 a {
-    color: $accent-color-100;
-    cursor: pointer;
+  color: $accent-color-100;
+  cursor: pointer;
+  text-decoration: none;
+  a:hover {
     text-decoration: none;
-    a:hover {
-        text-decoration: none;
-    }
+  }
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 input {
-    background: none;
-    border: solid 1px $primary-color-light;
-    height: 2rem;
-    color: $primary-color-light;
-    padding-left: 0.5rem;
+  background: none;
+  border: solid 1px $primary-color-light;
+  height: 2rem;
+  color: $primary-color-light;
+  padding-left: 0.5rem;
 }
 
 .form_container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin: 0.5rem 0;
-    .span_error {
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-    }
-    svg {
-        fill: $error-color;
-    }
-    span {
-        font-size: 0.8rem;
-        font-family: $body-font;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: $error-color;
-    }
-}
-
-.alert {
-    width: 100%;
-    padding: 12px 16px;
-    border-style: solid;
-    border-width: 1px;
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  .span_error {
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    line-height: 1.5;
+  }
+  svg {
+    fill: $error-color;
+  }
+  span {
+    font-size: 0.8rem;
+    font-family: $body-font;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $error-color;
+  }
+}
+
+.alert {
+  width: 100%;
+  padding: 12px 16px;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  line-height: 1.5;
 }
 
 .alert_success {
-    background-color: rgba(0, 127, 0, 0.193);
-    color: $primary-color-light;
-    border-color: rgba(0, 127, 0, 0.66);
-    svg {
-        fill: $primary-color-light;
-    }
+  background-color: rgba(0, 127, 0, 0.193);
+  color: $primary-color-light;
+  border-color: rgba(0, 127, 0, 0.66);
+  svg {
+    fill: $primary-color-light;
+  }
 }
 
 .alert_danger {
-    background-color: rgba(255, 0, 0, 0.181);
-    border-color: rgba(220, 53, 69, 1);
-    color: $primary-color-light;
-    svg {
-        fill: $primary-color-light;
-    }
+  background-color: rgba(255, 0, 0, 0.181);
+  border-color: rgba(220, 53, 69, 1);
+  color: $primary-color-light;
+  svg {
+    fill: $primary-color-light;
+  }
 }
 
 .isInvalid {
-    border: solid 1px $error-color;
+  border: solid 1px $error-color;
 }
 
 .isValid {
-    border: solid 1px greenyellow;
+  border: solid 1px greenyellow;
 }
 
 .cta {
-    // color: $primary-color-light;
-    font-size: 1.5rem;
-    display: block;
-    width: 30vw;
-    padding: 0.5rem 1rem;
-    background-color: $accent-color-100;
-    font-family: $h-font;
-    text-align: center;
-    &:hover {
-        transform: translate(-2px, -2px);
-        filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
-        background-color: $accent-color-hover;
-        box-shadow: 2px 2px 0px #b62f00;
-        text-shadow: 1px 1px 2px #b62f00;
-        transition: all 0.5s;
-        text-shadow: 1.5px 1.5px 1.5px #b62f00;
-    }
-    & a {
-        color: white;
-    }
+  // color: $primary-color-light;
+  font-size: 1.5rem;
+  display: block;
+  width: 30vw;
+  padding: 0.5rem 1rem;
+  background-color: $accent-color-100;
+  font-family: $h-font;
+  text-align: center;
+  &:hover {
+    transform: translate(-2px, -2px);
+    filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
+    background-color: $accent-color-hover;
+    box-shadow: 2px 2px 0px #b62f00;
+    text-shadow: 1px 1px 2px #b62f00;
+    transition: all 0.5s;
+    text-shadow: 1.5px 1.5px 1.5px #b62f00;
+  }
+  & a {
+    color: white;
+  }
 }
 
 .d_none {
-    display: none;
-    z-index: -99;
+  display: none;
+  z-index: -99;
 }
 
 .hero_banner {
-    margin-top: 4rem;
-    height: 20vh;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h1 {
-        margin: 2rem;
-    }
+  margin-top: 4rem;
+  height: 20vh;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    margin: 2rem;
+  }
 }
 
 .App {
-    height: fit-content;
-    position: relative;
+  height: fit-content;
+  position: relative;
 }
 
 .timer {
-    position: fixed;
-    top: -2rem;
-    left: -1rem;
-    background-color: #000000ad;
-    border-radius: 10rem;
-    z-index: 99;
+  position: fixed;
+  top: -2rem;
+  left: -1rem;
+  background-color: #000000ad;
+  border-radius: 10rem;
+  z-index: 99;
+  div {
+    scale: 0.5;
     div {
-        scale: 0.5;
-        div {
-            font-size: 5rem;
-            font-family: $h-font;
-        }
+      font-size: 5rem;
+      font-family: $h-font;
     }
+  }
 }
 
 .timeUp {
-    background-color: $grey-500;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    p {
-        font-size: 2rem;
-    }
+  background-color: $grey-500;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  p {
+    font-size: 2rem;
+  }
 }
 
 .sections_forms {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $mobile-query) {
+  h1 {
+    font-size: 3.375rem;
+  }
+  .cta {
+    width: 60vw;
+  }
+  .hero_banner {
+    height: 20vh;
+  }
+}
+
+@media only screen and (min-width: $mobile-query) {
+  .sections_forms {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     img {
-        width: 100%;
+      width: 100%;
+      grid-column: 1;
     }
+    h4 {
+      grid-column: 1;
+    }
+    form {
+      grid-column: 1;
+    }
+    img {
+      width: 100%;
+    }
+  }
 }
 
 @media only screen and (max-width: $mobile-query) {
-    h1 {
-        font-size: 3.375rem;
-    }
-    .cta {
-        width: 60vw;
-    }
-    .hero_banner {
-        height: 20vh;
-    }
-}
+  h1 {
+    font-size: 3.375rem;
+  }
+  .cta {
+    width: 60vw;
+  }
+  .hero_banner {
+    height: 20vh;
+  }
 
-@media only screen and (min-width: $mobile-query) {
-    .sections_forms {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        img {
-            width: 100%;
-            grid-column: 1;
-        }
-        h4 {
-            grid-column: 1;
-        }
-        form {
-            grid-column: 1;
-        }
-        img {
-            width: 100%;
-        }
-    }
-}
+  .primaryButton {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
 
-@media only screen and (max-width: $mobile-query) {
-    h1 {
-        font-size: 3.375rem;
-    }
-    .cta {
-        width: 60vw;
-    }
-    .hero_banner {
-        height: 20vh;
-    }
+  .secondaryButton {
+    padding: 0.5rem;
+  }
 }

@@ -50,7 +50,7 @@ export default function CheckOutForm(props) {
         {/* <img src={step3} alt="" /> */}
         <h2>Checkout</h2>
         <a href="#/">← Back</a>
-        <h3>Billing Information</h3>
+        <h4>Billing Information</h4>
         <form ref={formEl} onChange={createObject} className={billing.billing_form} onSubmit={exportInfo}>
           <fieldset>
             {/* <legend>Ticketholder information</legend> */}

@@ -1,127 +1,157 @@
 @use "_General.module" as general;
+
 .checkout_grid {
-    margin: 10% 5%;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+  margin: 10% 5%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
 
 .checkout_options {
-    background: general.$grey-300;
-    z-index: 1;
-    min-height: 90vh;
-    padding-bottom: 5%;
-    // overflow: scroll;
-    a {
-        color: general.$secondary-color;
-        padding: 1rem;
-        &:hover {
-            color: general.$accent-color-hover;
-        }
+  background: general.$grey-300;
+  z-index: 1;
+  min-height: 90vh;
+  padding-bottom: 5%;
+  // overflow: scroll;
+  a {
+    color: general.$secondary-color;
+    padding: 1rem;
+    &:hover {
+      color: general.$accent-color-hover;
     }
-    h2 {
-        font-size: 1.8rem;
-        background-color: general.$grey-100;
-        padding-left: 1rem;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+    background-color: general.$grey-100;
+    padding-left: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    padding-left: 5%;
+    margin-bottom: -2rem;
+    margin-top: 2rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto auto auto;
+    max-width: 90%;
+  }
+  .subMenu {
+    margin-top: -1rem;
+    background-color: general.$grey-200;
+    padding: 5%;
+    margin-bottom: 1rem;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  .subMenuItem {
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+    z-index: 999;
+    gap: 2rem;
+    font-size: 1rem;
+    p {
+      font-family: general.$h-font;
+      // font-weight: 600;
     }
-    h3 {
-        font-size: 1.5rem;
-        padding-left: 5%;
-        margin-bottom: -2rem;
-        margin-top: 2rem;
+    input {
+      text-align: center;
+      display: block;
+      background-color: #373737;
+      border: solid 0.5px general.$primary-color-light;
+      height: 2.5rem;
+      color: general.$primary-color-light;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
     }
-    form {
-        display: flex;
-        flex-direction: column;
-        margin: 2rem auto auto auto;
-        max-width: 90%;
-    }
-    .subMenu {
-        margin-top: -1rem;
-        background-color: general.$grey-200;
-        padding: 5%;
-        margin-bottom: 1rem;
-        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-        // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    }
-    .subMenuItem {
-        display: flex;
-        align-items: center;
-        margin: 2rem;
-        z-index: 999;
-        gap: 2rem;
-        font-size: 1rem;
-        p {
-            font-family: general.$h-font;
-            // font-weight: 600;
-        }
-        input {
-            text-align: center;
-            display: block;
-            background-color: #373737;
-            border: solid .5px general.$primary-color-light;
-            height: 2.5rem;
-            color: general.$primary-color-light;
-            padding-left: .25rem;
-            padding-right: .25rem;
-        }
-    }
+  }
 }
 
 .formItem {
-    margin-bottom: 1rem;
-    background-color: general.$grey-100;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+  background-color: general.$grey-100;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  &:hover {
+    transform: translate(-2px, -2px);
+    filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.25);
+    transition: all 0.5s;
+  }
+  label {
+    font-family: general.$h-font;
+    font-size: 1.25rem;
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    padding: 1rem 1.5rem;
     align-items: center;
-    &:hover {
-        transform: translate(-2px, -2px);
-        filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
-        box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
-        filter: brightness(1.25);
-        transition: all 0.5s;
-    }
-    label {
-        font-family: general.$h-font;
-        font-size: 1.25rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-    .subtext {
-        font-family: general.$body-font;
-        // width: 90%;
-        margin-left: 0;
-        font-weight: 200;
-        margin-top: -.25rem;
-    }
-    .price {
-        margin-left: auto;
-        min-width: max-content;
-    }
-    span {
-        font-family: general.$body-font;
-        color: general.$accent-color-100;
-        font-size: .8rem;
-        text-transform: uppercase;
-        font-weight: 200;
-    }
+    gap: 1rem;
+  }
+  .subtext {
+    font-family: general.$body-font;
+    // width: 90%;
+    margin-left: 0;
+    font-weight: 200;
+    margin-top: -0.25rem;
+  }
+  .price {
+    margin-left: auto;
+    min-width: max-content;
+  }
+  span {
+    font-family: general.$body-font;
+    color: general.$accent-color-100;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 200;
+  }
 }
 
 @media only screen and (max-width: general.$mobile-query) {
-    .checkout_grid {
-        margin: 10% 0;
-        display: flex;
-        flex-direction: column;
+  .checkout_grid {
+    margin: 10% 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .checkout_options {
+    max-width: 100%;
+    form {
+      max-width: fit-content;
+      margin: 0;
     }
-    .checkout_options {
-        max-width: 100%;
-        form {
-            max-width: 100%;
-        }
+    h4 {
+      font-size: 2rem;
+      padding-left: 1rem;
     }
+  }
+
+  fieldset {
+    display: block;
+    min-width: 90vw;
+  }
+
+  .formItem {
+    display: block;
+
+    label {
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1;
+      margin-top: 0.7rem;
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: left;
+      }
+      .price {
+        margin-top: 1rem;
+      }
+    }
+  }
 }

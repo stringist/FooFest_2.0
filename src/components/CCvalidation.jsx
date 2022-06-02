@@ -7,6 +7,7 @@ import billing from "/sass/modules/_Billing.module.scss";
 
 import Creditcard from "/sass/modules/_Creditcard.module.scss";
 import step4 from "/img/step4.svg";
+import Summary from "./form_components/Summary";
 
 export default function CCvalidation(props) {
   const [number, setNumber] = useState("");
@@ -191,6 +192,7 @@ export default function CCvalidation(props) {
           </fieldset>
         </form>
       </section>
+      <Summary {...props} />
     </div>
   );
 }
