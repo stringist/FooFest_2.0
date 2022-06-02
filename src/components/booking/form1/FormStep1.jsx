@@ -73,7 +73,7 @@ export default function FormStep1(props) {
       <form className={form1Styles.step1Form} ref={formEl} onSubmit={searchTickets}>
         <fieldset>
           {/* <legend className={form1Styles.ticket_legend}>Ticket Type:</legend> */}
-          <label className={form1Styles.ticket_legend}>Ticket Type:</label>
+          <label>Ticket Type:</label>
           <div className={form1Styles.form__type}>
             <TicketButton name="General" price="799kr" ticket={ticket} setTicket={setTicket} />
             <TicketButton name="VIP" price="1299kr" ticket={ticket} setTicket={setTicket} />
