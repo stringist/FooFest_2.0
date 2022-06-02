@@ -40,9 +40,6 @@ export default function Table(props) {
     const i = bands.data.findIndex((band) => band.name === act.act);
     props.setBandDisplayed(bands.data[i]);
     setAct(act);
-    console.log(props.bandDisplay);
-
-    // console.log(i);
   }
 
   return (

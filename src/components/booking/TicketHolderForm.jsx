@@ -1,37 +1,82 @@
+import { useState, useRef } from "react";
+import billing from "/sass/modules/_Billing.module.scss";
+import form2Styles from "/sass/modules/_Form2.module.scss";
+import generalStyles from "/sass/modules/_General.module.scss";
+
 export default function TicketHolderForm(props) {
-  const amount = 2;
-  const holderForm = [...Array(amount)].map((e, i) => {
-    if (i < amount) {
+  const formEl = useRef(null);
+
+  const holderForm = [...Array(props.amount)].map((e, i) => {
+    if (i < props.amount) {
       return (
-        <fieldset>
-          <legend>Ticketholder number {i + 1}</legend>
+        <fieldset className={billing.ticketholderCard}>
+          <legend>Ticketholder {i + 1}</legend>
           <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder=" "
-            pattern="^[a-zA-ZÆØÅæøå'- ]*$"
-            required
-          />
+          <input type="text" id="name" name="name" placeholder=" " pattern="^[a-zA-ZÆØÅæøå'- ]*$" required />
           <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder=" "
-            required
-          />
+          <input type="email" name="email" id="email" placeholder=" " required />
         </fieldset>
       );
-      console.log(i);
     }
   });
   return (
     <>
-      <h2>TICKET HOLDERS INFORMATION</h2>
+      {/* <h2>TICKET HOLDERS INFORMATION</h2>
+
       <a href="#/">← Back</a>
-      {holderForm}
+      <form ref={formEl}>
+        <fieldset>{holderForm}</fieldset>
+        <div className={generalSyles.buttonWrapper}>
+          <button
+            className={generalSyles.secondaryButton}
+            onClick={() => {
+              props.setStep((old) => old - 1);
+            }}
+          >
+            Back
+          </button>
+          <button
+            className={generalSyles.primaryButton}
+            onClick={() => {
+              props.setStep((old) => old + 1);
+            }}
+          >
+            Continue to payment
+          </button>
+        </div>
+      </form> */}
+
+      {/* -------------------------------------------------- */}
+
+      <div className={form2Styles.checkout_grid}>
+        <section className={form2Styles.checkout_options}>
+          <h2>Ticket holder information</h2>
+          <a href="#/">← Back</a>
+          <form className={billing.billing_form} ref={formEl}>
+            {holderForm}
+            <fieldset>
+              <div className={generalStyles.buttonWrapper}>
+                <button
+                  className={generalStyles.secondaryButton}
+                  onClick={() => {
+                    props.setStep((old) => old - 1);
+                  }}
+                >
+                  Back
+                </button>
+                <button
+                  className={generalStyles.primaryButton}
+                  onClick={() => {
+                    props.setStep((old) => old + 1);
+                  }}
+                >
+                  Continue to payment
+                </button>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+      </div>
     </>
   );
 }

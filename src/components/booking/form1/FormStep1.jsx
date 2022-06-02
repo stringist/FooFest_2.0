@@ -12,20 +12,15 @@ import Timer from "../Timer";
 import TimeUp from "../TimeUp";
 import FormStep2 from "../form2/FormStep2";
 
-export default function FormStep1(props) {
+export default function FormStep1({ ...props }) {
+  console.log(props);
   const formEl = useRef(null);
+  const area = props.area;
+  const amount = props.amount;
 
-  const [timer, setTimer] = useState(0);
-  const [ticket, setTicket] = useState("General");
-  const [area, setArea] = useState("Svartheim");
-  const [amount, setAmount] = useState(1);
+  console.log(props.step);
+
   // const currentTicket = {product: `ticket`, type: ticket, area: area, amount: amount};
-
-  const [reservation, setReservation] = useState([]);
-  const [showAlert, setAlert] = useState(false);
-  const [basket, setBasket] = useState([
-    { product: "Booking Fee", price: 99, id: 1, amount: 1 },
-  ]);
 
   function searchTickets(e) {
     e.preventDefault();
@@ -46,15 +41,15 @@ export default function FormStep1(props) {
     })
       .then((response) => {
         response.json().then((data) => {
-          setReservation(data);
-          data.error ? setAlert(true) : setAlert(false);
+          props.setReservation(data);
+          data.error ? props.setAlert(true) : props.setAlert(false);
         });
 
         /*         console.log(showAlert);
          */
         const timing = setTimeout(() => {
           props.setIsSearching(false);
-          showAlert ? setTimer(0) : setTimer(1);
+          props.showAlert ? props.setTimer(0) : props.setTimer(1);
         }, 2000);
         return () => {
           clearTimeout(timing);
@@ -64,7 +59,9 @@ export default function FormStep1(props) {
     applyReservationId();
   }
   function applyReservationId() {
-    props.setReservationId(reservation.id);
+    props.setReservationId(props.reservation.id);
+    console.log(props.reservation);
+    props.setStep((old) => old + 1);
   }
   return (
     <>
@@ -83,14 +80,14 @@ export default function FormStep1(props) {
                 <TicketButton
                   name="General"
                   price="799kr"
-                  ticket={ticket}
-                  setTicket={setTicket}
+                  ticket={props.ticket}
+                  setTicket={props.setTicket}
                 />
                 <TicketButton
                   name="VIP"
                   price="1299kr"
-                  ticket={ticket}
-                  setTicket={setTicket}
+                  ticket={props.ticket}
+                  setTicket={props.setTicket}
                 />
               </div>
             </fieldset>
@@ -101,8 +98,8 @@ export default function FormStep1(props) {
               <AmountButton
                 id="amount"
                 name="amount"
-                amount={amount}
-                setAmount={setAmount}
+                amount={props.amount}
+                setAmount={props.setAmount}
               />
             </fieldset>
 
@@ -111,17 +108,33 @@ export default function FormStep1(props) {
               <label>Choose area:</label>
               <div className={form1Styles.form__area}>
                 <div className={form1Styles.form__area__row}>
-                  <AreaButton name="Svartheim" area={area} setArea={setArea} />
-                  <AreaButton name="Nilfheim" area={area} setArea={setArea} />
-                  <AreaButton name="Helheim" area={area} setArea={setArea} />
+                  <AreaButton
+                    name="Svartheim"
+                    area={props.area}
+                    setArea={props.setArea}
+                  />
+                  <AreaButton
+                    name="Nilfheim"
+                    area={props.area}
+                    setArea={props.setArea}
+                  />
+                  <AreaButton
+                    name="Helheim"
+                    area={props.area}
+                    setArea={props.setArea}
+                  />
                 </div>
                 <div className={form1Styles.form__area__row}>
                   <AreaButton
                     name="Muspeleheim"
-                    area={area}
-                    setArea={setArea}
+                    area={props.area}
+                    setArea={props.setArea}
                   />
-                  <AreaButton name="Alfheim" area={area} setArea={setArea} />
+                  <AreaButton
+                    name="Alfheim"
+                    area={props.area}
+                    setArea={props.setArea}
+                  />
                 </div>
               </div>
             </fieldset>
@@ -139,20 +152,9 @@ export default function FormStep1(props) {
           </form>
         </section>
       </div>
-      {/*       {console.log(timer)}
-       */}{" "}
-      {timer === 1 && <Timer setTimer={setTimer} />}
-      {timer === -1 && <TimeUp />}
-      {showAlert === true ? (
+
+      {props.showAlert === true && (
         <Alert message={reservation.error} setAlert={setAlert} />
-      ) : (
-        <FormStep2
-          ticket={ticket}
-          area={area}
-          amount={amount}
-          setBasket={setBasket}
-          basket={basket}
-        />
       )}
     </>
   );

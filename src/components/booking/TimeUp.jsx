@@ -1,10 +1,14 @@
 import generalStyles from "/sass/modules/_General.module.scss";
 
-export default function TimeUp() {
+export default function TimeUp(props) {
+  console.log(props);
+  function refresh() {
+    props.setStep(1);
+  }
   return (
     <div className={generalStyles.timeUp}>
-      <p>Time is up!</p>
-      <a className={generalStyles.cta} href="/tickets" onClick={resetBasket}>
+      <p>Oh no, Time is up!</p>
+      <a className={generalStyles.cta} onClick={refresh}>
         Start a new search
       </a>
     </div>
