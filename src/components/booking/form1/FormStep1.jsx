@@ -102,7 +102,7 @@ export default function FormStep1(props) {
           </div>
         </fieldset>
 
-        {!props.isSearching && <button className={generalStyles.primaryButton}>Search tickets</button>}
+        {!props.isSearching && <button className={generalStyles.primaryButton}>Find tickets</button>}
         {props.isSearching && <button className={generalStyles.primaryButton}>Searching tickets...</button>}
       </form>
 </section>
