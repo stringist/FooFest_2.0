@@ -23,7 +23,9 @@ export default function FormStep1(props) {
 
   const [reservation, setReservation] = useState([]);
   const [showAlert, setAlert] = useState(false);
-  const [basket, setBasket] = useState([{ product: "Booking Fee", price: 99, id: 1, amount: 1 }]);
+  const [basket, setBasket] = useState([
+    { product: "Booking Fee", price: 99, id: 1, amount: 1 },
+  ]);
 
   function searchTickets(e) {
     e.preventDefault();
@@ -63,55 +65,95 @@ export default function FormStep1(props) {
   }
   function applyReservationId() {
     props.setReservationId(reservation.id);
-    console.log(reservation);
   }
   return (
     <>
-<div className={form2Styles.checkout_grid}>
-<section className={form2Styles.checkout_options}>
-<h2>Select ticket</h2>
-      <form className={form1Styles.step1Form} ref={formEl} onSubmit={searchTickets}>
-        <fieldset>
-          {/* <legend className={form1Styles.ticket_legend}>Ticket Type:</legend> */}
-          <label>Ticket Type:</label>
-          <div className={form1Styles.form__type}>
-            <TicketButton name="General" price="799kr" ticket={ticket} setTicket={setTicket} />
-            <TicketButton name="VIP" price="1299kr" ticket={ticket} setTicket={setTicket} />
-          </div>
-        </fieldset>
+      <div className={form2Styles.checkout_grid}>
+        <section className={form2Styles.checkout_options}>
+          <h2>Select ticket</h2>
+          <form
+            className={form1Styles.step1Form}
+            ref={formEl}
+            onSubmit={searchTickets}
+          >
+            <fieldset>
+              {/* <legend className={form1Styles.ticket_legend}>Ticket Type:</legend> */}
+              <label>Ticket Type:</label>
+              <div className={form1Styles.form__type}>
+                <TicketButton
+                  name="General"
+                  price="799kr"
+                  ticket={ticket}
+                  setTicket={setTicket}
+                />
+                <TicketButton
+                  name="VIP"
+                  price="1299kr"
+                  ticket={ticket}
+                  setTicket={setTicket}
+                />
+              </div>
+            </fieldset>
 
-        <fieldset className={form1Styles.form__amount}>
-          <label>Choose amount:</label>
-          {/* <p>Choose a number greater than 0</p> */}
-          <AmountButton  id="amount" name="amount" amount={amount} setAmount={setAmount} />
-        </fieldset>
+            <fieldset className={form1Styles.form__amount}>
+              <label>Choose amount:</label>
+              {/* <p>Choose a number greater than 0</p> */}
+              <AmountButton
+                id="amount"
+                name="amount"
+                amount={amount}
+                setAmount={setAmount}
+              />
+            </fieldset>
 
-        <fieldset>
-          {/* <legend>Choose area</legend> */}
-          <label>Choose area:</label>
-          <div className={form1Styles.form__area}>
-            <div className={form1Styles.form__area__row}>
-              <AreaButton name="Svartheim" area={area} setArea={setArea} />
-              <AreaButton name="Nilfheim" area={area} setArea={setArea} />
-              <AreaButton name="Helheim" area={area} setArea={setArea} />
-            </div>
-            <div className={form1Styles.form__area__row}>
-              <AreaButton name="Muspeleheim" area={area} setArea={setArea} />
-              <AreaButton name="Alfheim" area={area} setArea={setArea} />
-            </div>
-          </div>
-        </fieldset>
+            <fieldset>
+              {/* <legend>Choose area</legend> */}
+              <label>Choose area:</label>
+              <div className={form1Styles.form__area}>
+                <div className={form1Styles.form__area__row}>
+                  <AreaButton name="Svartheim" area={area} setArea={setArea} />
+                  <AreaButton name="Nilfheim" area={area} setArea={setArea} />
+                  <AreaButton name="Helheim" area={area} setArea={setArea} />
+                </div>
+                <div className={form1Styles.form__area__row}>
+                  <AreaButton
+                    name="Muspeleheim"
+                    area={area}
+                    setArea={setArea}
+                  />
+                  <AreaButton name="Alfheim" area={area} setArea={setArea} />
+                </div>
+              </div>
+            </fieldset>
 
-        {!props.isSearching && <button className={generalStyles.primaryButton}>Find tickets</button>}
-        {props.isSearching && <button className={generalStyles.primaryButton}>Searching tickets...</button>}
-      </form>
-</section>
-</div>    
+            {!props.isSearching && (
+              <button className={generalStyles.primaryButton}>
+                Find tickets
+              </button>
+            )}
+            {props.isSearching && (
+              <button className={generalStyles.primaryButton}>
+                Searching tickets...
+              </button>
+            )}
+          </form>
+        </section>
+      </div>
       {/*       {console.log(timer)}
        */}{" "}
       {timer === 1 && <Timer setTimer={setTimer} />}
       {timer === -1 && <TimeUp />}
-      {showAlert === true ? <Alert message={reservation.error} setAlert={setAlert} /> : <FormStep2 ticket={ticket} area={area} amount={amount} setBasket={setBasket} basket={basket} />}
-</>
+      {showAlert === true ? (
+        <Alert message={reservation.error} setAlert={setAlert} />
+      ) : (
+        <FormStep2
+          ticket={ticket}
+          area={area}
+          amount={amount}
+          setBasket={setBasket}
+          basket={basket}
+        />
+      )}
+    </>
   );
 }
