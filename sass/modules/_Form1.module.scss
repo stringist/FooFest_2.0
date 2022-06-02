@@ -3,26 +3,6 @@
     position: relative;
 }
 
-fieldset {
-    margin-bottom: 1rem;
-    background-color: general.$grey-100;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    // display: flex;
-    // justify-content: space-between;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 1.5rem 6vw;
-    align-items: center;
-    label {
-        grid-column: 1/2;
-        font-family: general.$h-font;
-        font-size: 1.5rem;
-        display: flex;
-        // align-items: center;
-        gap: 1rem;
-    }
-}
-
 form.step1Form {
     display: flex;
     flex-direction: column;
@@ -64,6 +44,25 @@ form.step1Form {
         // display: block;
         // margin-left: auto;
         // margin-right: auto;
+    }
+    fieldset {
+        margin-bottom: 1rem;
+        background-color: general.$grey-100;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        // display: flex;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1.5rem 6vw;
+        align-items: center;
+        label {
+            grid-column: 1/2;
+            font-family: general.$h-font;
+            font-size: 1.5rem;
+            display: flex;
+            // align-items: center;
+            gap: 1rem;
+        }
     }
 }
 
