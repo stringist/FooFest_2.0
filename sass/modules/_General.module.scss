@@ -371,4 +371,12 @@ input {
   .secondaryButton {
     padding: 0.5rem;
   }
+
+  .timer {
+    scale: 0.8;
+    background: none;
+    svg {
+      display: none;
+    }
+  }
 }

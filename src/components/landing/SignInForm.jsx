@@ -2,6 +2,9 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 import loginStyles from "/sass/modules/_Login.module.scss";
+import billing from "/sass/modules/_Billing.module.scss";
+import form2Styles from "/sass/modules/_Form2.module.scss";
+import generalStyles from "/sass/modules/_General.module.scss";
 
 import TextField from "./TextField";
 import SuccessMessage from "../general/SuccessMessage";
@@ -59,33 +62,35 @@ export default function SignInForm(props) {
       }}
     >
       {(formik) => (
-        <div className={loginStyles.card}>
-          {console.log(formik.values.password)}
-          <Form>
-            <div className={loginStyles.users}>
-              <p className={loginStyles.help}>(usernames: kalle, lasse or paula)</p>
-              <p>(passwords: "username" + "A123")</p>
-            </div>
-
-            {formik.touched.username && formik.touched.password && formik.errors && <DangerMessage message="Plese, correct the errors" />}
-
+        <div className={loginStyles.login}>
+          <section className={form2Styles.checkout_options}>
             <h2>Login to your account</h2>
-            <TextField label="Username" name="username" type="text" />
-            <TextField label="Password" name="password" type="password" />
+            {console.log(formik.values.password)}
+            <Form>
+              <div className={loginStyles.users}>
+                <p className={loginStyles.help}>(usernames: kalle, lasse or paula)</p>
+                <p>(passwords: "username" + "A123")</p>
+              </div>
 
-            <button className={loginStyles.sign_button} type="submit">
-              Sign in
-            </button>
-            <button className={loginStyles.g_button}>
-              <img src="/img/google-icon.png" alt="" width={20} /> Sign in with Google
-            </button>
-            <a href="#" className={loginStyles.forgot}>
-              Forgot your password?
-            </a>
-            <a href="#" className={loginStyles.forgot}>
-              Don't have an account yet? Sign up
-            </a>
-          </Form>
+              {formik.touched.username && formik.touched.password && formik.errors && <DangerMessage message="Plese, correct the errors" />}
+
+              <TextField label="Username" name="username" type="text" />
+              <TextField label="Password" name="password" type="password" />
+
+              <button className={generalStyles.primaryButton} type="submit">
+                Sign in
+              </button>
+              <button className={loginStyles.g_button}>
+                <img src="/img/google-icon.png" alt="" width={20} /> Sign in with Google
+              </button>
+              <a href="#" className={loginStyles.forgot}>
+                Forgot your password?
+              </a>
+              <a href="#" className={loginStyles.forgot}>
+                Don't have an account yet? Sign up
+              </a>
+            </Form>
+          </section>
         </div>
       )}
     </Formik>

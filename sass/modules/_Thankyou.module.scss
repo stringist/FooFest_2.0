@@ -1,0 +1,31 @@
+@use "_General.module" as general;
+.thankyou {
+  width: fit-content;
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem;
+
+  svg {
+    fill: general.$valid-color;
+    width: 7rem;
+    height: 7rem;
+    display: block;
+    margin: 1rem auto;
+  }
+  p {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: general.$mobile-query) {
+  .thankyou {
+    h2 {
+      line-height: 1;
+      padding: 0.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}

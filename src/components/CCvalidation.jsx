@@ -21,9 +21,6 @@ export default function CCvalidation({ ...props }) {
   const KEY = "615d83068597142da1745455";
   const reservation = { id: props.reservation.id };
 
-  console.log(props.reservationId);
-  console.log(props.reservation.id);
-
   function changeFocus(e) {
     /*     const attr = parseInt(e.target.attributes.maxLength.value, 10);
      */
@@ -86,7 +83,7 @@ export default function CCvalidation({ ...props }) {
   }
   function changePage(e) {
     e.preventDefault();
-    console.log(props.ticketholderdata);
+    // console.log(props.ticketholderdata);
     props.setShowContent(0);
   }
   function handleSubmit(e) {
@@ -103,11 +100,12 @@ export default function CCvalidation({ ...props }) {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+    props.setStep((old) => old + 1);
+    props.setTimer(1);
   }
   function handlePost() {
     const postData = JSON.stringify(reservation);
-    console.log(postData);
-    console.log(reservation);
+
     fetch(ENDPOINT2, {
       method: "post",
       headers: {

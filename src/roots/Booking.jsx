@@ -16,6 +16,7 @@ import FormStep2 from "../components/booking/form2/FormStep2";
 import Timer from "../components/booking/Timer";
 import TimeUp from "../components/booking/TimeUp";
 import Summary from "../components/form_components/Summary";
+import Thankyou from "../components/booking/Thankyou";
 
 export default function Booking(props) {
   const [isSearching, setIsSearching] = useState(false);
@@ -78,6 +79,8 @@ export default function Booking(props) {
         {step === 3 && <TicketHolderForm {...values} />}
         {step === 4 && <BillingInfo {...values} />}
         {step === 5 && <CCvalidation {...values} />}
+        {step === 6 && <Thankyou {...values} />}
+
         {timer === 1 && <Timer setStep={setStep} setTimer={setTimer} />}
         {step === -1 && <TimeUp setStep={setStep} />}
 
