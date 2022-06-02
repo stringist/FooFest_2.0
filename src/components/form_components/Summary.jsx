@@ -9,3 +9,4 @@ export default function Summary(props) {
 <Total className={summaryStyles.test}{...props}/>
 </section>);
 }
+

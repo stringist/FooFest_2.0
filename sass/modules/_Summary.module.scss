@@ -39,3 +39,26 @@
         min-width: max-content;
     }
 }
+
+@media only screen and (max-width: general.$mobile-query) {
+    .summary {
+        position: fixed;
+        bottom: 0;
+        z-index: 9999;
+        width: 100%;
+        h2,
+        ul {
+            display: none;
+        }
+    }
+    .total {
+        height: 6rem;
+        background-color: general.$primary-color-dark;
+        margin: 0;
+        padding: 1rem;
+        align-items: center;
+        border-top: solid 1px general.$accent-color-100;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+}
