@@ -70,7 +70,7 @@ export default function FormStep1(props) {
 <div className={form2Styles.checkout_grid}>
 <section className={form2Styles.checkout_options}>
 <h2>Select ticket</h2>
-      <form ref={formEl} onSubmit={searchTickets}>
+      <form className={form1Styles.step1Form} ref={formEl} onSubmit={searchTickets}>
         <fieldset>
           <legend className={form1Styles.ticket_legend}>Ticket Type:</legend>
           <div className={form1Styles.form__type}>
