@@ -67,7 +67,7 @@ export default function Booking(props) {
 
   return (
     <>
-      {console.log(step)}
+      {/* {console.log(step)} */}
 
       {isSearching && <MyLoader message="Searching tickets..." />}
       <div className={form1Styles.Booking}>

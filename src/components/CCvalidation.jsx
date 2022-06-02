@@ -9,7 +9,7 @@ import Creditcard from "/sass/modules/_Creditcard.module.scss";
 import step4 from "/img/step4.svg";
 import Summary from "./form_components/Summary";
 
-export default function CCvalidation(props) {
+export default function CCvalidation({ ...props }) {
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [expiry, setExpiry] = useState("");
@@ -19,6 +19,11 @@ export default function CCvalidation(props) {
   const ENDPOINT = "https://kea2semester-e216.restdb.io/rest/foofest";
   const ENDPOINT2 = "https://foofestival.herokuapp.com/fullfill-reservation";
   const KEY = "615d83068597142da1745455";
+  const reservation = { id: props.reservation.id };
+
+  console.log(props.reservationId);
+  console.log(props.reservation.id);
+
   function changeFocus(e) {
     /*     const attr = parseInt(e.target.attributes.maxLength.value, 10);
      */
@@ -100,9 +105,9 @@ export default function CCvalidation(props) {
       .then((data) => console.log(data));
   }
   function handlePost() {
-    const reservation = { id: props.reservationId };
     const postData = JSON.stringify(reservation);
     console.log(postData);
+    console.log(reservation);
     fetch(ENDPOINT2, {
       method: "post",
       headers: {
