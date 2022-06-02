@@ -1,221 +1,219 @@
 @use "_General.module" as general;
 table {
-  width: 100%;
-  border-collapse: collapse;
-  td {
-    border: solid 1px general.$primary-color-dark;
-  }
+    width: 100%;
+    border-collapse: collapse;
+    td {
+        border: solid 1px general.$primary-color-dark;
+    }
 }
 
 .festival__buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: space-evenly;
-  margin: general.$gap;
-  font-family: general.$h-font;
-  div {
-    font-size: 2.25rem;
-    background: none;
-    border: none;
-    padding: 0rem 0.5rem;
-    cursor: pointer;
-    width: fit-content;
-    &:hover {
-      color: general.$accent-color-hover;
-      border-bottom: solid 1px general.$accent-color-hover;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: space-evenly;
+    margin: general.$gap;
+    font-family: general.$h-font;
+    div {
+        font-size: 2.25rem;
+        background: none;
+        border: none;
+        padding: 0rem 0.5rem;
+        cursor: pointer;
+        width: fit-content;
+        &:hover {
+            color: general.$accent-color-hover;
+            border-bottom: solid 1px general.$accent-color-hover;
+        }
     }
-  }
-  .selected {
-    color: general.$accent-color-100;
-    border-bottom: solid 1px general.$accent-color-100;
-  }
+    .selected {
+        color: general.$accent-color-100;
+        border-bottom: solid 1px general.$accent-color-100;
+    }
 }
 
 .festival__schedule {
-  display: flex;
-  thead {
-    height: 3rem;
-    th {
-      font-size: 2.25rem;
-      font-family: general.$h-font;
-      svg {
-        width: 1.5rem;
-        height: 1.5rem;
-      }
-    }
-    th:first-child {
-      background-color: general.$grey-400;
-    }
-    th:nth-child(2) {
-      background-color: general.$grey-300;
-      width: 30%;
-    }
-    th:nth-child(3) {
-      background-color: general.$grey-200;
-      width: 30%;
-    }
-    th:nth-child(4) {
-      background-color: general.$grey-100;
-      width: 30%;
-    }
-  }
-  tbody {
-    th {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: general.$grey-500;
-      height: 100%;
-      width: 100%;
-    }
-    tr {
-      background-color: general.$grey-400;
-      height: 5rem;
-    }
-    p {
-      width: 100%;
-      height: 100%;
-      border-bottom: solid 1px general.$grey-400;
-      margin: 0;
-      align-self: center;
-      display: block;
-      align-self: center;
-      padding: 1rem 0;
-    }
-  }
-  td {
-    height: 100%;
-  }
-  .cell {
-    height: 100%;
-    width: 100%;
-    background-color: general.$accent-color-60;
-    font-size: 2.25rem;
-    line-height: 1;
-    position: relative;
-    font-family: general.$h-font;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    text-align: center;
-    padding: 0.5rem;
-
-    &:hover {
-      background-color: rgb(202, 60, 8);
-      scale: 1.03;
-      transition: all 0.3s;
-      z-index: 1;
-      box-shadow: rgba(150, 145, 145, 0.279) 0px 2px 8px 0px;
-      // text-decoration: underline;
-    }
-  }
-  hr {
-    color: general.$grey-400;
-  }
-}
-
-.band__info {
-  padding: 3rem;
-  background-color: green;
-  height: 100vh;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 2;
-  width: 70%;
-  overflow-y: scroll;
-  h2 {
-    font-size: 2.25rem;
-    margin: 2.5rem 0 0 0;
-    line-height: 1;
-  }
-  h4 {
-    font-size: 1.5rem;
-    margin: 0;
-  }
-  button {
-    background: none;
-    width: 2rem;
-    height: 2rem;
-    padding: 1rem;
-    border: none;
-    margin-right: 1rem;
-    svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    &:hover {
-      background: none;
-    }
-  }
-  img {
-    width: 100%;
-  }
-  div {
-    display: flex;
-    justify-content: space-between;
-  }
-  .bio {
-    max-width: 60ch;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media only screen and (max-width: general.$mobile-query) {
-  .festival__buttons {
-    flex-wrap: wrap;
-    button {
-      font-size: 1.25rem;
-      row-gap: 0;
-    }
-  }
-  .festival__schedule {
     thead {
-      th {
-        font-size: 1.25rem;
-        svg {
-          width: 1rem;
-          height: 1rem;
+        height: 3rem;
+        th {
+            font-size: 2.25rem;
+            font-family: general.$h-font;
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
         }
-      }
+        th:first-child {
+            background-color: general.$grey-400;
+        }
+        th:nth-child(2) {
+            background-color: general.$grey-300;
+            width: 30%;
+        }
+        th:nth-child(3) {
+            background-color: general.$grey-200;
+            width: 30%;
+        }
+        th:nth-child(4) {
+            background-color: general.$grey-100;
+            width: 30%;
+        }
     }
     tbody {
-      button {
-        font-size: 1rem;
-      }
-      tr {
+        th {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: general.$grey-500;
+            height: 100%;
+            width: 100%;
+        }
+        tr {
+            background-color: general.$grey-400;
+            height: 5rem;
+        }
+        p {
+            width: 100%;
+            height: 100%;
+            border-bottom: solid 1px general.$grey-400;
+            margin: 0;
+            align-self: center;
+            display: block;
+            align-self: center;
+            padding: 1rem 0;
+        }
+    }
+    td {
         height: 100%;
-      }
-      p {
-        display: block;
-        padding: 0.35rem 0.15rem;
-        font-size: 0.85rem;
-        font-weight: 400;
-      }
     }
-  }
-  .band__info {
-    padding: 2rem;
-    background-color: red;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
-    width: 100vw;
-    button svg {
-      width: 80%;
-      height: 80%;
+    .cell {
+        height: 100%;
+        width: 100%;
+        background-color: general.$accent-color-60;
+        font-size: 2.25rem;
+        line-height: 1;
+        position: relative;
+        font-family: general.$h-font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-align: center;
+        padding: 0.5rem;
+        &:hover {
+            background-color: rgb(202, 60, 8);
+            scale: 1.03;
+            transition: all 0.3s;
+            z-index: 1;
+            box-shadow: rgba(150, 145, 145, 0.279) 0px 2px 8px 0px;
+            // text-decoration: underline;
+        }
     }
-    h2 {
-      margin-top: 1rem;
+    hr {
+        color: general.$grey-400;
     }
-  }
+}
+
+// .band__info {
+//   padding: 3rem;
+//   background-color: green;
+//   height: 100vh;
+//   position: fixed;
+//   right: 0;
+//   top: 0;
+//   z-index: 2;
+//   width: 70%;
+//   overflow-y: scroll;
+//   h2 {
+//     font-size: 2.25rem;
+//     margin: 2.5rem 0 0 0;
+//     line-height: 1;
+//   }
+//   h4 {
+//     font-size: 1.5rem;
+//     margin: 0;
+//   }
+//   button {
+//     background: none;
+//     width: 2rem;
+//     height: 2rem;
+//     padding: 1rem;
+//     border: none;
+//     margin-right: 1rem;
+//     svg {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//     }
+//     &:hover {
+//       background: none;
+//     }
+//   }
+//   img {
+//     width: 100%;
+//   }
+//   div {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+//   .bio {
+//     max-width: 60ch;
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+// }
+@media only screen and (max-width: general.$mobile-query) {
+    .festival__buttons {
+        flex-wrap: wrap;
+        button {
+            font-size: 1.25rem;
+            row-gap: 0;
+        }
+    }
+    .festival__schedule {
+        thead {
+            th {
+                font-size: 1.25rem;
+                svg {
+                    width: 1rem;
+                    height: 1rem;
+                }
+            }
+        }
+        tbody {
+            button {
+                font-size: 1rem;
+            }
+            tr {
+                height: 100%;
+            }
+            p {
+                display: block;
+                padding: 0.35rem 0.15rem;
+                font-size: 0.85rem;
+                font-weight: 400;
+            }
+        }
+    }
+    // .band__info {
+    //   padding: 2rem;
+    //   background-color: red;
+    //   position: fixed;
+    //   bottom: 0;
+    //   right: 0;
+    //   z-index: 2;
+    //   width: 100vw;
+    //   button svg {
+    //     width: 80%;
+    //     height: 80%;
+    //   }
+    //   h2 {
+    //     margin-top: 1rem;
+    //   }
+    // }
 }
