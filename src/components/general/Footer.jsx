@@ -2,10 +2,10 @@ import footerStyles from "/sass/modules/_Footer.module.scss";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className={footerStyles.footer}>
       <nav>
         <a href="/">
-          <img src="/img/logo.svg" alt="Foofest logo" />
+          <img src="/img/ff_logo.svg" alt="Foofest logo" />
         </a>
         <ul>
           <li>

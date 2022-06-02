@@ -8,7 +8,6 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 export default function BandListTable(props) {
   const [page, setPage] = useState(0);
   const [nPages, setNPages] = useState(0);
-  const [pageButtons, setPageButtons] = useState([]);
 
   const bandsPerPage = 15;
 
@@ -90,9 +89,13 @@ export default function BandListTable(props) {
       </div>
 
       <div className={bandsStyles.pagination}>
-        <button className={bandsStyles.paginationButton}onClick={previousPage}>&#60;&#60; Previous</button>
+        <button className={bandsStyles.paginationButton} onClick={previousPage}>
+          &#60;&#60; Previous
+        </button>
         {buttonss}
-        <button className={bandsStyles.paginationButton}onClick={nextPage}>Next &#62;&#62;</button>
+        <button className={bandsStyles.paginationButton} onClick={nextPage}>
+          Next &#62;&#62;
+        </button>
       </div>
     </>
   );
