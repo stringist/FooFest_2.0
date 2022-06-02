@@ -15,16 +15,18 @@ table {
   justify-content: space-evenly;
   margin: general.$gap;
 
-  button {
+  div {
     font-size: 2.25rem;
     background: none;
     border: none;
     padding: 0.2rem 0.5rem;
     cursor: pointer;
     width: fit-content;
+    font-family: general.$h-font;
 
     &:hover {
-      color: general.$hover-color;
+      color: general.$accent-color-hover;
+      border-bottom: solid 1px general.$accent-color-hover;
     }
   }
 
@@ -96,13 +98,18 @@ table {
     height: 100%;
   }
 
-  button {
+  .cell {
     height: 100%;
     width: 100%;
     background-color: general.$accent-color-60;
     font-size: 2.25rem;
     line-height: 1;
     position: relative;
+    font-family: general.$h-font;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 
     &:hover {
       background-color: rgb(202, 60, 8);
