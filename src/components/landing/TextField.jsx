@@ -18,7 +18,7 @@ export default function TextField({ label, ...props }) {
   }
   return (
     <div className={generalStyles.form_container}>
-      <fieldset className={billing.ticketholderCard}>
+      <fieldset>
         <label htmlFor={field.name}>{label}</label>
         {label === "Password" && <span className={loginStyles.help}>Password must contain at least 6 characters</span>}
 

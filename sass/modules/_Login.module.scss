@@ -126,4 +126,20 @@
   .login__card {
     width: 90%;
   }
+  .login {
+    margin: 1rem;
+    padding: 1rem;
+    form {
+      padding: 1rem;
+    }
+    input {
+      width: 70vw;
+    }
+
+    .inputContainer {
+      svg {
+        right: 6rem;
+      }
+    }
+  }
 }
