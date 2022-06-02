@@ -40,13 +40,14 @@
     .subMenu {
         margin-top: -1rem;
         background-color: general.$grey-200;
-        z-index: -1;
         padding: 5%;
         margin-bottom: 1rem;
     }
     .subMenuItem {
         display: flex;
         // justify-content: space-between;
+        margin: 2rem;
+        z-index: 999;
         gap: 2rem;
         p {
             display: inline;
