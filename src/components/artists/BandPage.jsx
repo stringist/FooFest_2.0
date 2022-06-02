@@ -1,4 +1,5 @@
-import bandsStyles from "/sass/modules/_Bands.module.scss";
+// import bandsStyles from "/sass/modules/_Bands.module.scss";
+import detail from "/sass/modules/_BandDetail.module.scss"
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
@@ -18,18 +19,13 @@ export default function BandPage(props) {
 
   if (band.name != undefined) {
     return (
-      <div className={bandsStyles.festival__bandList__page}>
+      <div className={detail.bandDetail}>
         <button onClick={() => props.setBandDisplayed([null])}>
           <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
             <path d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z" />
           </svg>
-        </button>
-
-        <h2>{band.name}</h2>
-        <h4>
-          <em>{band.genre}</em>
-        </h4>
-        <figure>
+        </button><div className="wrapper">
+ <figure>
           {band.logo.includes("http") ? (
             <LazyLoadImage effect="blur" src={band.logo} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
           ) : (
@@ -37,6 +33,11 @@ export default function BandPage(props) {
           )}
           {band.logoCredits ? <figcaption>{band.logoCredits}</figcaption> : null}
         </figure>
+        <h2>{band.name}</h2>
+        <h4>
+          <em>{band.genre}</em>
+        </h4>
+       </div>
         <p>{band.bio}</p>
         <button onClick={switchFav} className={bandsStyles.favourite}>
           {props.favourites.find((item) => item.name === band.name) ? (
