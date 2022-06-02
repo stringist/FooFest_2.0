@@ -80,6 +80,15 @@
         //     width: 75%;
         // }
     }
+    .labelInputPair {
+        display: flex;
+        flex-direction: column;
+        gap: .05rem;
+        & span {
+            font-size: .8rem;
+            font-weight: 200;
+        }
+    }
     [type=number] {
         -moz-appearance: textfield;
     }

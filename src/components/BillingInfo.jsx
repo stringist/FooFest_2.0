@@ -64,24 +64,24 @@ export default function CheckOutForm(props) {
             <div className={billing.splitRow}>
               <div className={billing.labelInputPair}>
                 <label htmlFor="street_address">Street address</label>
-                {/* <span> Guldbergsgade 420</span> */}
+                <span> Guldbergsgade 420</span>
                 <input type="text" id="street_address" required />
               </div>
               <div className={billing.labelInputPair}>
                 <label htmlFor="apartment">Apartment</label>
-                {/* <span>69 TV</span> */}
+                <span>69 TV</span>
                 <input type="text" id="apartment" required />
               </div>
             </div>
             <div className={billing.splitRow}>
               <div className={billing.labelInputPair}>
                 <label htmlFor="city">City</label>
-                {/* <span>Haderslev</span> */}
+                <span>Haderslev</span>
                 <input type="text" id="city" required />
               </div>
               <div className={billing.labelInputPair}>
                 <label htmlFor="postalcode">Postal Code</label>
-                {/* <span>6100</span> */}
+                <span>6100</span>
                 <input type="number" id="postalcode" required />
               </div>
             </div>
