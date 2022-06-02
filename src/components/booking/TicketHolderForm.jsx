@@ -3,6 +3,8 @@ import billing from "/sass/modules/_Billing.module.scss";
 import form2Styles from "/sass/modules/_Form2.module.scss";
 import generalStyles from "/sass/modules/_General.module.scss";
 
+import Summary from "../form_components/Summary";
+
 export default function TicketHolderForm(props) {
   const formEl = useRef(null);
 
@@ -76,6 +78,7 @@ export default function TicketHolderForm(props) {
             </fieldset>
           </form>
         </section>
+        <Summary {...props} />
       </div>
     </>
   );

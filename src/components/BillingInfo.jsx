@@ -8,6 +8,8 @@ import form2Styles from "/sass/modules/_Form2.module.scss";
 import step3 from "/img/step3.svg";
 import CountrySelector from "./form_components/CountrySelector";
 
+import Summary from "./form_components/Summary";
+
 export default function CheckOutForm(props) {
   const formEl = useRef(null);
   const [country, setCountry] = useState("");
@@ -108,7 +110,7 @@ export default function CheckOutForm(props) {
           </fieldset>
         </form>
       </section>
-      {/* <Summary {...props}/> */}
+      <Summary {...props} />
     </div>
   );
 }

@@ -116,7 +116,7 @@ button {
 }
 
 [type="checkbox"] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 body {
@@ -283,6 +283,7 @@ input {
   left: -1rem;
   background-color: #000000ad;
   border-radius: 10rem;
+  z-index: 99;
   div {
     scale: 0.5;
     div {
