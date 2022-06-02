@@ -37,6 +37,33 @@
         margin: 2rem auto auto auto;
         max-width: 90%;
     }
+    .subMenu {
+        margin-top: -1rem;
+        background-color: general.$grey-200;
+        z-index: -1;
+        padding: 5%;
+        margin-bottom: 1rem;
+    }
+    .subMenuItem {
+        display: flex;
+        // justify-content: space-between;
+        gap: 2rem;
+        p {
+            display: inline;
+        }
+        input,
+        select {
+            // margin-top: .25rem;
+            display: block;
+            background-color: #373737;
+            border: solid .5px general.$primary-color-light;
+            height: 2.5rem;
+            color: general.$primary-color-light;
+            padding-left: .25rem;
+            padding-right: .25rem;
+            box-shadow: inset 2px 2px 3px 2px general.$grey-500;
+        }
+    }
 }
 
 .formItem {

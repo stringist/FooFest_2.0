@@ -1,4 +1,6 @@
 import { useState, useRef } from "react";
+import form2Styles from "/sass/modules/_Form2.module.scss";
+
 export default function CrewSetupSubMenu(props) {
   // const [twoPersonTent, setTwoPersonTents] = useState(0);
   // const [threePersonTent, setThreePersonTents] = useState(0);
@@ -15,7 +17,7 @@ export default function CrewSetupSubMenu(props) {
 
   function updateBasket(productName) {
     console.log(productName);
-    const twoPers = {product: "Two-person tent setup", name: "twoPersonTent", price: 299, id: 667 };
+    const twoPers = { product: "Two-person tent setup", name: "twoPersonTent", price: 299, id: 667 };
     const threePers = { product: "Three-person tent setup", name: "threePersonTent", price: 399, id: 668 };
 
     if (props.basket.find((item) => item.name === productName)) {
@@ -47,12 +49,11 @@ export default function CrewSetupSubMenu(props) {
   }
 
   return (
-    <div className="subFormItem">
-      <div className="tentSetupItem">
+    <div className={form2Styles.subMenu}>
+      <div className={form2Styles.subMenuItem}>
         <div className="text_content">
-          <label htmlFor="twoPersonTent">2 person tent</label>
-          <p className="price">+299 DKK</p>
-          <p className="subtext"></p>
+          <label htmlFor="twoPersonTent">2 person tent <span> +299Dkk</span></label>
+   
         </div>
         <input
           type="number"
@@ -63,11 +64,10 @@ export default function CrewSetupSubMenu(props) {
           onChange={handleChange}
         />
       </div>
-      <div className="tentSetupItem">
+      <div className={form2Styles.subMenuItem}>
         <div className="text_content">
-          <label htmlFor="threePersonTent">3 person tent</label>
-          {/* <p className="price">+399 DKK</p> */}
-          <p className="subtext"></p>
+          <label htmlFor="threePersonTent">3 person tent <span> +299Dkk</span></label>
+         
         </div>
         <input
           type="number"
