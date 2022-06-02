@@ -4,7 +4,7 @@ export default function TicketHolderForm(props) {
     if (i < amount) {
       return (
         <fieldset>
-          \<legend>Ticketholder number {i + 1}</legend>
+          <legend>Ticketholder number {i + 1}</legend>
           <label htmlFor="name">Name</label>
           <input
             type="text"
