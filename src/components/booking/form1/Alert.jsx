@@ -1,6 +1,7 @@
 import alertStyles from "/sass/modules/_Alert.module.scss";
 
 export default function Alert(props) {
+  props.setTimer(0);
   return (
     <div className={alertStyles.container}>
       <button onClick={() => props.setAlert(false)}>

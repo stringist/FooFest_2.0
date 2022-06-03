@@ -7,15 +7,16 @@
   flex-direction: column;
   box-shadow: rgba(150, 145, 145, 0.279) 0px 2px 8px 0px;
   justify-content: center;
-  position: fixed;
-  left: 25vw;
-  top: 25vh;
+  position: relative;
+  margin: 5vw;
   z-index: 99;
 
   button {
     position: absolute;
-    left: 1rem;
-    top: 1rem;
+    top: 0;
+    left: 0;
+    color: general.$primary-color-light;
+    background: none;
   }
 
   p {
@@ -25,4 +26,10 @@
 }
 
 @media only screen and (max-width: general.$mobile-query) {
+  .container {
+    width: 90vw;
+    height: fit-content;
+    padding: 2rem;
+    left: 0;
+  }
 }

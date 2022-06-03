@@ -115,7 +115,7 @@ export default function FormStep1({ ...props }) {
           </section>
         </div>
       )}
-      {props.showAlert === true && <Alert message={props.reservation.error} setAlert={props.setAlert} />}
+      {props.showAlert === true && <Alert message={props.reservation.error} setAlert={props.setAlert} setTimer={props.setTimer} />}
     </>
   );
 }
