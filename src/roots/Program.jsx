@@ -32,6 +32,8 @@ export default function Program(props) {
         setFilteredJ(data.Jotunheim.mon);
         setFilteredV(data.Vanaheim.mon);
         setLoadingSch(false);
+
+        // console.log(props.isLoading);
       });
   }, []);
 
@@ -69,6 +71,7 @@ export default function Program(props) {
             setBandDisplayed={setBandDisplayed}
             favourites={props.favourites}
             setFavourites={props.setFavourites}
+            day={day}
           />
 
           <Footer />

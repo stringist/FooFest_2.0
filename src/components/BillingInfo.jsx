@@ -47,97 +47,64 @@ export default function CheckOutForm(props) {
   const ticketholderdata = props.ticketholderdata;
 
   return (
-    <div className={form2Styles.checkout_grid}>
-      <section className={form2Styles.checkout_options}>
-        <h2>Checkout</h2>
-        <a href="#/">← Back</a>
-        <h4>Billing Information</h4>
-        <form
-          ref={formEl}
-          onChange={createObject}
-          className={billing.billing_form}
-          onSubmit={exportInfo}
-        >
-          <fieldset>
-            <div className={billing.labelInputPair}>
-              <label htmlFor="name">Name as on card</label>
-              <input
-                placeholder=" "
-                type="text"
-                id="name"
-                pattern="^[a-zA-ZÆØÅæøå'- ]*$"
-                required
-              />
-              <span className={billing.requirements}>
-                {" "}
-                Must only contain letters
-              </span>
-            </div>
-            <div className={billing.splitRow}>
+    <>
+      <img src="/img/step4.svg" alt="step4 breadcrumbs" className={form2Styles.breadcrumbs} />
+
+      <div className={form2Styles.checkout_grid}>
+        <section className={form2Styles.checkout_options}>
+          <h2>Checkout</h2>
+          <a href="#/">← Back</a>
+          <h4>Billing Information</h4>
+          <form ref={formEl} onChange={createObject} className={billing.billing_form} onSubmit={exportInfo}>
+            <fieldset>
               <div className={billing.labelInputPair}>
-                <label htmlFor="street_address">Street address</label>
-                <span> Guldbergsgade 420</span>
-                <input
-                  placeholder=" "
-                  type="text"
-                  id="street_address"
-                  required
-                />
+                <label htmlFor="name">Name as on card</label>
+                <input placeholder=" " type="text" id="name" pattern="^[a-zA-ZÆØÅæøå'- ]*$" required />
+                <span className={billing.requirements}> Must only contain letters</span>
               </div>
-              <div className={billing.labelInputPair}>
-                <label htmlFor="apartment">Apartment</label>
-                <span>69 TV</span>
-                <input placeholder=" " type="text" id="apartment" required />
+              <div className={billing.splitRow}>
+                <div className={billing.labelInputPair}>
+                  <label htmlFor="street_address">Street address</label>
+                  <span> Guldbergsgade 420</span>
+                  <input placeholder=" " type="text" id="street_address" required />
+                </div>
+                <div className={billing.labelInputPair}>
+                  <label htmlFor="apartment">Apartment</label>
+                  <span>69 TV</span>
+                  <input placeholder=" " type="text" id="apartment" required />
+                </div>
               </div>
-            </div>
-            <div className={billing.splitRow}>
-              <div className={billing.labelInputPair}>
-                <label htmlFor="city">City</label>
-                {<span>Haderslev</span>}
-                <input
-                  placeholder=" "
-                  type="text"
-                  id="city"
-                  pattern="^[a-zA-ZÆØÅæøå'- ]*$"
-                  required
-                />
-                <span className={billing.requirements}>
-                  {" "}
-                  Must only contain letters
-                </span>
+              <div className={billing.splitRow}>
+                <div className={billing.labelInputPair}>
+                  <label htmlFor="city">City</label>
+                  {<span>Haderslev</span>}
+                  <input placeholder=" " type="text" id="city" pattern="^[a-zA-ZÆØÅæøå'- ]*$" required />
+                  <span className={billing.requirements}> Must only contain letters</span>
+                </div>
+                <div className={billing.labelInputPair}>
+                  <label htmlFor="postalcode">Postal Code</label>
+                  {<span>6100</span>}
+                  <input placeholder=" " type="number" id="postalcode" required />
+                  <span className={billing.requirements}> Must only contain numbers</span>
+                </div>
               </div>
-              <div className={billing.labelInputPair}>
-                <label htmlFor="postalcode">Postal Code</label>
-                {<span>6100</span>}
-                <input placeholder=" " type="number" id="postalcode" required />
-                <span className={billing.requirements}>
-                  {" "}
-                  Must only contain numbers
-                </span>
+              <div className={billing.LabelInputPair}>
+                <label htmlFor="country">Country</label>
+                <CountrySelector id="country" required />
               </div>
-            </div>
-            <div className={billing.LabelInputPair}>
-              <label htmlFor="country">Country</label>
-              <CountrySelector id="country" required />
-            </div>
-            <div className={generalStyles.buttonWrapper}>
-              <button
-                className={generalStyles.secondaryButton}
-                onClick={backButton}
-              >
-                Back
-              </button>
-              <button
-                className={generalStyles.primaryButton}
-                onClick={exportInfo}
-              >
-                Next
-              </button>
-            </div>
-          </fieldset>
-        </form>
-      </section>
-      <Summary {...props} />
-    </div>
+              <div className={generalStyles.buttonWrapper}>
+                <button className={generalStyles.secondaryButton} onClick={backButton}>
+                  Back
+                </button>
+                <button className={generalStyles.primaryButton} onClick={exportInfo}>
+                  Next
+                </button>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+        <Summary {...props} />
+      </div>
+    </>
   );
 }

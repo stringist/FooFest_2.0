@@ -2,8 +2,13 @@
 .thankyou {
   width: fit-content;
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   padding: 2rem;
+
+  h2 {
+    text-align: center;
+  }
 
   svg {
     fill: general.$valid-color;

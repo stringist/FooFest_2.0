@@ -22,13 +22,15 @@ export default function Table(props) {
       });
   }, []);
 
-  useEffect(() => {
-    fetch(`https://foofestival.herokuapp.com/events`)
-      .then((res) => res.json())
-      .then((data) => {
-        setEvents(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`https://foofestival.herokuapp.com/events`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setEvents(data);
+  //     });
+  // }, []);
+  // console.log(events);
 
   if (!bands) {
     return null;
@@ -137,7 +139,8 @@ export default function Table(props) {
         setFavourites={props.setFavourites}
         act={act}
         stage={stage}
-      ></BandInfo>
+        day={props.day}
+      />
     </div>
   );
 }

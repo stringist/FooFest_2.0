@@ -1,5 +1,3 @@
-// for program pop-up
-// import programStyles from "/sass/modules/_Program.module.scss";
 import detail from "/sass/modules/_BandDetail.module.scss";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -96,7 +94,7 @@ export default function BandInfo(props) {
             <h2>{band.name}</h2>
             <h4>{band.genre}</h4>
             <p>
-              Performing: {props.act.start}-{props.act.end}{" "}
+              Performing:<br></br> {props.day} {props.act.start}-{props.act.end}{" "}
               <span>{props.stage}</span>
             </p>
           </div>

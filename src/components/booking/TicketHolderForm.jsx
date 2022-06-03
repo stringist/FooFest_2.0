@@ -49,6 +49,7 @@ export default function TicketHolderForm(props) {
       </form> */}
 
       {/* -------------------------------------------------- */}
+      <img src="/img/step3.svg" alt="step3 breadcrumbs" className={form2Styles.breadcrumbs} />
 
       <div className={form2Styles.checkout_grid}>
         <section className={form2Styles.checkout_options}>
