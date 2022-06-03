@@ -75,7 +75,7 @@ export default function FormStep1({ ...props }) {
     <>
       {!props.showAlert && (
         <div className={form2Styles.checkout_grid}>
-          <section className={form2Styles.checkout_options}>
+          <section className={form2Styles.checkout_optionsFullWidth}>
             <h2>Select ticket</h2>
             <form className={form1Styles.step1Form} ref={formEl} onSubmit={searchTickets}>
               <fieldset>
