@@ -48,7 +48,14 @@ export default function Table(props) {
         <thead>
           <tr>
             <th>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-clock-fill" viewBox="0 0 16 16">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-clock-fill"
+                viewBox="0 0 16 16"
+              >
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
               </svg>
             </th>
@@ -67,7 +74,11 @@ export default function Table(props) {
             return (
               <tr key={createUID(4)}>
                 <th>
-                  <p>{act.start.substring(0, 1) === "0" ? act.start.substring(1) : act.start}</p>
+                  <p>
+                    {act.start.substring(0, 1) === "0"
+                      ? act.start.substring(1)
+                      : act.start}
+                  </p>
                   <br></br>
                   <p>{Number(act.start.substring(0, 2)) + 1}:00</p>
                 </th>
@@ -121,7 +132,15 @@ export default function Table(props) {
           })}
         </tbody>
       </table>
-      <BandInfo bandDisplay={props.bandDisplay} setBandDisplayed={props.setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} act={act} stage={stage} day={props.day} />
+      <BandInfo
+        bandDisplay={props.bandDisplay}
+        setBandDisplayed={props.setBandDisplayed}
+        favourites={props.favourites}
+        setFavourites={props.setFavourites}
+        act={act}
+        stage={stage}
+        day={props.day}
+      />
     </div>
   );
 }
