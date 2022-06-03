@@ -35,25 +35,10 @@ export default function Program(props) {
         setLoadingSch(false);
         console.log("finished loading");
 
-        console.log(props.isLoading);
+        // console.log(props.isLoading);
       });
   }, []);
 
-  // const [events, setEvents] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(`https://foofestival.herokuapp.com/events`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setEvents(data);
-  //     });
-  // }, []);
-  // console.log(events);
-
-  // if (!schedule) {
-  //   return null;
-  // }
   if (loadingSch) {
     return (
       <div className={programStyles.Program}>
@@ -71,7 +56,7 @@ export default function Program(props) {
 
           <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} setDay={setDay} day={day} />
 
-          <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} />
+          <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} day={day} />
 
           <Footer />
         </>
