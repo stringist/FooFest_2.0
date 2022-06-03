@@ -1,171 +1,177 @@
 @use "_General.module" as general;
 .Festival {
-  main {
-    padding: 0 5%;
-  }
-  h2 {
-    margin: 0;
-    text-align: center;
-  }
-  h3 {
-    font-size: 1.5rem;
-    margin-top: 10vh;
-    margin-bottom: 0;
-  }
-  h4 {
-    font-size: 2.25rem;
-    margin-top: -3rem;
-    margin-left: 2rem;
-    margin-bottom: 0;
-    background-color: general.$primary-color-dark;
-    padding: 1rem;
-    width: fit-content;
-  }
-  img {
-    display: block;
-    margin: 0 auto;
-  }
-  .genres {
-    margin: 0;
-    color: general.$primary-color-lighter;
-    text-align: center;
-  }
-  .sponsors {
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    margin: 0 2vw;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-evenly;
-    img {
-      max-height: 100px;
-    }
-    p {
-      font-size: 0.8rem;
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .marshal {
-      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(312deg) brightness(103%) contrast(103%);
-      max-height: 50px;
-    }
-  }
-  .hero {
-    background-image: url(../img/landing_background.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .hero__ {
-    &logo {
-      width: 50vw;
-    }
-    &box {
-      background-color: rgba(71, 71, 71, 0.408);
-      width: fit-content;
-      padding: 2rem 3rem;
-      border: solid 2px general.$accent-color-100;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 3rem;
-
-      button {
-        width: fit-content;
-        padding: 0;
-      }
-      a {
-        padding: 0 6rem;
-      }
-    }
-  }
-  .articles {
-    width: 100%;
-    height: fit-content;
-    border: solid 2px hsl(16deg, 100%, 50%);
-    margin: 0 auto;
-    display: block;
-    background-position: center;
-    padding: 3rem;
-    padding-top: 0;
-    margin-top: 2.5rem;
-    margin-bottom: 5rem;
-    .content {
-      width: 70vw;
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-    }
-    img {
-      height: auto;
-      width: 100%;
-    }
-    p {
-      width: 30ch;
-      font-size: 1.5rem;
-      font-family: general.$h-font;
-      line-height: 1.5;
-      display: block;
-      margin-left: auto;
-      margin-right: 2rem;
-      color: general.$primary-color-light;
-    }
-    &:hover {
-      box-shadow: rgba(255, 127, 29, 0.257) 0px 2px 8px 0px;
-      border: solid 2.5px hsl(16deg, 100%, 50%);
-    }
-  }
-  .sponsors {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    img {
-      max-width: 200px;
-    }
-  }
-  @media only screen and (max-width: general.$mobile-query) {
-    .Festival {
-      padding: 0;
+    main {
+        padding: 0 5%;
     }
     h2 {
-      font-size: 1.93rem;
-      text-align: center;
+        margin: 0;
+        text-align: center;
     }
     h3 {
-      margin-top: 0;
-      font-size: 2.41rem;
+        font-size: 1.5rem;
+        margin-top: 10vh;
+        margin-bottom: 0;
     }
     h4 {
-      font-size: 1.56rem;
-      margin-top: -2.5rem;
+        font-size: 2.25rem;
+        margin-top: -3rem;
+        margin-left: 2rem;
+        margin-bottom: 0;
+        background-color: general.$primary-color-dark;
+        padding: 1rem;
+        width: fit-content;
+    }
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+    .genres {
+        margin: 0;
+        color: general.$primary-color-lighter;
+        text-align: center;
+        & span {
+            font-size: 1.5rem;
+            font-family: general.$body-font;
+            font-weight: 400;
+            // color: general.$accent-color-100;
+        }
+    }
+    .sponsors {
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        margin: 0 2vw;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-evenly;
+        img {
+            max-height: 100px;
+        }
+        p {
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .marshal {
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(312deg) brightness(103%) contrast(103%);
+            max-height: 50px;
+        }
+    }
+    .hero {
+        background-image: url(../img/landing_background.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .hero__ {
-      &logo {
-        width: 90vw;
-      }
-      &box {
-        padding: 1rem 2rem;
-        a {
-          font-size: 1.5rem;
+        &logo {
+            width: 45vw;
+            margin-top: 6rem;
         }
-      }
-    }
-    button {
-      font-size: 1rem;
-      width: 100%;
+        &box {
+            background-color: rgba(71, 71, 71, 0.408);
+            width: fit-content;
+            padding: 2rem 3rem;
+            border: solid 2px general.$accent-color-100;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3rem;
+            button {
+                width: fit-content;
+                padding: 0;
+            }
+            a {
+                padding: 0 6rem;
+            }
+        }
     }
     .articles {
-      .content {
+        width: 100%;
+        height: fit-content;
+        border: solid 2px hsl(16deg, 100%, 50%);
+        margin: 0 auto;
         display: block;
-      }
-      p {
-        font-size: 1rem;
-        margin-right: auto;
-      }
+        background-position: center;
+        padding: 3rem;
+        padding-top: 0;
+        margin-top: 2.5rem;
+        margin-bottom: 5rem;
+        .content {
+            width: 70vw;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        img {
+            height: auto;
+            width: 100%;
+        }
+        p {
+            width: 30ch;
+            font-size: 1.5rem;
+            font-family: general.$h-font;
+            line-height: 1.5;
+            display: block;
+            margin-left: auto;
+            margin-right: 2rem;
+            color: general.$primary-color-light;
+        }
+        &:hover {
+            box-shadow: rgba(255, 127, 29, 0.257) 0px 2px 8px 0px;
+            border: solid 2.5px hsl(16deg, 100%, 50%);
+        }
     }
-  }
+    .sponsors {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        img {
+            max-width: 200px;
+        }
+    }
+    @media only screen and (max-width: general.$mobile-query) {
+        .Festival {
+            padding: 0;
+        }
+        h2 {
+            font-size: 1.93rem;
+            text-align: center;
+        }
+        h3 {
+            margin-top: 0;
+            font-size: 2.41rem;
+        }
+        h4 {
+            font-size: 1.56rem;
+            margin-top: -2.5rem;
+        }
+        .hero__ {
+            &logo {
+                width: 90vw;
+            }
+            &box {
+                padding: 1rem 2rem;
+                a {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        button {
+            font-size: 1rem;
+            width: 100%;
+        }
+        .articles {
+            .content {
+                display: block;
+            }
+            p {
+                font-size: 1rem;
+                margin-right: auto;
+            }
+        }
+    }
 }
