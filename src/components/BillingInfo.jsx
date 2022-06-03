@@ -27,10 +27,15 @@ export default function CheckOutForm(props) {
     postalcode: zipcode,
     country: country,
   };
-
+  function backButton() {
+    props.setStep((old) => old - 1);
+    console.log("im called");
+  }
   function exportInfo(e) {
+    console.log(ticketHolderObject);
     props.setTicketholderdata(ticketHolderObject);
     props.setShowContent(1);
+    props.setStep((old) => old + 1);
   }
   function createObject(e) {
     e.preventDefault();
@@ -47,23 +52,40 @@ export default function CheckOutForm(props) {
   return (
     <div className={form2Styles.checkout_grid}>
       <section className={form2Styles.checkout_options}>
-        {/* <img src={step3} alt="" /> */}
         <h2>Checkout</h2>
         <a href="#/">← Back</a>
         <h4>Billing Information</h4>
-        <form ref={formEl} onChange={createObject} className={billing.billing_form} onSubmit={exportInfo}>
+        <form
+          ref={formEl}
+          onChange={createObject}
+          className={billing.billing_form}
+          onSubmit={exportInfo}
+        >
           <fieldset>
-            {/* <legend>Ticketholder information</legend> */}
             <div className={billing.labelInputPair}>
               <label htmlFor="name">Name as on card</label>
-              <input placeholder=" " type="text" id="name" pattern="^[a-zA-ZÆØÅæøå'- ]*$" required />
-              <span className={billing.requirements}> Must only contain letters</span>
+              <input
+                placeholder=" "
+                type="text"
+                id="name"
+                pattern="^[a-zA-ZÆØÅæøå'- ]*$"
+                required
+              />
+              <span className={billing.requirements}>
+                {" "}
+                Must only contain letters
+              </span>
             </div>
             <div className={billing.splitRow}>
               <div className={billing.labelInputPair}>
                 <label htmlFor="street_address">Street address</label>
                 <span> Guldbergsgade 420</span>
-                <input placeholder=" " type="text" id="street_address" required />
+                <input
+                  placeholder=" "
+                  type="text"
+                  id="street_address"
+                  required
+                />
               </div>
               <div className={billing.labelInputPair}>
                 <label htmlFor="apartment">Apartment</label>
@@ -75,14 +97,26 @@ export default function CheckOutForm(props) {
               <div className={billing.labelInputPair}>
                 <label htmlFor="city">City</label>
                 {<span>Haderslev</span>}
-                <input placeholder=" " type="text" id="city" pattern="^[a-zA-ZÆØÅæøå'- ]*$" required />
-                <span className={billing.requirements}> Must only contain letters</span>
+                <input
+                  placeholder=" "
+                  type="text"
+                  id="city"
+                  pattern="^[a-zA-ZÆØÅæøå'- ]*$"
+                  required
+                />
+                <span className={billing.requirements}>
+                  {" "}
+                  Must only contain letters
+                </span>
               </div>
               <div className={billing.labelInputPair}>
                 <label htmlFor="postalcode">Postal Code</label>
                 {<span>6100</span>}
                 <input placeholder=" " type="number" id="postalcode" required />
-                <span className={billing.requirements}> Must only contain numbers</span>
+                <span className={billing.requirements}>
+                  {" "}
+                  Must only contain numbers
+                </span>
               </div>
             </div>
             <div className={billing.LabelInputPair}>
@@ -92,17 +126,13 @@ export default function CheckOutForm(props) {
             <div className={generalStyles.buttonWrapper}>
               <button
                 className={generalStyles.secondaryButton}
-                onClick={() => {
-                  props.setStep((old) => old - 1);
-                }}
+                onClick={backButton}
               >
                 Back
               </button>
               <button
                 className={generalStyles.primaryButton}
-                onClick={() => {
-                  props.setStep((old) => old + 1);
-                }}
+                onClick={exportInfo}
               >
                 Next
               </button>
