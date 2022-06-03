@@ -11,6 +11,5 @@ return(
       </div>
       <p className={form2Styles.price}>+99 DKK</p>
     </div>
-);
-
+  );
 }

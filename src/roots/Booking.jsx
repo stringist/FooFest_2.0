@@ -30,7 +30,9 @@ export default function Booking(props) {
   const [amount, setAmount] = useState(1);
   const [reservation, setReservation] = useState([]);
   const [showAlert, setAlert] = useState(false);
-  const [basket, setBasket] = useState([{ product: "Booking Fee", price: 99, id: 1, amount: 1 }]);
+  const [basket, setBasket] = useState([
+    { product: "Booking Fee", price: 99, id: 1, amount: 1 },
+  ]);
 
   const values = {
     isSearching,
@@ -68,8 +70,6 @@ export default function Booking(props) {
 
   return (
     <>
-      {/* {console.log(step)} */}
-
       {isSearching && <MyLoader message="Searching tickets..." />}
       <div className={form1Styles.Booking}>
         <Menu user={props.user} />

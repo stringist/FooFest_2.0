@@ -2,7 +2,6 @@ import { useState, useRef } from "react";
 import form2Styles from "/sass/modules/_Form2.module.scss";
 import form1Styles from "/sass/modules/_Form1.module.scss";
 
-
 export default function CrewSetupSubMenu(props) {
   // const [twoPersonTent, setTwoPersonTents] = useState(0);
   // const [threePersonTent, setThreePersonTents] = useState(0);
@@ -12,21 +11,28 @@ export default function CrewSetupSubMenu(props) {
   // const [twoPersCount, setTwoPersCount] = useState(0);
   // const [threePersCount, setThreePersCount] = useState(0);
 
-  console.log(`number of tickets is`, props.amount);
-
   const handleChange = (e) => {
-    console.log(props.basket);
-    setTentTotal(twoPersonInput.current.value * 2 + threePersonInput.current.value * 3);
+    setTentTotal(
+      twoPersonInput.current.value * 2 + threePersonInput.current.value * 3
+    );
     updateBasket(e.target.name);
   };
 
   function updateBasket(productName) {
-    console.log(productName);
-    const twoPers = { product: "Two-person tent setup", name: "twoPersonTent", price: 299, id: 667 };
-    const threePers = { product: "Three-person tent setup", name: "threePersonTent", price: 399, id: 668 };
+    const twoPers = {
+      product: "Two-person tent setup",
+      name: "twoPersonTent",
+      price: 299,
+      id: 667,
+    };
+    const threePers = {
+      product: "Three-person tent setup",
+      name: "threePersonTent",
+      price: 399,
+      id: 668,
+    };
 
     if (props.basket.find((item) => item.name === productName)) {
-      console.log(`the item called ${productName} is already in the basket`);
       props.setBasket((old) =>
         old.map((item) => {
           if (item.name === productName) {
@@ -44,7 +50,6 @@ export default function CrewSetupSubMenu(props) {
         })
       );
     } else {
-      console.log(`first ${productName} added to basket`);
       if (productName === "twoPersonTent") {
         props.setBasket((old) => [...old, { ...twoPers, amount: 1 }]);
       } else {
@@ -58,8 +63,8 @@ export default function CrewSetupSubMenu(props) {
       <div className={form2Styles.subMenuItem}>
         <div className="text_content">
           <label htmlFor="twoPersonTent">2 person tent </label>
-</div>
-  <input
+        </div>
+        <input
           type="number"
           name="twoPersonTent"
           id="twoPersonTent"

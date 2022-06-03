@@ -13,14 +13,9 @@ import TimeUp from "../TimeUp";
 import FormStep2 from "../form2/FormStep2";
 
 export default function FormStep1({ ...props }) {
-  console.log(props);
   const formEl = useRef(null);
   const area = props.area;
   const amount = props.amount;
-
-  // console.log(props.step);
-
-  // const currentTicket = {product: `ticket`, type: ticket, area: area, amount: amount};
 
   function searchTickets(e) {
     e.preventDefault();
@@ -28,9 +23,6 @@ export default function FormStep1({ ...props }) {
 
     const ticketRequest = { area, amount };
     const putData = JSON.stringify(ticketRequest);
-
-    /*  console.log(ticketRequest);
-    console.log(putData); */
 
     fetch("https://foofestival.herokuapp.com/reserve-spot", {
       method: "PUT",
@@ -43,8 +35,6 @@ export default function FormStep1({ ...props }) {
         response.json().then((data) => {
           props.setReservation(data);
           props.setReservationId(data.id);
-          console.log(data.id);
-          console.log("id saved");
 
           data.error ? showAlert() : applyReservationId();
         });
@@ -65,11 +55,9 @@ export default function FormStep1({ ...props }) {
   }
   function applyReservationId() {
     props.setReservationId(props.reservation.id);
-    console.log(props.reservation);
     props.setStep((old) => old + 1);
   }
   {
-    console.log(props.reservation, props.setReservationId);
   }
   return (
     <>
@@ -77,20 +65,39 @@ export default function FormStep1({ ...props }) {
         <div className={form2Styles.checkout_grid}>
           <section className={form2Styles.checkout_optionsFullWidth}>
             <h2>Select ticket</h2>
-            <form className={form1Styles.step1Form} ref={formEl} onSubmit={searchTickets}>
+            <form
+              className={form1Styles.step1Form}
+              ref={formEl}
+              onSubmit={searchTickets}
+            >
               <fieldset>
                 {/* <legend className={form1Styles.ticket_legend}>Ticket Type:</legend> */}
                 <label>Ticket Type:</label>
                 <div className={form1Styles.form__type}>
-                  <TicketButton name="General" price="799kr" ticket={props.ticket} setTicket={props.setTicket} />
-                  <TicketButton name="VIP" price="1299kr" ticket={props.ticket} setTicket={props.setTicket} />
+                  <TicketButton
+                    name="General"
+                    price="799kr"
+                    ticket={props.ticket}
+                    setTicket={props.setTicket}
+                  />
+                  <TicketButton
+                    name="VIP"
+                    price="1299kr"
+                    ticket={props.ticket}
+                    setTicket={props.setTicket}
+                  />
                 </div>
               </fieldset>
 
               <fieldset className={form1Styles.form__amount}>
                 <label>Choose amount:</label>
                 {/* <p>Choose a number greater than 0</p> */}
-                <AmountButton id="amount" name="amount" amount={props.amount} setAmount={props.setAmount} />
+                <AmountButton
+                  id="amount"
+                  name="amount"
+                  amount={props.amount}
+                  setAmount={props.setAmount}
+                />
               </fieldset>
 
               <fieldset>
@@ -98,24 +105,58 @@ export default function FormStep1({ ...props }) {
                 <label>Choose area:</label>
                 <div className={form1Styles.form__area}>
                   <div className={form1Styles.form__area__row}>
-                    <AreaButton name="Svartheim" area={props.area} setArea={props.setArea} />
-                    <AreaButton name="Nilfheim" area={props.area} setArea={props.setArea} />
-                    <AreaButton name="Helheim" area={props.area} setArea={props.setArea} />
+                    <AreaButton
+                      name="Svartheim"
+                      area={props.area}
+                      setArea={props.setArea}
+                    />
+                    <AreaButton
+                      name="Nilfheim"
+                      area={props.area}
+                      setArea={props.setArea}
+                    />
+                    <AreaButton
+                      name="Helheim"
+                      area={props.area}
+                      setArea={props.setArea}
+                    />
                   </div>
                   <div className={form1Styles.form__area__row}>
-                    <AreaButton name="Muspeleheim" area={props.area} setArea={props.setArea} />
-                    <AreaButton name="Alfheim" area={props.area} setArea={props.setArea} />
+                    <AreaButton
+                      name="Muspeleheim"
+                      area={props.area}
+                      setArea={props.setArea}
+                    />
+                    <AreaButton
+                      name="Alfheim"
+                      area={props.area}
+                      setArea={props.setArea}
+                    />
                   </div>
                 </div>
               </fieldset>
 
-              {!props.isSearching && <button className={generalStyles.primaryButton}>Find tickets</button>}
-              {props.isSearching && <button className={generalStyles.primaryButton}>Searching tickets...</button>}
+              {!props.isSearching && (
+                <button className={generalStyles.primaryButton}>
+                  Find tickets
+                </button>
+              )}
+              {props.isSearching && (
+                <button className={generalStyles.primaryButton}>
+                  Searching tickets...
+                </button>
+              )}
             </form>
           </section>
         </div>
       )}
-      {props.showAlert === true && <Alert message={props.reservation.error} setAlert={props.setAlert} setTimer={props.setTimer} />}
+      {props.showAlert === true && (
+        <Alert
+          message={props.reservation.error}
+          setAlert={props.setAlert}
+          setTimer={props.setTimer}
+        />
+      )}
     </>
   );
 }

@@ -1,9 +1,6 @@
 import summaryStyles from "/sass/modules/_Form2.module.scss";
 import createUID from "create-unique-id";
 export default function BasketList(props) {
-  /*   console.log(props);
-   */
-
   const ticket = (
     <li>
       {props.amount}x {props.ticket}, {props.area}{" "}

@@ -12,20 +12,23 @@ export default function BandListTable(props) {
   const bandsPerPage = 15;
 
   useEffect(() => {
-    props.searched === "" ? setNPages(Math.ceil(props.filtered.length / bandsPerPage)) : setNPages(Math.ceil(props.searched.length / bandsPerPage));
+    props.searched === ""
+      ? setNPages(Math.ceil(props.filtered.length / bandsPerPage))
+      : setNPages(Math.ceil(props.searched.length / bandsPerPage));
   }, [props.filtered.length, props.searched.length]);
 
   function showBand(bandName) {
-    console.log("shw band clicked");
     const i = props.bands.findIndex((band) => band.name == bandName);
     props.setBandDisplayed(props.bands[i]);
-    console.log(props.bandDisplayed);
-    // console.log(i);
   }
 
   const buttonss = [...Array(nPages)].map((e, i) =>
     page === i ? (
-      <button key={i + 1} onClick={() => handleClick(i)} className={bandsStyles.active}>
+      <button
+        key={i + 1}
+        onClick={() => handleClick(i)}
+        className={bandsStyles.active}
+      >
         {i + 1}
       </button>
     ) : (
@@ -52,40 +55,78 @@ export default function BandListTable(props) {
       <div className={bandsStyles.band__grid}>
         {/* <SortToggle name="Genre" setSort={props.setSort} setSortDir={props.setSortDir} sortKey={"genre"} /> */}
         {props.searched === ""
-          ? props.filtered.slice(page * bandsPerPage, page * bandsPerPage + bandsPerPage).map((band) => {
-              const path = band.logo.includes("http") ? band.logo : `https://foofestival.herokuapp.com/logos/${band.logo}`;
-              // console.log(path);
-              return (
-                <div className={bandsStyles.band__card} onClick={() => showBand(band.name)} key={createUID(4)}>
-                  <div className={bandsStyles.band__card__img}>
-                    {path.includes("svg") ? (
-                      <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" className={bandsStyles.fill} />
-                    ) : (
-                      <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
-                    )}
+          ? props.filtered
+              .slice(page * bandsPerPage, page * bandsPerPage + bandsPerPage)
+              .map((band) => {
+                const path = band.logo.includes("http")
+                  ? band.logo
+                  : `https://foofestival.herokuapp.com/logos/${band.logo}`;
+                // console.log(path);
+                return (
+                  <div
+                    className={bandsStyles.band__card}
+                    onClick={() => showBand(band.name)}
+                    key={createUID(4)}
+                  >
+                    <div className={bandsStyles.band__card__img}>
+                      {path.includes("svg") ? (
+                        <LazyLoadImage
+                          effect="blur"
+                          src={path}
+                          alt={band.name}
+                          placeholderSrc="/img/ff_logo.svg"
+                          className={bandsStyles.fill}
+                        />
+                      ) : (
+                        <LazyLoadImage
+                          effect="blur"
+                          src={path}
+                          alt={band.name}
+                          placeholderSrc="/img/ff_logo.svg"
+                        />
+                      )}
+                    </div>
+                    {band.logoCredits ? <p>{band.logoCredits}</p> : null}
+                    <h4>{band.name}</h4>
                   </div>
-                  {band.logoCredits ? <p>{band.logoCredits}</p> : null}
-                  <h4>{band.name}</h4>
-                </div>
-              );
-            })
-          : props.searched.slice(page * bandsPerPage, page * bandsPerPage + bandsPerPage).map((band) => {
-              const path = band.logo.includes("http") ? band.logo : `https://foofestival.herokuapp.com/logos/${band.logo}`;
-              return (
-                <div className={bandsStyles.band__card} onClick={() => showBand(band.name)} key={createUID(4)}>
-                  <div className={bandsStyles.band__card__img}>
-                    {path.includes("svg") ? (
-                      <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" className={bandsStyles.fill} />
-                    ) : (
-                      <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
-                    )}
-                    {/* <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" /> */}
+                );
+              })
+          : props.searched
+              .slice(page * bandsPerPage, page * bandsPerPage + bandsPerPage)
+              .map((band) => {
+                const path = band.logo.includes("http")
+                  ? band.logo
+                  : `https://foofestival.herokuapp.com/logos/${band.logo}`;
+                return (
+                  <div
+                    className={bandsStyles.band__card}
+                    onClick={() => showBand(band.name)}
+                    key={createUID(4)}
+                  >
+                    <div className={bandsStyles.band__card__img}>
+                      {path.includes("svg") ? (
+                        <LazyLoadImage
+                          effect="blur"
+                          src={path}
+                          alt={band.name}
+                          placeholderSrc="/img/ff_logo.svg"
+                          className={bandsStyles.fill}
+                        />
+                      ) : (
+                        <LazyLoadImage
+                          effect="blur"
+                          src={path}
+                          alt={band.name}
+                          placeholderSrc="/img/ff_logo.svg"
+                        />
+                      )}
+                      {/* <LazyLoadImage effect="blur" src={path} alt={band.name} placeholderSrc="/img/ff_logo.svg" /> */}
+                    </div>
+                    {band.logoCredits ? <p>{band.logoCredits}</p> : null}
+                    <h4>{band.name}</h4>
                   </div>
-                  {band.logoCredits ? <p>{band.logoCredits}</p> : null}
-                  <h4>{band.name}</h4>
-                </div>
-              );
-            })}
+                );
+              })}
       </div>
 
       <div className={bandsStyles.pagination}>

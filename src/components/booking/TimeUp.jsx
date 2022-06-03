@@ -1,7 +1,6 @@
 import generalStyles from "/sass/modules/_General.module.scss";
 
 export default function TimeUp(props) {
-  console.log(props);
   function refresh() {
     props.setStep(1);
   }

@@ -23,7 +23,6 @@ export default function Program(props) {
 
   useEffect(() => {
     setLoadingSch(true);
-    console.log("is loading");
 
     fetch(`https://foofestival.herokuapp.com/schedule`)
       .then((res) => res.json())
@@ -33,7 +32,6 @@ export default function Program(props) {
         setFilteredJ(data.Jotunheim.mon);
         setFilteredV(data.Vanaheim.mon);
         setLoadingSch(false);
-        console.log("finished loading");
 
         // console.log(props.isLoading);
       });
@@ -54,9 +52,27 @@ export default function Program(props) {
 
           <HeroBanner img="/img/bands_background.png" title="Program" />
 
-          <ScheduleButtons setFilteredM={setFilteredM} setFilteredJ={setFilteredJ} setFilteredV={setFilteredV} midgard={schedule.Midgard} jotunheim={schedule.Jotunheim} vanaheim={schedule.Vanaheim} setDay={setDay} day={day} />
+          <ScheduleButtons
+            setFilteredM={setFilteredM}
+            setFilteredJ={setFilteredJ}
+            setFilteredV={setFilteredV}
+            midgard={schedule.Midgard}
+            jotunheim={schedule.Jotunheim}
+            vanaheim={schedule.Vanaheim}
+            setDay={setDay}
+            day={day}
+          />
 
-          <Table stage1={filteredM} stage2={filteredJ} stage3={filteredV} bandDisplay={bandDisplay} setBandDisplayed={setBandDisplayed} favourites={props.favourites} setFavourites={props.setFavourites} day={day} />
+          <Table
+            stage1={filteredM}
+            stage2={filteredJ}
+            stage3={filteredV}
+            bandDisplay={bandDisplay}
+            setBandDisplayed={setBandDisplayed}
+            favourites={props.favourites}
+            setFavourites={props.setFavourites}
+            day={day}
+          />
 
           <Footer />
         </>
