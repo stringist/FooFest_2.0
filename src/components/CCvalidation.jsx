@@ -88,7 +88,6 @@ export default function CCvalidation({ ...props }) {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(props.ticketholderdata);
 
     const postData = JSON.stringify(props.ticketholderdata);
     fetch(ENDPOINT, {

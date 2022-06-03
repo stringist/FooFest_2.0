@@ -5,15 +5,14 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 export default function BandPage(props) {
   const band = { ...props.bandDisplay };
-  // console.log(props.bandDisplay);
 
   function switchFav() {
     if (props.favourites.find((item) => item.name === band.name)) {
-      console.log("band removed from the fav list");
-      props.setFavourites((old) => old.filter((item) => item.name !== band.name));
+      props.setFavourites((old) =>
+        old.filter((item) => item.name !== band.name)
+      );
     } else {
       props.setFavourites((old) => old.concat(band));
-      console.log("band added to the fav list");
     }
   }
 
@@ -38,7 +37,12 @@ export default function BandPage(props) {
         <div className={detail.topWrapper}>
           <figure>
             {band.logo.includes("http") ? (
-              <LazyLoadImage effect="blur" src={band.logo} alt={band.name} placeholderSrc="/img/ff_logo.svg" />
+              <LazyLoadImage
+                effect="blur"
+                src={band.logo}
+                alt={band.name}
+                placeholderSrc="/img/ff_logo.svg"
+              />
             ) : (
               <LazyLoadImage
                 effect="blur"
@@ -47,12 +51,13 @@ export default function BandPage(props) {
                 placeholderSrc="/img/ff_logo.svg"
               />
             )}
-            {band.logoCredits ? <figcaption>{band.logoCredits}</figcaption> : null}
+            {band.logoCredits ? (
+              <figcaption>{band.logoCredits}</figcaption>
+            ) : null}
           </figure>
-        <div className={detail.textWrapper}>
+          <div className={detail.textWrapper}>
             <h2>{band.name}</h2>
             <h4>{band.genre}</h4>
-           
           </div>
         </div>
         <p>{band.bio}</p>

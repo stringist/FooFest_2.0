@@ -29,10 +29,8 @@ export default function CheckOutForm(props) {
   };
   function backButton() {
     props.setStep((old) => old - 1);
-    console.log("im called");
   }
   function exportInfo(e) {
-    console.log(ticketHolderObject);
     props.setTicketholderdata(ticketHolderObject);
     props.setShowContent(1);
     props.setStep((old) => old + 1);
@@ -47,7 +45,6 @@ export default function CheckOutForm(props) {
     setCountry(formEl.current.elements.country.value);
   }
   const ticketholderdata = props.ticketholderdata;
-  // console.log(ticketholderdata.apartment);
 
   return (
     <div className={form2Styles.checkout_grid}>

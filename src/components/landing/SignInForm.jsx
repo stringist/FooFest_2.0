@@ -65,14 +65,19 @@ export default function SignInForm(props) {
         <div className={loginStyles.login}>
           <section className={form2Styles.checkout_options}>
             <h2>Login to your account</h2>
-            {console.log(formik.values.password)}
             <Form>
               <div className={loginStyles.users}>
-                <p className={loginStyles.help}>(usernames: kalle, lasse or paula)</p>
+                <p className={loginStyles.help}>
+                  (usernames: kalle, lasse or paula)
+                </p>
                 <p>(passwords: "username" + "A123")</p>
               </div>
 
-              {formik.touched.username && formik.touched.password && formik.errors && <DangerMessage message="Plese, correct the errors" />}
+              {formik.touched.username &&
+                formik.touched.password &&
+                formik.errors && (
+                  <DangerMessage message="Plese, correct the errors" />
+                )}
 
               <TextField label="Username" name="username" type="text" />
               <TextField label="Password" name="password" type="password" />
@@ -81,7 +86,8 @@ export default function SignInForm(props) {
                 Sign in
               </button>
               <button className={loginStyles.g_button}>
-                <img src="/img/google-icon.png" alt="" width={20} /> Sign in with Google
+                <img src="/img/google-icon.png" alt="" width={20} /> Sign in
+                with Google
               </button>
               <a href="#" className={loginStyles.forgot}>
                 Forgot your password?

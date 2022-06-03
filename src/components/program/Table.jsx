@@ -26,11 +26,9 @@ export default function Table(props) {
     fetch(`https://foofestival.herokuapp.com/events`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setEvents(data);
       });
   }, []);
-  console.log(events);
 
   if (!bands) {
     return null;
@@ -74,7 +72,11 @@ export default function Table(props) {
             return (
               <tr key={createUID(4)}>
                 <th>
-                  <p>{act.start.substring(0, 1) === "0" ? act.start.substring(1) : act.start}</p>
+                  <p>
+                    {act.start.substring(0, 1) === "0"
+                      ? act.start.substring(1)
+                      : act.start}
+                  </p>
                   <br></br>
                   <p>{Number(act.start.substring(0, 2)) + 1}:00</p>
                 </th>
