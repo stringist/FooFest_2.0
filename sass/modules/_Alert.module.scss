@@ -1,35 +1,37 @@
 @use "_General.module" as general;
 .container {
-  background-color: general.$grey-100;
-  width: 50vw;
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  box-shadow: rgba(150, 145, 145, 0.279) 0px 2px 8px 0px;
-  justify-content: center;
-  position: relative;
-  margin: 5vw;
-  z-index: 99;
-
-  button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: general.$primary-color-light;
-    background: none;
-  }
-
-  p {
-    display: block;
-    margin: 0.5rem auto;
-  }
+    background-color: general.$grey-100;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(150, 145, 145, 0.279) 0px 2px 8px 0px;
+    justify-content: center;
+    position: relative;
+    margin: 5vw;
+    z-index: 99;
+    button {
+        position: absolute;
+        top: 0;
+        right: -2rem;
+        color: general.$primary-color-light;
+        background: none;
+        svg {
+            width: 35px;
+            height: 35px;
+        }
+    }
+    p {
+        display: block;
+        margin: 0.5rem auto;
+    }
 }
 
 @media only screen and (max-width: general.$mobile-query) {
-  .container {
-    width: 90vw;
-    height: fit-content;
-    padding: 2rem;
-    left: 0;
-  }
+    .container {
+        width: 90vw;
+        height: fit-content;
+        padding: 2rem;
+        left: 0;
+    }
 }
