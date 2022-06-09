@@ -1,184 +1,186 @@
 @use "_General.module" as general;
 .Booking {
-  position: relative;
+    position: relative;
 }
 
 form.step1Form {
-  display: flex;
-  flex-direction: column;
-  // gap: 1.5rem;
-  width: 90%;
-  // background-color: #3f3f3f;
-  font-family: general.$body-font;
-  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  // padding: 5%;
-  legend {
-    font-family: general.$h-font;
-    // margin-bottom: 1rem;
-    margin-top: 0;
-  }
-  input,
-  select {
-    margin-top: 0.25rem;
-    display: block;
-    background-color: #373737;
-    border: solid 0.5px general.$primary-color-light;
-    height: 2.5rem;
-    color: general.$primary-color-light;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    box-shadow: inset 2px 2px 3px 2px general.$grey-500;
-  }
-  // font-family: general.$h-font;
-  // margin: 0 30vw;
-  // gap: 1rem;
-  // legend {
-  //     font-size: 1.5rem;
-  //     margin-top: 2rem;
-  //     line-height: 1;
-  //     margin-bottom: 0.5rem;
-  // }
-  .ticket_legend {
-    font-size: 2rem;
-    // text-align: center;
-    // display: block;
-    // margin-left: auto;
-    // margin-right: auto;
-  }
-  fieldset {
-    margin-bottom: 1rem;
-    background-color: general.$grey-100;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    // display: flex;
-    // justify-content: space-between;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 1.5rem 6vw;
-    align-items: center;
-    label {
-      grid-column: 1/2;
-      font-family: general.$h-font;
-      font-size: 1.5rem;
-      display: flex;
-      // align-items: center;
-      gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    // gap: 1.5rem;
+    width: 90%;
+    // background-color: #3f3f3f;
+    font-family: general.$body-font;
+    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    // padding: 5%;
+    legend {
+        font-family: general.$h-font;
+        // margin-bottom: 1rem;
+        margin-top: 0;
     }
-  }
+    input,
+    select {
+        margin-top: 0.25rem;
+        display: block;
+        background-color: #373737;
+        border: solid 0.5px general.$primary-color-light;
+        height: 2.5rem;
+        color: general.$primary-color-light;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+        box-shadow: inset 2px 2px 3px 2px general.$grey-500;
+    }
+    // font-family: general.$h-font;
+    // margin: 0 30vw;
+    // gap: 1rem;
+    // legend {
+    //     font-size: 1.5rem;
+    //     margin-top: 2rem;
+    //     line-height: 1;
+    //     margin-bottom: 0.5rem;
+    // }
+    .ticket_legend {
+        font-size: 2rem;
+        // text-align: center;
+        // display: block;
+        // margin-left: auto;
+        // margin-right: auto;
+    }
+    fieldset {
+        margin-bottom: 1rem;
+        background-color: general.$grey-100;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        // display: flex;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1.5rem 6vw;
+        align-items: center;
+        label {
+            grid-column: 1/2;
+            font-family: general.$h-font;
+            font-size: 1.5rem;
+            display: flex;
+            // align-items: center;
+            gap: 1rem;
+        }
+    }
 }
 
 .form__ {
-  &area [type="radio"] {
-    display: none;
-  }
-  &area__row {
-    display: flex;
-    justify-content: center;
-    label {
-      img {
-        cursor: pointer;
-      }
-      .not_selected:hover {
-        filter: brightness(0) saturate(100%) invert(65%) sepia(42%) saturate(1033%) hue-rotate(321deg) brightness(97%) contrast(86%);
-      }
+    &area [type="radio"] {
+        display: none;
     }
-  }
-  &type {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    [type="radio"] {
-      display: none;
-    }
-    label {
-      font-family: general.$h-font;
-      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-      background-color: general.$grey-500;
-      border: 2px solid hsl(0deg, 0%, 98%);
-      padding: 1.5rem;
-      font-size: 2.25rem;
-      line-height: 1.2;
-      text-align: center;
-      // min-width: 12rem;
-      cursor: pointer;
-      display: block;
-      &:hover {
-        border: 2px solid general.$accent-color-hover;
-        color: general.$accent-color-hover;
-        transform: translate(-2px, -2px);
-        filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
-        box-shadow: 2px 2px 0px #b62f00;
-        text-shadow: 1px 1px 1px #b62f00;
-        transition: all 0.5s;
-      }
-    }
-    .checked {
-      border: 2px solid general.$accent-color-100;
-      color: general.$accent-color-100;
-    }
-  }
-  &amount {
-    // display: flex;
-    // gap: 2rem;
-    input {
-      width: 8rem;
-      text-align: center;
-      // padding: 1rem;
-    }
-    &__row {
-      display: flex;
-      align-items: flex-end;
-      gap: 0.5rem;
-      grid-column: 2/3;
-      margin: auto;
-      div {
-        display: grid;
-        place-items: center;
-        font-size: 2rem;
-        line-height: 0;
-        width: 2.5rem;
-        height: 2.5rem;
-        background-color: general.$accent-color-100;
-        cursor: pointer;
-        &:hover {
-          background-color: general.$accent-color-hover;
-          border: 0.5px solid general.$accent-color-100;
-          // transform: translate(-1px, -1px);
-          filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
-          box-shadow: 2px 2px 0px #b62f00;
-          text-shadow: 1px 1px 1px #b62f00;
-          transition: all 0.5s;
+    &area__row {
+        display: flex;
+        justify-content: center;
+        label {
+            img {
+                cursor: pointer;
+            }
+            .not_selected:hover {
+                filter: brightness(0) saturate(100%) invert(65%) sepia(42%) saturate(1033%) hue-rotate(321deg) brightness(97%) contrast(86%);
+            }
         }
-      }
     }
-    p {
-      margin: 0;
-      font-family: general.$body-font;
-      font-size: 0.85rem;
-      color: general.$primary-color-lighter;
+    &type {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        [type="radio"] {
+            display: none;
+        }
+        label {
+            font-family: general.$h-font;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            background-color: general.$grey-500;
+            border: 2px solid hsl(0deg, 0%, 98%);
+            padding: 1.5rem;
+            font-size: 2.25rem;
+            line-height: 1.2;
+            text-align: center;
+            // min-width: 12rem;
+            cursor: pointer;
+            display: block;
+            &:hover {
+                border: 2px solid general.$accent-color-hover;
+                color: general.$accent-color-hover;
+                transform: translate(-2px, -2px);
+                filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
+                box-shadow: 2px 2px 0px #b62f00;
+                text-shadow: 1px 1px 1px #b62f00;
+                transition: all 0.5s;
+            }
+        }
+        .checked {
+            border: 2px solid general.$accent-color-100;
+            color: general.$accent-color-100;
+        }
     }
-  }
+    &amount {
+        // display: flex;
+        // gap: 2rem;
+        input {
+            width: 8rem;
+            text-align: center;
+            // padding: 1rem;
+        }
+        &__row {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.5rem;
+            grid-column: 2/3;
+            margin: auto;
+            div {
+                display: grid;
+                place-items: center;
+                font-size: 2rem;
+                line-height: 0;
+                width: 2.5rem;
+                height: 2.5rem;
+                background-color: general.$accent-color-100;
+                cursor: pointer;
+                &:hover {
+                    background-color: general.$accent-color-hover;
+                    border: 0.5px solid general.$accent-color-100;
+                    // transform: translate(-1px, -1px);
+                    filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
+                    box-shadow: 2px 2px 0px #b62f00;
+                    text-shadow: 1px 1px 1px #b62f00;
+                    transition: all 0.5s;
+                }
+            }
+        }
+        p {
+            margin: 0;
+            font-family: general.$body-font;
+            font-size: 0.85rem;
+            color: general.$primary-color-lighter;
+        }
+    }
 }
 
 @media only screen and (max-width: general.$mobile-query) {
-  form.step1Form {
-    width: 100%;
-    fieldset {
-      display: block;
+    form.step1Form {
+        width: 100%;
+        fieldset {
+            display: block;
+        }
     }
-  }
-  .Booking form {
-    margin: 0;
-    margin-top: 2rem;
-    padding: 1rem;
-    .form__type {
-      gap: 3rem;
+    .Booking form {
+        margin: 0;
+        margin-top: 2rem;
+        padding: 1rem;
+        .form__type {
+            gap: 3rem;
+        }
+        legend {
+            margin-bottom: 1rem;
+        }
+        .form__area__row label img {
+            max-width: 6rem;
+        }
+        .form__amount__row {
+            justify-content: center;
+        }
     }
-    legend {
-      margin-bottom: 1rem;
-    }
-
-    .form__area__row label img {
-      max-width: 6rem;
-    }
-  }
 }
