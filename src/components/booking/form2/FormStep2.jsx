@@ -8,7 +8,7 @@ export default function FormStep2(props) {
     <>
       <img
         src="/img/step2.svg"
-        alt="step2 breadcrumbs"
+        alt="step 2 breadcrumbs"
         className={form2Styles.breadcrumbs}
       />
       <section className={form2Styles.checkout_grid}>
