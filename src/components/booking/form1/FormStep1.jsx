@@ -42,7 +42,7 @@ export default function FormStep1({ ...props }) {
         const timing = setTimeout(() => {
           props.setIsSearching(false);
           props.showAlert ? props.setTimer(0) : props.setTimer(1);
-        }, 2000);
+        }, 1600);
         return () => {
           clearTimeout(timing);
         };
@@ -56,9 +56,9 @@ export default function FormStep1({ ...props }) {
   function applyReservationId() {
     props.setReservationId(props.reservation.id);
     props.setStep((old) => old + 1);
+ticketsToBasket();
   }
-  {
-  }
+
   return (
     <>
       {!props.showAlert && (
