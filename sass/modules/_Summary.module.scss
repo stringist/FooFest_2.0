@@ -17,36 +17,45 @@
     }
     li {
         margin-bottom: 0.5rem;
-        display: flex;
+        // display: flex;
+        display: grid;
+        grid-template-columns: 9fr 2fr 1fr;
         justify-content: space-between;
         align-items: center;
         button {
             font-family: general.$body-font;
             font-weight: 200;
+            font-size: .75rem;
+            margin: auto 0 auto auto;
             color: rgb(194, 194, 194);
             padding: 0;
-            width: 2rem;
-            height: 2rem;
+            width: 1rem;
+            height: 1rem;
             border: solid .5px rgb(194, 194, 194);
         }
         // border: solid .5px lime;
         span {
             font-family: general.$h-font;
-            min-width: max-content;
+            text-align: right;
+            // margin-left: auto;
+            // min-width: max-content;
         }
     }
 }
 
 .total {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: 9fr 2fr 1fr;
     margin: 1rem;
     padding-top: 1rem;
     border-top: solid 0.5px general.$secondary-color;
     font-weight: 700;
     .price {
         font-family: general.$h-font;
-        min-width: max-content;
+        // min-width: max-content;
+        text-align: right;
     }
 }
 
