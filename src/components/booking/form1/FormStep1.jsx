@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-
+import createUID from "create-unique-id";
 import form1Styles from "/sass/modules/_Form1.module.scss";
 import form2Styles from "/sass/modules/_Form2.module.scss";
 import generalStyles from "/sass/modules/_General.module.scss";
@@ -60,7 +60,7 @@ export default function FormStep1({ ...props }) {
   }
 
   function ticketsToBasket() {
-    const ticketObj = {product: props.ticket, area: props.area, amount: amount, price: props.ticket === "General" ? 799 : 1299 };
+    const ticketObj = {product: props.ticket, area: props.area, amount: amount, id: createUID(5), price: props.ticket === "General" ? 799 : 1299 };
     props.setBasket((old) => [...old, ticketObj]);
   }
 
