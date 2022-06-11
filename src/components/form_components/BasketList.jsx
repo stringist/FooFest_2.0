@@ -14,7 +14,7 @@ export default function BasketList(props) {
         {item.product === "General" || item.product === "VIP" ? `${item.product},  ${item.area}` : item.product}{" "}
         <span>{item.price * item.amount} Dkk</span>
         {item.product !== "Booking Fee" ? (
-          <button className="removeButton" onClick={() => removeItem(item.id)}>
+          <button title="Remove from basket" className="removeButton" onClick={() => removeItem(item.id)}>
             X
           </button>
         ) : null}

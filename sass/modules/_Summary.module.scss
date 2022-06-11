@@ -29,9 +29,18 @@
             margin: auto 0 auto auto;
             color: rgb(194, 194, 194);
             padding: 0;
-            width: 1rem;
-            height: 1rem;
+            width: 1.2rem;
+            height: 1.2rem;
             border: solid .5px rgb(194, 194, 194);
+            &:hover {
+                transform: translate(-2px, -2px);
+                filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
+                box-shadow: 2px 2px 0px #b62f00;
+                text-shadow: 1px 1px 1px #b62f00;
+                transition: all 0.5s;
+                color: general.$primary-color-light;
+                background-color: general.$accent-color-100;
+            }
         }
         // border: solid .5px lime;
         span {
