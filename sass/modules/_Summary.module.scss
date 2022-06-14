@@ -81,6 +81,9 @@
         }
     }
     .total {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
         height: 6rem;
         background-color: general.$primary-color-dark;
         margin: 0;

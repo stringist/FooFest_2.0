@@ -14,7 +14,7 @@ const handleChange = (e) => {setIsChecked((prevState) => prevState = e.target.ch
         <input type="checkbox" id="crew_setup" name="crew_setup" onChange={handleChange}/>
         <div className="text_content">
           <label htmlFor="crew_setup">
-            Have the crew set up the tent for you <span>Optional</span>
+            Have the crew set up the tent for you
           </label>
           <p className={form2Styles.subtext}>The number of tents must match the number of tickets</p>
         </div>

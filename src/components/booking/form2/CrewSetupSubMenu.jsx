@@ -62,7 +62,7 @@ export default function CrewSetupSubMenu(props) {
     <div className={form2Styles.subMenu}>
       <div className={form2Styles.subMenuItem}>
         <div className="text_content">
-          <label htmlFor="twoPersonTent">2 person tent </label>
+          <label htmlFor="twoPersonTent">2-person tent </label>
         </div>
         <input
           type="number"
@@ -76,7 +76,7 @@ export default function CrewSetupSubMenu(props) {
       </div>
       <div className={form2Styles.subMenuItem}>
         <div className="text_content">
-          <label htmlFor="threePersonTent">3 person tent </label>
+          <label htmlFor="threePersonTent">3-person tent </label>
         </div>
         <input
           type="number"
