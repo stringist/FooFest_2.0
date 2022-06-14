@@ -14,7 +14,9 @@ function App() {
   const [user, setUser] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [favourites, setFavourites] = useState([]);
-
+useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, [<Booking/>]);
   // useEffect(() => {
   //   setIsLoading(true);
   //   const timing = setTimeout(() => {
@@ -25,6 +27,7 @@ function App() {
 
   return (
     <div className={generalStyles.App}>
+
       <Routes>
         <Route path="/" element={<Festival user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />
         <Route path="/tickets" element={<Booking user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />
