@@ -30,9 +30,9 @@ export default function Booking(props) {
   const [amount, setAmount] = useState(1);
   const [reservation, setReservation] = useState([]);
   const [showAlert, setAlert] = useState(false);
-  const [basket, setBasket] = useState([
-    { product: "Booking Fee", price: 99, id: 1, amount: 1 },
-  ]);
+  const [basket, setBasket] = useState([{ product: "Booking Fee", price: 99, id: 1, amount: 1 }]);
+  const [twoPersCount, setTwoPersCount] = useState(0);
+  const [threePersCount, setThreePersCount] = useState(0);
 
   const values = {
     isSearching,
@@ -59,6 +59,10 @@ export default function Booking(props) {
     setAlert,
     setBasket,
     basket,
+    twoPersCount,
+    setTwoPersCount,
+    threePersCount,
+    setThreePersCount,
   };
 
   const prevStep = () => {

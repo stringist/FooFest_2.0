@@ -21,7 +21,7 @@ export default function Timer(props) {
 
   return (
     <div className={generalStyles.timer}>
-      <CountdownCircleTimer isPlaying duration={300} colors={["#0E8923", "#F2EC6D", "#DC3545"]} colorsTime={[300, 120, 0]} onComplete={timeUp}>
+      <CountdownCircleTimer isPlaying duration={600} colors={["#0E8923", "#F2EC6D", "#DC3545"]} colorsTime={[300, 120, 0]} onComplete={timeUp}>
         {renderTime}
       </CountdownCircleTimer>
     </div>
