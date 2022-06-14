@@ -4,16 +4,16 @@
     svg {
         fill: general.$primary-color-light;
     }
-    // button {
-    //     position: fixed;
-    //     right: -2rem;
-    //     top: 0;
-    //     z-index: 10;
-    //     cursor: pointer;
-    //     background: transparent;
-    //     border: none;
-    //     width: fit-content;
-    // }
+    button {
+        position: fixed;
+        right: -2rem;
+        top: 0;
+        z-index: 10;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        width: fit-content;
+    }
     .menuNav {
         overflow-y: scroll;
         list-style: none;
