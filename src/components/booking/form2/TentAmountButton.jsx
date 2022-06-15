@@ -25,20 +25,13 @@ export default function TentAmountButton(props) {
 
   const reduceAmount = (e) => {
     props.setTentCount((old) => old - 1);
-  if (props.basket.find((item) => item.name === props.name)) {
+    if (props.basket.find((item) => item.name === props.name)) {
       props.setBasket((old) =>
         old.map((item) => {
           if (item.name === props.name) {
-            if (props.name === "twoPersonTent") {
-              const copy = { ...item };
-              copy.amount = copy.amount -1;
-              return copy;
-            }
-//  else {
-//               const copy = { ...threePers };
-//               copy.amount = copy.amount - 1;
-//               return copy;
-//             }
+            const copy = { ...item };
+            copy.amount = copy.amount - 1;
+            return copy;
           }
           return item;
         })
@@ -47,48 +40,35 @@ export default function TentAmountButton(props) {
       console.log(`first time in de basket`);
       if (props.name === "twoPersonTent") {
         props.setBasket((old) => [...old, { ...twoPers, amount: 1 }]);
-      } 
-// else {
-//         props.setBasket((old) => [...old, { ...threePers, amount: 1 }]);
-//       }
-    };
-
-    // newCount=props.tentCount;
-    //     updateBasket(props.name);
+      } else {
+        props.setBasket((old) => [...old, { ...threePers, amount: 1 }]);
+      }
+    }
   };
 
   const addAmount = (e) => {
     props.setTentCount((old) => old + 1);
- if (props.basket.find((item) => item.name === props.name)) {
+    if (props.basket.find((item) => item.name === props.name)) {
       props.setBasket((old) =>
         old.map((item) => {
           if (item.name === props.name) {
-            if (props.name === "twoPersonTent") {
-              const copy = { ...item };
-console.log(copy.amount, typeof copy.amount);
-              copy.amount = copy.amount + 1;
-              // copy.amount ++;
-              return copy;
-            } 
-// else {
-//               const copy = { ...threePers };
-//               copy.amount = copy.amount + 1;
-//               return copy;
-//             }
+            const copy = { ...item };
+            console.log(copy.amount, typeof copy.amount);
+            copy.amount = copy.amount + 1;
+            // copy.amount ++;
+            return copy;
           }
           return item;
         })
       );
-    } 
-else {
+    } else {
       console.log(`first time in de basket`);
       if (props.name === "twoPersonTent") {
         props.setBasket((old) => [...old, { ...twoPers, amount: 1 }]);
+      } else {
+        props.setBasket((old) => [...old, { ...threePers, amount: 1 }]);
       }
-//  else {
-//         props.setBasket((old) => [...old, { ...threePers, amount: 1 }]);
-//       }
-    };
+    }
     // newCount=props.tentCount;
 
     // updateBasket(props.name);
@@ -98,20 +78,20 @@ else {
   // function updateBasket(productName) {
   //   console.log(props.tentCount);
   //   console.log(productName);
-    // const twoPers = {
-    //   product: "Two-person tent setup",
-    //   name: "twoPersonTent",
-    //   price: 299,
-    //   id: 667,
-    //   amount: 0,
-    // };
-    // const threePers = {
-    //   product: "Three-person tent setup",
-    //   name: "threePersonTent",
-    //   price: 399,
-    //   id: 668,
-    //   amount: 0,
-    // };
+  // const twoPers = {
+  //   product: "Two-person tent setup",
+  //   name: "twoPersonTent",
+  //   price: 299,
+  //   id: 667,
+  //   amount: 0,
+  // };
+  // const threePers = {
+  //   product: "Three-person tent setup",
+  //   name: "threePersonTent",
+  //   price: 399,
+  //   id: 668,
+  //   amount: 0,
+  // };
 
   //   if (props.basket.find((item) => item.name === productName)) {
   //     props.setBasket((old) =>
@@ -154,7 +134,7 @@ else {
           // onChange={(e) => {
           //   props.setTentCount(Number(e.target.value));
           // }}
-onChange={handleChange}
+          onChange={handleChange}
         />
         <div onClick={addAmount}>+</div>
       </div>
