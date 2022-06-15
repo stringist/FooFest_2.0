@@ -10,16 +10,20 @@ let newCount = 0;
 
   const reduceAmount = (e) => {
 
-     props.setTentCount((old) => old - 1);
-newCount=props.tentCount;
-    updateBasket(props.name);
+     props.setTentCount(old => {old - 1}, () => this. updateBasket(props.name)); 
+   
+
+
+// newCount=props.tentCount;
+//     updateBasket(props.name);
   }
 
   const addAmount = (e) => {
-    props.setTentCount((old) => old + 1);
-newCount=props.tentCount;
+//     props.setTentCount((old) => old + 1);
+// newCount=props.tentCount;
 
-    updateBasket(props.name);
+//     updateBasket(props.name);
+ props.setTentCount(old => {old + 1}, () => this. updateBasket(props.name)); 
   };
 
   function updateBasket(productName) {
