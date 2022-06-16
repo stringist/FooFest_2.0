@@ -10,13 +10,13 @@ export default function AmountButton(props) {
   return (
     <>
       <div className={form1Styles.form__amount__row}>
-        <div onClick={props.amount > 1 ? reduceAmount : null}>-</div>
+        <div onClick={props.amount > 0 ? reduceAmount : null}>-</div>
         <input
           type="text"
           id={props.name}
           name={props.name}
           value={props.amount}
-          min="1"
+          min="0"
           inputMode="numeric"
           onChange={(e) => {
             props.setAmount(Number(e.target.value));

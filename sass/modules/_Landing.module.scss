@@ -106,9 +106,26 @@
             align-items: center;
             gap: 3rem;
         }
+        .spotlight {
+            width: 70vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
         img {
             height: auto;
             width: 100%;
+        }
+        .band_logo {
+            width: 35vw;
+            z-index: 1;
+            margin-right: -15vw;
+        }
+        .lg_img {
+            width: 50vw;
+            height: auto;
+            margin: auto;
         }
         p {
             width: 30ch;
