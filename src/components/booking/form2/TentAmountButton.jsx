@@ -85,7 +85,7 @@ export default function TentAmountButton(props) {
           onChange={(e) => {
             props.setTentCount(Number(e.target.value));
           }}
-          // onChange={handleChange}
+         
         />
         <div onClick={addAmount}>+</div>
       </div>
