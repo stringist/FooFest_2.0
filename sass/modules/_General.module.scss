@@ -119,6 +119,15 @@ button {
     }
 }
 
+.disabledButton {
+    font-family: $body-font;
+    font-weight: 700;
+    background-color: unset;
+    color: rgb(159, 159, 159);
+    text-align: center;
+    border: solid 2px rgb(159, 159, 159);
+}
+
 .buttonWrapper {
     display: flex;
     gap: 1rem;

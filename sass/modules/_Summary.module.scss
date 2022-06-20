@@ -25,14 +25,15 @@
         button {
             font-family: general.$body-font;
             font-weight: 200;
-            font-size: .75rem;
-            margin: auto 0 auto auto;
+            font-size: 1rem;
+            margin: auto -.25rem auto auto;
             color: rgb(194, 194, 194);
             padding: 0;
             width: 1.2rem;
             height: 1.2rem;
-            border: solid .5px rgb(194, 194, 194);
+            // border: solid .5px rgb(194, 194, 194);
             &:hover {
+                border: solid .5px rgb(194, 194, 194);
                 transform: translate(-2px, -2px);
                 filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
                 box-shadow: 2px 2px 0px #b62f00;
@@ -47,7 +48,7 @@
             font-family: general.$h-font;
             text-align: right;
             // margin-left: auto;
-            // min-width: max-content;
+            min-width: max-content;
         }
     }
 }
@@ -63,7 +64,7 @@
     font-weight: 700;
     .price {
         font-family: general.$h-font;
-        // min-width: max-content;
+        min-width: max-content;
         text-align: right;
     }
 }
