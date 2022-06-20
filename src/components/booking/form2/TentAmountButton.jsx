@@ -19,7 +19,7 @@ export default function TentAmountButton(props) {
   };
 
   const handleChange = (e) => {
-    console.log(e.target.name);
+    console.log(e.target.name + ` updating tents`);
    
   };
 
