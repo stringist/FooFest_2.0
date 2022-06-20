@@ -8,173 +8,176 @@
 //     line-height: 4rem;
 // }
 .billing_form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: #3f3f3f;
-  font-family: general.$body-font;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 5%;
-  legend {
-    font-family: general.$h-font;
-    margin-bottom: 1rem;
-    margin-top: 0;
-  }
-  input,
-  select {
-    margin-top: 0.25rem;
-    display: block;
-    background-color: #373737;
-    border: solid 0.5px general.$primary-color-light;
-    height: 2.5rem;
-    color: general.$primary-color-light;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    box-shadow: inset 2px 2px 3px 2px general.$grey-500;
-  }
-  input:valid {
-    outline: 2px solid rgba(0, 127, 0, 0.66);
-    background-color: rgba(0, 127, 0, 0.1);
-  }
-  input:invalid:not(:placeholder-shown, :focus) {
-    border: 2px solid red;
-    background-color: rgba(255, 0, 0, 0.181);
-  }
-  input:invalid:focus:not(:placeholder-shown) {
-    & ~ .requirements {
-      visibility: visible;
-    }
-  }
-  input:invalid:not(:placeholder-shown + span) {
-    opacity: 1;
-  }
-  input:focus-within {
-    border: 1px solid rgba(0, 0, 255, 0.623);
-    background-color: rgba(0, 0, 255, 0.167);
-  }
-  // select {
-  //     margin-top: .5rem;
-  //     font-size: 1rem;
-  //     display: block;
-  //     background-color: #373737;
-  //     color: general.$primary-color-light;
-  //     // height: 30px;
-  //     border: solid .5px hsl(0deg, 0%, 98%);
-  //     width: 50%;
-  // }
-  fieldset {
-    margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    width: 80%;
-    input {
-      width: 100%;
-    }
-  }
-  .ticketholderCard {
-    margin-bottom: 2rem;
-    gap: 0.5rem;
-    border: solid 1px general.$grey-400;
+    width: 100%;
+    background-color: #3f3f3f;
+    font-family: general.$body-font;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 5%;
     legend {
-      font-size: 1.5rem;
-      padding: auto 4rem;
+        font-family: general.$h-font;
+        margin-bottom: 1rem;
+        margin-top: 0;
     }
-    input {
-      margin: 0;
+    input,
+    select {
+        margin-top: 0.25rem;
+        display: block;
+        background-color: #373737;
+        border: solid 0.5px general.$primary-color-light;
+        height: 2.5rem;
+        color: general.$primary-color-light;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+        box-shadow: inset 2px 2px 3px 2px general.$grey-500;
     }
-  }
-  .splitRow {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 1rem;
-  }
-  .twoColumn {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
-    // & input {
-    //     width: 75%;
+    input:valid {
+        outline: 2px solid rgba(0, 127, 0, 0.66);
+        background-color: rgba(0, 127, 0, 0.1);
+    }
+    input:invalid:not(:placeholder-shown, :focus) {
+        border: 2px solid red;
+        background-color: rgba(255, 0, 0, 0.181);
+    }
+    input:invalid:focus:not(:placeholder-shown) {
+        &~.requirements {
+            visibility: visible;
+        }
+    }
+    input:invalid:not(:placeholder-shown + span) {
+        opacity: 1;
+    }
+    input:focus-within {
+        border: 1px solid rgba(0, 0, 255, 0.623);
+        background-color: rgba(0, 0, 255, 0.167);
+    }
+    // select {
+    //     margin-top: .5rem;
+    //     font-size: 1rem;
+    //     display: block;
+    //     background-color: #373737;
+    //     color: general.$primary-color-light;
+    //     // height: 30px;
+    //     border: solid .5px hsl(0deg, 0%, 98%);
+    //     width: 50%;
     // }
-  }
-  [type="number"] {
-    -moz-appearance: textfield;
-  }
+    fieldset {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 80%;
+        input {
+            width: 100%;
+        }
+    }
+    .ticketholderCard {
+        margin-bottom: 2rem;
+        gap: 0;
+        border: solid 1px general.$grey-400;
+        padding: 5%;
+        legend {
+            font-size: 1.5rem;
+            padding: auto 4rem;
+        }
+        input {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            margin-bottom: .25rem;
+        }
+    }
+    .splitRow {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 1rem;
+    }
+    .twoColumn {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        // & input {
+        //     width: 75%;
+        // }
+    }
+    [type="number"] {
+        -moz-appearance: textfield;
+    }
 }
 
 .requirements {
-  height: 0;
-  transition: 0.28s;
-  overflow: hidden;
-  color: red;
-  font-style: italic;
-  visibility: hidden;
-  input:invalid:not(:placeholder-shown + span) {
-    opacity: 1;
-  }
-  input:focus-within {
-    border: 1px solid rgba(0, 0, 255, 0.623);
-    background-color: rgba(0, 0, 255, 0.167);
-  }
-  // select {
-  //     margin-top: .5rem;
-  //     font-size: 1rem;
-  //     display: block;
-  //     background-color: #373737;
-  //     color: general.$primary-color-light;
-  //     // height: 30px;
-  //     border: solid .5px hsl(0deg, 0%, 98%);
-  //     width: 50%;
-  // }
-  fieldset {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 80%;
-    input {
-      width: 100%;
+    height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    color: red;
+    font-style: italic;
+    visibility: hidden;
+    input:invalid:not(:placeholder-shown + span) {
+        opacity: 1;
     }
-  }
-  .splitRow {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 1rem;
-  }
-  .twoColumn {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
-    // & input {
-    //     width: 75%;
+    input:focus-within {
+        border: 1px solid rgba(0, 0, 255, 0.623);
+        background-color: rgba(0, 0, 255, 0.167);
+    }
+    // select {
+    //     margin-top: .5rem;
+    //     font-size: 1rem;
+    //     display: block;
+    //     background-color: #373737;
+    //     color: general.$primary-color-light;
+    //     // height: 30px;
+    //     border: solid .5px hsl(0deg, 0%, 98%);
+    //     width: 50%;
     // }
-  }
-  [type="number"] {
-    -moz-appearance: textfield;
-  }
+    fieldset {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 80%;
+        input {
+            width: 100%;
+        }
+    }
+    .splitRow {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 1rem;
+    }
+    .twoColumn {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        // & input {
+        //     width: 75%;
+        // }
+    }
+    [type="number"] {
+        -moz-appearance: textfield;
+    }
 }
 
 .labelInputPair {
-  display: flex;
-  flex-direction: column;
-  gap: 0.05rem;
-  & span {
-    font-size: 0.8rem;
-    font-weight: 200;
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+    & span {
+        font-size: 0.8rem;
+        font-weight: 200;
+    }
 }
 
 @media only screen and (min-width: general.$mobile-query) {
-  .billing_form {
-    margin-top: 2rem;
-
-    .splitRow {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
+    .billing_form {
+        margin-top: 2rem;
+        .splitRow {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
     }
-  }
 }
+
 //         /*     max-width: 800px;
 //  */
 //         margin: 0;

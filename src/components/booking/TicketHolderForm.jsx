@@ -54,7 +54,14 @@ export default function TicketHolderForm(props) {
       <div className={form2Styles.checkout_grid}>
         <section className={form2Styles.checkout_options}>
           <h2>Ticket holder information</h2>
-          <a href="#/">← Back</a>
+           <a
+        href="#/"
+        onClick={() => {
+          props.setStep((old) => old - 1);
+        }}
+      >
+        ← Back
+      </a>
           <form className={billing.billing_form} ref={formEl}>
             {holderForm}
             <fieldset>
