@@ -258,6 +258,10 @@ input {
     line-height: 1.5;
 }
 
+.error_text {
+    color: $error-color;
+}
+
 .alert_success {
     background-color: rgba(0, 127, 0, 0.193);
     color: $primary-color-light;

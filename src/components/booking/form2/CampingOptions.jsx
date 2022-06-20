@@ -38,7 +38,8 @@ export default function CampingOptions(props) {
             >
               Continue to payment
             </button>
-          ) :<button className={generalStyles.disabledButton}>Continue to payment</button>}
+          ) :<><button className={generalStyles.disabledButton}>Continue to payment</button> 
+<p className={generalStyles.error_text}>You don't have any tickets in your basket!</p></>}
         </div>
       </form>
     </section>
