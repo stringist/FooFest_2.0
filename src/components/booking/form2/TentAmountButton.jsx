@@ -18,10 +18,10 @@ export default function TentAmountButton(props) {
     // amount: 0,
   };
 
-  const handleChange = (e) => {
-    console.log(e.target.name + ` updating tents`);
+  // const handleChange = (e) => {
+  //   console.log(e.target.name + ` updating tents`);
    
-  };
+  // };
 
   const reduceAmount = (e) => {
     props.setTentCount((old) => old - 1);
@@ -61,7 +61,7 @@ export default function TentAmountButton(props) {
         })
       );
     } else {
-      console.log(`first time in de basket`);
+
       if (props.name === "twoPersonTent") {
         props.setBasket((old) => [...old, { ...twoPers, amount: 1 }]);
       } else {

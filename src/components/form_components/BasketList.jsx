@@ -1,8 +1,9 @@
 import summaryStyles from "/sass/modules/_Form2.module.scss";
 import createUID from "create-unique-id";
 export default function BasketList(props) {
-  function removeItem(id) {console.log(id);
-    props.setBasket((old) => old.filter((item) => item.id !== id));
+  function removeItem(prod) {console.log(prod.id);
+    props.setBasket((old) => old.filter((item) => item.id !== prod.id));
+prod.name === "twoPersonTent" ? props.setTwoPersCount(0) : prod.name === "threePersonTent" ? props.setThreePersCount(0) : null;
   }
 
   // const initialValue = 0;
@@ -15,7 +16,7 @@ export default function BasketList(props) {
         <span>{item.price * item.amount} Dkk</span>
         {/* {item.product !== "Booking Fee" && (item.product !== "General" && item.product !== "VIP")?  ( */}
          {item.product !== "Booking Fee" ?  ( 
-          <button title="Remove from basket" className="removeButton" onClick={() => removeItem(item.id)}>
+          <button title="Remove from basket" className="removeButton" onClick={() => removeItem({...item})}>
             X
           </button>
         ) : null}
