@@ -7,9 +7,9 @@ export default function TimeUp(props) {
   return (
     <div className={generalStyles.timeUp}>
       <p>Sorry, your checkout session has expired.</p>
-      <a className={generalStyles.cta} onClick={refresh}>
+      <button className={generalStyles.primaryButton} onClick={refresh}>
         Start a new search
-      </a>
+      </button>
     </div>
   );
 }

@@ -130,6 +130,9 @@ form.step1Form {
             gap: 0.5rem;
             grid-column: 2/3;
             margin: auto;
+            input {
+                box-shadow: inset 2px 2px 3px 2px general.$grey-500;
+            }
             div {
                 display: grid;
                 place-items: center;
